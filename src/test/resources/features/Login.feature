@@ -35,8 +35,12 @@ Feature: Sign In and Sign Out in dsAlgo Portal
     When The user clicks the login button after entering valid username and valid password
     Then The user should land in Data Structure Home Page with message "You are logged in"
 
+HEAD
   Scenario: Verify that user is able to sign out successfully
     Given The user is in the Home page after Sign in
     When The user clicks "Sign out" on home page
     Then The user should be redirected to the home page with message "Logged out successfully"
+
+ 
+ b4db99f (pushing to darshana branch)
   

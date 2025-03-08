@@ -1,7 +1,11 @@
 Feature: Home and DS Algo Portal Navigation and Functionality
 
   Background: The user opened DS Algo portal in the browser
+ HEAD
 
+
+   
+ b4db99f (pushing to darshana branch)
   Scenario: Verify that user is able to sign out of the portal
     Given The user is on the home page and logged in with valid credentials
     When The user clicks on the sign out button
@@ -56,3 +60,11 @@ Feature: Home and DS Algo Portal Navigation and Functionality
     Given The user is logged in to the DS Algo portal
     When The user clicks on the dropdown menu and selects the "Graph" tab
     Then The user lands on the Graph page
+<<<<<<< HEAD
+=======
+    
+     Scenario: Verify that user is able to sign out successfully
+    Given The user is in the Home page after Sign in
+    When The user clicks "Sign out" on home page
+    Then The user should be redirected to the home page with message "Logged out successfully"
+>>>>>>> b4db99f (pushing to darshana branch)
