@@ -1,27 +1,63 @@
 package pageObjects;
 
- HEAD
-public class dataStructurePage {
 
-	
 
-}
-
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class dataStructurePage {
 	
 	//WebDriver driver=new ChromeDriver();
 	
 
-	By GetstartedButton=By.xpath("//a[@href='data-structures-introduction']");
-	By timeComplexity=By.className("list-group-item");
-	By tryHere=By.xpath("a[href='/tryEditor']");
-	By tryEditorTextBox= By.xpath("//div[@class='CodeMirror-scroll']");
-	By Runbutton=By.xpath("//button[text()='Run']");
-	By PracticeQuestions=By.xpath("//a[text()='Practice Questions']");
+	@FindBy(xpath="//a[@href='data-structures-introduction']")WebElement GetstartedButton;
+	@FindBy(className="list-group-item")WebElement timeComplexity;
+	@FindBy(xpath="a[href='/tryEditor']")WebElement tryHere;
+	@FindBy(xpath="//div[@class='CodeMirror-scroll']")WebElement tryEditorTextBox;
+	@FindBy(xpath="//button[text()='Run']")WebElement Runbutton;
+	@FindBy(xpath="//a[text()='Practice Questions']")WebElement PracticeQuestions;
+	
+	public dataStructurePage(WebDriver driver)
+	{
+		PageFactory.initElements(driver, this);
+	}
+	
+	public void checkGetstarted()
+	{
+		GetstartedButton.click();
+		
+	}
+	public void checkTimeComplexity()
+	{
+		timeComplexity.click();
+	}
+	
+	public void tryhere()
+	{
+		tryHere.click();
+	}
+	
+	public void checkPractice()
+	{
+		PracticeQuestions.click();
+	}
+	public void runValidcode(String code)
+	{
+		tryEditorTextBox.sendKeys(code);
+		Runbutton.click();
+		
+	}
+	
+	public void invalidcode(String code)
+	{
+		tryEditorTextBox.sendKeys(code);
+		Runbutton.click();
+	}
+	
 	
 	
 	
 }
- b4db99f (pushing to darshana branch)
+ 

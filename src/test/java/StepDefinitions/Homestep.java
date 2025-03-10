@@ -1,21 +1,38 @@
 package StepDefinitions;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.homePage;
 
 public class Homestep {
+	
+	
+	 
+	WebDriver driver;
+	// driver.manage().window().maximize();
+	 
+	    homePage homePageobj;
 
 	@Given("The user is on the home page and logged in with valid credentials")
 	public void the_user_is_on_the_home_page_and_logged_in_with_valid_credentials() {
 	    // Write code here that turns the phrase above into concrete actions
+		driver = new ChromeDriver();
+       driver.manage().window().maximize();
+       driver.get("https://dsportalapp.herokuapp.com/home"); // URL of the home page
+        
+        // Initialize Page Object
+        homePageobj = new homePage(driver);
 	    
 	}
 
 	@When("The user clicks on the sign out button")
 	public void the_user_clicks_on_the_sign_out_button() {
 	    // Write code here that turns the phrase above into concrete actions
-	  
+	  homePageobj.clickSignOut();
 	}
 
 	@Then("The user should be able to sign out of the portal and see success message")
@@ -45,13 +62,18 @@ public class Homestep {
 	@Given("The user is on the Home page")
 	public void the_user_is_on_the_home_page() {
 	    // Write code here that turns the phrase above into concrete actions
-	   
+		driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://dsportalapp.herokuapp.com/home"); // URL of the home page
+        
+        // Initialize Page Object
+        homePageobj = new homePage(driver);
 	}
 
 	@When("The user clicks the Data Structures dropdown")
 	public void the_user_clicks_the_data_structures_dropdown() {
 	    // Write code here that turns the phrase above into concrete actions
-	  
+	  homePageobj.openDropdown();
 	}
 
 	@Then("The user should be able to see {int} options {string} in the dropdown menu")
@@ -148,13 +170,19 @@ public class Homestep {
 	@Given("The user is in the Home page after Sign in")
 	public void the_user_is_in_the_home_page_after_sign_in() {
 	    // Write code here that turns the phrase above into concrete actions
+	   WebDriver driver=new ChromeDriver();
+	   driver.manage().window().maximize();
+       driver.get("https://dsportalapp.herokuapp.com/home"); // URL of the home page
+       
+       // Initialize Page Object
+       homePageobj = new homePage(driver);
 	   
 	}
 
 	@When("The user clicks {string} on home page")
 	public void the_user_clicks_on_home_page(String string) {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+	  //  homePageobj.clickSignIn("Sign In");
 	}
 
 	@Then("The user should be redirected to the home page with message {string}")

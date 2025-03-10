@@ -5,7 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
  
-HEAD
+
 
    <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
@@ -13,7 +13,7 @@ HEAD
         <version>4.9.0</version> <!-- Use the latest stable version -->
     </dependency>
     
- b4db99f (pushing to darshana branch)
+
 <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
     <groupId>org.testng</groupId>

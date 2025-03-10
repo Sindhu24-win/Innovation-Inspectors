@@ -2,39 +2,61 @@
 
 package StepDefinitions;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.dataStructurePage;
 
 public class DataStructurestep {
+	
+	WebDriver driver;
+	dataStructurePage dspageobj;
+	
+	 @Before
+	    public void setup() {
+		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ashish\\eclipse-workspace\\DsAlgoCucumber\\src\\test\\resources\\driver");
+	       // System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ashish\\chromedriver\\chromedriver.exe");
+	        driver = new ChromeDriver();
+	        driver.manage().window().maximize();
+	    }
+	
 	@Given("The user is in the Home page after logged in the DsAlgo portal")
 	public void the_user_is_in_the_home_page_after_logged_in_the_ds_algo_portal() {
 	    // Write code here that turns the phrase above into concrete actions
+	   // driver=new ChromeDriver();
+	   // driver.manage().window().maximize();
+	    driver.get("https://dsportalapp.herokuapp.com/home");
 	    
 	}
 
 	@When("The user clicks on the {string} button in Data Structures - Introduction")
 	public void the_user_clicks_on_the_button_in_data_structures_introduction(String string) {
 	    // Write code here that turns the phrase above into concrete actions
-	   
+	   dspageobj.checkGetstarted();
 	}
 
 	@Then("The user should land in {string}")
 	public void the_user_should_land_in(String string) {
 	    // Write code here that turns the phrase above into concrete actions
+		
+		
 	    
 	}
 
 	@Given("The user is in the {string} page")
 	public void the_user_is_in_the_page(String string) {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+	    driver.get("https://dsportalapp.herokuapp.com/data-structures-introduction/");
 	}
 
 	@When("The user clicks on the Time Complexity link")
 	public void the_user_clicks_on_the_time_complexity_link() {
 	    // Write code here that turns the phrase above into concrete actions
-	   
+	   dspageobj.checkTimeComplexity();
 	}
 
 	@Then("The user should be able to land on the {string} page")
@@ -58,7 +80,7 @@ public class DataStructurestep {
 	@When("The user clicks {string} button")
 	public void the_user_clicks_button(String string) {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+	    dspageobj.tryhere();
 	}
 
 	@Then("The user should be redirected to a page having an try Editor with a Run button to test")
@@ -70,13 +92,13 @@ public class DataStructurestep {
 	@Given("The user is in the tryEditor page")
 	public void the_user_is_in_the_try_editor_page() {
 	    // Write code here that turns the phrase above into concrete actions
-	   
+	   driver.get("https://dsportalapp.herokuapp.com/tryEditor");
 	}
 
 	@When("The user clicks the Run Button without entering the code in the Editor")
 	public void the_user_clicks_the_run_button_without_entering_the_code_in_the_editor() {
 	    // Write code here that turns the phrase above into concrete actions
-	   
+	   dspageobj.invalidcode("");
 	}
 
 	@Then("The user should able to see an error message in alert window")
@@ -88,13 +110,13 @@ public class DataStructurestep {
 	@When("The user write the invalid code in Editor and click the Run Button")
 	public void the_user_write_the_invalid_code_in_editor_and_click_the_run_button() {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+		dspageobj.invalidcode("vfff");
 	}
 
 	@When("The user writes the valid code in try editor box and click the Run Button")
 	public void the_user_writes_the_valid_code_in_try_editor_box_and_click_the_run_button() {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+		dspageobj.runValidcode("print hello");
 	}
 
 	@Then("The user should able to see output in the console")
