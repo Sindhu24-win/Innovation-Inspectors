@@ -1,10 +1,17 @@
 package StepDefinitions;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.QueuePage;
 
 public class QueueSteps {
+	WebDriver driver = new EdgeDriver();
+    QueuePage queuePage = new QueuePage(driver);
+
 	@Given("the user is signed in to the dsAlgo Portal")
 	public void the_user_is_signed_in_to_the_ds_algo_portal() {
 	    System.out.println("queue");

@@ -1,20 +1,28 @@
 package StepDefinitions;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.StackPage;
+
 
 public class StackSteps {
+	WebDriver driver = new EdgeDriver();
+    StackPage stackPage = new StackPage(driver);
+	
 	//You can implement missing steps with the snippets below:
 
 		@Given("The user is signed in to dsAlgo Portal")
 		public void the_user_is_signed_in_to_ds_algo_portal() {
-		    System.out.println("\n I am here");
+		    driver.get("https://dsportalapp.herokuapp.com");
 		}
 
 		@Given("The user is on the Home page after signing in")
 		public void the_user_is_on_the_home_page_after_signing_in() {
-			  System.out.println("\n I am here 1");
+			 driver.get("https://dsportalapp.herokuapp.com/home");;
 		}
 
 		@When("The user clicks the {string} button in the Stack panel or selects Stack item from the dropdown menu")
