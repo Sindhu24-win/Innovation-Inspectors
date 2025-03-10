@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class StackPage {
 	WebDriver driver;
+	
 	String url = "https://dsportalapp.herokuapp.com/home";
 	 @FindBy(xpath = "//a[@href='stack']")
 	 WebElement GetStarted;

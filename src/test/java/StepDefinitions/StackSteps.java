@@ -13,8 +13,6 @@ public class StackSteps {
 	WebDriver driver = new EdgeDriver();
     StackPage stackPage = new StackPage(driver);
 	
-	//You can implement missing steps with the snippets below:
-
 		@Given("The user is signed in to dsAlgo Portal")
 		public void the_user_is_signed_in_to_ds_algo_portal() {
 		    driver.get("https://dsportalapp.herokuapp.com");
