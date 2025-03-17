@@ -66,3 +66,4 @@ Feature: Graph
     Given The user is in the Try Editor page
     When The user writes valid code in the Editor and clicks the Run button
     Then The user should see output in the console
+
