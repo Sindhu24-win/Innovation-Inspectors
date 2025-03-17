@@ -1,8 +1,9 @@
 package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import DriverFactory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,94 +11,193 @@ import pageObjects.StackPage;
 
 
 public class StackSteps {
-	WebDriver driver = new EdgeDriver();
-    StackPage stackPage = new StackPage(driver);
 	
-		@Given("The user is signed in to dsAlgo Portal")
-		public void the_user_is_signed_in_to_ds_algo_portal() {
-		    driver.get("https://dsportalapp.herokuapp.com");
-		}
+	WebDriverWait wait;
+	WebDriver driver;
+	StackPage stackPage = new StackPage(driver);
+	String Url = "https://dsportalapp.herokuapp.com";
+	String HomeUrl = "https://dsportalapp.herokuapp.com/home";
+	String TryEditor = "https://dsportalapp.herokuapp.com/tryEditor";
 
-		@Given("The user is on the Home page after signing in")
-		public void the_user_is_on_the_home_page_after_signing_in() {
-			 driver.get("https://dsportalapp.herokuapp.com/home");;
-		}
+	public StackSteps() {
+		System.out.println("****I'm in Stack Data Structure****");
+		driver = DriverFactory.initiateDriver();
+		stackPage = new StackPage(driver);
+	}
 
-		@When("The user clicks the {string} button in the Stack panel or selects Stack item from the dropdown menu")
-		public void the_user_clicks_the_button_in_the_stack_panel_or_selects_stack_item_from_the_dropdown_menu(String string) {
-			  System.out.println("\n I am here 2");
-		}
+	@Given("the user has successfully logged into the dsAlgo Portal")
+	public void the_user_has_successfully_logged_into_the_ds_algo_portal() {
+	    
+	}
 
-		@Then("The user should be directed to the {string} Data Structure Page")
-		public void the_user_should_be_directed_to_the_data_structure_page(String string) {
-			  System.out.println("\n I am here 3");
-		}
+	@Given("the user is on the homepage after logging into the dsAlgo Portal")
+	public void the_user_is_on_the_homepage_after_logging_into_the_ds_algo_portal() {
+	    
+	}
 
-		@Given("The user is on the Stack page after signing in")
-		public void the_user_is_on_the_stack_page_after_signing_in() {
-			  System.out.println("\n I am here 4");
-		}
+	@When("the user selects the Getting Started button from the Stack panel")
+	public void the_user_selects_the_getting_started_button_from_the_stack_panel() {
+	   
+	}
 
-		@When("The user clicks the {string} button")
-		public void the_user_clicks_the_button(String string) {
-			  System.out.println("\n I am here 5");
-		}
-		@Then("The user should be redirected to the {string} page")
-		public void the_user_should_be_redirected_to_the_page(String string) {
-			  System.out.println("\n I am here 6");
-		}
+	@Then("the user should be redirected to the Stack Data Structure page")
+	public void the_user_should_be_redirected_to_the_stack_data_structure_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
-		@Given("The user is on the {string} page")
-		public void the_user_is_on_the_page(String string) {
-			  System.out.println("\n I am here 7");
-		}
+	@Given("the user is on the Stack page after logging in")
+	public void the_user_is_on_the_stack_page_after_logging_in() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
-		@When("The user clicks the {string} button in Stack in Python page")
-		public void the_user_clicks_the_button_in_stack_in_python_page(String string) {
-			  System.out.println("\n I am here 8");
-		}
+	@When("the user clicks the Operations in Stack link")
+	public void the_user_clicks_the_operations_in_stack_link() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
-		@Then("The user should be redirected to a page with a Try Editor and a Run button to test")
-		public void the_user_should_be_redirected_to_a_page_with_a_try_editor_and_a_run_button_to_test() {
-			  System.out.println("\n I am here 9");
-		}
+	@Then("the user should be navigated to the Operations in Stack page")
+	public void the_user_should_be_navigated_to_the_operations_in_stack_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
-		@Given("The user is in the Try Editor page")
-		public void the_user_is_in_the_try_editor_page() {
-			  System.out.println("\n I am here 10");
-		}
+	@Given("the user is on the Operations in Stack page")
+	public void the_user_is_on_the_operations_in_stack_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
-		@When("The user clicks the Run button without entering code in the Editor")
-		public void the_user_clicks_the_run_button_without_entering_code_in_the_editor() {
-			  System.out.println("\n I am here 11");
-		}
+	@When("the user clicks the Try Here button on the Stack in Python page")
+	public void the_user_clicks_the_try_here_button_on_the_stack_in_python_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
-		@Then("The user should see an error message in an alert window")
-		public void the_user_should_see_an_error_message_in_an_alert_window() {
-			  System.out.println("\n I am here 12");
-		}
+	@Then("the user should be taken to a page containing a try editor with a Run button for testing the code")
+	public void the_user_should_be_taken_to_a_page_containing_a_try_editor_with_a_run_button_for_testing_the_code() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
-		@When("The user writes invalid code in the Editor and clicks the Run button")
-		public void the_user_writes_invalid_code_in_the_editor_and_clicks_the_run_button() {
-			  System.out.println("\n I am here 13");
-		}
+	@Given("the user is on the TryEditor page")
+	public void the_user_is_on_the_try_editor_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
-		@When("The user writes valid code in the Editor and clicks the Run button")
-		public void the_user_writes_valid_code_in_the_editor_and_clicks_the_run_button() {
-			  System.out.println("\n I am here 14");
-		}
+	@When("the user clicks the Run button without any code in the editor")
+	public void the_user_clicks_the_run_button_without_any_code_in_the_editor() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
-		@Then("The user should see output in the console")
-		public void the_user_should_see_output_in_the_console() {
-			  System.out.println("\n I am here 15");
-		}
+	@Then("the user should receive an error message in the alert window")
+	public void the_user_should_receive_an_error_message_in_the_alert_window() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
-		@Then("The user should be able to see the expected content in the {string} page")
-		public void the_user_should_be_able_to_see_the_expected_content_in_the_page(String string) {
-			  System.out.println("\n I am here 16");
-		}
+	@When("the user types invalid code in the editor and clicks the Run button")
+	public void the_user_types_invalid_code_in_the_editor_and_clicks_the_run_button() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Then("the user should see an error message in the alert window")
+	public void the_user_should_see_an_error_message_in_the_alert_window() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("the user enters valid code in the editor and clicks the Run button")
+	public void the_user_enters_valid_code_in_the_editor_and_clicks_the_run_button() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Then("the user should see the output displayed in the console")
+	public void the_user_should_see_the_output_displayed_in_the_console() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Given("the user is on the Stack page after logging into the dsAlgo Portal")
+	public void the_user_is_on_the_stack_page_after_logging_into_the_ds_algo_portal() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("the user clicks the Practice Questions button")
+	public void the_user_clicks_the_practice_questions_button() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Then("the user should be redirected to the Practice Questions page")
+	public void the_user_should_be_redirected_to_the_practice_questions_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("the user clicks the Implementation link")
+	public void the_user_clicks_the_implementation_link() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Then("the user should be taken to the Implementation page")
+	public void the_user_should_be_taken_to_the_implementation_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Given("the user is on the Implementation page")
+	public void the_user_is_on_the_implementation_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Then("the user should be redirected to a page containing a try editor with a Run button for testing the code")
+	public void the_user_should_be_redirected_to_a_page_containing_a_try_editor_with_a_run_button_for_testing_the_code() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("the user clicks the Run button without entering any code in the editor")
+	public void the_user_clicks_the_run_button_without_entering_any_code_in_the_editor() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("the user enters invalid code in the editor and clicks the Run button")
+	public void the_user_enters_invalid_code_in_the_editor_and_clicks_the_run_button() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("the user clicks the Applications link")
+	public void the_user_clicks_the_applications_link() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Then("the user should be taken to the Applications page")
+	public void the_user_should_be_taken_to_the_applications_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Given("the user is on the Applications page")
+	public void the_user_is_on_the_applications_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
 
 
 
+	
 
 }

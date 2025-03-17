@@ -8,6 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/Features", glue = {"StepDefinitions"},
 monochrome = true,
+
 plugin = {"pretty", "html:target/htmlReports/HTMLreports.html","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm","junit:target/JUnitReport/report.xml"})
 
 
