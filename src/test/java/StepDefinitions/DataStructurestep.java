@@ -3,9 +3,9 @@
 package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.chrome.ChromeDriver;
 
-import io.cucumber.java.Before;
+//import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,13 +16,13 @@ public class DataStructurestep {
 	WebDriver driver;
 	dataStructurePage dspageobj;
 	
-	 @Before
-	    public void setup() {
-		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ashish\\eclipse-workspace\\DsAlgoCucumber\\src\\test\\resources\\driver");
+	// @Before
+	//    public void setup() {
+	//	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ashish\\eclipse-workspace\\DsAlgoCucumber\\src\\test\\resources\\driver");
 	       // System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ashish\\chromedriver\\chromedriver.exe");
-	        driver = new ChromeDriver();
-	        driver.manage().window().maximize();
-	    }
+	 //       driver = new ChromeDriver();
+	//        driver.manage().window().maximize();
+	  //  }
 	
 	@Given("The user is in the Home page after logged in the DsAlgo portal")
 	public void the_user_is_in_the_home_page_after_logged_in_the_ds_algo_portal() {
@@ -33,22 +33,22 @@ public class DataStructurestep {
 	    
 	}
 
-	@When("The user clicks on the {string} button in Data Structures - Introduction")
-	public void the_user_clicks_on_the_button_in_data_structures_introduction(String string) {
+	@When("The user clicks on the Getting Started button in Data Structures Introduction")
+	public void the_user_clicks_on_the_getting_started_button_in_data_structures_introduction() {
 	    // Write code here that turns the phrase above into concrete actions
 	   dspageobj.checkGetstarted();
 	}
 
-	@Then("The user should land in {string}")
-	public void the_user_should_land_in(String string) {
+	@Then("The user should land in Data Structures Introduction Page")
+	public void the_user_should_land_in_data_structures_introduction_page() {
 	    // Write code here that turns the phrase above into concrete actions
 		
 		
 	    
 	}
 
-	@Given("The user is in the {string} page")
-	public void the_user_is_in_the_page(String string) {
+	@Given("The user is in the Data Structure Introduction page")
+	public void the_user_is_in_the_data_structure_introduction_page() {
 	    // Write code here that turns the phrase above into concrete actions
 	    driver.get("https://dsportalapp.herokuapp.com/data-structures-introduction/");
 	}
@@ -59,26 +59,32 @@ public class DataStructurestep {
 	   dspageobj.checkTimeComplexity();
 	}
 
-	@Then("The user should be able to land on the {string} page")
-	public void the_user_should_be_able_to_land_on_the_page(String string) {
+	@Then("The user should be able to land on the Time complexity page")
+	public void the_user_should_be_able_to_land_on_the_time_complexity_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+	
+	@Given("The user is in the Time Complexity page")
+	public void the_user_in_the_time_complexity_page(){
+		
+	}
+	
+
+	@When("The user clicks the Practice Questions button")
+	public void the_user_clicks_the_practice_questions_button() {
 	    // Write code here that turns the phrase above into concrete actions
 	   
 	}
 
-	@When("The user clicks the {string} button")
-	public void the_user_clicks_the_button(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	   
-	}
-
-	@Then("The user should be redirected to {string} of Data structures-Introduction")
-	public void the_user_should_be_redirected_to_of_data_structures_introduction(String string) {
+	@Then("The user should be redirected to Practice Questions of Data structures-Introduction")
+	public void the_user_should_be_redirected_to_practice_questions_of_data_structures_introduction() {
 	    // Write code here that turns the phrase above into concrete actions
 	    
 	}
 
-	@When("The user clicks {string} button")
-	public void the_user_clicks_button(String string) {
+	@When("The user clicks Try Here button")
+	public void the_user_clicks_try_here_button() {
 	    // Write code here that turns the phrase above into concrete actions
 	    dspageobj.tryhere();
 	}

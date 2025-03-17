@@ -9,13 +9,26 @@ import io.cucumber.java.en.When;
 import pageObjects.homePage;
 
 public class Homestep {
-	
-	
 	 
 	WebDriver driver;
 	// driver.manage().window().maximize();
 	 
 	    homePage homePageobj;
+	    @Given("The user is on the DS Algo Home Page")
+	    public void the_user_is_on_the_ds_algo_home_page()
+	    {
+	    	
+	    }
+	    
+	    @When("The user clicks the Sign in link")
+	    public void the_user_clicks_the_sign_in_link() {
+	    	
+	    }
+	    
+	    @Then("The user should be redirected to the log in page")
+	    public void the_user_should_be_redirected_to_the_log_in_page() {
+	    	
+	    }
 
 	@Given("The user is on the home page and logged in with valid credentials")
 	public void the_user_is_on_the_home_page_and_logged_in_with_valid_credentials() {
@@ -47,14 +60,14 @@ public class Homestep {
 	   
 	}
 
-	@When("The user clicks the {string} button in home page")
-	public void the_user_clicks_the_button(String string) {
+	@When("The user clicks the Get Started button in home page")
+	public void the_user_clicks_the_het_started_button_in_home_page() {
 	    // Write code here that turns the phrase above into concrete actions
 	   
 	}
 
-	@Then("The user should be navigated to the home page, which displays the {string} and {string} links")
-	public void the_user_should_be_navigated_to_the_home_page_which_displays_the_and_links(String string, String string2) {
+	@Then("The user should be navigated to the home page, which displays the Register and Sign in links")
+	public void the_user_should_be_navigated_to_the_home_page_which_displays_the_register_and_sign_in_links() {
 	    // Write code here that turns the phrase above into concrete actions
 	    
 	}
@@ -76,8 +89,8 @@ public class Homestep {
 	  homePageobj.openDropdown();
 	}
 
-	@Then("The user should be able to see {int} options {string} in the dropdown menu")
-	public void the_user_should_be_able_to_see_options_in_the_dropdown_menu(Integer int1, String string) {
+	@Then("The user should be able to see options Arrays, Linked List, Stack, Queue, Tree, Graph in the dropdown menu")
+	public void the_user_should_be_able_to_see_options_array_livked_list_stack_queue_tree_graph_in_the_dropdown_menu(Integer int1, String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	    
 	}

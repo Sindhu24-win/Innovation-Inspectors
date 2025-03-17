@@ -15,27 +15,6 @@ public class Loginstep {
 	
 	//System.setProperty("driver", "C:\\Users\\Ashish\\chromedriver\\chromedriver.exe");
 
-	@Given("The user is on the DS Algo Home Page")
-	public void the_user_is_on_the_ds_algo_home_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    driver=new ChromeDriver();
-	    driver.manage().window().maximize();
-	    driver.get("https://dsportalapp.herokuapp.com/home");
-		
-	}
-
-	@When("The user clicks the {string} link")
-	public void the_user_clicks_the_link(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-		loginPageobj.clickLoginButton();
-	}
-
-	@Then("The user should be redirected to the log in page")
-	public void the_user_should_be_redirected_to_the_log_in_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    
-	}
-
 	@Given("The user is on the login page")
 	public void the_user_is_on_the_login_page() {
 	    // Write code here that turns the phrase above into concrete actions
@@ -44,8 +23,8 @@ public class Loginstep {
 	    driver.get("https://dsportalapp.herokuapp.com/login");
 	}
 
-	@When("The user clicks on the {string} link")
-	public void the_user_clicks_on_the_link(String string) {
+	@When("The user clicks on the Register link")
+	public void the_user_clicks_on_the_register_link(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 		loginPageobj.register();
 	    
@@ -69,8 +48,8 @@ public class Loginstep {
 	   
 	}
 
-	@Then("The error message {string} appears below Username textbox during login")
-	public void the_error_message_appears_below_username_textbox_during_login(String string) {
+	@Then("The error message Please fill out this field. appears below Username textbox during login")
+	public void the_error_message_please_fill_out_this_field_appears_below_username_textbox_during_login(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	    
 	}
@@ -78,7 +57,7 @@ public class Loginstep {
 	@When("The user clicks the login button after entering the {string} and leaves {string} textbox empty")
 	public void the_user_clicks_the_login_button_after_entering_the_and_leaves_textbox_empty(String string, String string2) {
 	    // Write code here that turns the phrase above into concrete actions
-	 loginPageobj.invalidlogin("", "");   
+	 loginPageobj.invalidlogin("darshana", "");   
 	}
 
 	@Then("The error message {string} appears below Password textbox during login")
@@ -92,8 +71,8 @@ public class Loginstep {
 	    // Write code here that turns the phrase above into concrete actions
 	   loginPageobj.invalidlogin(" ", "zenithhp4987");
 	}
-	  @Then("The error message {string} appears below Username textbox")
-	    public void the_error_message_appears_below_username_textbox(String expectedErrorMessage) {
+	  @Then("The error message appears below Username textbox")
+	    public void the_error_message_appears_below_username_textbox(){
 	       // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	       // WebElement usernameError = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username-error"))); // Adjust locator
 	  }
@@ -104,7 +83,7 @@ public class Loginstep {
 	    loginPageobj.invalidlogin("!!!!", "zenithhp4987");
 	}
 
-	@Then("The user should see an error message {string}")
+	@Then("The user should see an error message")
 	public void the_user_should_see_an_error_message(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	   
@@ -116,8 +95,8 @@ public class Loginstep {
 	   loginPageobj.login("darshana", "zenithhp4987");
 	}
 
-	@Then("The user should land in Data Structure Home Page with message {string}")
-	public void the_user_should_land_in_data_structure_home_page_with_message(String string) {
+	@Then("The user should land in Data Structure Home Page with message You are logged in")
+	public void the_user_should_land_in_data_structure_home_page_with_message_you_are_loggen_in() {
 	    // Write code here that turns the phrase above into concrete actions
 	   
 	}

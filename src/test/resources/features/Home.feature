@@ -1,25 +1,21 @@
 Feature: Home and DS Algo Portal Navigation and Functionality
 
   Background: The user opened DS Algo portal in the browser
- HEAD
-
-
-   
- b4db99f (pushing to darshana branch)
-  Scenario: Verify that user is able to sign out of the portal
-    Given The user is on the home page and logged in with valid credentials
-    When The user clicks on the sign out button
-    Then The user should be able to sign out of the portal and see success message
+ 
+ Scenario: Verify that the user is able to land on the Login Page
+    Given The user is on the DS Algo Home Page
+    When The user clicks the Sign in link
+    Then The user should be redirected to the log in page
 
   Scenario: Verify the Home page for a user without Sign in
     Given The user is on the DS Algo Portal
-    When The user clicks the "Get Started" button in home page
-    Then The user should be navigated to the home page, which displays the "Register" and "Sign in" links
+    When The user clicks the Get Started button in home page
+    Then The user should be navigated to the home page, which displays the Register and Sign in links
 
   Scenario: Verify that user is able to view options for "Data Structures" dropdown on home page without Sign in
     Given The user is on the Home page
     When The user clicks the Data Structures dropdown
-    Then The user should be able to see 6 options "Arrays, Linked List, Stack, Queue, Tree, Graph" in the dropdown menu
+    Then The user should be able to see options Arrays, Linked List, Stack, Queue, Tree, Graph in the dropdown menu
 
   Scenario: Verify that user sees a warning message when selecting "Data Structures" from the dropdown without Sign in
     Given The user is on the Home page
@@ -61,8 +57,7 @@ Feature: Home and DS Algo Portal Navigation and Functionality
     When The user clicks on the dropdown menu and selects the "Graph" tab
     Then The user lands on the Graph page
 
-    
-     Scenario: Verify that user is able to sign out successfully
+  Scenario: Verify that user is able to sign out successfully
     Given The user is in the Home page after Sign in
     When The user clicks "Sign out" on home page
     Then The user should be redirected to the home page with message "Logged out successfully"
