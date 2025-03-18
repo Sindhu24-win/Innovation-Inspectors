@@ -106,10 +106,9 @@ public class Arraypage {
 	@CacheLookup
 	WebElement SearchThe_Array;
 
-	// @FindBy(xpath = "//div[@class='CodeMirror-lines']")
-	@FindBy(xpath = "//textarea[text()='def search(input_list, num):']")
+	@FindBy(className = "CodeMirror")
 	@CacheLookup
-	WebElement PracticeTryEditor;
+	WebElement codeMirrorDiv;
 
 	@FindBy(xpath = "//input[@type='submit']")
 	@CacheLookup
@@ -264,38 +263,27 @@ public class Arraypage {
 		Practice_Questions.click();
 	}
 
+	public void PracticeNoCodeinput() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].CodeMirror.setValue('');", codeMirrorDiv);
+
+		System.out.println("Code input field cleared successfully");
+
+	}
+
+//	public void PracticeValidinput() {
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].CodeMirror.setValue(arguments[1]);", codeMirrorDiv, pythonCode);
+//
+//		System.out.println("New code entered successfully");
+//	}
+
 	public void SearchArray() {
 		SearchThe_Array.click();
 	}
 
-	public void PracticeQuestion1() {
-		// Wait for elements to load
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-		PracticeTryEditor.click();
-		PracticeTryEditor.clear();
-
-	}
-
 	public String Errormsg() {
 		return Errormessage.getText();
-	}
-
-	public void Validoutput() {
-		// PracticeTryEditor.click();
-		PracticeTryEditor.clear();
-		PracticeTryEditor.sendKeys("print('Hello Kitty')");
-		Run.click();
-
-	}
-
-	public void Invalidoutput() {
-		PracticeTryEditor.click();
-		PracticeTryEditor.clear();
-		Actions actions = new Actions(driver);
-		actions.moveToElement(PracticeTryEditor).sendKeys("print(Hello')").build().perform();
-		Run.click();
-
 	}
 
 	public void Maxconsecutive() {

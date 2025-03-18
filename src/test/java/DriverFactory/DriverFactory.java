@@ -51,7 +51,7 @@ public class DriverFactory {
 	    public static String getCurrentURL() {
 	        return getInstance().getDriver().getCurrentUrl();
 	    }
-	    public static void getstatred() {
+	    public static void getstarted() {
 	        openwebpage("https://dsportalapp.herokuapp.com/");
 	    }
 
