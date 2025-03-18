@@ -15,7 +15,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class StackPage {
 	WebDriver driver;
 	WebDriverWait wait;
-	String url = "https://dsportalapp.herokuapp.com/home";
+	String loginname = "darshana";
+	String loginpassword = "zenithhp4987";
+	public String url = "https://dsportalapp.herokuapp.com/home";
+	
 	
 	@FindBy(className = "btn")
 	@CacheLookup
@@ -43,7 +46,7 @@ public class StackPage {
 	
 	 @FindBy(xpath = "//a[@href='stack']")
 	 @CacheLookup
-	 WebElement GetStarted;
+	 WebElement StackGetStarted;
 	 
 	 @FindBy(xpath = "//a[text()='Operations in Stack']")
 	 @CacheLookup
@@ -51,17 +54,17 @@ public class StackPage {
 	 
 	 @FindBy(xpath = "//a[text()='Try here>>>']")
 	 @CacheLookup
-	WebElement TryHere;
+	WebElement Tryhere;
 	 
 	@FindBy(xpath = "//button[@type='button']")
 	 @CacheLookup
 	public
-	WebElement RunButton;
+	WebElement RunBtn;
 	
 	@FindBy(xpath = "//*[@id=\\\"answer_form\\\"]/div/div/div[6]")
 	 @CacheLookup
 	public
-	WebElement tryEditor;
+	WebElement TryEditor;
 	
 	@FindBy(xpath = "//*[@id='output']")
 	@CacheLookup
@@ -90,7 +93,7 @@ public class StackPage {
 			public void SignIn() {
 				SignIn.click();
 			}
-			public void Login(String loginname,String loginpassword) {
+			public void Login() {
 				UserName.sendKeys(loginname);
 				Password.sendKeys(loginpassword);
 				Login.click();
@@ -101,20 +104,20 @@ public class StackPage {
 				
 			}
 			public void StackGetStarted() {
-              GetStarted.click();
+              StackGetStarted.click();
 			}
 			public void OperationInStack() {
 	 OperationsInStack.click();
 			}
-			public void TryHere() {
-				TryHere.click();
+			public void Tryhere() {
+				Tryhere.click();
 			}
-			public void RunButton() {
-				RunButton.click();
+			public void RunBtn() {
+				RunBtn.click();
 				}
 			public void EmptytryEditor() {
 				Actions actions = new Actions(driver);
-				actions.moveToElement(tryEditor).click().sendKeys("").build().perform();
+				actions.moveToElement(TryEditor).click().sendKeys("").build().perform();
 			}
 			public String alertMessage() {
 				return driver.switchTo().alert().getText();
@@ -122,12 +125,12 @@ public class StackPage {
 
 			public void Invalidinput() {
 				Actions actions = new Actions(driver);
-				actions.moveToElement(tryEditor).click().sendKeys("System.out.println('Hello, World!');").build().perform();
+				actions.moveToElement(TryEditor).click().sendKeys("System.out.println('Hello, World!');").build().perform();
 			}
 
 			public void Validinput() {
 				Actions actions = new Actions(driver);
-				actions.moveToElement(tryEditor).click().sendKeys("print 'hello'").build().perform();
+				actions.moveToElement(TryEditor).click().sendKeys("print 'hello'").build().perform();
 			}
 
 			public String consoleOutput() {

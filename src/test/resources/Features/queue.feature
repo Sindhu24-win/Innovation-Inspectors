@@ -1,129 +1,136 @@
-Feature: dsAlgo Portal Queue Functionality
+Feature: Navigation and Functionality Verification on dsAlgo Portal for Queue Data Structure
 
-  Background:
-    Given the user is signed in to the dsAlgo Portal
+  Background: 
+    The user is signed into the  DSAlgo Portal
 
+ 
   Scenario: Navigate to Queue Data Structure Page
-    Given the user is on the Home page after signing in
-    When the user clicks the "Getting Started" button in the Queue Panel or the user selects Queue from the dropdown menu
-    Then the user should be directed to the "Queue" Data Structure Page
+    Given The user is on the Home page
+    When The user selects Getting Started in Queue Panel or the user selects Queue item from the drop down menu
+    Then The user should be directed to the Queue Data Structure Page
+    
+ 
+  Scenario: Navigate to Implementation of Queue in Python page
+    Given The user is on the Queue page
+    When The user clicks Implementation of Queue in Python button
+    Then The user should be redirected to Implementation of Queue in Python page
+    
+ 
+  Scenario: Navigate to try editor page for Implementation of Queue in Python
+    Given The user is on the Implementation of Queue in Python page
+    When The user clicks Try Here button in Queue in Python page
+    Then The user should be redirected to a page having a try Editor with a Run button to test
+    
 
-  Scenario: Navigate to "Implementation of Queue in Python" Page
-    Given the user is on the Queue page after signing in
-    When the user clicks the "Implementation of Queue in Python" button
-    Then the user should be redirected to the "Implementation of Queue in Python" page
+  Scenario: Error on clicking Run button without entering code for Implementation of Queue in Python
+    Given The user is on the try editor page in the Implementation of Queue on Python page
+    When The user clicks the Run Button without entering the code in the Editor
+    Then The user should see an error message in the alert window
+    
 
-  Scenario: Navigate to Try Editor for "Implementation of Queue in Python"
-    Given the user is on the "Implementation of Queue in Python" page
-    When the user clicks the "Try Here" button
-    Then the user should be redirected to a page with a try Editor and a Run button to test the code
+  Scenario: Error for invalid Python code for Implementation of Queue in Python
+    Given The user is on the try editor page in the Implementation of Queue on Python page
+    When The user writes invalid code in the Editor and clicks the Run Button
+    Then The user should see an error message in the alert window
+    
 
-  Scenario: Error when clicking Run without code for "Implementation of Queue in Python"
-    Given the user is on the tryEditor page for "Implementation of Queue in Python"
-    When the user clicks the Run Button without entering any code
-    Then the user should see an error message in an alert window
+  Scenario: Output for valid Python code for Implementation of Queue in Python
+    Given The user is on the try editor page in the Implementation of Queue in Python page
+    When The user writes valid code in the Editor and clicks the Run Button
+    Then The user should see the output in the console
+    
+ 
+  Scenario: Navigate to Practice Questions Page for Implementation of Queue in Python
+    Given The user is on the Queue page
+    When The user clicks Practice Questions button in the Implementation of Queue in Python page
+    Then The user should be redirected to the Practice Questions page
+    
+ 
+  Scenario: Navigate to Implementation using collections.deque page
+    Given The user is on the Queue page
+    When The user clicks Implementation using collections.deque button page
+    Then The user should be redirected to the Implementation using collections.deque page
+    
+ 
+  Scenario: Navigate to try editor page for Implementation using collections.deque
+    Given The user is on the Implementation using collections.deque page
+    When The user clicks Try Here button in Queue in Python page
+    Then The user should be redirected to a page having a try Editor with a Run button to test
+    
 
-  Scenario: Error for invalid Python code for "Implementation of Queue in Python"
-    Given the user is on the tryEditor page for "Implementation of Queue in Python"
-    When the user writes invalid code and clicks the Run Button
-    Then the user should see an error message in an alert window
+  Scenario: Error on clicking Run button without entering code for Implementation using collections.deque
+    Given The user is on the try editor page in the Implementation using collections.deque page
+    When The user clicks the Run Button without entering the code in the Editor
+    Then The user should see an error message in the alert window
+    
 
-  Scenario: Display output for valid Python code for "Implementation of Queue in Python"
-    Given the user is on the tryEditor page for "Implementation of Queue in Python"
-    When the user writes valid code and clicks the Run Button
-    Then the user should see output in the console
+  Scenario: Error for invalid Python code for Implementation using collections.deque
+    Given The user is on the try editor page in the Implementation using collections.deque page
+    When The user writes invalid code in the Editor and clicks the Run Button
+    Then The user should see an error message in the alert window
+    
 
-  Scenario: Navigate to "Practice Questions" Page from "Implementation of Queue in Python"
-    Given the user is on the Queue page after signing in
-    When the user clicks the "Practice Questions" button
-    Then the user should be redirected to the "Practice Questions" page
+  Scenario: Output for valid Python code for Implementation using collections.deque
+    Given The user is on the try editor page in the Implementation using collections.deque page
+    When The user writes valid code in the Editor and clicks the Run Button
+    Then The user should see the output in the console
+    
+ 
+  Scenario: Navigate to Implementation using array page
+    Given The user is on the Queue page
+    When The user clicks Implementation using array button
+    Then The user should be redirected to the Implementation using array page
+    
+ 
+  Scenario: Navigate to try editor page for Implementation using array page
+    Given The user is on the Implementation using array page
+    When The user clicks Try Here button in Queue in Python page
+    Then The user should be redirected to a page having a try Editor with a Run button to test
+    
 
-  Scenario: Navigate to "Implementation using collections.deque" Page
-    Given the user is on the Queue page after signing in
-    When the user clicks the "Implementation using collections.deque" button
-    Then the user should be redirected to the "Implementation using collections.deque" page
+  Scenario: Error on clicking Run button without entering code for Implementation using array page
+    Given The user is on the try editor page in the Implementation using array page
+    When The user clicks the Run Button without entering the code in the Editor
+    Then The user should see an error message in the alert window
+    
 
-  Scenario: Navigate to Try Editor for "Implementation using collections.deque"
-    Given the user is on the "Implementation using collections.deque" page
-    When the user clicks the "Try Here" button
-    Then the user should be redirected to a page with a try Editor and a Run button to test the code
+  Scenario: Error for invalid Python code for Implementation using array page
+    Given The user is on the try editor page in the Implementation using array page
+    When The user writes invalid code in the Editor and clicks the Run Button
+    Then The user should see an error message in the alert window
+    
 
-  Scenario: Error when clicking Run without code for "Implementation using collections.deque"
-    Given the user is on the tryEditor page for "Implementation using collections.deque"
-    When the user clicks the Run Button without entering any code
-    Then the user should see an error message in an alert window
+  Scenario: Output for valid Python code for Implementation using array
+    Given The user is on the try editor page  in the Implementation using array page
+    When The user writes valid code in the Editor and clicks the Run Button
+    Then The user should see the output in the console
+    
+ 
+  Scenario: Navigate to Queue Operations page
+    Given The user is on the Queue page
+    When The user clicks Queue Operations button
+    Then The user should be redirected to the Queue Operations page
+    
+ 
+  Scenario: Navigate to try editor page for Queue Operations
+    Given The user is on the Queue Operations page
+    When The user clicks Try Here button in Queue in Python page
+    Then The user should be redirected to a page having a try Editor with a Run button to test
+    
 
-  Scenario: Error for invalid Python code for "Implementation using collections.deque"
-    Given the user is on the tryEditor page for "Implementation using collections.deque"
-    When the user writes invalid code and clicks the Run Button
-    Then the user should see an error message in an alert window
+  Scenario: Error on clicking Run button without entering code for Queue Operations
+    Given The user is on the try editor page in the Queue Operations page
+    When The user clicks the Run Button without entering the code in the Editor
+    Then The user should see an error message in the alert window
+    
 
-  Scenario: Display output for valid Python code for "Implementation using collections.deque"
-    Given the user is on the tryEditor page for "Implementation using collections.deque"
-    When the user writes valid code and clicks the Run Button
-    Then the user should see output in the console
+  Scenario: Error for invalid Python code for Queue Operations
+    Given The user is on the try editor page in the Queue Operations page
+    When The user writes invalid code in the Editor and clicks the Run Button
+    Then The user should see an error message in the alert window
+    
 
-  Scenario: Navigate to "Practice Questions" Page from "Implementation using collections.deque"
-    Given the user is on the Queue page after signing in
-    When the user clicks the "Practice Questions" button
-    Then the user should be redirected to the "Practice Questions" page
-
-  Scenario: Navigate to "Implementation using array" Page
-    Given the user is on the Queue page after signing in
-    When the user clicks the "Implementation using array" button
-    Then the user should be redirected to the "Implementation using array" page
-
-  Scenario: Navigate to Try Editor for "Implementation using array"
-    Given the user is on the "Implementation using array" page
-    When the user clicks the "Try Here" button
-    Then the user should be redirected to a page with a try Editor and a Run button to test the code
-
-  Scenario: Error when clicking Run without code for "Implementation using array"
-    Given the user is on the tryEditor page for "Implementation using array"
-    When the user clicks the Run Button without entering any code
-    Then the user should see an error message in an alert window
-
-  Scenario: Error for invalid Python code for "Implementation using array"
-    Given the user is on the tryEditor page for "Implementation using array"
-    When the user writes invalid code and clicks the Run Button
-    Then the user should see an error message in an alert window
-
-  Scenario: Display output for valid Python code for "Implementation using array"
-    Given the user is on the tryEditor page for "Implementation using array"
-    When the user writes valid code and clicks the Run Button
-    Then the user should see output in the console
-
-  Scenario: Navigate to "Practice Questions" Page from "Implementation using array"
-    Given the user is on the Queue page after signing in
-    When the user clicks the "Practice Questions" button
-    Then the user should be redirected to the "Practice Questions" page
-
-  Scenario: Navigate to "Queue Operations" Page
-    Given the user is on the Queue page after signing in
-    When the user clicks the "Queue Operations" button
-    Then the user should be redirected to the "Queue Operations" page
-
-  Scenario: Navigate to Try Editor for "Queue Operations"
-    Given the user is on the "Queue Operations" page
-    When the user clicks the "Try Here" button
-    Then the user should be redirected to a page with a try Editor and a Run button to test the code
-
-  Scenario: Error when clicking Run without code for "Queue Operations"
-    Given the user is on the tryEditor page for "Queue Operations"
-    When the user clicks the Run Button without entering any code
-    Then the user should see an error message in an alert window
-
-  Scenario: Error for invalid Python code for "Queue Operations"
-    Given the user is on the tryEditor page for "Queue Operations"
-    When the user writes invalid code and clicks the Run Button
-    Then the user should see an error message in an alert window
-
-  Scenario: Display output for valid Python code for "Queue Operations"
-    Given the user is on the tryEditor page for "Queue Operations"
-    When the user writes valid code and clicks the Run Button
-    Then the user should see output in the console
-
-  Scenario: Navigate to "Practice Questions" Page from "Queue Operations"
-    Given the user is on the Queue page after signing in
-    When the user clicks the "Practice Questions" button
-    Then the user should be redirected to the "Practice Questions" page
+  Scenario: Output for valid Python code for Queue Operations
+    Given The user is on the try editor page in the Queue Operations page
+    When The user writes valid code in the Editor and clicks the Run Button
+    Then The user should see the output in the console

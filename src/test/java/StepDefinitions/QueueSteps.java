@@ -20,7 +20,7 @@ import pageObjects.QueuePage;
 public class QueueSteps {
 	WebDriverWait wait;
 	WebDriver driver;
-	QueuePage queuePage = new QueuePage(driver);
+	QueuePage queuePage;
 	String Url = "https://dsportalapp.herokuapp.com";
 	String HomeUrl = "https://dsportalapp.herokuapp.com/home";
 	String TryEditor = "https://dsportalapp.herokuapp.com/tryEditor";
