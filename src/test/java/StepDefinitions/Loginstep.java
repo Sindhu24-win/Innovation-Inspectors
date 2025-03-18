@@ -1,107 +1,108 @@
 package StepDefinitions;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import DriverFactory.driverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.homePage;
 import pageObjects.loginPage;
 
 public class Loginstep {
-	
-	WebDriver driver;
-	loginPage loginPageobj;
-	
-	//System.setProperty("driver", "C:\\Users\\Ashish\\chromedriver\\chromedriver.exe");
 
-	@Given("The user is on the login page")
-	public void the_user_is_on_the_login_page() {
-	    // Write code here that turns the phrase above into concrete actions
-		driver=new ChromeDriver();
-	    driver.manage().window().maximize();
-	    driver.get("https://dsportalapp.herokuapp.com/login");
-	}
+    public WebDriver driver;
+    WebDriverWait wait;
 
-	@When("The user clicks on the Register link")
-	public void the_user_clicks_on_the_register_link(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-		loginPageobj.register();
-	    
-	}
+    loginPage loginPageobj;
+    homePage homeObj;
 
-	@Then("The user should be redirected to the registration page")
-	public void the_user_should_be_redirected_to_the_registration_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	   
-	}
+    // Constructor initializes WebDriver and page objects
+    public Loginstep() {
+        System.out.println("****I'm in Login****");
+        driver = driverFactory.initiateDriver(); // Driver initiation
+        loginPageobj = new loginPage(driver); // Initialize loginPage object
+        homeObj = new homePage(driver); // Initialize homePage object after WebDriver initialization
+    }
 
-	@Given("The user is on the DS Algo Sign in Page")
-	public void the_user_is_on_the_ds_algo_sign_in_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    
-	}
+    @Given("The user is on the login page")
+    public void the_user_is_on_the_login_page() {
+        driver.get("https://dsportalapp.herokuapp.com/login");
+        assertTrue(loginPageobj.isLoginPageDisplayed()); // Verify if the login page is displayed
+    }
 
-	@When("The user clicks the login button after leaving the {string} textbox and {string} textbox empty")
-	public void the_user_clicks_the_login_button_after_leaving_the_textbox_and_textbox_empty(String string, String string2) {
-	    // Write code here that turns the phrase above into concrete actions
-	   
-	}
+    @When("The user clicks on the Register link")
+    public void the_user_clicks_on_the_register_link() {
+        loginPageobj.register(); // Click the Register link
+    }
 
-	@Then("The error message Please fill out this field. appears below Username textbox during login")
-	public void the_error_message_please_fill_out_this_field_appears_below_username_textbox_during_login(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    
-	}
+    @Then("The user should be redirected to the registration page")
+    public void the_user_should_be_redirected_to_the_registration_page() {
+        assertTrue(driver.getCurrentUrl().contains("register")); // Validate URL contains 'register'
+    }
 
-	@When("The user clicks the login button after entering the {string} and leaves {string} textbox empty")
-	public void the_user_clicks_the_login_button_after_entering_the_and_leaves_textbox_empty(String string, String string2) {
-	    // Write code here that turns the phrase above into concrete actions
-	 loginPageobj.invalidlogin("darshana", "");   
-	}
+    @Given("The user is on the DS Algo Sign in Page")
+    public void the_user_is_on_the_ds_algo_sign_in_page() {
+        driver.get("https://dsportalapp.herokuapp.com/login"); // Navigate to the login page
+    }
 
-	@Then("The error message {string} appears below Password textbox during login")
-	public void the_error_message_appears_below_password_textbox_during_login(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    
-	}
+    @When("The user clicks the login button after leaving the \"Username\" textbox and \"Password\" textbox empty")
+    public void the_user_clicks_the_login_button_after_leaving_the_textbox_and_textbox_empty() {
+        loginPageobj.clickLoginButton(); // Click login without filling any fields
+    }
 
-	@When("The user clicks the login button after entering the Password only")
-	public void the_user_clicks_the_login_button_after_entering_the_password_only() {
-	    // Write code here that turns the phrase above into concrete actions
-	   loginPageobj.invalidlogin(" ", "zenithhp4987");
-	}
-	  @Then("The error message appears below Username textbox")
-	    public void the_error_message_appears_below_username_textbox(){
-	       // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-	       // WebElement usernameError = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username-error"))); // Adjust locator
-	  }
+    @Then("The error message Please fill out this field. appears below Username textbox during login")
+    public void the_error_message_please_fill_out_this_field_appears_below_username_textbox_during_login() {
+        assertEquals("Please fill out this field.", loginPageobj.getErrorMessageForUsername());
+    }
 
-	@When("The user clicks the login button after entering an invalid username and valid password")
-	public void the_user_clicks_the_login_button_after_entering_an_invalid_username_and_valid_password() {
-	    // Write code here that turns the phrase above into concrete actions
-	    loginPageobj.invalidlogin("!!!!", "zenithhp4987");
-	}
+    @When("The user clicks the login button after entering the \"Username\" and leaves \"Password\" textbox empty")
+    public void the_user_clicks_the_login_button_after_entering_the_and_leaves_textbox_empty() {
+        loginPageobj.enterUsername("darshana"); // Enter username
+        loginPageobj.clickLoginButton(); // Click login without filling the password
+    }
 
-	@Then("The user should see an error message")
-	public void the_user_should_see_an_error_message(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	   
-	}
+    @Then("The error message {string} appears below Password textbox during login")
+    public void the_error_message_appears_below_password_textbox_during_login(String string) {
+        assertEquals("Please fill out this field.", loginPageobj.getErrorMessageForPassword());
+    }
 
-	@When("The user clicks the login button after entering valid username and valid password")
-	public void the_user_clicks_the_login_button_after_entering_valid_username_and_valid_password() {
-	    // Write code here that turns the phrase above into concrete actions
-	   loginPageobj.login("darshana", "zenithhp4987");
-	}
+    @When("The user clicks the login button after entering the Password only")
+    public void the_user_clicks_the_login_button_after_entering_the_password_only() {
+        loginPageobj.enterPassword("zenithhp4987"); // Enter password only
+        loginPageobj.clickLoginButton(); // Click login
+    }
 
-	@Then("The user should land in Data Structure Home Page with message You are logged in")
-	public void the_user_should_land_in_data_structure_home_page_with_message_you_are_loggen_in() {
-	    // Write code here that turns the phrase above into concrete actions
-	   
-	}
+    @Then("The error message appears below Username textbox")
+    public void the_error_message_appears_below_username_textbox() {
+        assertEquals("Please fill out this field.", loginPageobj.getErrorMessageForUsername());
+    }
 
+    @When("The user clicks the login button after entering an invalid username and valid password")
+    public void the_user_clicks_the_login_button_after_entering_an_invalid_username_and_valid_password() {
+        loginPageobj.enterUsername("76"); // Invalid username
+        loginPageobj.enterPassword("zenithhp4987"); // Valid password
+        loginPageobj.clickLoginButton(); // Click login
+    }
 
+    @Then("The user should see an error message")
+    public void the_user_should_see_an_error_message(String string) {
+        assertTrue(driver.getPageSource().contains("Invalid username or password")); // Validate error message
+    }
 
+    @When("The user clicks the login button after entering valid username and valid password")
+    public void the_user_clicks_the_login_button_after_entering_valid_username_and_valid_password() {
+        loginPageobj.enterUsername("darshana"); // Valid username
+        loginPageobj.enterPassword("zenithhp4987"); // Valid password
+        loginPageobj.clickLoginButton(); // Click login
+    }
 
+    @Then("The user should land in Data Structure Home Page with message You are logged in")
+    public void the_user_should_land_in_data_structure_home_page_with_message_you_are_loggen_in() {
+        assertEquals("You are logged in", homeObj.getWelcomeMessage()); // Validate welcome message
+    }
 }

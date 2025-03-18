@@ -15,20 +15,19 @@ public class DataStructurestep {
 	
 	WebDriver driver;
 	dataStructurePage dspageobj;
+	String Url = "https://dsportalapp.herokuapp.com/";
+
+	 String HomeUrl = "https://dsportalapp.herokuapp.com/home";
+
+	 String TryEditorUrl = "https://dsportalapp.herokuapp.com/tryEditor";
+
+	 String PracticepageUrl = "https://dsportalapp.herokuapp.com/datastructure/practice";
 	
-	// @Before
-	//    public void setup() {
-	//	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ashish\\eclipse-workspace\\DsAlgoCucumber\\src\\test\\resources\\driver");
-	       // System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ashish\\chromedriver\\chromedriver.exe");
-	 //       driver = new ChromeDriver();
-	//        driver.manage().window().maximize();
-	  //  }
 	
 	@Given("The user is in the Home page after logged in the DsAlgo portal")
 	public void the_user_is_in_the_home_page_after_logged_in_the_ds_algo_portal() {
 	    // Write code here that turns the phrase above into concrete actions
-	   // driver=new ChromeDriver();
-	   // driver.manage().window().maximize();
+	  
 	    driver.get("https://dsportalapp.herokuapp.com/home");
 	    
 	}

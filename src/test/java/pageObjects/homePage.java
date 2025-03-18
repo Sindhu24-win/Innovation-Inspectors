@@ -42,12 +42,12 @@ public class homePage {
 	    @FindBy(xpath = "//a[text()='Graph']")
 	    private WebElement graphOption;
 	    
-	    
+	   
 	
 	//By logoutmessage=By.xpath("//div[@role='alert']");
 	
-	//By loginmessage=By.xpath("//div[@role='alert']");
-
+	
+    @FindBy(xpath="/html/body/div[2]")WebElement loginMessage;
 	@FindBy(xpath="//a[@href='/register']")WebElement registerLink;
     @FindBy(xpath="//a[@href='/login']")WebElement loginLink;
     @FindBy(xpath="//div[@role='alert']")WebElement logoutMessage;
@@ -165,4 +165,8 @@ public class homePage {
 	{
 		registerLink.click();
 	}
+	public String getWelcomeMessage() {
+		return loginMessage.getText();
+	}
+	
 }

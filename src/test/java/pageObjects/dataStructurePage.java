@@ -56,9 +56,7 @@ public class dataStructurePage {
 		tryEditorTextBox.sendKeys(code);
 		Runbutton.click();
 	}
-	
-	
-	
+		
 	
 }
  

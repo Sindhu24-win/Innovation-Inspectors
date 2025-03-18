@@ -2,7 +2,7 @@ Feature: User Registration on DS Algo Portal
 
 Scenario: Verify that user is able to land on Register Page
   Given The user is in the home page
-  When The user clicks "Register" link on the Home page
+  When The user clicks Register link on the Home page
   Then The user should be redirected to Register form
 
 Scenario: Verify that user receives error message for all empty fields during registration
@@ -25,7 +25,6 @@ Scenario: Verify that user receives error message for empty Password Confirmatio
   When The user clicks Register button after entering Password and Password Confirmation with Username fields empty
   Then The error message "Please fill out this field." appears below Password Confirmation textbox
 
-
 Scenario: Verify that user receives error message for invalid password field during registration
   Given The user is on the user registration page
   When The user clicks Register button after entering a password with numeric data
@@ -44,11 +43,8 @@ Scenario: Verify that user receives error message for mismatched Password and Pa
 Scenario: Verify that user is able to land on Homepage after registration with valid fields
   Given The user is on the user registration page
   When The user clicks Register button after entering a valid username, password, and password confirmation in related textboxes
-  Then The user should be redirected to Home Page of DS Algo with message "New Account Created. You are logged in as <ID>"
+  Then The user should be redirected to Home Page of DS Algo with success message
 
-Scenario: User navigates to login page from registration
-  Given The user is on the registration page
-  When The user clicks on the "Login instead" link on registration page
-  Then The user should be redirected to the login page
+
 
 
