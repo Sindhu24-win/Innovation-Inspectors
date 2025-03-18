@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import DriverFactory.DriverFactory;
+import Utilities.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,9 +20,8 @@ public class TreeSteps {
 	TreePage treepage;
 	WebDriver driver;
 	WebDriverWait wait;
-	String Url = "https://dsportalapp.herokuapp.com";
-	String HomeUrl = "https://dsportalapp.herokuapp.com/home";
-	String TryEditor = "https://dsportalapp.herokuapp.com/tryEditor";
+	String username = ConfigReader.getUsername();
+	String password = ConfigReader.getPassword();
 
 	public TreeSteps() {
 		System.out.println("****I'm in Tree Data Structure****");
@@ -31,10 +31,10 @@ public class TreeSteps {
 
 	@Given("The user is in the Home page after Sign in")
 	public void the_user_is_in_the_home_page_after_sign_in() {
-		driver.get(Url);
+		DriverFactory.getStarted();
 		treepage.GetStarted();
 		treepage.signIn();
-		treepage.clickLogin();
+		treepage.clickLogin(username, password);
 	}
 
 	@When("The user clicks the Getting Started button in Tree Panel")
@@ -602,4 +602,3 @@ public class TreeSteps {
 	}
 
 }
-

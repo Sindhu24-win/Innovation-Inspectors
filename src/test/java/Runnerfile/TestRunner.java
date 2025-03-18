@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/Features", glue = { "StepDefinitions" }, 
+@CucumberOptions(features = "src/test/resources/Features", glue = { "StepDefinitions", "StepDefinitions/Hooks" }, 
 monochrome = true, plugin = {
 		"pretty", "html:target/htmlReports/HTMLreports.html", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 
@@ -22,5 +22,8 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 				
 		return super.scenarios();
     }
+				
+	
+    
 
 }

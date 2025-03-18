@@ -16,9 +16,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class TreePage {
 
 	WebDriverWait wait;
-	String loginName = "darshana";
-	String loginPassword = "zenithhp4987";
-	public String homeurl = "https://dsportalapp.herokuapp.com/";
+	//String loginName = "darshana";
+	//St//ring loginPassword = "zenithhp4987";
+	//public String homeurl = "https://dsportalapp.herokuapp.com/";
 
 	@FindBy(className = "btn")
 	@CacheLookup
@@ -34,7 +34,7 @@ public class TreePage {
 
 	@FindBy(id = "id_password")
 	@CacheLookup
-	WebElement password;
+	WebElement Password;
 
 	@FindBy(xpath = "//*[@value='Login']")
 	@CacheLookup
@@ -144,10 +144,8 @@ public class TreePage {
 	@CacheLookup
 	WebElement Practice_QuestionsLink;
 
-	@FindBy(linkText = "NumpyNinja")
-	@CacheLookup
-	WebElement NumpyNinjaHomePage;
 	public WebDriver driver;
+	
 
 	public TreePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -162,10 +160,11 @@ public class TreePage {
 		signIn.click();
 	}
 
-	public void clickLogin() {
-		userName.sendKeys(loginName);
-		password.sendKeys(loginPassword);
+	public void clickLogin(String username, String password) {
+		userName.sendKeys(username);
+		Password.sendKeys(password);
 		LoginBtn.click();
+	
 	}
 
 	public String getStatus() {

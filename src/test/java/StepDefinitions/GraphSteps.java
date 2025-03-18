@@ -9,44 +9,44 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import DriverFactory.DriverFactory;
+import Utilities.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.GraphPage;
 
 public class GraphSteps {
-	
-	
+
 	GraphPage graphPage;
-	WebDriver driver;
+	WebDriver driver = Hooks.getDriver();
 	WebDriverWait wait;
-	
-	
-	
+	String username = ConfigReader.getUsername();
+	String password = ConfigReader.getPassword();
+
 	public GraphSteps() {
 		System.out.println("****I'm in Graph Data Structure****");
 		driver = DriverFactory.initiateDriver();
-		graphPage =new GraphPage(driver);
+		graphPage = new GraphPage(driver);
 	}
+
 	@Given("The user is in the Home page after Sign in with valid credentials.")
 	public void the_user_is_in_the_home_page_after_sign_in_with_valid_credentials() {
 		DriverFactory.getStarted();
 		graphPage.GetStarted();
 		graphPage.signIn();
-		graphPage.clickLogin();
+		graphPage.clickLogin(username, password);
 	}
 
 	@When("The user clicks the Getting Started button in Graph Panel")
 	public void the_user_clicks_the_getting_started_button_in_graph_panel() {
 		graphPage.GraphGetStarted();
-		
+
 	}
 
 	@Then("The user should be directed to Graph Data Structure Page")
 	public void the_user_should_be_directed_to_graph_data_structure_page() {
 		Assert.assertEquals(driver.getTitle(), "Graph");
 	}
-	
 
 	@Given("The user is in the Home page after Signed in.")
 	public void the_user_is_in_the_home_page_after_signed_in() {
@@ -69,10 +69,11 @@ public class GraphSteps {
 		DriverFactory.homepage();
 		graphPage.GraphGetStarted();
 	}
+
 	@When("The user clicks Graph link")
 	public void the_user_clicks_graph_link() {
 		graphPage.Graphlink();
-		
+
 	}
 
 	@Then("The user should be redirected to Graph page of Graph-Data structures")
@@ -85,7 +86,7 @@ public class GraphSteps {
 		DriverFactory.homepage();
 		graphPage.GraphGetStarted();
 		graphPage.Graphlink();
-		
+
 	}
 
 	@When("The user clicks Try Here button in Graph page")
@@ -107,7 +108,7 @@ public class GraphSteps {
 		graphPage.GraphGetStarted();
 		graphPage.Graphlink();
 		graphPage.TryHereButton();
-		//driver.get(TryEditor);
+		// driver.get(TryEditor);
 	}
 
 	@When("The user clicks the Run button without entering the code in the Editor")
@@ -119,29 +120,28 @@ public class GraphSteps {
 	@Then("The user should see an error message in an alert window")
 	public void the_user_should_see_an_error_message_in_an_alert_window() {
 		Assert.assertEquals(driver.getTitle(), "Assessment");// There will be no alert window pop-up so its is bug???
-			
+
 	}
 
 	@When("The user writes invalid code in the Editor and clicks the Run button")
-	public void the_user_writes_invalid_code_in_the_editor_and_clicks_the_run_button() throws InterruptedException   {
+	public void the_user_writes_invalid_code_in_the_editor_and_clicks_the_run_button() throws InterruptedException {
 		graphPage.Invalidinput();
 		Thread.sleep(3000);
 		graphPage.Run();
 		try {
-	        // Wait for the alert to appear
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-	        wait.until(ExpectedConditions.alertIsPresent());
-	        
-	        // Switch to the alert and accept (click OK)
-	        Alert alert = driver.switchTo().alert();
-	        alert.accept();  
-	        
-	    } catch (NoAlertPresentException e) {
-	        // No alert was present, continue with the test
-	        System.out.println("No alert present.");
-	    }
+			// Wait for the alert to appear
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			wait.until(ExpectedConditions.alertIsPresent());
+
+			// Switch to the alert and accept (click OK)
+			Alert alert = driver.switchTo().alert();
+			alert.accept();
+
+		} catch (NoAlertPresentException e) {
+			// No alert was present, continue with the test
+			System.out.println("No alert present.");
+		}
 	}
-	
 
 	@When("The user writes valid code in the Editor and clicks the Run button")
 	public void the_user_writes_valid_code_in_the_editor_and_clicks_the_run_button() throws InterruptedException {
@@ -165,7 +165,7 @@ public class GraphSteps {
 	@When("The user clicks Practice Questions link")
 	public void the_user_clicks_practice_questions_link() {
 		driver.getCurrentUrl();
-		graphPage.PracticeQns(); //no such element exception coming 
+		graphPage.PracticeQns(); // no such element exception coming
 	}
 
 	@Then("The user should be redirected to Practice page")
@@ -191,8 +191,7 @@ public class GraphSteps {
 	@When("The user clicks Try Here button in the Graph Representations page")
 	public void the_user_clicks_try_here_button_in_the_graph_representations_page() {
 		graphPage.TryHereButton();
-		
+
 	}
-	
-	
+
 }
