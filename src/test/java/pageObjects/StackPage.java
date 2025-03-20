@@ -61,7 +61,7 @@ public class StackPage {
 	public
 	WebElement RunBtn;
 	
-	@FindBy(xpath = "//*[@id=\\\"answer_form\\\"]/div/div/div[6]")
+	@FindBy(xpath = "//*[@id=\"answer_form\"]/div/div/div[6]")
 	 @CacheLookup
 	public
 	WebElement TryEditor;
@@ -87,7 +87,15 @@ public class StackPage {
 	        this.driver = driver;
 	        PageFactory.initElements(driver,this);
 	    }
-			public void GetStartedIntro() {
+			
+			// Method to check if the user is logged in based on the URL
+		   // public boolean isLoggedIn() {
+		     //   String currentUrl = driver.getCurrentUrl();
+		        // You can check if the URL contains a part that only appears when logged in, like "home"
+		       // return currentUrl.contains("/home");
+		    //}// Example: logged-in users will be redirected to a URL containing "/home"
+			
+		    public void GetStartedIntro() {
 				GetStartedIntro.click();
 			}
 			public void SignIn() {
@@ -114,6 +122,7 @@ public class StackPage {
 			}
 			public void RunBtn() {
 				RunBtn.click();
+			
 				}
 			public void EmptytryEditor() {
 				Actions actions = new Actions(driver);

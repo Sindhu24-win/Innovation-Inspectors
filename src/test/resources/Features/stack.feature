@@ -1,7 +1,7 @@
 Feature: dsAlgo Portal Stack Functionality
 
 Background:
-Given the user has successfully logged into the dsAlgo Portal
+ the user has successfully logged into the dsAlgo Portal
 
 Scenario: Navigate to Stack Data Structure Page
 Given the user is on the homepage after logging into the dsAlgo Portal
@@ -19,23 +19,23 @@ When the user clicks the Try Here button on the Stack in Python page
 Then the user should be taken to a page containing a try editor with a Run button for testing the code
 
 Scenario: Error on Clicking Run Without Code in Operations in Stack
-Given the user is on the TryEditor page
+Given the user is on the TryEditor page in the Operations in Stack on Python page
 When the user clicks the Run button without any code in the editor
 Then the user should receive an error message in the alert window
 
 Scenario: Error for Invalid Python Code in Operations in Stack
-Given the user is on the TryEditor page
+Given the user is on the TryEditor page in the Operations in Stack on Python page
 When the user types invalid code in the editor and clicks the Run button
 Then the user should see an error message in the alert window
 
 Scenario: Display Output for Valid Python Code in Operations in Stack
-Given the user is on the TryEditor page
+Given the user is on the TryEditor page in the Operations in Stack on Python page
 When the user enters valid code in the editor and clicks the Run button
 Then the user should see the output displayed in the console
 
 Scenario: Navigate to Practice Questions Page for Operations in Stack
 Given the user is on the Stack page after logging into the dsAlgo Portal
-When the user clicks the Practice Questions button
+When the user clicks the Practice Questions button in the Operations in Stack on Python page
 Then the user should be redirected to the Practice Questions page
 
 Scenario: Navigate to Implementation Page
@@ -49,17 +49,17 @@ When the user clicks the Try Here button on the Stack in Python page
 Then the user should be redirected to a page containing a try editor with a Run button for testing the code
 
 Scenario: Error on Clicking Run Without Code in Implementation Page
-Given the user is on the TryEditor page
+Given the user is on the TryEditor page in the Implementation page
 When the user clicks the Run button without entering any code in the editor
 Then the user should see an error message in the alert window
 
 Scenario: Error for Invalid Python Code in Implementation Page
-Given the user is on the TryEditor page
+Given the user is on the TryEditor page in the Implementation page
 When the user enters invalid code in the editor and clicks the Run button
 Then the user should receive an error message in the alert window
 
 Scenario: Display Output for Valid Python Code in Implementation Page
-Given the user is on the TryEditor page
+Given the user is on the TryEditor page in the Implementation page
 When the user enters valid code in the editor and clicks the Run button
 Then the user should see the output displayed in the console
 
@@ -74,16 +74,16 @@ When the user clicks the Try Here button on the Stack in Python page
 Then the user should be redirected to a page containing a try editor with a Run button for testing the code
 
 Scenario: Error on Clicking Run Without Code in Applications Page
-Given the user is on the TryEditor page
+Given the user is on the TryEditor page in the Applications page
 When the user clicks the Run button without any code in the editor
 Then the user should see an error message in the alert window
 
 Scenario: Error for Invalid Python Code in Applications Page
-Given the user is on the TryEditor page
+Given the user is on the TryEditor page in the Applications page
 When the user enters invalid code in the editor and clicks the Run button
 Then the user should receive an error message in the alert window
 
 Scenario: Display Output for Valid Python Code in Applications Page
-Given the user is on the TryEditor page
+Given the user is on the TryEditor page in the Applications page
 When the user enters valid code in the editor and clicks the Run button
 Then the user should see the output displayed in the console

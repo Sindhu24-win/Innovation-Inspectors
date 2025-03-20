@@ -216,7 +216,9 @@ public class QueueSteps {
 
 	@Given("The user is on the try editor page in the Implementation using array page")
 	public void the_user_is_on_the_try_Editor_page_in_the_implementation_using_array_page() {
-		driver.getCurrentUrl();
+		driver.get(HomeUrl);
+		queuePage.clickQueueGetStartedBtn();
+		queuePage.clickImplementationUsingArray();
 		queuePage.clickTryHereBtn();
 	}
 
