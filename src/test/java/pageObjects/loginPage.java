@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -17,9 +19,8 @@ public class loginPage {
     @FindBy(xpath="//input[@name='password']") WebElement passwordLoginpage;
     @FindBy(xpath="/html/body/div[2]/div/div[2]/form/input[4]") WebElement loginButton;
     @FindBy(xpath="//a[@href='/register']") WebElement registerlinkLoginPage;
-    @FindBy(xpath="//div[@id='username-error']") WebElement usernameError;  // Fixed xpath for username error
-    @FindBy(xpath="//div[@id='password-error']") WebElement passwordError;  // Fixed xpath for password error
-    
+    @FindBy(xpath="//div[@class='alert alert-primary']") WebElement Error;  // Fixed xpath for username error
+   
     @FindBy(className = "btn")
     @CacheLookup
     WebElement getStartedButton;  // Renamed WebElement to avoid method conflict
@@ -27,9 +28,8 @@ public class loginPage {
     public loginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
-       // this.wait = new WebDriverWait(driver, 10); // Initializing WebDriverWait with a timeout of 10 seconds
+       this.wait = new WebDriverWait(driver,Duration.ofSeconds(5)); // Initializing WebDriverWait with a timeout of 10 seconds
     }
-
     public void clickGetStarted() {
         wait.until(ExpectedConditions.elementToBeClickable(getStartedButton));  // Wait until clickable
         getStartedButton.click();
@@ -74,19 +74,19 @@ public class loginPage {
     }
 
     // Get the error message for username
-    public String getErrorMessageForUsername() {
-        wait.until(ExpectedConditions.visibilityOf(usernameError));  // Wait for error message visibility
-        return usernameError.getText();
+    public String getErrorMessage() {
+        wait.until(ExpectedConditions.visibilityOf(Error));  // Wait for error message visibility
+        return Error.getText();
     }
 
     // Get the error message for password
-    public String getErrorMessageForPassword() {
-        wait.until(ExpectedConditions.visibilityOf(passwordError));  // Wait for error message visibility
-        return passwordError.getText();
-    }
+   // public String getErrorMessageForPassword() {
+     //   wait.until(ExpectedConditions.visibilityOf(Error));  // Wait for error message visibility
+       // return Error.getText();
+    //}
 
     // Check if login page is displayed
-    public boolean isLoginPageDisplayed() {
-        return driver.getTitle().equals("Login - DS Algo");
+   public boolean isLoginPageDisplayed() {
+       return driver.getTitle().equals("Login");
     }
 }

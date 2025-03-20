@@ -14,7 +14,7 @@ Feature: Sign In and Sign Out in dsAlgo Portal
   Scenario: Verify that user receives an error message for empty Password field during login
     Given The user is on the DS Algo Sign in Page
     When The user clicks the login button after entering the "Username" and leaves "Password" textbox empty
-    Then The error message "Please fill out this field." appears below Password textbox during login
+    Then The error message Please fill out this field. appears below Password textbox during login
 
   Scenario: Verify that user receives an error message for empty Username field during login
     Given The user is on the DS Algo Sign in Page

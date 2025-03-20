@@ -2,40 +2,53 @@
 
 package StepDefinitions;
 
+import static org.testng.Assert.assertTrue;
+
 import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
 
+import DriverFactory.driverFactory;
 //import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.dataStructurePage;
+import pageObjects.homePage;
+import pageObjects.loginPage;
 
 public class DataStructurestep {
 	
 	WebDriver driver;
 	dataStructurePage dspageobj;
-	String Url = "https://dsportalapp.herokuapp.com/";
-
-	 String HomeUrl = "https://dsportalapp.herokuapp.com/home";
-
-	 String TryEditorUrl = "https://dsportalapp.herokuapp.com/tryEditor";
-
-	 String PracticepageUrl = "https://dsportalapp.herokuapp.com/datastructure/practice";
+	WebDriver wait;
+	homePage homeobj;
+	loginPage loginobj;
 	
+	public DataStructurestep() 
+	{
+		System.out.println("*****************i am in data structure page");
+		driver=driverFactory.initiateDriver();
+		dspageobj=new dataStructurePage(driver);
+		
+	}
 	
 	@Given("The user is in the Home page after logged in the DsAlgo portal")
 	public void the_user_is_in_the_home_page_after_logged_in_the_ds_algo_portal() {
 	    // Write code here that turns the phrase above into concrete actions
 	  
-	    driver.get("https://dsportalapp.herokuapp.com/home");
+	    driver.get("https://dsportalapp.herokuapp.com/login");
+	    loginobj.enterUsername("darshana");
+	    loginobj.enterPassword("zenithhp4987");
+	    loginobj.clickLoginButton();
+	    assertTrue(driver.getCurrentUrl().contains("home"));
 	    
 	}
 
 	@When("The user clicks on the Getting Started button in Data Structures Introduction")
 	public void the_user_clicks_on_the_getting_started_button_in_data_structures_introduction() {
 	    // Write code here that turns the phrase above into concrete actions
-	   dspageobj.checkGetstarted();
+	   wait.until(Expected);
+		dspageobj.checkGetstarted();
 	}
 
 	@Then("The user should land in Data Structures Introduction Page")
