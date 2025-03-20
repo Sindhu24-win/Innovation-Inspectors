@@ -1,3 +1,4 @@
+@Graph
 Feature: Graph
 
   Background: The user sign in to dsAlgo Portal

@@ -1,3 +1,4 @@
+@Tree
 Feature: Tree Data Structure
 
   Background: The user sign in to dsAlgo Portal

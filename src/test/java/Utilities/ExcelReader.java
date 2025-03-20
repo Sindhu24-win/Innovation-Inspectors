@@ -1,53 +1,77 @@
 package Utilities;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class ExcelReader {
-	
-public String[] excelDataRead(String sheetName, int rowNumber) throws IOException {
-	String path = System.getProperty("user.dir") + "/src/test/resources/TestData/DsAlgo_TestData.xlsx";
-	File excelFile = new File(path);
-	
-	FileInputStream Fis = new FileInputStream(excelFile);
-	XSSFWorkbook workbook = new XSSFWorkbook(Fis);
-	XSSFSheet sheet = workbook.getSheet(sheetName);
 
-	Row row = sheet.getRow(rowNumber); 
-        
-    String username = getCellValue(row, 0);
-    String password = getCellValue(row, 1);
-    String passwordConfirmation = getCellValue(row, 2);
-    
-    workbook.close();
-    Fis.close();
-    
-    String[] credentials = new String[3];
-    credentials[0] = username;
-    credentials[1] = password;
-    credentials[2] = passwordConfirmation;
+	public static int totalRow = 0;
 
-    return credentials;
+	public List<Map<String, String>> getData(String excelFilePath, String sheetName)
+			throws EncryptedDocumentException, IOException {
+
+		Workbook workbook = WorkbookFactory.create(new POIFSFileSystem());
+
+		Sheet sheet = workbook.getSheet(sheetName);
+
+		workbook.close();
+
+		return readSheet(sheet);
+
 	}
-	
-	private String getCellValue(Row row, int cellIndex) {
-	    Cell cell = row.getCell(cellIndex);
-	    if (cell == null || cell.getCellType() == CellType.BLANK) {
-	        return ""; 
-	    }
-	    if (cell.getCellType() == CellType.NUMERIC) {
-	        return String.valueOf(cell.getNumericCellValue());
-	    }
-	    if (cell.getCellType() == CellType.STRING) {
-	        return cell.getStringCellValue();
-	    }
-	    return "";
+
+	private List<Map<String, String>> readSheet(Sheet sheet) {
+
+		Row row = null;
+
+		Cell cell = null;
+
+		totalRow = sheet.getLastRowNum();
+
+		List<Map<String, String>> excelRows = new ArrayList<Map<String, String>>();
+
+		for (int currentRow = 1; currentRow <= totalRow; currentRow++) {
+
+			row = sheet.getRow(currentRow);
+
+			short totalColumn = row.getLastCellNum();
+
+			Map<String, String> columnMapData = new LinkedHashMap<String, String>();
+
+			for (int currentColumn = 0; currentColumn < totalColumn; currentColumn++) {
+
+				cell = row.getCell(currentColumn);
+
+				String columnHeaderName = sheet.getRow(sheet.getFirstRowNum()).getCell(currentColumn)
+						.getStringCellValue();
+
+				columnMapData.put(columnHeaderName, cell.getStringCellValue());
+
+			}
+
+			excelRows.add(columnMapData);
+
+		}
+
+		return excelRows;
+
 	}
+
+	public int countRow() {
+
+		return totalRow;
+
+	}
+
 }

@@ -96,9 +96,7 @@ public class GraphPage {
 	@CacheLookup
 	WebElement GraphRepresentationsLink;
 
-	@FindBy(linkText = "Sign out")
-	@CacheLookup
-	WebElement SignOut;
+	
 
 	private WebDriver driver;
 

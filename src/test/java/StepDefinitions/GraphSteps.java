@@ -8,7 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import DriverFactory.DriverFactory;
+import DriverFactory.driverFactory;
+import HooksFile.Hooks;
 import Utilities.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -25,13 +26,13 @@ public class GraphSteps {
 
 	public GraphSteps() {
 		System.out.println("****I'm in Graph Data Structure****");
-		driver = DriverFactory.initiateDriver();
+		driver = driverFactory.initiateDriver();
 		graphPage = new GraphPage(driver);
 	}
 
 	@Given("The user is in the Home page after Sign in with valid credentials.")
 	public void the_user_is_in_the_home_page_after_sign_in_with_valid_credentials() {
-		DriverFactory.getStarted();
+		driverFactory.getStarted();
 		graphPage.GetStarted();
 		graphPage.signIn();
 		graphPage.clickLogin(username, password);
@@ -50,7 +51,7 @@ public class GraphSteps {
 
 	@Given("The user is in the Home page after Signed in.")
 	public void the_user_is_in_the_home_page_after_signed_in() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 	}
 
 	@When("The user selects Graph item from the drop down menu.")
@@ -66,7 +67,7 @@ public class GraphSteps {
 
 	@Given("The user is in the Graph data structure page after Sign in")
 	public void the_user_is_in_the_graph_data_structure_page_after_sign_in() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		graphPage.GraphGetStarted();
 	}
 
@@ -83,7 +84,7 @@ public class GraphSteps {
 
 	@Given("The user is on the Graph page")
 	public void the_user_is_on_the_graph_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		graphPage.GraphGetStarted();
 		graphPage.Graphlink();
 
@@ -104,7 +105,7 @@ public class GraphSteps {
 
 	@Given("The user is in the Try Editor page")
 	public void the_user_is_in_the_try_editor_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		graphPage.GraphGetStarted();
 		graphPage.Graphlink();
 		graphPage.TryHereButton();
@@ -157,7 +158,7 @@ public class GraphSteps {
 
 	@Given("The user is in the Graph page after Sign in")
 	public void the_user_is_in_the_graph_page_after_sign_in() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		graphPage.GraphGetStarted();
 		graphPage.Graphlink();
 	}

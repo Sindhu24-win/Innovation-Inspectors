@@ -1,5 +1,7 @@
 package StepDefinitions;
 
+import static org.testng.Assert.assertEquals;
+
 import java.time.Duration;
 
 import org.junit.Assert;
@@ -9,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import DriverFactory.DriverFactory;
+import DriverFactory.driverFactory;
 import Utilities.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -25,13 +27,14 @@ public class TreeSteps {
 
 	public TreeSteps() {
 		System.out.println("****I'm in Tree Data Structure****");
-		driver = DriverFactory.initiateDriver();
+		driver = driverFactory.initiateDriver();
 		treepage = new TreePage(driver);
 	}
 
 	@Given("The user is in the Home page after Sign in")
 	public void the_user_is_in_the_home_page_after_sign_in() {
-		DriverFactory.getStarted();
+		driverFactory.getStarted();
+		driverFactory.homepage();
 		treepage.GetStarted();
 		treepage.signIn();
 		treepage.clickLogin(username, password);
@@ -55,7 +58,7 @@ public class TreeSteps {
 
 	@Given("The user is on the Home page after signed in")
 	public void the_user_is_on_the_home_page_after_signed_in() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 	}
 
 	@When("The user selects Tree item from the drop-down menu")
@@ -68,8 +71,8 @@ public class TreeSteps {
 	public void the_user_should_land_on_the_tree_data_structure_page() {
 		System.out.println("Current URL: " + driver.getCurrentUrl());
 		System.out.println("Actual title: " + driver.getTitle());
+		assertEquals("Tree", driver.getTitle());
 
-		Assert.assertEquals(driver.getTitle(), "Tree");
 	}
 
 	@Given("The user is on the Tree Data Structure page after signing in")
@@ -106,7 +109,7 @@ public class TreeSteps {
 
 	@Given("The user is on the TryEditor page.")
 	public void the_user_is_on_the_try_editor_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.overviewOfTrees();
 		treepage.TryHereButton();
@@ -125,7 +128,7 @@ public class TreeSteps {
 
 	@Given("The user is on the TryEditor page")
 	public void the_user_is_on_the_tryEditor_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.overviewOfTrees();
 		treepage.TryHereButton();
@@ -166,7 +169,7 @@ public class TreeSteps {
 
 	@Given("The user is on the Tree page after signing in")
 	public void the_user_is_on_the_tree_page_after_signing_in() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.overviewOfTrees();
 	}
@@ -271,7 +274,7 @@ public class TreeSteps {
 
 	@When("The user clicks Tree Traversal link")
 	public void the_user_clicks_tree_traversal_link() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.TreeTraversals();
 	}
@@ -283,7 +286,7 @@ public class TreeSteps {
 
 	@Given("The user is on the Tree Traversal page")
 	public void the_user_is_on_the_tree_traversal_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.TreeTraversals();
 	}
@@ -295,7 +298,7 @@ public class TreeSteps {
 
 	@Given("The user is on the Try Editor page")
 	public void the_user_is_on_the_try_Editor_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.TreeTraversals();
 		treepage.TryHereButton();
@@ -309,7 +312,7 @@ public class TreeSteps {
 
 	@When("The user clicks Traversals-Illustration link")
 	public void the_user_clicks_traversals_illustration_link() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.Traversal_Illustration();
 	}
@@ -321,7 +324,7 @@ public class TreeSteps {
 
 	@Given("The user is on the Traversals-Illustration page")
 	public void the_user_is_on_the_traversals_illustration_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.Traversal_Illustration();
 	}
@@ -333,7 +336,7 @@ public class TreeSteps {
 
 	@When("The user clicks Binary trees link")
 	public void the_user_clicks_binary_trees_link() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.Binary_Trees();
 	}
@@ -381,7 +384,7 @@ public class TreeSteps {
 
 	@When("The user clicks Implementation in Python link")
 	public void the_user_clicks_implementation_in_python_link() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.ImplementationInPython();
 	}
@@ -393,7 +396,7 @@ public class TreeSteps {
 
 	@Given("The user is on the Implementation in Python page")
 	public void the_user_is_on_the_implementation_in_python_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.ImplementationInPython();
 	}
@@ -416,7 +419,7 @@ public class TreeSteps {
 
 	@Given("The user is on the Binary Tree Traversals page")
 	public void the_user_is_on_the_binary_tree_traversals_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.BinaryTreeTraversals();
 	}
@@ -429,7 +432,7 @@ public class TreeSteps {
 
 	@Given("The user is in the TryEditor page for Binary Tree Traversals")
 	public void the_user_is_in_the_try_editor_page_for_binary_tree_traversals() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.BinaryTreeTraversals();
 		treepage.TryHereButton();
@@ -466,7 +469,7 @@ public class TreeSteps {
 
 	@Given("The user is in the Tree data structure page after sign in")
 	public void the_user_is_in_the_tree_data_structure_page_after_sign_in() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 	}
 
@@ -482,14 +485,14 @@ public class TreeSteps {
 
 	@Given("The user is on the Implementation of Binary Trees page")
 	public void the_user_is_on_the_implementation_of_binary_trees_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.ImplementationOfBinaryTrees();
 	}
 
 	@Given("The user is in the TryEditor page for Implementation of Binary Trees")
 	public void the_user_is_in_the_try_editor_page_for_implementation_of_binary_trees() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.ImplementationOfBinaryTrees();
 		treepage.TryHereButton();
@@ -525,7 +528,7 @@ public class TreeSteps {
 
 	@When("The user clicks the Applications of Binary trees link")
 	public void the_user_clicks_the_applications_of_binary_trees_link() {
-		DriverFactory.treepage();// here comes stale element error if ....
+		driverFactory.treepage();// here comes stale element error if ....
 		treepage.ApplicationOfBinaryTrees();
 	}
 
@@ -536,14 +539,14 @@ public class TreeSteps {
 
 	@Given("The user is on the Applications of Binary trees page")
 	public void the_user_is_on_the_applications_of_binary_trees_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.ApplicationOfBinaryTrees();
 	}
 
 	@Given("The user is in the TryEditor page for Applications of Binary trees")
 	public void the_user_is_in_the_try_editor_page_for_applications_of_binary_trees() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.ApplicationOfBinaryTrees();
 		treepage.TryHereButton();
@@ -551,7 +554,7 @@ public class TreeSteps {
 
 	@When("The user clicks the Binary Search Trees link")
 	public void the_user_clicks_the_binary_search_trees_link() {
-		DriverFactory.treepage();
+		driverFactory.treepage();
 		treepage.BinarySearchTrees();
 	}
 
@@ -562,14 +565,14 @@ public class TreeSteps {
 
 	@Given("The user is on the Binary Search Trees page")
 	public void the_user_is_on_the_binary_search_trees_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.BinarySearchTrees();
 	}
 
 	@Given("The user is in the TryEditor page for Binary Search Trees")
 	public void the_user_is_in_the_try_editor_page_for_binary_search_trees() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.BinarySearchTrees();
 		treepage.TryHereButton();
@@ -577,7 +580,7 @@ public class TreeSteps {
 
 	@When("The user clicks the Implementation Of BST link")
 	public void the_user_clicks_the_implementation_of_bst_link() {
-		DriverFactory.treepage();
+		driverFactory.treepage();
 		treepage.ImplementationOfBST();
 	}
 
@@ -588,14 +591,14 @@ public class TreeSteps {
 
 	@Given("The user is on the Implementation Of BST page")
 	public void the_user_is_on_the_implementation_of_bst_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.ImplementationOfBST();
 	}
 
 	@Given("The user is in the TryEditor page for Implementation Of BST")
 	public void the_user_is_in_the_try_editor_page_for_implementation_of_bst() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		treepage.treeGetStarted();
 		treepage.ImplementationOfBST();
 		treepage.TryHereButton();
