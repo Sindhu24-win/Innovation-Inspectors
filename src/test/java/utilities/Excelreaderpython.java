@@ -3,7 +3,6 @@ package utilities;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -15,25 +14,24 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-//import org.openqa.selenium.By;
-//import org.openqa.selenium.JavascriptExecutor;
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.support.ui.ExpectedConditions;
-//import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-//import io.github.bonigarcia.wdm.WebDriverManager;
+//import com.google.common.collect.Table.Cell;
 
-public class ExcelReader {
+public class Excelreaderpython {
 
 	public static int totalRow = 0;
 
 	public List<Map<String, String>> getData(String excelFilePath, String sheetName)
 			throws EncryptedDocumentException, IOException {
+
 		Workbook workbook = WorkbookFactory.create(new File(excelFilePath));
+
 		Sheet sheet = workbook.getSheet(sheetName);
+
 		workbook.close();
 
 		return readSheet(sheet);
@@ -41,19 +39,30 @@ public class ExcelReader {
 	}
 
 	private List<Map<String, String>> readSheet(Sheet sheet) {
+
 		Row row = null;
+
 		Cell cell = null;
+
 		totalRow = sheet.getLastRowNum();
+
 		List<Map<String, String>> excelRows = new ArrayList<Map<String, String>>();
+
 		for (int currentRow = 1; currentRow <= totalRow; currentRow++) {
+
 			row = sheet.getRow(currentRow);
+
 			short totalColumn = row.getLastCellNum();
 
 			Map<String, String> columnMapData = new LinkedHashMap<String, String>();
+
 			for (int currentColumn = 0; currentColumn < totalColumn; currentColumn++) {
+
 				cell = row.getCell(currentColumn);
+
 				String columnHeaderName = sheet.getRow(sheet.getFirstRowNum()).getCell(currentColumn)
 						.getStringCellValue();
+
 				columnMapData.put(columnHeaderName, cell.getStringCellValue());
 
 			}
@@ -61,11 +70,13 @@ public class ExcelReader {
 			excelRows.add(columnMapData);
 
 		}
+
 		return excelRows;
 
 	}
 
 	public int countRow() {
+
 		return totalRow;
 
 	}

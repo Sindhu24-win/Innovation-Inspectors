@@ -46,13 +46,11 @@ public class Linkedlistpage {
 
 	@FindBy(xpath = "//*[@id=\"answer_form\"]/div/div/div[6]/div[1]/div/div")
 	@CacheLookup()
-	public
-	WebElement Tryeditor;
+	public WebElement Tryeditor;
 
 	@FindBy(xpath = "//button[text()='Run']")
 	@CacheLookup()
-	public
-	WebElement TryeditorRun;
+	public WebElement TryeditorRun;
 
 	@FindBy(xpath = "//pre[@id='output']")
 	@CacheLookup()
@@ -66,7 +64,7 @@ public class Linkedlistpage {
 	@CacheLookup()
 	WebElement Types_LinkedList;
 
-	@FindBy(xpath ="//a[text()='Implement Linked List in Python']")
+	@FindBy(xpath = "//a[text()='Implement Linked List in Python']")
 	@CacheLookup()
 	WebElement Implementing_LinkedList;
 
@@ -135,8 +133,6 @@ public class Linkedlistpage {
 		TryeditorRun.click();
 
 	}
-
-	
 
 	public void Invalidcode() {
 		Actions actions = new Actions(driver);

@@ -1,6 +1,6 @@
 package pageObjects;
 
-import java.time.Duration;
+//import java.time.Duration;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -70,7 +70,7 @@ public class Arraypage {
 
 	WebElement Run;
 
-	@FindBy(xpath = "//pre[@id='output']")
+	@FindBy(id = "output")
 	@CacheLookup
 	WebElement TryEditor_Console;
 
@@ -105,10 +105,6 @@ public class Arraypage {
 	@FindBy(xpath = "//a[text()='Search the array']")
 	@CacheLookup
 	WebElement SearchThe_Array;
-
-	@FindBy(className = "CodeMirror")
-	@CacheLookup
-	WebElement codeMirrorDiv;
 
 	@FindBy(xpath = "//input[@type='submit']")
 	@CacheLookup
@@ -145,6 +141,10 @@ public class Arraypage {
 	@FindBy(xpath = "//*[@id=\"answer_form\"]/button")
 	@CacheLookup
 	WebElement SquaresOfSortedArray_Run;
+
+	@FindBy(className = ("CodeMirror"))
+	@CacheLookup
+	public WebElement codeMirrorDiv;
 
 	private WebDriver driver;
 
@@ -186,15 +186,11 @@ public class Arraypage {
 
 	}
 
-	public void ArraysPythonTry() {
-		Arrays_InPython_Tryhere.click();
-	}
-
 	public void Tryherebtn() {
 		TryHere.click();
 	}
 
-	public void ArraysPythonTryEditorNocode() {
+	public void TryEditorNocode() {
 		Actions actions = new Actions(driver);
 
 		actions.moveToElement(TryEditor).click().sendKeys("").build().perform();
@@ -208,7 +204,7 @@ public class Arraypage {
 	public void InvalidPythoncode() {
 		Actions actions = new Actions(driver);
 
-		actions.moveToElement(TryEditor).click().sendKeys("print Hello").build().perform();
+		actions.moveToElement(TryEditor).click();
 		Run.click();
 
 	}
@@ -263,20 +259,19 @@ public class Arraypage {
 		Practice_Questions.click();
 	}
 
+	public void PracticeTryEditor() {
+		codeMirrorDiv.click();
+
+	}
+
 	public void PracticeNoCodeinput() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].CodeMirror.setValue('');", codeMirrorDiv);
 
 		System.out.println("Code input field cleared successfully");
+		Run.click();
 
 	}
-
-//	public void PracticeValidinput() {
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].CodeMirror.setValue(arguments[1]);", codeMirrorDiv, pythonCode);
-//
-//		System.out.println("New code entered successfully");
-//	}
 
 	public void SearchArray() {
 		SearchThe_Array.click();
@@ -287,17 +282,17 @@ public class Arraypage {
 	}
 
 	public void Maxconsecutive() {
-		driver.navigate().back();
+
 		MaxConsecutive_Ones.click();
 	}
 
 	public void FindEvenNumbers() {
-		driver.navigate().back();
+
 		Find_Numbers_Evennumber_Digits.click();
 	}
 
 	public void SquaresSortedArray() {
-		driver.navigate().back();
+
 		SquaresOf_SortedArray.click();
 	}
 
