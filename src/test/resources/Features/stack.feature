@@ -9,13 +9,13 @@ When the user selects the Getting Started button from the Stack panel
 Then the user should be redirected to the Stack Data Structure page
 
 Scenario: Navigate to Operations in Stack Page
-Given the user is on the Stack page after logging in
+Given the user is on the Stack page 
 When the user clicks the Operations in Stack link
 Then the user should be navigated to the Operations in Stack page
 
 Scenario: Navigate to TryEditor for Operations in Stack
 Given the user is on the Operations in Stack page
-When the user clicks the Try Here button on the Stack in Python page
+When the user clicks the Try Here button on the Operations in Stack page
 Then the user should be taken to a page containing a try editor with a Run button for testing the code
 
 Scenario: Error on Clicking Run Without Code in Operations in Stack
@@ -34,18 +34,18 @@ When the user enters valid code in the editor and clicks the Run button
 Then the user should see the output displayed in the console
 
 Scenario: Navigate to Practice Questions Page for Operations in Stack
-Given the user is on the Stack page after logging into the dsAlgo Portal
+Given the user is on the Operations in Stack page 
 When the user clicks the Practice Questions button in the Operations in Stack on Python page
 Then the user should be redirected to the Practice Questions page
 
 Scenario: Navigate to Implementation Page
-Given the user is on the Stack page after logging into the dsAlgo Portal
+Given the user is currently on the stack page
 When the user clicks the Implementation link
 Then the user should be taken to the Implementation page
 
 Scenario: Navigate to TryEditor for Implementation Page
 Given the user is on the Implementation page
-When the user clicks the Try Here button on the Stack in Python page
+When the user clicks the Try Here button on the Implementation page
 Then the user should be redirected to a page containing a try editor with a Run button for testing the code
 
 Scenario: Error on Clicking Run Without Code in Implementation Page
@@ -64,13 +64,13 @@ When the user enters valid code in the editor and clicks the Run button
 Then the user should see the output displayed in the console
 
 Scenario: Navigate to Applications Page
-Given the user is on the Stack page after logging into the dsAlgo Portal
+Given the user is currently on the stack page  
 When the user clicks the Applications link
 Then the user should be taken to the Applications page
 
 Scenario: Navigate to TryEditor for Applications Page
 Given the user is on the Applications page
-When the user clicks the Try Here button on the Stack in Python page
+When the user clicks the Try Here button on the Applications page
 Then the user should be redirected to a page containing a try editor with a Run button for testing the code
 
 Scenario: Error on Clicking Run Without Code in Applications Page

@@ -36,11 +36,11 @@ public class StackPage {
 	@CacheLookup
 	WebElement Password;
 	
-	@FindBy(xpath = "/html/body/div[2]/div/div[2]/form/input[4]")
+	@FindBy(xpath = "//input[@type='submit']")
 	@CacheLookup
 	WebElement Login;
 	
-	@FindBy(xpath = "/html/body/div[2]")
+	@FindBy(xpath = "//div[@class='alert alert-primary']")
 	@CacheLookup
 	WebElement LoginStatus;
 	
@@ -80,7 +80,7 @@ public class StackPage {
 	 
 	 @FindBy(xpath = "//a[text()='Applications']")
 	 @CacheLookup
-	WebElement Application;
+	WebElement Applications;
 	
 	
 			public StackPage(WebDriver driver) {
@@ -152,8 +152,8 @@ public class StackPage {
 			public void Implementation() {
 	 Implementation.click();
 			}
-			public void Application() {
-	 Application.click();
+			public void Applications() {
+	 Applications.click();
 	
 }
 }
