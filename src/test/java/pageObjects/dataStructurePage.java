@@ -4,8 +4,13 @@ package pageObjects;
 
 import java.time.Duration;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,21 +26,78 @@ public class dataStructurePage {
     String password="zenithhp4987";
 
     @FindBy(xpath="//button[text()='Get Started']")WebElement DSAlgoGetstart;
-    @FindBy(xpath="//a[text()='Sign in']")WebElement signIn;
+   // @FindBy(xpath="//a[text()='Sign in']")WebElement signIn;
 	@FindBy(xpath="//a[@href='data-structures-introduction']")WebElement GetstartedButton;
 	@FindBy(className="list-group-item")WebElement timeComplexity;
 	@FindBy(xpath="a[href='/tryEditor']")WebElement tryHere;
-	@FindBy(xpath="//div[@class='CodeMirror-scroll']")WebElement tryEditorTextBox;
-	@FindBy(xpath="//button[text()='Run']")WebElement Runbutton;
+	@FindBy(xpath="//div[@class='CodeMirror-scroll']")
+	public WebElement tryEditorTextBox;
+	public WebElement Runbutton;
+	
+	@FindBy(className = "CodeMirror")
+	@CacheLookup
+	public WebElement tryEditor;
+
+	@FindBy(xpath = "//button[@type='button']")
+	@CacheLookup
+	public WebElement RunBtn;
+	
 	@FindBy(xpath="//a[text()='Practice Questions']")WebElement PracticeQuestions;
 	
+	@FindBy(className="btn")WebElement GetStarted;
+
+	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[3]")
+	@CacheLookup
+	WebElement signin;
+	@FindBy(id = "id_username")
+	@CacheLookup
+	WebElement userName;
+
+	@FindBy(id = "id_password")
+	@CacheLookup
+	WebElement Password;
+
+	@FindBy(xpath = "//*[@value='Login']")
+	@CacheLookup
+	WebElement LoginBtn;
+
+	@FindBy(xpath = "//*[@class ='alert alert-primary']")
+	@CacheLookup
+	WebElement LoginStatus;
+	
+	@FindBy(xpath = "//pre[@id='output']")
+	@CacheLookup
+	WebElement OutPutmsg;
+	
+	
+	@FindBy(xpath = "//div[@class='CodeMirror-code']")
+	@CacheLookup
+	WebElement tryEditorInp;
+
 	public dataStructurePage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 		this.driver=driver;
 		this.wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 	}
+	public void GetStarted()
+	{
+	GetStarted.click();
+	}
 	
+	public void signIn() {
+		signin.click();
+	}
+
+	public void clickLogin(String username, String password) {
+		userName.sendKeys(username);
+		Password.sendKeys(password);
+		LoginBtn.click();
+	}
+
+	public String getStatus() {
+		return LoginStatus.getText();
+	}
 	public void checkGetstarted()
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(GetstartedButton));
@@ -60,23 +122,61 @@ public class dataStructurePage {
 		PracticeQuestions.click();
 	}
 	
-	public void runValidcode()
-	{
-		wait.until(ExpectedConditions.elementToBeClickable(tryEditorTextBox));
-		tryEditorTextBox.sendKeys("print 'hello'");
-		wait.until(ExpectedConditions.elementToBeClickable(Runbutton));
-		Runbutton.click();
-		
+	public void enterCode() {
+		tryEditorTextBox.clear();
+		tryEditorTextBox.sendKeys(" ");
 	}
-	
-	public void invalidcode()
-	{
-		
-		tryEditorTextBox.sendKeys("hgvh");
-		wait.until(ExpectedConditions.elementToBeClickable(Runbutton));
+
+	public String RunBtnText() {
+		return Runbutton.getText();
+	}
+
+	public void Run() {
 		Runbutton.click();
 	}
-		
+	public void EmptytryInput() {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(tryEditorTextBox).click().sendKeys("").build().perform();
+	}
 	
+	public String alertMessage() {
+		return driver.switchTo().alert().getText();
+	}
+
+	public void Invalidinput() {
+		Runbutton.click();
+		try {
+			// Wait for the alert to appear
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			wait.until(ExpectedConditions.alertIsPresent());
+
+			// Switch to the alert and accept (click OK)
+			Alert alert = driver.switchTo().alert();
+			alert.accept(); // Or alert.dismiss() if you want to dismiss the alert
+
+		} catch (NoAlertPresentException e) {
+			// No alert was present, continue with the test
+			System.out.println("No alert present.");
+		}
+	}
+
+	public void Validinput() {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(tryEditorInp).click().sendKeys("print ('hello')").build().perform();
+	}
+
+	public String Outputmsg() {
+		return OutPutmsg.getText();
+	}
+
+	
+
+	public void PracticeQns() {
+	//	wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", PracticeQuestions);
+		wait.until(ExpectedConditions.elementToBeClickable(PracticeQuestions)).click();
+	}
+
+
 }
  

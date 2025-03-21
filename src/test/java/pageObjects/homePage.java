@@ -48,8 +48,11 @@ public class homePage {
 	
 	
     @FindBy(xpath="/html/body/div[2]")WebElement loginMessage;
-	@FindBy(xpath="//a[@href='/register']")WebElement registerLink;
-    @FindBy(xpath="//a[@href='/login']")WebElement loginLink;
+	
+    @FindBy(xpath="//a[@href='/register']")WebElement registerLink;
+   
+	@FindBy(xpath="//a[@href='/login']")WebElement loginLink;
+   
     @FindBy(xpath="//div[@role='alert']")WebElement logoutMessage;
     
     // Locating the "Get Started" button for Data Structures Introduction
@@ -157,7 +160,7 @@ public class homePage {
     public void clickSignOut() {
         signOutLink.click();
     }
-    public void clickSignIn(String login) {
+    public void clickSignIn() {
     	loginLink.click();
     }
 	

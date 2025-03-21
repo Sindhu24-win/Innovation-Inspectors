@@ -27,7 +27,7 @@ Feature: Data Structures - Introduction Navigation
     
    Scenario: Verify that user receives error for invalid python code
     Given The user is in the tryEditor page
-    When The user write the invalid code in Editor and click the Run Button
+    When The user reads the invalid python code from  excel "sheet1" and {int} and  enters in the Editor and clicks on Run button
     Then The user should able to see an error message in alert window
     
     Scenario: Verify that user is able to see output for valid python code
