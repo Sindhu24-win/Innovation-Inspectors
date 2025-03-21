@@ -3,7 +3,9 @@ package pageObjects;
 
 import java.time.Duration;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -223,8 +225,20 @@ public class TreePage {
 	}
 
 	public void Invalidinput() {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(tryEditorInp).click().sendKeys("System.out.println('Hello, World!');").build().perform();
+		RunBtn.click();
+		try {
+			// Wait for the alert to appear
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			wait.until(ExpectedConditions.alertIsPresent());
+
+			// Switch to the alert and accept (click OK)
+			Alert alert = driver.switchTo().alert();
+			alert.accept(); // Or alert.dismiss() if you want to dismiss the alert
+
+		} catch (NoAlertPresentException e) {
+			// No alert was present, continue with the test
+			System.out.println("No alert present.");
+		}
 	}
 
 	public void Validinput() {

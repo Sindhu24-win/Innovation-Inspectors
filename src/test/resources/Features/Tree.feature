@@ -29,15 +29,23 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the TryEditor.
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Overview of Trees TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Overview of Trees TryEditor page
     Given The user is on the TryEditor page
-    When The user writes invalid code in the TryEditor and clicks the Run button.
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Overview of Trees TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Overview of Trees TryEditor page
     Given The user is on the TryEditor page
-    When The user writes valid code in the TryEditor and clicks the Run button.
-    Then The user should see output in the Output console.
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
+    Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Practice Questions inthe Trees Data Structure page
     Given The user is on the Tree page after signing in
@@ -59,15 +67,23 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the TryEditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Terminologies TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Terminologies TryEditor page
     Given The user is on the TryEditor page
-    When The user writes invalid code in the TryEditor and clicks the Run button
-    Then The user should see an error message in a pop-up alert box
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
+    Then The user should see an error message in an pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Terminologies TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Terminologies TryEditor page
     Given The user is on the TryEditor page
-    When The user writes valid code in the TryEditor and clicks the Run button
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Types of Trees page
     Given The user is on the Tree Data Structure page after signing in
@@ -84,15 +100,23 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the TryEditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Types of Tree TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Types of Tree TryEditor page
     Given The user is on the TryEditor page
-    When The user writes invalid code in the TryEditor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Types of Trees TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Types of Trees TryEditor page
     Given The user is on the TryEditor page
-    When The user writes valid code in the TryEditor and clicks the Run button
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Tree Traversal page
     Given The user is on the Tree Data Structure page after signing in
@@ -104,20 +128,28 @@ Feature: Tree Data Structure
     When The user clicks Try Here button in the Tree Traversal page
     Then The user should be redirected to a TryEditor page with a Run button to test
 
-  Scenario: Verify that user receives error when click on Run button without entering code in Tree Travesal TryEditor page
+  Scenario: Verify that user receives error when click on Run button without entering code in Tree Travesal TryEditor page for Tree Tryeditor
     Given The user is on the Try Editor page
     When The user clicks the Run button without entering code in the Editor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Tree Traversal TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Tree Traversal TryEditor page
     Given The user is on the TryEditor page
-    When The user writes invalid code in the TryEditor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Tree Traversal TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Tree Traversal TryEditor page
     Given The user is on the TryEditor page
-    When The user writes valid code in the TryEditor and clicks the Run button
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Traversals-Illustration page
     Given The user is on the Tree Data Structure page after signing in
@@ -134,15 +166,23 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the TryEditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Traversals-Illustration TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Traversals-Illustration TryEditor page
     Given The user is on the TryEditor page
-    When The user writes invalid code in the TryEditor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Traversals-Illustration TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Traversals-Illustration TryEditor page
     Given The user is on the TryEditor page
-    When The user writes valid code in the TryEditor and clicks the Run button
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Binary trees page
     Given The user is on the Tree Data Structure page after signing in
@@ -159,15 +199,23 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the TryEditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Binary trees TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Binary trees TryEditor page
     Given The user is on the TryEditor page
-    When The user writes invalid code in the TryEditor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Binary trees TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Binary trees TryEditor page
     Given The user is on the TryEditor page
-    When The user writes valid code in the TryEditor and clicks the Run button
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Types of Binary trees page
     Given The user is on the Tree Data Structure page after signing in
@@ -184,15 +232,23 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the Editor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Types of Binary Trees TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Types of Binary Trees TryEditor page
     Given The user is on the TryEditor page
-    When The user writes invalid code in the TryEditor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Types of Binary Trees TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Types of Binary Trees TryEditor page
     Given The user is on the TryEditor page
-    When The user writes valid code in the TryEditor and clicks the Run button
-    Then The user should see output in the Outpt console
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
+    Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Implementation in Python page
     Given The user is on the Tree Data Structure page after signing in
@@ -209,15 +265,23 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the TryEditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Implementation in Python TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Implementation in Python TryEditor page
     Given The user is on the TryEditor page
-    When The user writes invalid code in the TryEditor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Implementation in Python TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Implementation in Python TryEditor page
     Given The user is on the TryEditor page
-    When The user writes valid code in the TryEditor and clicks the Run button
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Binary Tree Traversals page
     Given The user is on the Tree Data Structure page after signing in
@@ -234,15 +298,23 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the TryEditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Binary Tree Traversals TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Binary Tree Traversals TryEditor page
     Given The user is in the TryEditor page for Binary Tree Traversals
-    When The user writes invalid python codein the TryEditor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Binary Tree Traversals TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Binary Tree Traversals TryEditor page
     Given The user is in the TryEditor page for Binary Tree Traversals
-    When The user writes valid python code in the TryEditor and clicks the Run button
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Implementation of Binary Trees page
     Given The user is in the Tree data structure page after sign in
@@ -259,15 +331,23 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the TryEditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Implementation of Binary Trees TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Implementation of Binary Trees TryEditor page
     Given The user is in the TryEditor page for Implementation of Binary Trees
-    When The user writes invalid python code in the TryEditor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Implementation of Binary Trees TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Implementation of Binary Trees TryEditor page
     Given The user is in the TryEditor page for Implementation of Binary Trees
-    When The user writes valid python code and clicks the Run button
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Applications of Binary trees page
     Given The user is in the Tree data structure page after sign in
@@ -284,15 +364,23 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the TryEditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Applications of Binary trees TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Applications of Binary trees TryEditor page
     Given The user is in the TryEditor page for Applications of Binary trees
-    When The user writes invalid python code in the TryEditor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Applications of Binary trees TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Applications of Binary trees TryEditor page
     Given The user is in the TryEditor page for Applications of Binary trees
-    When The user writes valid python code in the TryEditor and clicks the Run button
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Binary Search Trees page
     Given The user is in the Tree data structure page after sign in
@@ -309,15 +397,23 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the TryEditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Binary Search Trees TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Binary Search Trees TryEditor page
     Given The user is in the TryEditor page for Binary Search Trees
-    When The user writes invalid python code in the TryEditor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Binary Search Trees TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Binary Search Trees TryEditor page
     Given The user is in the TryEditor page for Binary Search Trees
-    When The user writes valid python code in the TryEditor and clicks the Run button
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Implementation Of BST page
     Given The user is in the Tree data structure page after sign in
@@ -334,12 +430,20 @@ Feature: Tree Data Structure
     When The user clicks the Run button without entering code in the TryEditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user receives error for invalid python code in Implementation Of BST TryEditor page
+  Scenario Outline: Verify that user receives error for invalid python code in Implementation Of BST TryEditor page
     Given The user is in the TryEditor page for Implementation Of BST
-    When The user writes invalid python code in the TryEditor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see an error message in a pop-up alert box
 
-  Scenario: Verify that user is able to see output for valid python code in Implementation Of BST TryEditor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid python code in Implementation Of BST TryEditor page
     Given The user is in the TryEditor page for Implementation Of BST
-    When The user writes valid python code in the TryEditor and clicks the Run button
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button for Tree Tryeditor
     Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |

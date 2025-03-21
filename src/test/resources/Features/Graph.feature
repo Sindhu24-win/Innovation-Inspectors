@@ -28,15 +28,23 @@ Feature: Graph
     When The user clicks the Run button without entering the code in the Editor
     Then The user should see an error message in an alert window
 
-  Scenario: Verify that user receives an error for invalid Python code in Graph Try Editor page
+  Scenario Outline: Verify that user receives an error for invalid Python code read from "<SheetName>"  and <RowNumber> in Graph Page
     Given The user is in the Try Editor page
-    When The user writes invalid code in the Editor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button
     Then The user should see an error message in an alert window
 
-  Scenario: Verify that user is able to see output for valid Python code in Graph Try Editor page
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
+
+  Scenario Outline: Verify that user is able to see output for valid Python code from "<SheetName>"  and <RowNumber> in Graph Page
     Given The user is in the Try Editor page
-    When The user writes valid code in the Editor and clicks the Run button
-    Then The user should see output in the console
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button
+    Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Practice Questions in the Graph Data Structure page
     Given The user is in the Graph page after Sign in
@@ -58,13 +66,20 @@ Feature: Graph
     When The user clicks the Run button without entering the code in the Editor
     Then The user should see an error message in an alert window
 
-  Scenario: Verify that user receives an error for invalid Python code in Try Editor page of Graph Representations
+  Scenario Outline: Verify that user receives an error for invalid Python code in Try Editor page of Graph Representations
     Given The user is in the Try Editor page
-    When The user writes invalid code in the Editor and clicks the Run button
+    When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button
     Then The user should see an error message in an alert window
 
-  Scenario: Verify that user is able to see output for valid Python code in Try Editor page of Graph Representations
-    Given The user is in the Try Editor page
-    When The user writes valid code in the Editor and clicks the Run button
-    Then The user should see output in the console
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
 
+  Scenario Outline: Verify that user is able to see output for valid Python code in Try Editor page of Graph Representations
+    Given The user is in the Try Editor page
+    When The user reads the valid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run button
+    Then The user should see output in the Output console
+
+    Examples: 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
