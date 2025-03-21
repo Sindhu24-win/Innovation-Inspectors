@@ -1,0 +1,3460 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Mar 20, 2025 03:43:38 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Mar 20, 2025 03:43:38 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Mar 20, 2025 03:44:43 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>1</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='50%'>
+<b>1</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='50%'><b>1</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='43%'><b>28</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='56%'><b>36</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='42%'><b>81</b> steps passed</small></div>
+<div>
+<small data-tooltip='19%'><b>36</b> steps failed,
+<b>72</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Array Navigation":59.77,"Linked List Navigation":2.492
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@LinkedList</td>
+<td>0</td>
+<td>36</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@Array</td>
+<td>28</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Engineer</td>
+<td>Sindhu Thanigesan</td>
+</tr>
+<tr>
+<td>Project</td>
+<td>Innovation_Inspectors</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>Google Chrome</td>
+</tr>
+<tr>
+<td>os</td>
+<td>windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 1,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 28,
+failChild: 36,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 81,
+failGrandChild: 36,
+warningGrandChild: 0,
+skipGrandChild: 72,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@LinkedList</a><a class="dropdown-item" href="#">@Array</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Array Navigation</p>
+            <p class="text-sm">
+              <span>3:43:41 PM</span> / <span>00:00:59:770</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Array Navigation</h5>
+<span class='badge badge-success'>03.20.2025 3:43:41 PM</span>
+<span class='badge badge-danger'>03.20.2025 3:44:40 PM</span>
+<span class='badge badge-default'>00:00:59:770</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Home page</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to login with valid credentials</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_in_the_home_page()">
+                <span>Given The user is in the Home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_on_sign_in_and_enter_username_and_password_and_clicks_on_login_button()">
+                <span>When The user clicks on Sign in and enter username and password and clicks on Login button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_logged_in_successfully()">
+                <span>Then The user should be logged in successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="8"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Array data structure page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_in_the_home_page_after_sign_in_with_valid_credentials()">
+                <span>Given The user is in the Home page after Sign in with valid credentials</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_the_getting_started_button_in_array_panel()">
+                <span>When The user clicks the Getting Started button in Array Panel</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_directed_to_array_data_structure_page()">
+                <span>Then The user should be directed to Array Data Structure Page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="13"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Arrays in Python page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_in_the_array_page_after_sign_in()">
+                <span>Given The user is in the Array page after Sign in</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_arrays_in_python_link()">
+                <span>When The user clicks Arrays in Python link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_arrays_in_python_page()">
+                <span>Then The user should be redirected to Arrays in Python page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="18"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to try Editor page for Arrays in Python page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_on_the_arrays_in_python_page()">
+                <span>Given The user is on the Arrays in Python page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_try_here_button_in_arrays_in_python_page()">
+                <span>When The user clicks Try Here button in Arrays in Python page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to a page having an try Editor with a Run button to test</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="23"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error when click on Run button without entering code</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_in_the_try_editor_page()">
+                <span>Given The user is in the tryEditor page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_the_run_button_without_entering_the_code_in_the_editor()">
+                <span>When The user clicks the Run Button without entering the code in the Editor</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_able_to_see_error_message_in_alert_window()">
+                <span>Then The user should be able to see error message in alert window</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="28"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error for invalid python code read from "<SheetName>"  and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="29"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error for invalid python code read from "pythonCode"  and 1</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads the invalid python code from  excel "pythonCode"  and 1 and  enters in the Editor and clicks on Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should be able to see an error message in alert window</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="34"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code read from "<SheetName>"  and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="35"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code read from "pythonCode"  and 0</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads the valid python code from excel "pythonCode" and 0 and  enters in the Editor and click the Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see output in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="40"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Arrays using List page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_on_the_arrays_using_list_page()">
+                <span>Given The user is on the Arrays using List page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_try_here_button_in_arrays_using_list_page()">
+                <span>When The user clicks Try Here button in Arrays using List page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to a page having an try Editor with a Run button to test</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="45"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="46"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error for invalid python code read from "pythonCode" and 1</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads  the invalid python code from excel "pythonCode" and 1 and enters in Arrays using List Editor and click the Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see an error message in alert window</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="51"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="52"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code read from "pythonCode" and 0</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads  the valid python code from excel "pythonCode" and 0 and  enters in Arrays using List Editor and click the Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see output for Arrays using list in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="57"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Basic Operations in Lists page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_on_the_basic_operations_in_lists_page()">
+                <span>Given The user is on the Basic Operations in Lists page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_try_here_button_in_basic_operations_in_lists_page()">
+                <span>When The user clicks Try Here button in Basic Operations in Lists page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to a page having an try Editor with a Run button to test</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="62"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="63"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error for invalid python code read from "pythonCode" and 1</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user read the invalid python code from excel "pythonCode" and 1 and  enters in Basic Operations Editor and click the Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see an error message for Basic Operations in alert window</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="68"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code read from "<SheetName>" and <RowNumber> for Basic Operations in Lists page</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="69"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code read from "pythonCode" and 0 for Basic Operations in Lists page</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user write the valid python code from excel "pythonCode" and 0 and enters in Basic Operations Editor and click the Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see output for Basic Operations in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="74"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Applications of Array page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_in_the_array_page_after_sign_in()">
+                <span>Given The user is in the Array page after Sign in</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_applications_of_array_link()">
+                <span>When The user clicks Applications of Array link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_applications_of_array_page()">
+                <span>Then The user should be redirected to Applications of Array page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="79"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to try Editor page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_on_the_applications_of_array_page()">
+                <span>Given The user is on the Applications of Array page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_try_here_button_in_application_of_arrays_page()">
+                <span>When The user clicks Try Here button in Application of Arrays page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to a page having an try Editor with a Run button to test</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="84"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error for invalid python code  read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="85"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error for invalid python code  read from "pythonCode" and 1</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads the invalid python code from excel "pythonCode" and 1 and enters  in  Applications of Arrays Editor and click the Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see error message in alert window</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="90"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code  read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="91"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code  read from "pythonCode" and 0</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads the valid  python code from excel "pythonCode" and 0 and  enters in Application of Arrays Editor and click the Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see output for Application of Arrays in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="96"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Practice Questions Page for Applications of Array page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_in_the_array_page_after_sign_in()">
+                <span>Given The user is in the Array page after Sign in</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_practice_questions_link()">
+                <span>When The user clicks Practice Questions link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_practice_page()">
+                <span>Then The user should be redirected to Practice page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="101"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Search the array Page from Practice question page of Applications of Array page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_in_the_Practice_Page()">
+                <span>Given The user is in the practice page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_the_search_the_array_link()">
+                <span>When The user clicks the Search the array link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_question_page_contains_a_question_and_try_editor_with_run_and_submit_button()">
+                <span>Then The user should be redirected to Question page contains a question,and try Editor with Run and Submit button</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="106"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error when click on Run button without entering code</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_in_the_try_Editor_in_question_page()">
+                <span>Given The user is in the try editor in question page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_did_not_write_the_code_for_search_element_in_editor_and_click_the_run_button()">
+                <span>When The user did not  write the code for search element in  Editor and Click the Run Button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_able_to_see_error_message_for_search_element_in_alert_window()">
+                <span>Then The user should be able to see error message for search element  in alert window</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="111"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to run valid python code  read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="112"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to run valid python code  read from "pythonCode" and 2</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the try editor in question page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads the valid python code for search element from excel "pythonCode" and 2 and enters in Editor and Click the Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see output for search element  in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="117"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Max Consecutive Ones Page from Practice questions page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_in_the_practice_page()">
+                <span>Given The user is in the practice  page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_the_max_consecutive_ones_link()">
+                <span>When The user clicks the Max ConsecutiveOnes link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_question_page_contains_a_question_and_try_editor_with_run_and_submit_button()">
+                <span>Then The user should be redirected to Question page contains a question,and try Editor with Run and Submit button</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="122"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to run valid python code read from "<SheetName>" and <RowNumber> for Max Consecutive Ones question</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="123"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to run valid python code read from "pythonCode" and 4 for Max Consecutive Ones question</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor in question page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads the valid python code from excel "pythonCode" and 4 and enters in Editor for maximum number of consecutive ones and Click the Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see output for maximum number of consecutive ones  in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="128"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Find Numbers with Even Number of Digits Page from Practice questions page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_in_the_Practice_Page()">
+                <span>Given The user is in the practice page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_the_find_numbers_with_even_number_of_digits_link()">
+                <span>When The user clicks the Find Numbers with Even Number of Digits link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_question_page_contains_a_question_and_try_editor_with_run_and_submit_button()">
+                <span>Then The user should be redirected to Question page contains a question,and try Editor with Run and Submit button</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="133"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code  read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="134"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code  read from "pythonCode" and 6</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor in question page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads the valid python code from excel "pythonCode" and 6 and  enters in Editor for even number of integers and Click the Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see output for even number of integers in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="139"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Squares of a Sorted Array Page from Practice questions page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_is_in_the_Practice_page()">
+                <span>Given The user is in the  practice  page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_clicks_the_squares_of_a_sorted_array_link()">
+                <span>When The user clicks the Squares of a Sorted Array link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_question_page_contains_a_question_and_try_editor_with_run_and_submit_button()">
+                <span>Then The user should be redirected to Question page contains a question,and try Editor with Run and Submit button</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="144"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code  read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="145"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid python code  read from "pythonCode" and 8</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor in question page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads the valid python code from excel "pythonCode" and 8 and enters in Editor for squares of each number in Editor and Click the Run Button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see output for squares of each number  in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="150"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Linked List Navigation</p>
+            <p class="text-sm">
+              <span>3:44:41 PM</span> / <span>00:00:02:492</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Linked List Navigation</h5>
+<span class='badge badge-success'>03.20.2025 3:44:41 PM</span>
+<span class='badge badge-danger'>03.20.2025 3:44:43 PM</span>
+<span class='badge badge-default'>00:00:02:492</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=150</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="151"><span class="badge log fail-bg mr-2">Fail</span>Verify the user is able to Sign in to DSAlgo Portal</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_in_the_home_page()">
+                <span>Given The user is in the Home Page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_home_page(LinkedlistSteps.java:41)
+	at ✽.The user is in the Home Page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:7)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_the_sign_in_button_to_enter_username_and_password()">
+                <span>When The user clicks the Sign in button to enter username and password</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_on_login_and_sees_logged_in_message()">
+                <span>Then The user clicks on Login and sees logged in message</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="156"><span class="badge log fail-bg mr-2">Fail</span>Verify the user is able to go to LinkedList page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_in_home_page_after_sign_in()">
+                <span>Given The user is in home page after sign in</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_home_page_after_sign_in(LinkedlistSteps.java:59)
+	at ✽.The user is in home page after sign in(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:12)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_get_started_button_in_linkedlist_panel()">
+                <span>When The user clicks Get Started button in Linkedlist panel</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_land_on_linked_list_page()">
+                <span>Then The user should land on LinkedList page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="161"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to Introduction page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_in_the_Linked_list_page_after_sign_in()">
+                <span>Given The user is in the Linked List page after Sign in</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_Linked_list_page_after_sign_in(LinkedlistSteps.java:77)
+	at ✽.The user is in the Linked List page after Sign in(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:17)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_introduction_link()">
+                <span>When The user clicks Introduction link</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_introduction_page()">
+                <span>Then The user should be redirected to Introduction page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="166"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to try Editor page for Introduction page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_introduction_page()">
+                <span>Given The user is on the Introduction page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_introduction_page(LinkedlistSteps.java:95)
+	at ✽.The user is on the Introduction page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:22)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_try_here_button_in_introduction_page()">
+                <span>When The user clicks Try Here button in Introduction page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.ArraySteps.the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to a page having an try Editor with a Run button to test</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="171"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for when click on Run button without entering code</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_introduction()">
+                <span>Given The user is in the tryEditor page for Introduction</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_introduction(LinkedlistSteps.java:107)
+	at ✽.The user is in the tryEditor page for Introduction(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:27)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_the_run_button_without_entering_the_code_in_the_introduction_try_editor()">
+                <span>When The user clicks the Run Button without entering the code in the Introduction Try Editor</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_able_to_see_error_message_for_introduction_in_alert_window()">
+                <span>Then The user should be able to see error message for Introduction  in alert window</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="176"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="177"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "pythonCode" and 0</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is in the Introduction tryEditor page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_introduction_try_editor_page(LinkedlistSteps.java:125)
+	at ✽.The user is in the Introduction tryEditor page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:32)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads the valid python code from excel "pythonCode" and 0 and enters in Introduction Try Editor and click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see output for Introduction in the console</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="182"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="183"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "pythonCode" and 1</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is in the tryEditor page for Introduction</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_introduction(LinkedlistSteps.java:107)
+	at ✽.The user is in the tryEditor page for Introduction(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:41)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads  the invalid python code from excel "pythonCode" and 1 and enters in Introduction Try Editor and click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see an error message for Introduction in alert window</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="188"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to Creating Linked List page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_creating_linked_list_page()">
+                <span>Given The user is on the Creating Linked List page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_creating_linked_list_page(LinkedlistSteps.java:155)
+	at ✽.The user is on the Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:50)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_try_here_button_in_creating_linked_list_page()">
+                <span>When The user clicks Try Here button in Creating Linked List page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_creating_linked_list_page_having_an_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to Creating Linked list page having an try Editor with a Run button to test</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="193"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error when click on Run button without entering code</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_creating_linked_list_page()">
+                <span>Given The user is in the tryEditor page for Creating Linked List page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_creating_linked_list_page(LinkedlistSteps.java:173)
+	at ✽.The user is in the tryEditor page for Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:55)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_the_run_button_without_entering_the_code_in_the_creating_linked_list_try_editor()">
+                <span>When The user clicks the Run Button without entering the code in the Creating Linked List Try Editor</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_able_to_see_error_message_for_creating_linked_list_in_alert_window()">
+                <span>Then The user should be able to see error message for Creating Linked List  in alert window</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="198"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="199"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "pythonCode" and 1</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is in the tryEditor page for Creating Linked List page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_creating_linked_list_page(LinkedlistSteps.java:173)
+	at ✽.The user is in the tryEditor page for Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:60)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads the invalid python code from excel "pythonCode" and 1 and enters in Creating Linked List Try Editor and click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see an error message for Creating Linked List in alert window</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="204"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="205"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "pythonCode" and 0</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is in the tryEditor page for Creating Linked List page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_creating_linked_list_page(LinkedlistSteps.java:173)
+	at ✽.The user is in the tryEditor page for Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:69)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user raeds the valid python code from excel "pythonCode" and 0 and enters in Creating Linked List Try Editor and click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see output for Creating Linked List  in the console</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="210"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to Types of Linked List page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_types_of_linked_list_page()">
+                <span>Given The user is on the Types of Linked List page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_types_of_linked_list_page(LinkedlistSteps.java:215)
+	at ✽.The user is on the Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:78)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_try_here_button_in_types_of_linked_list_page()">
+                <span>When The user clicks Try Here button in Types of Linked List page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_types_of_linked_list_page_having_an_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to Types of Linked List page having an try Editor with a Run button to test</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="215"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error when click on Run button without entering code</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_types_of_linked_list_page()">
+                <span>Given The user is in the tryEditor page for Types of Linked List page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_types_of_linked_list_page(LinkedlistSteps.java:233)
+	at ✽.The user is in the tryEditor page for Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:83)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_the_run_button_without_entering_the_code_in_the_creating_linked_list_try_editor()">
+                <span>When The user clicks the Run Button without entering the code in the Creating Linked List Try Editor</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_able_to_see_error_message_for_creating_linked_list_in_alert_window()">
+                <span>Then The user should be able to see error message for Creating Linked List  in alert window</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="220"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="221"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "pythonCode" and 1</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is in the tryEditor page for Types of Linked List page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_types_of_linked_list_page(LinkedlistSteps.java:233)
+	at ✽.The user is in the tryEditor page for Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:88)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads the invalid python code from excel "pythonCode" and 1 and enters  in Types of Linked List Try Editor and click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see an error message for Types of Linked List in alert window</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="226"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="227"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "pythonCode" and 0</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is in the tryEditor page for Types of Linked List page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_types_of_linked_list_page(LinkedlistSteps.java:233)
+	at ✽.The user is in the tryEditor page for Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:97)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads the valid python code  from excel "pythonCode" and 0 and enters in  Types of Linked List Try Editor and click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see output for Types of Linked List  in the console</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="232"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to Implement Linked List in Python page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_in_the_linked_list_page_after_sign_in()">
+                <span>Given The user is in the  Linked List  page after Sign in</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_linked_list_page_after_sign_in(LinkedlistSteps.java:263)
+	at ✽.The user is in the  Linked List  page after Sign in(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:106)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_implement_linked_list_in_python_link()">
+                <span>When The user clicks Implement Linked List in Python link</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_implement_linked_list_in_python_page()">
+                <span>Then The user should be redirected to Implement Linked List in Python page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="237"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to try Editor page for Implement Linked List in Python page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_implement_linked_list_in_python_page()">
+                <span>Given The user is on the Implement Linked List in Python page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_implement_linked_list_in_python_page(LinkedlistSteps.java:281)
+	at ✽.The user is on the Implement Linked List in Python page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:111)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_try_here_button_in_implement_linked_list_in_python_page()">
+                <span>When The user clicks Try Here button in Implement Linked List in Python page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_implement_linked_list_page_having_an_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to Implement Linked List page having an try Editor with a Run button to test</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="242"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error when click on Run button without entering code</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_implement_linked_list()">
+                <span>Given The user is in the tryEditor page for Implement Linked List</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_implement_linked_list(LinkedlistSteps.java:299)
+	at ✽.The user is in the tryEditor page for Implement Linked List(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:116)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_the_run_button_without_entering_the_code_in_the_implement_linked_list_try_editor()">
+                <span>When The user clicks the Run Button without entering the code in the Implement Linked List Try Editor</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_able_to_see_error_message_for_implement_linked_list_in_alert_window()">
+                <span>Then The user should be able to see error message for Implement Linked List   in alert window</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="247"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="248"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "pythonCode" and 1</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is in the tryEditor page for Implement Linked List</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_implement_linked_list(LinkedlistSteps.java:299)
+	at ✽.The user is in the tryEditor page for Implement Linked List(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:121)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads the valid python code  from excel "pythonCode" and 1 and enters in Implement Linked List Try Editor and click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see an error message for Implement Linked List  in alert window</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="253"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="254"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "pythonCode" and 0</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is in the tryEditor page for Implement Linked List</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_implement_linked_list(LinkedlistSteps.java:299)
+	at ✽.The user is in the tryEditor page for Implement Linked List(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:130)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads the valid python code from excel "pythonCode" and 0  and enters in Implement Linked List Try Editor and click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see output for Implement Linked List in the console</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="259"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to Traversal Page for Linked List page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_traversal_page()">
+                <span>Given The user is on Traversal page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_traversal_page(LinkedlistSteps.java:341)
+	at ✽.The user is on Traversal page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:139)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_traversal_link()">
+                <span>When The user clicks Traversal link</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_traversal_page()">
+                <span>Then The user should be redirected to Traversal page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="264"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to try Editor  page for Traversal page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_traversal_page()">
+                <span>Given The user is on the  Traversal page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_traversal_page(LinkedlistSteps.java:359)
+	at ✽.The user is on the  Traversal page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:144)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_the_try_here_button_in_traversal_page()">
+                <span>When The user clicks the Try here  button in Traversal page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_try_editor_page_when_clicking_on_try_here_button()">
+                <span>Then The user should be redirected to Try Editor page when clicking on Try here button</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="269"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error when click on Run button without entering code</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_traversal()">
+                <span>Given The user is on the tryEditor  page for Traversal</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_traversal(LinkedlistSteps.java:377)
+	at ✽.The user is on the tryEditor  page for Traversal(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:149)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_did_not_write_the_code_in_traversal_try_editor_and_click_the_submit_button()">
+                <span>When The user did not  write the code in  Traversal Try Editor and Click the Submit Button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_able_to_see_error_message_for_traversal_in_alert_window()">
+                <span>Then The user should be able to see error message for Traversal  in alert window</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="274"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="275"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "pythonCode" and 1</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is on the tryEditor  page for Traversal</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_traversal(LinkedlistSteps.java:377)
+	at ✽.The user is on the tryEditor  page for Traversal(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:154)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads the invalid python code from excel "pythonCode" and 1 and enters  in  Traversal Try Editor and Click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see an error message for Traversal  in alert window</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="280"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="281"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "pythonCode" and 0</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is on the tryEditor  page for Traversal</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_traversal(LinkedlistSteps.java:377)
+	at ✽.The user is on the tryEditor  page for Traversal(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:163)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads the valid python code from excel "pythonCode" and 0 and enters   in Traversal Try Editor and Click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see output for Traversal  in the console</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="286"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to Insertion page from Linked List page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_linked_list_page()">
+                <span>Given The user is on the Linked List page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_linked_list_page(LinkedlistSteps.java:419)
+	at ✽.The user is on the Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:172)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_the_insertion_link()">
+                <span>When The user clicks the Insertion  link</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_insertion_page_from_linked_list_page()">
+                <span>Then The user should be redirected to Insertion page from Linked List page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="291"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to try Editor page from  Insertion page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_insertion_page()">
+                <span>Given The user is on the Insertion page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_insertion_page(LinkedlistSteps.java:437)
+	at ✽.The user is on the Insertion page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:177)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_the_try_here_button_in_insertion_page()">
+                <span>When The user clicks the Try here button in Insertion page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_try_editor_page_from_insertion_page()">
+                <span>Then The user should be redirected to Try Editor page from Insertion page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="296"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error when click on Run button without entering code</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_insertion()">
+                <span>Given The user is on the Try Editor page for Insertion</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_insertion(LinkedlistSteps.java:455)
+	at ✽.The user is on the Try Editor page for Insertion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:182)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_did_not_write_the_code_in_insertion_try_editor_and_click_the_submit_button()">
+                <span>When The user did not  write the code in  Insertion Try Editor and Click the Submit Button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_able_to_see_error_message_for_insertion_in_alert_window()">
+                <span>Then The user should be able to see error message for Insertion in alert window</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="301"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="302"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for valid python code read from "pythonCode" and 0</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is on the Try Editor page for Insertion</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_insertion(LinkedlistSteps.java:455)
+	at ✽.The user is on the Try Editor page for Insertion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:187)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads the valid python code  from excel "pythonCode" and 0 and enters in Insertion Try Editor and Click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see output for Insertion in the console</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="307"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="308"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "pythonCode" and 1</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is on the Try Editor page for Insertion</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_insertion(LinkedlistSteps.java:455)
+	at ✽.The user is on the Try Editor page for Insertion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:196)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads the invalid python code from excel "pythonCode" and 1 and enters in Insertion Try Editor and Click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see an error message for Insertion  in alert window</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="313"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to Deletion Page from  Linked List page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_deletion_page()">
+                <span>Given The user is on the Deletion page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_deletion_page(LinkedlistSteps.java:497)
+	at ✽.The user is on the Deletion page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:205)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_the_deletion_link()">
+                <span>When The user clicks the Deletion link</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_deletion_page()">
+                <span>Then The user should be redirected to Deletion page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="318"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to try Editor page for Deletion page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_deletion_page()">
+                <span>Given The user is on the Deletion page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_deletion_page(LinkedlistSteps.java:497)
+	at ✽.The user is on the Deletion page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:210)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_the_try_here_button_in_deletion_page()">
+                <span>When The user clicks the Try Here  button in Deletion page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_deletion_try_editor_page()">
+                <span>Then The user should be redirected to Deletion  Try Editor  page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="323"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error when click on Run button without entering code</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_deletion()">
+                <span>Given The user is on the tryEditor  page for Deletion</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_deletion(LinkedlistSteps.java:527)
+	at ✽.The user is on the tryEditor  page for Deletion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:215)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_did_not_write_the_code_in_deletion_try_editor_and_click_the_submit_button()">
+                <span>When The user did not  write the code in Deletion Try Editor and Click the Submit Button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_able_to_see_error_message_for_deletion_in_alert_window()">
+                <span>Then The user should be able to see error message for Deletion  in alert window</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="328"><span class="badge log fail-bg mr-2">Fail</span>Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_Try_editor_page_for_deletion()">
+                <span>Given The user is on the Try Editor  page for Deletion</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_Try_editor_page_for_deletion(LinkedlistSteps.java:545)
+	at ✽.The user is on the Try Editor  page for Deletion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:220)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_reads_the_invalid_python_code_from_excel_and_row_number_and_enters_in_deletion_try_editor_and_click_the_submit_button(java.lang.String)">
+                <span>When The user  reads the invalid python code  from excel "<SheetName>" and <RowNumber> and enters in Deletion Try Editor and Click the Submit Button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_able_to_see_an_error_message_for_deletion_in_the_alert_window()">
+                <span>Then The user should  be able to see an error message for Deletion in the alert window</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="333"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for  valid python code read from "<SheetName>" and <RowNumber></div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="334"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to see output for  valid python code read from "pythonCode" and 0</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given The user is on the tryEditor  page for Deletion</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_deletion(LinkedlistSteps.java:527)
+	at ✽.The user is on the tryEditor  page for Deletion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:225)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When The user reads the valid python code from excel "pythonCode" and 0 and enters in Deletion Try Editor and Click the Run Button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then The user should able to see output for Deletion in the console</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="339"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to navigate to Practice Questions  page from Linked List page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="StepDefinitions.LinkedlistSteps.the_user_is_on_the_practice_questions_page()">
+                <span>Given The user is on the Practice Questions  page</span>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_practice_questions_page(LinkedlistSteps.java:575)
+	at ✽.The user is on the Practice Questions  page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:234)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_clicks_on_practice_questions_link_in_linked_list_page()">
+                <span>When The user clicks on Practice Questions link in Linked List page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LinkedlistSteps.the_user_should_be_redirected_to_practice_questions_page()">
+                <span>Then The user should be redirected to Practice Questions page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>36</span>
+</span>
+<p class="name">@LinkedList</p>
+<p class="duration text-sm">36 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@LinkedList</h4>
+<span status="fail" class='badge log badge-danger'>36 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='151'>Verify the user is able to Sign in to DSAlgo Portal</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify the user is able to Sign in to DSAlgo Portal</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='156'>Verify the user is able to go to LinkedList page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify the user is able to go to LinkedList page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='161'>Verify that user is able to navigate to Introduction page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Introduction page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='166'>Verify that user is able to navigate to try Editor page for Introduction page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to try Editor page for Introduction page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='171'>Verify that user receives error for when click on Run button without entering code</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for when click on Run button without entering code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='177'>Verify that user is able to see output for valid python code read from "pythonCode" and 0</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='183'>Verify that user receives error for invalid python code read from "pythonCode" and 1</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='188'>Verify that user is able to navigate to Creating Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Creating Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='193'>Verify that user receives error when click on Run button without entering code</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='199'>Verify that user receives error for invalid python code read from "pythonCode" and 1</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='205'>Verify that user is able to see output for valid python code read from "pythonCode" and 0</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='210'>Verify that user is able to navigate to Types of Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Types of Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='215'>Verify that user receives error when click on Run button without entering code</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='221'>Verify that user receives error for invalid python code read from "pythonCode" and 1</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='227'>Verify that user is able to see output for valid python code read from "pythonCode" and 0</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='232'>Verify that user is able to navigate to Implement Linked List in Python page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Implement Linked List in Python page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='237'>Verify that user is able to navigate to try Editor page for Implement Linked List in Python page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to try Editor page for Implement Linked List in Python page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='242'>Verify that user receives error when click on Run button without entering code</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='248'>Verify that user receives error for invalid python code read from "pythonCode" and 1</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='254'>Verify that user is able to see output for valid python code read from "pythonCode" and 0</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='259'>Verify that user is able to navigate to Traversal Page for Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Traversal Page for Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='264'>Verify that user is able to navigate to try Editor page for Traversal page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to try Editor page for Traversal page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='269'>Verify that user receives error when click on Run button without entering code</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='275'>Verify that user receives error for invalid python code read from "pythonCode" and 1</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='281'>Verify that user is able to see output for valid python code read from "pythonCode" and 0</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='286'>Verify that user is able to navigate to Insertion page from Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Insertion page from Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='291'>Verify that user is able to navigate to try Editor page from Insertion page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to try Editor page from Insertion page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='296'>Verify that user receives error when click on Run button without entering code</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='302'>Verify that user is able to see output for valid python code read from "pythonCode" and 0</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='308'>Verify that user receives error for invalid python code read from "pythonCode" and 1</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='313'>Verify that user is able to navigate to Deletion Page from Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Deletion Page from Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='318'>Verify that user is able to navigate to try Editor page for Deletion page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to try Editor page for Deletion page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='323'>Verify that user receives error when click on Run button without entering code</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='328'>Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber></a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber></span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='334'>Verify that user is able to see output for valid python code read from "pythonCode" and 0</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='339'>Verify that user is able to navigate to Practice Questions page from Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Practice Questions page from Linked List page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>28</span>
+</span>
+<p class="name">@Array</p>
+<p class="duration text-sm">28 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Array</h4>
+<span status="pass" class='badge log pass-bg'>28 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Verify that user is able to navigate to Home page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to Home page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Verify that user is able to login with valid credentials</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to login with valid credentials</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='8'>Verify that user is able to navigate to Array data structure page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to Array data structure page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='13'>Verify that user is able to navigate to Arrays in Python page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to Arrays in Python page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='18'>Verify that user is able to navigate to try Editor page for Arrays in Python page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to try Editor page for Arrays in Python page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='23'>Verify that user receives error when click on Run button without entering code</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user receives error when click on Run button without entering code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:43:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='29'>Verify that user receives error for invalid python code read from "pythonCode" and 1</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='35'>Verify that user is able to see output for valid python code read from "pythonCode" and 0</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='40'>Verify that user is able to navigate to Arrays using List page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to Arrays using List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:07 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='46'>Verify that user receives error for invalid python code read from "pythonCode" and 1</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='52'>Verify that user is able to see output for valid python code read from "pythonCode" and 0</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:16 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>Verify that user is able to navigate to Basic Operations in Lists page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to Basic Operations in Lists page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='63'>Verify that user receives error for invalid python code read from "pythonCode" and 1</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='69'>Verify that user is able to see output for valid python code read from "pythonCode" and 0 for Basic Operations in Lists page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0 for Basic Operations in Lists page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>Verify that user is able to navigate to Applications of Array page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to Applications of Array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>Verify that user is able to navigate to try Editor page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to try Editor page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='85'>Verify that user receives error for invalid python code read from "pythonCode" and 1</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='91'>Verify that user is able to see output for valid python code read from "pythonCode" and 0</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='96'>Verify that user is able to navigate to Practice Questions Page for Applications of Array page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to Practice Questions Page for Applications of Array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:32 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='101'>Verify that user is able to navigate to Search the array Page from Practice question page of Applications of Array page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to Search the array Page from Practice question page of Applications of Array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='106'>Verify that user receives error when click on Run button without entering code</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user receives error when click on Run button without entering code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='112'>Verify that user is able to run valid python code read from "pythonCode" and 2</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to run valid python code read from "pythonCode" and 2</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='117'>Verify that user is able to navigate to Max Consecutive Ones Page from Practice questions page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to Max Consecutive Ones Page from Practice questions page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='123'>Verify that user is able to run valid python code read from "pythonCode" and 4 for Max Consecutive Ones question</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to run valid python code read from "pythonCode" and 4 for Max Consecutive Ones question</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='128'>Verify that user is able to navigate to Find Numbers with Even Number of Digits Page from Practice questions page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to Find Numbers with Even Number of Digits Page from Practice questions page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:37 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='134'>Verify that user is able to see output for valid python code read from "pythonCode" and 6</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 6</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:39 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='139'>Verify that user is able to navigate to Squares of a Sorted Array Page from Practice questions page</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to navigate to Squares of a Sorted Array Page from Practice questions page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:44:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='145'>Verify that user is able to see output for valid python code read from "pythonCode" and 8</a>
+<div class="">
+<span class="badge badge-default">Array Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 8</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>36</span>
+</span>
+<p class="name">io.cucumber.java.PendingException</p>
+<p class="duration text-sm">36 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>io.cucumber.java.PendingException</h4>
+<span status="fail" class='badge log badge-danger'>36 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='152'>Given The user is in the Home Page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify the user is able to Sign in to DSAlgo Portal.Given The user is in the Home Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='157'>Given The user is in home page after sign in</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify the user is able to go to LinkedList page.Given The user is in home page after sign in</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='162'>Given The user is in the Linked List page after Sign in</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Introduction page.Given The user is in the Linked List page after Sign in</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='167'>Given The user is on the Introduction page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to try Editor page for Introduction page.Given The user is on the Introduction page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='172'>Given The user is in the tryEditor page for Introduction</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for when click on Run button without entering code.Given The user is in the tryEditor page for Introduction</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='178'>Given The user is in the Introduction tryEditor page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0.Given The user is in the Introduction tryEditor page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='184'>Given The user is in the tryEditor page for Introduction</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1.Given The user is in the tryEditor page for Introduction</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='189'>Given The user is on the Creating Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Creating Linked List page.Given The user is on the Creating Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='194'>Given The user is in the tryEditor page for Creating Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code.Given The user is in the tryEditor page for Creating Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='200'>Given The user is in the tryEditor page for Creating Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1.Given The user is in the tryEditor page for Creating Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='206'>Given The user is in the tryEditor page for Creating Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0.Given The user is in the tryEditor page for Creating Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='211'>Given The user is on the Types of Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Types of Linked List page.Given The user is on the Types of Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='216'>Given The user is in the tryEditor page for Types of Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code.Given The user is in the tryEditor page for Types of Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='222'>Given The user is in the tryEditor page for Types of Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1.Given The user is in the tryEditor page for Types of Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='228'>Given The user is in the tryEditor page for Types of Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0.Given The user is in the tryEditor page for Types of Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='233'>Given The user is in the Linked List page after Sign in</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Implement Linked List in Python page.Given The user is in the Linked List page after Sign in</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='238'>Given The user is on the Implement Linked List in Python page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to try Editor page for Implement Linked List in Python page.Given The user is on the Implement Linked List in Python page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='243'>Given The user is in the tryEditor page for Implement Linked List</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code.Given The user is in the tryEditor page for Implement Linked List</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='249'>Given The user is in the tryEditor page for Implement Linked List</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1.Given The user is in the tryEditor page for Implement Linked List</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='255'>Given The user is in the tryEditor page for Implement Linked List</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0.Given The user is in the tryEditor page for Implement Linked List</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='260'>Given The user is on Traversal page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Traversal Page for Linked List page.Given The user is on Traversal page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='265'>Given The user is on the Traversal page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to try Editor page for Traversal page.Given The user is on the Traversal page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='270'>Given The user is on the tryEditor page for Traversal</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code.Given The user is on the tryEditor page for Traversal</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='276'>Given The user is on the tryEditor page for Traversal</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1.Given The user is on the tryEditor page for Traversal</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='282'>Given The user is on the tryEditor page for Traversal</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0.Given The user is on the tryEditor page for Traversal</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='287'>Given The user is on the Linked List page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Insertion page from Linked List page.Given The user is on the Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='292'>Given The user is on the Insertion page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to try Editor page from Insertion page.Given The user is on the Insertion page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='297'>Given The user is on the Try Editor page for Insertion</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code.Given The user is on the Try Editor page for Insertion</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='303'>Given The user is on the Try Editor page for Insertion</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0.Given The user is on the Try Editor page for Insertion</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='309'>Given The user is on the Try Editor page for Insertion</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "pythonCode" and 1.Given The user is on the Try Editor page for Insertion</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='314'>Given The user is on the Deletion page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Deletion Page from Linked List page.Given The user is on the Deletion page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='319'>Given The user is on the Deletion page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to try Editor page for Deletion page.Given The user is on the Deletion page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='324'>Given The user is on the tryEditor page for Deletion</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error when click on Run button without entering code.Given The user is on the tryEditor page for Deletion</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='329'>Given The user is on the Try Editor page for Deletion</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber>.Given The user is on the Try Editor page for Deletion</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='335'>Given The user is on the tryEditor page for Deletion</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to see output for valid python code read from "pythonCode" and 0.Given The user is on the tryEditor page for Deletion</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:44:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='150' id='340'>Given The user is on the Practice Questions page</a>
+<div class="">
+<span class="badge badge-default">Linked List Navigation.Verify that user is able to navigate to Practice Questions page from Linked List page.Given The user is on the Practice Questions page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

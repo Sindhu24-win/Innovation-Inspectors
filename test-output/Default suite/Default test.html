@@ -1,0 +1,661 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>28/36/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Mar 20 15:43:35 EDT 2025</td>
+</tr>
+<tr><td>Total time:</td><td>71 seconds (71479 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code read from "pythonCode" and 0", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_creating_linked_list_page(LinkedlistSteps.java:173)
+	at ✽.The user is in the tryEditor page for Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:69)
+</pre></div><a href='#' onClick='toggleBox("stack-trace425246937", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace425246937'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_creating_linked_list_page(LinkedlistSteps.java:173)
+	at ✽.The user is in the tryEditor page for Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:69)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Types of Linked List page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_types_of_linked_list_page(LinkedlistSteps.java:215)
+	at ✽.The user is on the Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:78)
+</pre></div><a href='#' onClick='toggleBox("stack-trace268961738", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace268961738'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_types_of_linked_list_page(LinkedlistSteps.java:215)
+	at ✽.The user is on the Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:78)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error when click on Run button without entering code", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_traversal(LinkedlistSteps.java:377)
+	at ✽.The user is on the tryEditor  page for Traversal(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:149)
+</pre></div><a href='#' onClick='toggleBox("stack-trace531196203", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace531196203'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_traversal(LinkedlistSteps.java:377)
+	at ✽.The user is on the tryEditor  page for Traversal(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:149)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for invalid python code read from "pythonCode" and 1", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_creating_linked_list_page(LinkedlistSteps.java:173)
+	at ✽.The user is in the tryEditor page for Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:60)
+</pre></div><a href='#' onClick='toggleBox("stack-trace509636452", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace509636452'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_creating_linked_list_page(LinkedlistSteps.java:173)
+	at ✽.The user is in the tryEditor page for Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:60)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code read from "pythonCode" and 0", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_insertion(LinkedlistSteps.java:455)
+	at ✽.The user is on the Try Editor page for Insertion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:187)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1882145060", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1882145060'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_insertion(LinkedlistSteps.java:455)
+	at ✽.The user is on the Try Editor page for Insertion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:187)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error when click on Run button without entering code", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_insertion(LinkedlistSteps.java:455)
+	at ✽.The user is on the Try Editor page for Insertion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:182)
+</pre></div><a href='#' onClick='toggleBox("stack-trace449953373", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace449953373'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_insertion(LinkedlistSteps.java:455)
+	at ✽.The user is on the Try Editor page for Insertion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:182)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to try Editor page for Implement Linked List in Python page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_implement_linked_list_in_python_page(LinkedlistSteps.java:281)
+	at ✽.The user is on the Implement Linked List in Python page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:111)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1165086398", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1165086398'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_implement_linked_list_in_python_page(LinkedlistSteps.java:281)
+	at ✽.The user is on the Implement Linked List in Python page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:111)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code read from "pythonCode" and 0", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_traversal(LinkedlistSteps.java:377)
+	at ✽.The user is on the tryEditor  page for Traversal(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:163)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1412619426", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1412619426'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_traversal(LinkedlistSteps.java:377)
+	at ✽.The user is on the tryEditor  page for Traversal(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:163)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Deletion Page from  Linked List page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_deletion_page(LinkedlistSteps.java:497)
+	at ✽.The user is on the Deletion page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:205)
+</pre></div><a href='#' onClick='toggleBox("stack-trace22800011", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace22800011'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_deletion_page(LinkedlistSteps.java:497)
+	at ✽.The user is on the Deletion page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:205)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the user is able to Sign in to DSAlgo Portal", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_home_page(LinkedlistSteps.java:41)
+	at ✽.The user is in the Home Page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:7)
+</pre></div><a href='#' onClick='toggleBox("stack-trace784714772", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace784714772'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_home_page(LinkedlistSteps.java:41)
+	at ✽.The user is in the Home Page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:7)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to try Editor page from  Insertion page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_insertion_page(LinkedlistSteps.java:437)
+	at ✽.The user is on the Insertion page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:177)
+</pre></div><a href='#' onClick='toggleBox("stack-trace403041430", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace403041430'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_insertion_page(LinkedlistSteps.java:437)
+	at ✽.The user is on the Insertion page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:177)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Implement Linked List in Python page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_linked_list_page_after_sign_in(LinkedlistSteps.java:263)
+	at ✽.The user is in the  Linked List  page after Sign in(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:106)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1742498632", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1742498632'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_linked_list_page_after_sign_in(LinkedlistSteps.java:263)
+	at ✽.The user is in the  Linked List  page after Sign in(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:106)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to try Editor page for Introduction page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_introduction_page(LinkedlistSteps.java:95)
+	at ✽.The user is on the Introduction page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:22)
+</pre></div><a href='#' onClick='toggleBox("stack-trace739101205", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace739101205'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_introduction_page(LinkedlistSteps.java:95)
+	at ✽.The user is on the Introduction page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:22)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error when click on Run button without entering code", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_types_of_linked_list_page(LinkedlistSteps.java:233)
+	at ✽.The user is in the tryEditor page for Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:83)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1606886748", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1606886748'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_types_of_linked_list_page(LinkedlistSteps.java:233)
+	at ✽.The user is in the tryEditor page for Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:83)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for invalid python code read from "pythonCode" and 1", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_insertion(LinkedlistSteps.java:455)
+	at ✽.The user is on the Try Editor page for Insertion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:196)
+</pre></div><a href='#' onClick='toggleBox("stack-trace119674169", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace119674169'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_insertion(LinkedlistSteps.java:455)
+	at ✽.The user is on the Try Editor page for Insertion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:196)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the user is able to go to LinkedList page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_home_page_after_sign_in(LinkedlistSteps.java:59)
+	at ✽.The user is in home page after sign in(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:12)
+</pre></div><a href='#' onClick='toggleBox("stack-trace647170252", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace647170252'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_home_page_after_sign_in(LinkedlistSteps.java:59)
+	at ✽.The user is in home page after sign in(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:12)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error when click on Run button without entering code", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_deletion(LinkedlistSteps.java:527)
+	at ✽.The user is on the tryEditor  page for Deletion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:215)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1570165812", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1570165812'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_deletion(LinkedlistSteps.java:527)
+	at ✽.The user is on the tryEditor  page for Deletion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:215)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Practice Questions  page from Linked List page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_practice_questions_page(LinkedlistSteps.java:575)
+	at ✽.The user is on the Practice Questions  page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:234)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1890686675", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1890686675'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_practice_questions_page(LinkedlistSteps.java:575)
+	at ✽.The user is on the Practice Questions  page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:234)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for when click on Run button without entering code", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_introduction(LinkedlistSteps.java:107)
+	at ✽.The user is in the tryEditor page for Introduction(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:27)
+</pre></div><a href='#' onClick='toggleBox("stack-trace131475186", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace131475186'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_introduction(LinkedlistSteps.java:107)
+	at ✽.The user is in the tryEditor page for Introduction(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:27)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code read from "pythonCode" and 0", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_types_of_linked_list_page(LinkedlistSteps.java:233)
+	at ✽.The user is in the tryEditor page for Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:97)
+</pre></div><a href='#' onClick='toggleBox("stack-trace622897669", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace622897669'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_types_of_linked_list_page(LinkedlistSteps.java:233)
+	at ✽.The user is in the tryEditor page for Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:97)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Insertion page from Linked List page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_linked_list_page(LinkedlistSteps.java:419)
+	at ✽.The user is on the Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:172)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1140684760", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1140684760'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_linked_list_page(LinkedlistSteps.java:419)
+	at ✽.The user is on the Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:172)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for  valid python code read from "pythonCode" and 0", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_deletion(LinkedlistSteps.java:527)
+	at ✽.The user is on the tryEditor  page for Deletion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:225)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1043090763", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1043090763'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_deletion(LinkedlistSteps.java:527)
+	at ✽.The user is on the tryEditor  page for Deletion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:225)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for invalid python code read from "pythonCode" and 1", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_introduction(LinkedlistSteps.java:107)
+	at ✽.The user is in the tryEditor page for Introduction(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:41)
+</pre></div><a href='#' onClick='toggleBox("stack-trace38305312", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace38305312'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_introduction(LinkedlistSteps.java:107)
+	at ✽.The user is in the tryEditor page for Introduction(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:41)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for invalid python code read from "pythonCode" and 1", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_implement_linked_list(LinkedlistSteps.java:299)
+	at ✽.The user is in the tryEditor page for Implement Linked List(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:121)
+</pre></div><a href='#' onClick='toggleBox("stack-trace653648989", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace653648989'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_implement_linked_list(LinkedlistSteps.java:299)
+	at ✽.The user is in the tryEditor page for Implement Linked List(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:121)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to try Editor page for Deletion page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_deletion_page(LinkedlistSteps.java:497)
+	at ✽.The user is on the Deletion page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:210)
+</pre></div><a href='#' onClick='toggleBox("stack-trace895697353", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace895697353'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_deletion_page(LinkedlistSteps.java:497)
+	at ✽.The user is on the Deletion page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:210)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Introduction page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_Linked_list_page_after_sign_in(LinkedlistSteps.java:77)
+	at ✽.The user is in the Linked List page after Sign in(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:17)
+</pre></div><a href='#' onClick='toggleBox("stack-trace400037555", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace400037555'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_Linked_list_page_after_sign_in(LinkedlistSteps.java:77)
+	at ✽.The user is in the Linked List page after Sign in(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:17)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to try Editor  page for Traversal page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_traversal_page(LinkedlistSteps.java:359)
+	at ✽.The user is on the  Traversal page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:144)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1616818290", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1616818290'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_traversal_page(LinkedlistSteps.java:359)
+	at ✽.The user is on the  Traversal page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:144)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Creating Linked List page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_creating_linked_list_page(LinkedlistSteps.java:155)
+	at ✽.The user is on the Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:50)
+</pre></div><a href='#' onClick='toggleBox("stack-trace814387812", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace814387812'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_creating_linked_list_page(LinkedlistSteps.java:155)
+	at ✽.The user is on the Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:50)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error when click on Run button without entering code", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_creating_linked_list_page(LinkedlistSteps.java:173)
+	at ✽.The user is in the tryEditor page for Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:55)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1021295599", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1021295599'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_creating_linked_list_page(LinkedlistSteps.java:173)
+	at ✽.The user is in the tryEditor page for Creating Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:55)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for invalid python code read from "pythonCode" and 1", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_traversal(LinkedlistSteps.java:377)
+	at ✽.The user is on the tryEditor  page for Traversal(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:154)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1682050612", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1682050612'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_try_editor_page_for_traversal(LinkedlistSteps.java:377)
+	at ✽.The user is on the tryEditor  page for Traversal(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:154)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code read from "pythonCode" and 0", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_implement_linked_list(LinkedlistSteps.java:299)
+	at ✽.The user is in the tryEditor page for Implement Linked List(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:130)
+</pre></div><a href='#' onClick='toggleBox("stack-trace932736431", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace932736431'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_implement_linked_list(LinkedlistSteps.java:299)
+	at ✽.The user is in the tryEditor page for Implement Linked List(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:130)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error when click on Run button without entering code", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_implement_linked_list(LinkedlistSteps.java:299)
+	at ✽.The user is in the tryEditor page for Implement Linked List(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:116)
+</pre></div><a href='#' onClick='toggleBox("stack-trace298507058", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace298507058'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_implement_linked_list(LinkedlistSteps.java:299)
+	at ✽.The user is in the tryEditor page for Implement Linked List(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:116)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Traversal Page for Linked List page", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_traversal_page(LinkedlistSteps.java:341)
+	at ✽.The user is on Traversal page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:139)
+</pre></div><a href='#' onClick='toggleBox("stack-trace89916388", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace89916388'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_traversal_page(LinkedlistSteps.java:341)
+	at ✽.The user is on Traversal page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:139)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for invalid python code read from "<SheetName>" and <RowNumber>", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_Try_editor_page_for_deletion(LinkedlistSteps.java:545)
+	at ✽.The user is on the Try Editor  page for Deletion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:220)
+</pre></div><a href='#' onClick='toggleBox("stack-trace678054994", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace678054994'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_on_the_Try_editor_page_for_deletion(LinkedlistSteps.java:545)
+	at ✽.The user is on the Try Editor  page for Deletion(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:220)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code read from "pythonCode" and 0", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_introduction_try_editor_page(LinkedlistSteps.java:125)
+	at ✽.The user is in the Introduction tryEditor page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:32)
+</pre></div><a href='#' onClick='toggleBox("stack-trace837267422", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace837267422'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_introduction_try_editor_page(LinkedlistSteps.java:125)
+	at ✽.The user is in the Introduction tryEditor page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:32)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for invalid python code read from "pythonCode" and 1", "Linked List Navigation"</td>
+<td><div><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_types_of_linked_list_page(LinkedlistSteps.java:233)
+	at ✽.The user is in the tryEditor page for Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:88)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1891763647", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1891763647'><pre>io.cucumber.java.PendingException: TODO: implement me
+	at StepDefinitions.LinkedlistSteps.the_user_is_in_the_try_editor_page_for_types_of_linked_list_page(LinkedlistSteps.java:233)
+	at ✽.The user is in the tryEditor page for Types of Linked List page(file:///C:/Numpy%20Ninja%20Projects/Sindhu_Thaniga/Innovation-Inspectors/src/test/resources/Features/Linkedlist.feature:88)
+</pre></div></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to login with valid credentials", "Array Navigation"</td>
+<td></td>
+<td>12</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Array data structure page", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code  read from "pythonCode" and 0", "Array Navigation"</td>
+<td></td>
+<td>2</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for invalid python code read from "pythonCode"  and 1", "Array Navigation"</td>
+<td></td>
+<td>5</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Applications of Array page", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code  read from "pythonCode" and 6", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to try Editor page for Arrays in Python page", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to run valid python code  read from "pythonCode" and 2", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for invalid python code  read from "pythonCode" and 1", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to run valid python code read from "pythonCode" and 4 for Max Consecutive Ones question", "Array Navigation"</td>
+<td></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Max Consecutive Ones Page from Practice questions page", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Squares of a Sorted Array Page from Practice questions page", "Array Navigation"</td>
+<td></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code read from "pythonCode" and 0", "Array Navigation"</td>
+<td></td>
+<td>5</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code read from "pythonCode"  and 0", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Home page", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Arrays using List page", "Array Navigation"</td>
+<td></td>
+<td>2</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to try Editor page", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for invalid python code read from "pythonCode" and 1", "Array Navigation"</td>
+<td></td>
+<td>3</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Basic Operations in Lists page", "Array Navigation"</td>
+<td></td>
+<td>3</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error when click on Run button without entering code", "Array Navigation"</td>
+<td></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error when click on Run button without entering code", "Array Navigation"</td>
+<td></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Arrays in Python page", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error for invalid python code read from "pythonCode" and 1", "Array Navigation"</td>
+<td></td>
+<td>2</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code read from "pythonCode" and 0 for Basic Operations in Lists page", "Array Navigation"</td>
+<td></td>
+<td>2</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid python code  read from "pythonCode" and 8", "Array Navigation"</td>
+<td></td>
+<td>0</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Search the array Page from Practice question page of Applications of Array page", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Find Numbers with Even Number of Digits Page from Practice questions page", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Practice Questions Page for Applications of Array page", "Array Navigation"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@503d687a</td></tr>
+</table><p>
+</body>
+</html>

@@ -533,7 +533,6 @@ public class ArraySteps {
 	@When("The user clicks the Find Numbers with Even Number of Digits link")
 	public void the_user_clicks_the_find_numbers_with_even_number_of_digits_link() {
 
-
 		arraypage.FindEvenNumbers();
 
 	}
@@ -572,13 +571,11 @@ public class ArraySteps {
 		driver.navigate().back();
 		Assert.assertEquals(driver.getTitle(), "Practice Questions");
 
-		
-
 	}
 
 	@When("The user clicks the Squares of a Sorted Array link")
 	public void the_user_clicks_the_squares_of_a_sorted_array_link() {
-             arraypage.SquaresSortedArray();
+		arraypage.SquaresSortedArray();
 	}
 
 	@When("The user reads the valid python code from excel {string} and {int} and enters in Editor for squares of each number in Editor and Click the Run Button")
@@ -601,18 +598,13 @@ public class ArraySteps {
 		arraypage.Run.click();
 		System.out.println("Squares of sorted Array program  entered Successfully  ");
 
-		
-		
-
 	}
 
 	@Then("The user should able to see output for squares of each number  in the console")
 	public void the_user_should_able_to_see_output_for_squares_of_each_number_in_the_console() {
-		
+
 		Assert.assertEquals("[4, 9, 9, 49, 121]", arraypage.GetConsoleOutput());
 		System.out.println("======Valid python code output is ===" + arraypage.GetConsoleOutput());
-		
-		
 
 	}
 

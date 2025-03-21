@@ -12,6 +12,10 @@ public class Linkedlistpage {
 	String username = "darshana";
 	String password = "zenithhp4987";
 
+	@FindBy(xpath = "//button[text()='Get Started']")
+	@CacheLookup
+	WebElement DSAlgoGetStart;
+
 	@FindBy(xpath = "//a[text()='Sign in']")
 	@CacheLookup
 	WebElement Signin;
@@ -44,13 +48,13 @@ public class Linkedlistpage {
 	@CacheLookup()
 	WebElement Tryherebtn;
 
-	@FindBy(xpath = "//*[@id=\"answer_form\"]/div/div/div[6]/div[1]/div/div")
+	@FindBy(xpath = "//*[@id=\"answer_form\"]/div/div/div[6]")
 	@CacheLookup()
 	public WebElement Tryeditor;
 
 	@FindBy(xpath = "//button[text()='Run']")
 	@CacheLookup()
-	public WebElement TryeditorRun;
+	public WebElement Runbtn;
 
 	@FindBy(xpath = "//pre[@id='output']")
 	@CacheLookup()
@@ -93,11 +97,15 @@ public class Linkedlistpage {
 
 	}
 
+	public void DsAlgoStarting() {
+		DSAlgoGetStart.click();
+	}
+
 	public void signingin() {
 		Signin.click();
 	}
 
-	public void EnterCredentials(String username, String password) {
+	public void EnterCredentials() {
 		Username.sendKeys(username);
 		Password.sendKeys(password);
 	}
@@ -124,21 +132,12 @@ public class Linkedlistpage {
 	}
 
 	public void Run() {
-		TryeditorRun.click();
+		Runbtn.click();
 	}
 
 	public void Nocode() {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(Tryeditor).click().sendKeys("").build().perform();
-		TryeditorRun.click();
-
-	}
-
-	public void Invalidcode() {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(Tryeditor).click().sendKeys("System.out.println('Apple,Banana,Orange')").build()
-				.perform();
-		TryeditorRun.click();
 
 	}
 
@@ -150,12 +149,6 @@ public class Linkedlistpage {
 	public void EmptyTryEditorpage() {
 		Tryeditor.clear();
 
-	}
-
-	public void Validcode() {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(Tryeditor).click().sendKeys("print('Banana','Apple','Orange')").build().perform();
-		TryeditorRun.click();
 	}
 
 	public String ValidOutput() {
