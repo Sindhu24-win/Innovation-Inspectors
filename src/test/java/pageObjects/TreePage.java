@@ -18,9 +18,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class TreePage {
 
 	WebDriverWait wait;
-	//String loginName = "darshana";
-	//St//ring loginPassword = "zenithhp4987";
-	//public String homeurl = "https://dsportalapp.herokuapp.com/";
 
 	@FindBy(className = "btn")
 	@CacheLookup
@@ -147,7 +144,6 @@ public class TreePage {
 	WebElement Practice_QuestionsLink;
 
 	public WebDriver driver;
-	
 
 	public TreePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -166,7 +162,7 @@ public class TreePage {
 		userName.sendKeys(username);
 		Password.sendKeys(password);
 		LoginBtn.click();
-	
+
 	}
 
 	public String getStatus() {
@@ -239,11 +235,6 @@ public class TreePage {
 			// No alert was present, continue with the test
 			System.out.println("No alert present.");
 		}
-	}
-
-	public void Validinput() {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(tryEditorInp).click().sendKeys("print 'hello'").build().perform();
 	}
 
 	public String Outputmsg() {

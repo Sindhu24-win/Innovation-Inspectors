@@ -1,4 +1,4 @@
-@Graph
+@DsAlgo_Cucumber
 Feature: Graph
 
   Background: The user sign in to dsAlgo Portal

@@ -5,17 +5,13 @@ import static org.testng.Assert.assertEquals;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import DriverFactory.driverFactory;
@@ -30,8 +26,8 @@ public class TreeSteps {
 	TreePage treepage;
 	WebDriver driver;
 	WebDriverWait wait;
-	String username = ConfigReader.getUsername();
-	String password = ConfigReader.getPassword();
+	String username = ConfigReader.getProperty("username");
+	String password = ConfigReader.getProperty("password");
 
 	public TreeSteps() {
 		System.out.println("****I'm in Tree Data Structure****");

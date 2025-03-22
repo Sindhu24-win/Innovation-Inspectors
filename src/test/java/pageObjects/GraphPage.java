@@ -188,10 +188,6 @@ public class GraphPage {
 		}
 	}
 
-	public void Validinput() {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(tryEditorInp).click().sendKeys("print ('hello')").build().perform();
-	}
 
 	public String Outputmsg() {
 		return OutPutmsg.getText();

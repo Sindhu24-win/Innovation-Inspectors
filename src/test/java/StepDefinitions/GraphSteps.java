@@ -12,7 +12,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import DriverFactory.driverFactory;
-import HooksFile.Hooks;
 import Utilities.ConfigReader;
 import Utilities.Excelreaderpython;
 import io.cucumber.java.en.Given;
@@ -112,7 +111,7 @@ public void the_user_is_in_the_try_editor_page() {
 	graphPage.GraphGetStarted();
 	graphPage.Graphlink();
 	graphPage.TryHereButton();
-	// driver.get(TryEditor);
+	
 }
 
 @When("The user clicks the Run button without entering the code in the Editor")

@@ -1,1 +1,9 @@
+
+.settings
+.project
+.classpath
+target/*
+logs/*
+allure-results/*
+
 /target/

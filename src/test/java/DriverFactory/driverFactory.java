@@ -43,7 +43,7 @@ public class driverFactory {
         return driver.get();
     }
 
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         if (driver.get() == null) {
             initiateDriver();
         }
@@ -55,19 +55,23 @@ public class driverFactory {
     }
 
     public static void waitFor(int time) {
-        new WebDriverWait(getInstance().getDriver(), Duration.ofSeconds(time));
+        getInstance();
+		new WebDriverWait(driverFactory.getDriver(), Duration.ofSeconds(time));
     }
 
     public static void openwebpage(String url) {
-        getInstance().getDriver().get(url);
+        getInstance();
+		driverFactory.getDriver().get(url);
     }
 
     public static String getCurrentURL() {
-        return getInstance().getDriver().getCurrentUrl();
+        getInstance();
+		return driverFactory.getDriver().getCurrentUrl();
     }
 
     public static String getTitle() {
-        return getInstance().getDriver().getTitle();
+        getInstance();
+		return driverFactory.getDriver().getTitle();
     }
 
     public static void getStarted() {

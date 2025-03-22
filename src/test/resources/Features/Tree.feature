@@ -1,4 +1,4 @@
-@Tree
+@DsAlgo_Cucumber
 Feature: Tree Data Structure
 
   Background: The user sign in to dsAlgo Portal
