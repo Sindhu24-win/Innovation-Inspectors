@@ -1,11 +1,8 @@
 package pageObjects;
 
-
-
 import java.time.Duration;
 
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,38 +14,45 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class dataStructurePage {
-	
-	//WebDriver driver=new ChromeDriver();
-	private WebDriver driver;
-    WebDriverWait wait;
-    
-    String username="darshana";
-    String password="zenithhp4987";
 
-    @FindBy(xpath="//button[text()='Get Started']")WebElement DSAlgoGetstart;
-   // @FindBy(xpath="//a[text()='Sign in']")WebElement signIn;
-	@FindBy(xpath="//a[@href='data-structures-introduction']")WebElement GetstartedButton;
-	@FindBy(className="list-group-item")WebElement timeComplexity;
-	@FindBy(xpath="a[href='/tryEditor']")WebElement tryHere;
-	@FindBy(xpath="//div[@class='CodeMirror-scroll']")
-	public WebElement tryEditorTextBox;
-	public WebElement Runbutton;
+	private WebDriver driver;
+	WebDriverWait wait;
+
+	@FindBy(xpath = "//button[text()='Get Started']")
+	WebElement DSAlgoGetstart;
+	@CacheLookup
+
+	@FindBy(xpath = "//a[@href='data-structures-introduction']")
+	WebElement GetstartedButton;
 	
-	@FindBy(className = "CodeMirror")
+	@FindBy(className = "list-group-item")
+	WebElement timeComplexity;
+
+	@FindBy(xpath = "//a[@href='/tryEditor']")
+	@CacheLookup
+	WebElement TryhereBtn;
+
+	@FindBy(xpath = "//div[@class='CodeMirror-scroll']")
+	public WebElement tryEditorTextBox;
+	
+    @FindBy(className = "CodeMirror")
 	@CacheLookup
 	public WebElement tryEditor;
 
 	@FindBy(xpath = "//button[@type='button']")
 	@CacheLookup
 	public WebElement RunBtn;
-	
-	@FindBy(xpath="//a[text()='Practice Questions']")WebElement PracticeQuestions;
-	
-	@FindBy(className="btn")WebElement GetStarted;
+
+	@FindBy(xpath = "//a[text()='Practice Questions']")
+	WebElement PracticeQuestions;
+
+	@FindBy(className = "btn")
+	WebElement GetStarted;
 
 	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[3]")
 	@CacheLookup
 	WebElement signin;
+
 	@FindBy(id = "id_username")
 	@CacheLookup
 	WebElement userName;
@@ -64,27 +68,24 @@ public class dataStructurePage {
 	@FindBy(xpath = "//*[@class ='alert alert-primary']")
 	@CacheLookup
 	WebElement LoginStatus;
-	
+
 	@FindBy(xpath = "//pre[@id='output']")
 	@CacheLookup
 	WebElement OutPutmsg;
-	
-	
+
 	@FindBy(xpath = "//div[@class='CodeMirror-code']")
 	@CacheLookup
 	WebElement tryEditorInp;
 
-	public dataStructurePage(WebDriver driver)
-	{
+	public dataStructurePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
-		this.driver=driver;
-		this.wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+		this.driver = driver;
 	}
-	public void GetStarted()
-	{
-	GetStarted.click();
+
+	public void GetStarted() {
+		DSAlgoGetstart.click();
 	}
-	
+
 	public void signIn() {
 		signin.click();
 	}
@@ -98,53 +99,53 @@ public class dataStructurePage {
 	public String getStatus() {
 		return LoginStatus.getText();
 	}
-	public void checkGetstarted()
-	{
-		wait.until(ExpectedConditions.elementToBeClickable(GetstartedButton));
+
+	public void checkGetstarted() {
 		GetstartedButton.click();
-		
 	}
-	public void checkTimeComplexity()
-	{
-		wait.until(ExpectedConditions.elementToBeClickable(timeComplexity));
+
+	public void checkTimeComplexity() {
 		timeComplexity.click();
 	}
-	
-	public void tryhere()
-	{
-		wait.until(ExpectedConditions.elementToBeClickable(tryHere));
-		tryHere.click();
+
+	public void tryhere() {
+
+		TryhereBtn.click();
 	}
-	
-	public void checkPractice()
-	{
-		wait.until(ExpectedConditions.elementToBeClickable(PracticeQuestions));
+
+	public void checkPractice() {
+
 		PracticeQuestions.click();
 	}
-	
+
 	public void enterCode() {
+
 		tryEditorTextBox.clear();
+
 		tryEditorTextBox.sendKeys(" ");
 	}
 
 	public String RunBtnText() {
-		return Runbutton.getText();
+		return RunBtn.getText();
 	}
 
 	public void Run() {
-		Runbutton.click();
+
+		RunBtn.click();
 	}
+
 	public void EmptytryInput() {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(tryEditorTextBox).click().sendKeys("").build().perform();
 	}
-	
+
 	public String alertMessage() {
 		return driver.switchTo().alert().getText();
 	}
 
 	public void Invalidinput() {
-		Runbutton.click();
+
+		RunBtn.click();
 		try {
 			// Wait for the alert to appear
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -160,23 +161,8 @@ public class dataStructurePage {
 		}
 	}
 
-	public void Validinput() {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(tryEditorInp).click().sendKeys("print ('hello')").build().perform();
-	}
-
 	public String Outputmsg() {
 		return OutPutmsg.getText();
 	}
 
-	
-
-	public void PracticeQns() {
-	//	wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", PracticeQuestions);
-		wait.until(ExpectedConditions.elementToBeClickable(PracticeQuestions)).click();
-	}
-
-
 }
- 

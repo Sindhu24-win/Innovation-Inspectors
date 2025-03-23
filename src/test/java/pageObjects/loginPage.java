@@ -15,11 +15,16 @@ public class loginPage {
     private WebDriver driver;
     WebDriverWait wait;
 
-    @FindBy(xpath="//input[@name='username']") WebElement usernameLoginpage;
-    @FindBy(xpath="//input[@name='password']") WebElement passwordLoginpage;
-    @FindBy(xpath="/html/body/div[2]/div/div[2]/form/input[4]") WebElement loginButton;
+    @FindBy(xpath="//input[@name='username']")
+	public WebElement usernameLoginpage;
+    @FindBy(xpath="//input[@name='password']")
+	public WebElement passwordLoginpage;
+    @FindBy(xpath="/html/body/div[2]/div/div[2]/form/input[4]")
+	public WebElement loginButton;
     @FindBy(xpath="//a[@href='/register']") WebElement registerlinkLoginPage;
-    @FindBy(xpath="//div[@class='alert alert-primary']") WebElement Error;  // Fixed xpath for username error
+   
+    @FindBy(xpath="//div[@role='alert']")
+	public WebElement Error;  // Fixed xpath for username error
    
     @FindBy(className = "btn")
     @CacheLookup
@@ -75,18 +80,16 @@ public class loginPage {
 
     // Get the error message for username
     public String getErrorMessage() {
-        wait.until(ExpectedConditions.visibilityOf(Error));  // Wait for error message visibility
+        
         return Error.getText();
     }
 
-    // Get the error message for password
-   // public String getErrorMessageForPassword() {
-     //   wait.until(ExpectedConditions.visibilityOf(Error));  // Wait for error message visibility
-       // return Error.getText();
-    //}
-
-    // Check if login page is displayed
    public boolean isLoginPageDisplayed() {
        return driver.getTitle().equals("Login");
     }
+   
+   
+   public boolean isErrorMessageForUsernameDisplayed() {
+	    return Error.isDisplayed(); // Assuming 'usernameErrorMessage' is a WebElement for the error message below the username field
+	}
 }

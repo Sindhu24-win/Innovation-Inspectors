@@ -1,0 +1,1691 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Mar 22, 2025 11:02:23 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Mar 22, 2025 11:02:23 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Mar 22, 2025 11:04:27 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>2</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>2</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='50%'>
+<b>2</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='50%'><b>2</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='60%'><b>18</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='40%'><b>12</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='61%'><b>56</b> steps passed</small></div>
+<div>
+<small data-tooltip='14%'><b>13</b> steps failed,
+<b>22</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Data Structures - Introduction Navigation":97.021,"Home and DS Algo Portal Navigation and Functionality":1.279,"Sign In and Sign Out in dsAlgo Portal":11.299,"User Registration on DS Algo Portal":8.961
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@Regression</td>
+<td>18</td>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>60%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Engineer</td>
+<td>Darshana Bhende</td>
+</tr>
+<tr>
+<td>Project</td>
+<td>Innovation_Inspectors</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>Google Chrome</td>
+</tr>
+<tr>
+<td>os</td>
+<td>windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 2,
+failParent: 2,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 18,
+failChild: 12,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 56,
+failGrandChild: 13,
+warningGrandChild: 0,
+skipGrandChild: 22,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@Regression</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Data Structures - Introduction Navigation</p>
+            <p class="text-sm">
+              <span>11:02:28 PM</span> / <span>00:01:37:021</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Data Structures - Introduction Navigation</h5>
+<span class='badge badge-success'>03.22.2025 11:02:28 PM</span>
+<span class='badge badge-danger'>03.22.2025 11:04:05 PM</span>
+<span class='badge badge-default'>00:01:37:021</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify that the user can navigate to Data Structures - Introduction page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_is_in_the_home_page_after_logged_in_the_ds_algo_portal()">
+                <span>Given The user is in the Home page after logged in the DsAlgo portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_clicks_on_the_getting_started_button_in_data_structures_introduction()">
+                <span>When The user clicks on the Getting Started button in Data Structures Introduction</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_should_land_in_data_structures_introduction_page()">
+                <span>Then The user should land in Data Structures Introduction Page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>Verify that the user is able to navigate to the Time Comlexity Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_is_in_the_data_structure_introduction_page()">
+                <span>Given The user is in the Data Structure Introduction page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_clicks_on_the_time_complexity_link()">
+                <span>When The user clicks on the Time Complexity link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_should_be_able_to_land_on_the_time_complexity_page()">
+                <span>Then The user should be able to land on the Time complexity page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="20"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to Practice Questions page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_is_in_the_time_complexity_page()">
+                <span>Given The user is in the Time Complexity page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_clicks_the_practice_questions_button()">
+                <span>When The user clicks the Practice Questions button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_should_be_redirected_to_practice_questions_of_data_structures_introduction()">
+                <span>Then The user should be redirected to Practice Questions of Data structures-Introduction</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="29"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to navigate to try Editor page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_is_in_the_time_complexity_page()">
+                <span>Given The user is in the Time Complexity page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_clicks_try_here_button()">
+                <span>When The user clicks Try Here button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to a page having an try Editor with a Run button to test</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="38"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error when click on Run button without entering code</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_is_in_the_try_editor_page()">
+                <span>Given The user is in the tryEditor page.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_clicks_the_run_button_without_entering_the_code_in_the_editor()">
+                <span>When The user clicks the Run Button without entering the code in the Editor</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.DataStructurestep.the_user_should_able_to_see_an_error_message_in_alert_window()">
+                <span>Then The user should able to see an error message in alert window.</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="47"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives an error for invalid Python code in Try Editor page of Time Complexity</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="48"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives an error for invalid Python code in Try Editor page of Time Complexity</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor page for the Time complexity page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads the invalid python code from  excel "pythonCode"  and 1 and  enters in the tryEditor and clicks on Run button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see an error message in alert window.</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="57"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid Python code in Try Editor page of Time Complexity</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="58"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to see output for valid Python code in Try Editor page of Time Complexity</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is in the tryEditor page for the Time complexity page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user reads the valid python code from  excel "pythonCode"  and 0 and  enters in the tryEditor and clicks on Run button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should able to see output in the console.</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="67"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Home and DS Algo Portal Navigation and Functionality</p>
+            <p class="text-sm">
+              <span>11:04:06 PM</span> / <span>00:00:01:279</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Home and DS Algo Portal Navigation and Functionality</h5>
+<span class='badge badge-success'>03.22.2025 11:04:06 PM</span>
+<span class='badge badge-danger'>03.22.2025 11:04:07 PM</span>
+<span class='badge badge-default'>00:00:01:279</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=67</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="68"><span class="badge log fail-bg mr-2">Fail</span>Verify the Home page for a user without Sign in</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given The user is on the DS Algo Portal</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>When The user clicks the Get Started button in home page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then The user should be navigated to the home page, which displays the Register and Sign in links</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="77"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to view options for "Data Structures" dropdown on home page without Sign in</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given The user is on the Home page</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>When The user clicks the Data Structures dropdown</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then The user should be able to see options Arrays, Linked List, Stack, Queue, Tree, Graph in the dropdown menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="86"><span class="badge log fail-bg mr-2">Fail</span>Verify that user sees a warning message when selecting "Data Structures" from the dropdown without Sign in</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given The user is on the Home page</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>When The user selects "Data Structures" from the drop-down without Sign in</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then The user should see a warning message "You are not logged in"</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="95"><span class="badge log fail-bg mr-2">Fail</span>Verify that the user is able to navigate to the Stack page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given The user is logged in to the DS Algo portal</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>When The user clicks on the dropdown menu and selects the "Stack" tab</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then The user lands on the Stack page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="104"><span class="badge log fail-bg mr-2">Fail</span>Verify that the user is able to open the DS Algo portal in the browser</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given The user has the DS Algo portal link or web address</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>When The user enters the DS Algo portal web address in the browser</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then The user should land on the DS Algo portal in the browser</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="113"><span class="badge log fail-bg mr-2">Fail</span>Verify that the user is able to navigate to the Array page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given The user is logged in to the DS Algo portal</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>When The user clicks on the dropdown menu and selects the "Array" tab</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then The user lands on the Array page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="122"><span class="badge log fail-bg mr-2">Fail</span>Verify that the user is able to navigate to the Linked List page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given The user is logged in to the DS Algo portal</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>When The user clicks on the dropdown menu and selects the "Linked List" tab</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then The user lands on the Linked List page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="131"><span class="badge log fail-bg mr-2">Fail</span>Verify that the user is able to navigate to the Queue page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given The user is logged in to the DS Algo portal</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>When The user clicks on the dropdown menu and selects the "Queue" tab</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then The user lands on the Queue page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="140"><span class="badge log fail-bg mr-2">Fail</span>Verify that the user is able to navigate to the Tree page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given The user is logged in to the DS Algo portal</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>When The user clicks on the dropdown menu and selects the "Tree" tab</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then The user lands on the Tree page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="149"><span class="badge log fail-bg mr-2">Fail</span>Verify that the user is able to navigate to the Graph page</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given The user is logged in to the DS Algo portal</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>When The user clicks on the dropdown menu and selects the "Graph" tab</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then The user lands on the Graph page</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="158"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to sign out successfully</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" >
+                <span>Given The user is in the Home page after Sign in</span>
+      <div>Step undefined
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>When The user clicks "Sign out" on home page</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>Then The user should be redirected to the home page with message "Logged out successfully"</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="167"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Sign In and Sign Out in dsAlgo Portal</p>
+            <p class="text-sm">
+              <span>11:04:07 PM</span> / <span>00:00:11:299</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Sign In and Sign Out in dsAlgo Portal</h5>
+<span class='badge badge-success'>03.22.2025 11:04:07 PM</span>
+<span class='badge badge-danger'>03.22.2025 11:04:18 PM</span>
+<span class='badge badge-default'>00:00:11:299</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=167</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="168"><span class="badge log pass-bg mr-2">Pass</span>Verify that the user can navigate to registration from login</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_user_is_on_the_login_page()">
+                <span>Given The user is on the login page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_user_clicks_on_the_register_link()">
+                <span>When The user clicks on the Register link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_user_should_be_redirected_to_the_registration_page()">
+                <span>Then The user should be redirected to the registration page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="177"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives an error message for all empty fields during login</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_user_is_on_the_ds_algo_sign_in_page()">
+                <span>Given The user is on the DS Algo Sign in Page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_user_clicks_the_login_button_after_leaving_the_textbox_and_textbox_empty()">
+                <span>When The user clicks the login button after leaving the "Username" textbox and "Password" textbox empty</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_error_message_please_fill_out_this_field_appears_below_username_textbox_during_login()">
+                <span>Then The error message Please fill out this field. appears below Username textbox during login</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="186"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives an error message for empty Password field during login</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_user_is_on_the_ds_algo_sign_in_page()">
+                <span>Given The user is on the DS Algo Sign in Page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_user_clicks_the_login_button_after_entering_the_and_leaves_textbox_empty()">
+                <span>When The user clicks the login button after entering the "Username" and leaves "Password" textbox empty</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_error_message_please_fill_out_this_field_appears_below_password_textbox_during_login()">
+                <span>Then The error message Please fill out this field. appears below Password textbox during login</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="195"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives an error message for empty Username field during login</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_user_is_on_the_ds_algo_sign_in_page()">
+                <span>Given The user is on the DS Algo Sign in Page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_user_clicks_the_login_button_after_entering_the_password_only()">
+                <span>When The user clicks the login button after entering the Password only</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Loginstep.the_error_message_appears_below_username_textbox()">
+                <span>Then The error message appears below Username textbox</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="204"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives an error message for invalid Username during login</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="205"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives an error message for invalid Username during login</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the DS Algo Sign in Page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user clicks the login button after entering an invalid username and valid password from excel 1</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should see an error message "Invalid Username and Password"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="214"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives an error message for invalid Username during login</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the DS Algo Sign in Page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user clicks the login button after entering an invalid username and valid password from excel 2</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should see an error message "Invalid Username and Password"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="223"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives an error message for invalid Username during login</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the DS Algo Sign in Page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user clicks the login button after entering an invalid username and valid password from excel 3</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should see an error message "Invalid Username and Password"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="232"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to land on the Home page after entering valid credentials</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="233"><span class="badge log pass-bg mr-2">Pass</span>Verify that user is able to land on the Home page after entering valid credentials</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the DS Algo Sign in Page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user clicks the login button after entering valid username and valid password from excel 4</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should land in Data Structure Home Page with message You are logged in</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="242"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">User Registration on DS Algo Portal</p>
+            <p class="text-sm">
+              <span>11:04:18 PM</span> / <span>00:00:08:961</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">User Registration on DS Algo Portal</h5>
+<span class='badge badge-success'>03.22.2025 11:04:18 PM</span>
+<span class='badge badge-danger'>03.22.2025 11:04:27 PM</span>
+<span class='badge badge-default'>00:00:08:961</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=242</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="243"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error message for all empty fields during registration</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.RegisterStep.the_user_is_on_the_user_registration_page()">
+                <span>Given The user is on the user registration page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.RegisterStep.the_user_clicks_register_button_with_and_empty()">
+                <span>When The user clicks Register button with "username" , "password" and "confirm_password" empty</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.RegisterStep.the_error_message_should_be_displayed_under_username()">
+                <span>Then The error message should be displayed under username</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="252"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error message for empty Username Confirmation field during registration</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="253"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error message for empty Username Confirmation field during registration</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the user registration page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user clicks Register button after entering Password and Password Confirmation with Username field empty 1</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The error message should be displayed "password_mismatch:The two password fields didn’t match."</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="262"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error message for mismatched Password and Password Confirmation field during registration</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="263"><span class="badge log pass-bg mr-2">Pass</span>Verify that user receives error message for mismatched Password and Password Confirmation field during registration</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the user registration page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user clicks Register button after entering different passwords in Password and Password Confirmation fields 2</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should be able to see a password warning "password_mismatch:The two password fields didn’t match."</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="272"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to land on Homepage after registration with valid fields</div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="273"><span class="badge log fail-bg mr-2">Fail</span>Verify that user is able to land on Homepage after registration with valid fields</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the user registration page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user clicks Register button after entering a valid username, password, and password confirmation in related textboxes 3</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then The user should be redirected to Home Page of DS Algo with success message</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at StepDefinitions.RegisterStep.the_user_should_be_redirected_to_home_page_of_ds_algo_with_success_message(RegisterStep.java:129)
+	at ✽.The user should be redirected to Home Page of DS Algo with success message(file:///C:/Users/Ashish/eclipse-workspace/DsAlgoCucumber/src/test/resources/features/Register.feature:30)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>StepDefinitions.Hooks.takeScreenshot(io.cucumber.java.Scenario)</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\Ashish\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60467}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60467/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:154)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:598)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:318)
+	at StepDefinitions.Hooks.takeScreenshot(Hooks.java:43)
+</textarea>
+      
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>18</span>
+<span class='badge log badge-danger'>12</span>
+</span>
+<p class="name">@Regression</p>
+<p class="duration text-sm">30 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Regression</h4>
+<span status="pass" class='badge log pass-bg'>18 passed</span>
+<span status="fail" class='badge log badge-danger'>12 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:02:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Verify that the user can navigate to Data Structures - Introduction page</a>
+<div class="">
+<span class="badge badge-default">Data Structures - Introduction Navigation.Verify that the user can navigate to Data Structures - Introduction page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:03:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='11'>Verify that the user is able to navigate to the Time Comlexity Page</a>
+<div class="">
+<span class="badge badge-default">Data Structures - Introduction Navigation.Verify that the user is able to navigate to the Time Comlexity Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:03:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='20'>Verify that user is able to navigate to Practice Questions page</a>
+<div class="">
+<span class="badge badge-default">Data Structures - Introduction Navigation.Verify that user is able to navigate to Practice Questions page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:03:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='29'>Verify that user is able to navigate to try Editor page</a>
+<div class="">
+<span class="badge badge-default">Data Structures - Introduction Navigation.Verify that user is able to navigate to try Editor page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:03:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='38'>Verify that user receives error when click on Run button without entering code</a>
+<div class="">
+<span class="badge badge-default">Data Structures - Introduction Navigation.Verify that user receives error when click on Run button without entering code</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:03:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='48'>Verify that user receives an error for invalid Python code in Try Editor page of Time Complexity</a>
+<div class="">
+<span class="badge badge-default">Data Structures - Introduction Navigation.Verify that user receives an error for invalid Python code in Try Editor page of Time Complexity</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='58'>Verify that user is able to see output for valid Python code in Try Editor page of Time Complexity</a>
+<div class="">
+<span class="badge badge-default">Data Structures - Introduction Navigation.Verify that user is able to see output for valid Python code in Try Editor page of Time Complexity</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='67' id='68'>Verify the Home page for a user without Sign in</a>
+<div class="">
+<span class="badge badge-default">Home and DS Algo Portal Navigation and Functionality.Verify the Home page for a user without Sign in</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='67' id='77'>Verify that user is able to view options for "Data Structures" dropdown on home page without Sign in</a>
+<div class="">
+<span class="badge badge-default">Home and DS Algo Portal Navigation and Functionality.Verify that user is able to view options for "Data Structures" dropdown on home page without Sign in</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='67' id='86'>Verify that user sees a warning message when selecting "Data Structures" from the dropdown without Sign in</a>
+<div class="">
+<span class="badge badge-default">Home and DS Algo Portal Navigation and Functionality.Verify that user sees a warning message when selecting "Data Structures" from the dropdown without Sign in</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='67' id='95'>Verify that the user is able to navigate to the Stack page</a>
+<div class="">
+<span class="badge badge-default">Home and DS Algo Portal Navigation and Functionality.Verify that the user is able to navigate to the Stack page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='67' id='104'>Verify that the user is able to open the DS Algo portal in the browser</a>
+<div class="">
+<span class="badge badge-default">Home and DS Algo Portal Navigation and Functionality.Verify that the user is able to open the DS Algo portal in the browser</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='67' id='113'>Verify that the user is able to navigate to the Array page</a>
+<div class="">
+<span class="badge badge-default">Home and DS Algo Portal Navigation and Functionality.Verify that the user is able to navigate to the Array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='67' id='122'>Verify that the user is able to navigate to the Linked List page</a>
+<div class="">
+<span class="badge badge-default">Home and DS Algo Portal Navigation and Functionality.Verify that the user is able to navigate to the Linked List page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='67' id='131'>Verify that the user is able to navigate to the Queue page</a>
+<div class="">
+<span class="badge badge-default">Home and DS Algo Portal Navigation and Functionality.Verify that the user is able to navigate to the Queue page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:07 PM</td>
+<td>
+<a href="#" class="linked" test-id='67' id='140'>Verify that the user is able to navigate to the Tree page</a>
+<div class="">
+<span class="badge badge-default">Home and DS Algo Portal Navigation and Functionality.Verify that the user is able to navigate to the Tree page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:07 PM</td>
+<td>
+<a href="#" class="linked" test-id='67' id='149'>Verify that the user is able to navigate to the Graph page</a>
+<div class="">
+<span class="badge badge-default">Home and DS Algo Portal Navigation and Functionality.Verify that the user is able to navigate to the Graph page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:07 PM</td>
+<td>
+<a href="#" class="linked" test-id='67' id='158'>Verify that user is able to sign out successfully</a>
+<div class="">
+<span class="badge badge-default">Home and DS Algo Portal Navigation and Functionality.Verify that user is able to sign out successfully</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:07 PM</td>
+<td>
+<a href="#" class="linked" test-id='167' id='168'>Verify that the user can navigate to registration from login</a>
+<div class="">
+<span class="badge badge-default">Sign In and Sign Out in dsAlgo Portal.Verify that the user can navigate to registration from login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:08 PM</td>
+<td>
+<a href="#" class="linked" test-id='167' id='177'>Verify that user receives an error message for all empty fields during login</a>
+<div class="">
+<span class="badge badge-default">Sign In and Sign Out in dsAlgo Portal.Verify that user receives an error message for all empty fields during login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='167' id='186'>Verify that user receives an error message for empty Password field during login</a>
+<div class="">
+<span class="badge badge-default">Sign In and Sign Out in dsAlgo Portal.Verify that user receives an error message for empty Password field during login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:10 PM</td>
+<td>
+<a href="#" class="linked" test-id='167' id='195'>Verify that user receives an error message for empty Username field during login</a>
+<div class="">
+<span class="badge badge-default">Sign In and Sign Out in dsAlgo Portal.Verify that user receives an error message for empty Username field during login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='167' id='205'>Verify that user receives an error message for invalid Username during login</a>
+<div class="">
+<span class="badge badge-default">Sign In and Sign Out in dsAlgo Portal.Verify that user receives an error message for invalid Username during login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='167' id='214'>Verify that user receives an error message for invalid Username during login</a>
+<div class="">
+<span class="badge badge-default">Sign In and Sign Out in dsAlgo Portal.Verify that user receives an error message for invalid Username during login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='167' id='223'>Verify that user receives an error message for invalid Username during login</a>
+<div class="">
+<span class="badge badge-default">Sign In and Sign Out in dsAlgo Portal.Verify that user receives an error message for invalid Username during login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:16 PM</td>
+<td>
+<a href="#" class="linked" test-id='167' id='233'>Verify that user is able to land on the Home page after entering valid credentials</a>
+<div class="">
+<span class="badge badge-default">Sign In and Sign Out in dsAlgo Portal.Verify that user is able to land on the Home page after entering valid credentials</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:18 PM</td>
+<td>
+<a href="#" class="linked" test-id='242' id='243'>Verify that user receives error message for all empty fields during registration</a>
+<div class="">
+<span class="badge badge-default">User Registration on DS Algo Portal.Verify that user receives error message for all empty fields during registration</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='242' id='253'>Verify that user receives error message for empty Username Confirmation field during registration</a>
+<div class="">
+<span class="badge badge-default">User Registration on DS Algo Portal.Verify that user receives error message for empty Username Confirmation field during registration</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:04:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='242' id='263'>Verify that user receives error message for mismatched Password and Password Confirmation field during registration</a>
+<div class="">
+<span class="badge badge-default">User Registration on DS Algo Portal.Verify that user receives error message for mismatched Password and Password Confirmation field during registration</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='242' id='273'>Verify that user is able to land on Homepage after registration with valid fields</a>
+<div class="">
+<span class="badge badge-default">User Registration on DS Algo Portal.Verify that user is able to land on Homepage after registration with valid fields</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchSessionException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchSessionException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='242' id='280'>StepDefinitions.Hooks.takeScreenshot(io.cucumber.java.Scenario)</a>
+<div class="">
+<span class="badge badge-default">User Registration on DS Algo Portal.Verify that user is able to land on Homepage after registration with valid fields.StepDefinitions.Hooks.takeScreenshot(io.cucumber.java.Scenario)</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:04:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='242' id='279'>Then The user should be redirected to Home Page of DS Algo with success message</a>
+<div class="">
+<span class="badge badge-default">User Registration on DS Algo Portal.Verify that user is able to land on Homepage after registration with valid fields.Then The user should be redirected to Home Page of DS Algo with success message</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

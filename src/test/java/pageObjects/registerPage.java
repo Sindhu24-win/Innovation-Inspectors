@@ -4,12 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class registerPage {
 
+	 private WebDriver driver;
+	 WebDriverWait wait;
 	
-	//alterMessage=By.xpath("//div[@class='alert alert-primary']");
-	
+	@FindBy(xpath="//div[@class='alert alert-primary']")WebElement ErrorMessage;
 	
 	 // Locating the Username field
     @FindBy(xpath="//input[@id='id_username']") // Change if the actual attribute is different
@@ -26,10 +28,13 @@ public class registerPage {
     // Locating the Register button
     @FindBy(xpath = "//input[@value='Register']") // Change if needed
     private WebElement registerButton;
+    
+    @FindBy(xpath="/html/body/div[2]")WebElement success;
 
     // Constructor to initialize the PageFactory
     public registerPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
+        this.driver=driver;
     }
 
     // Method to enter Username
@@ -59,7 +64,15 @@ public class registerPage {
         enterConfirmPassword(confirmPassword);
         clickRegister();
     }
-    
-	
+    public String getErrorMessage()
+    {
+    	return ErrorMessage.getText();
+    }
+	public String successMessage()
+	{
+		return success.getText();
+		
+		
+	}
  
 }

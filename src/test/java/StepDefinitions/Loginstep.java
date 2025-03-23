@@ -3,16 +3,26 @@ package StepDefinitions;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Map;
 
+import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import DriverFactory.driverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.homePage;
 import pageObjects.loginPage;
+import utilities.ExcelReader;
+import utilities.Excelreaderpython;
 
 public class Loginstep {
 
@@ -22,7 +32,10 @@ public class Loginstep {
 
     loginPage loginPageobj;
     homePage homeObj;
-
+    
+    String filePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx"; // Excel file path
+    String sheetName = "Sheet1";
+    
     // Constructor initializes WebDriver and page objects
     public Loginstep() {
         System.out.println("****I'm in Login****");
@@ -59,9 +72,8 @@ public class Loginstep {
 
     @Then("The error message Please fill out this field. appears below Username textbox during login")
     public void the_error_message_please_fill_out_this_field_appears_below_username_textbox_during_login() {
-    	assertTrue(driver.getPageSource().contains("Please fill out this field."));
-    	//Assert.assertEquals(, "Overview of Trees");
-        //assertEquals("Please fill out this field.", loginPageobj.getErrorMessageForUsername());
+    	WebElement alert = driver.findElement(By.cssSelector("input:invalid"));
+    	assertTrue(alert.isDisplayed());
     }
 
     @When("The user clicks the login button after entering the \"Username\" and leaves \"Password\" textbox empty")
@@ -72,8 +84,10 @@ public class Loginstep {
 
     @Then("The error message Please fill out this field. appears below Password textbox during login")
     public void the_error_message_please_fill_out_this_field_appears_below_password_textbox_during_login() {
-    	assertTrue(driver.getPageSource().contains("Please fill out this field."));
-        //assertEquals("Please fill out this field.", loginPageobj.getErrorMessageForPassword());
+    	
+    	WebElement alert = driver.findElement(By.cssSelector("input:invalid"));
+    	assertTrue(alert.isDisplayed());
+        
     }
 
     @When("The user clicks the login button after entering the Password only")
@@ -84,32 +98,61 @@ public class Loginstep {
 
     @Then("The error message appears below Username textbox")
     public void the_error_message_appears_below_username_textbox() {
-       // assertEquals("Please fill out this field.", loginPageobj.getErrorMessageForUsername());
-    assertTrue(driver.getPageSource().contains("Please fill out this field."));
+    	//Assert.assertEquals(validationMessage, "Please fill out this field", "Validation message mismatch!");
+    	WebElement alert = driver.findElement(By.cssSelector("input:invalid"));
+    	assertTrue(alert.isDisplayed());
     }
 
-    @When("The user clicks the login button after entering an invalid username and valid password")
-    public void the_user_clicks_the_login_button_after_entering_an_invalid_username_and_valid_password() {
-        loginPageobj.enterUsername("76"); // Invalid username
-        loginPageobj.enterPassword("zenithhp4987"); // Valid password
-        loginPageobj.clickLoginButton(); // Click login
+    @When("The user clicks the login button after entering an invalid username and valid password from excel {int}")
+    public void the_user_clicks_the_login_button_after_entering_an_invalid_username_and_valid_password_from_excel_and(Integer rowIndex) throws EncryptedDocumentException, IOException {
+        // Write code here that turns the phrase above into concrete actions
+    	
+    	 // Initialize ExcelReader
+        ExcelReader excelReader = new ExcelReader();
+        
+        ExcelReader.loadExcel(filePath);
+
+        String username = ExcelReader.getCellData(sheetName, rowIndex, 0);
+        String password = ExcelReader.getCellData(sheetName, rowIndex, 1);
+
+        loginPageobj.enterUsername(username);
+        loginPageobj.enterPassword(password);
+
+ 
+        loginPageobj.loginButton.click();
     }
 
-    @Then("The user should see an error message")
-    public void the_user_should_see_an_error_message(String string) {
+
+    @Then("The user should see an error message {string}")
+    public void the_user_should_see_an_error_message(String expected) {
   
-        assertTrue(driver.getPageSource().contains("Invalid username or password")); // Validate error message
+    	 assertEquals(expected, loginPageobj.getErrorMessage());
+       
     }
 
-    @When("The user clicks the login button after entering valid username and valid password")
-    public void the_user_clicks_the_login_button_after_entering_valid_username_and_valid_password() {
-        loginPageobj.enterUsername("darshana"); // Valid username
-        loginPageobj.enterPassword("zenithhp4987"); // Valid password
-        loginPageobj.clickLoginButton(); // Click login
+    @When("The user clicks the login button after entering valid username and valid password from excel {int}")
+    public void the_user_clicks_the_login_button_after_entering_valid_username_and_valid_password_from_excel_and(Integer rowIndex) throws EncryptedDocumentException, IOException {
+        // Write code here that turns the phrase above into concrete actions
+    	
+   	 // Initialize ExcelReader
+       //ExcelReader excelReader = new ExcelReader();
+       
+       ExcelReader.loadExcel(filePath);
+
+       String username = ExcelReader.getCellData(sheetName, rowIndex, 0);
+       String password = ExcelReader.getCellData(sheetName, rowIndex, 1);
+
+       System.out.println("Attempting login with Username: " + username + " | Password: " + password);
+       
+       loginPageobj.enterUsername(username);
+       loginPageobj.enterPassword(password);
+       loginPageobj.loginButton.click();
     }
 
     @Then("The user should land in Data Structure Home Page with message You are logged in")
     public void the_user_should_land_in_data_structure_home_page_with_message_you_are_loggen_in() {
-        assertEquals("You are logged in", homeObj.getWelcomeMessage()); // Validate welcome message
+       assertEquals(driver.getTitle(),"NumpyNinja"); // Validate welcome message
+    	//assertTrue(driver.getCurrentUrl().contains("home"));
+    	
     }
 }

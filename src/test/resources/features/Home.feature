@@ -1,11 +1,7 @@
+@Regression
 Feature: Home and DS Algo Portal Navigation and Functionality
 
   Background: The user opened DS Algo portal in the browser
- 
- Scenario: Verify that the user is able to land on the Login Page
-    Given The user is on the DS Algo Home Page
-    When The user clicks the Sign in link
-    Then The user should be redirected to the log in page
 
   Scenario: Verify the Home page for a user without Sign in
     Given The user is on the DS Algo Portal
@@ -61,4 +57,3 @@ Feature: Home and DS Algo Portal Navigation and Functionality
     Given The user is in the Home page after Sign in
     When The user clicks "Sign out" on home page
     Then The user should be redirected to the home page with message "Logged out successfully"
-

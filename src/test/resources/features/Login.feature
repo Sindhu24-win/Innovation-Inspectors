@@ -1,5 +1,5 @@
+@Regression
 Feature: Sign In and Sign Out in dsAlgo Portal
-
 
   Scenario: Verify that the user can navigate to registration from login
     Given The user is on the login page
@@ -21,19 +21,22 @@ Feature: Sign In and Sign Out in dsAlgo Portal
     When The user clicks the login button after entering the Password only
     Then The error message appears below Username textbox
 
-  Scenario: Verify that user receives an error message for invalid Username during login
+  Scenario Outline: Verify that user receives an error message for invalid Username during login
     Given The user is on the DS Algo Sign in Page
-    When The user clicks the login button after entering an invalid username and valid password
-    Then The user should see an error message
+    When The user clicks the login button after entering an invalid username and valid password from excel <rowIndex>
+    Then The user should see an error message "Invalid Username and Password"
 
-  Scenario: Verify that user is able to land on the Home page after entering valid credentials
+    Examples: 
+      | rowIndex |
+      |        1 |
+      |        2 |
+      |        3 |
+
+  Scenario Outline: Verify that user is able to land on the Home page after entering valid credentials
     Given The user is on the DS Algo Sign in Page
-    When The user clicks the login button after entering valid username and valid password
+    When The user clicks the login button after entering valid username and valid password from excel <rowIndex>
     Then The user should land in Data Structure Home Page with message You are logged in
 
-
-  
-
- 
- 
-  
+    Examples: 
+      | rowIndex |
+      |        4 |

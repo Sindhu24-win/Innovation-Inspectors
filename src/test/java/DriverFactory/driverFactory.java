@@ -84,6 +84,21 @@ public class driverFactory {
         openwebpage("https://dsportalapp.herokuapp.com/tree/");
     }
 
+    public static void login()
+    {
+      openwebpage("https://dsportalapp.herokuapp.com/login");
+    }
+    
+    public static void dspage() {
+        openwebpage("https://dsportalapp.herokuapp.com/data-structures-introduction/");
+    }
+    
+    public static void graph() {
+        openwebpage("https://dsportalapp.herokuapp.com/graph/");
+    }
+    
+    
+    
     public static void tearDown() {
         if (driver.get() != null) {
             driver.get().quit();

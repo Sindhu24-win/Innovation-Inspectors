@@ -1,76 +1,37 @@
 package utilities;
 
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.io.File;
-import org.apache.poi.EncryptedDocumentException;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class ExcelReader {
+    private static Workbook workbook;
 
-	public static int totalRow = 0;
+    // Load the Excel file
+    public static void loadExcel(String filePath) throws IOException {
+        FileInputStream fileInputStream = new FileInputStream(filePath);
+        workbook = new XSSFWorkbook(fileInputStream);
+    }
 
-	public List<Map<String, String>> getData(String excelFilePath, String sheetName)
-			throws EncryptedDocumentException, IOException {
+    // Get data from a specific cell
+    public static String getCellData(String sheetName, int row, int column) {
+        Sheet sheet = workbook.getSheet(sheetName);
+        if (sheet != null) {
+            Row rowData = sheet.getRow(row);
+            if (rowData != null) {
+                Cell cell = rowData.getCell(column);
+                if (cell != null) {
+                    return cell.toString();
+                }
+            }
+        }
+        return "";
+    }
 
-		Workbook workbook = WorkbookFactory.create(new File(excelFilePath));
-
-		Sheet sheet = workbook.getSheet(sheetName);
-
-		workbook.close();
-
-		return readSheet(sheet);
-
-	}
-
-	private List<Map<String, String>> readSheet(Sheet sheet) {
-
-		Row row = null;
-
-		Cell cell = null;
-
-		totalRow = sheet.getLastRowNum();
-
-		List<Map<String, String>> excelRows = new ArrayList<Map<String, String>>();
-
-		for (int currentRow = 1; currentRow <= totalRow; currentRow++) {
-
-			row = sheet.getRow(currentRow);
-
-			short totalColumn = row.getLastCellNum();
-
-			Map<String, String> columnMapData = new LinkedHashMap<String, String>();
-
-			for (int currentColumn = 0; currentColumn < totalColumn; currentColumn++) {
-
-				cell = row.getCell(currentColumn);
-
-				String columnHeaderName = sheet.getRow(sheet.getFirstRowNum()).getCell(currentColumn)
-						.getStringCellValue();
-
-				columnMapData.put(columnHeaderName, cell.getStringCellValue());
-
-			}
-
-			excelRows.add(columnMapData);
-
-		}
-
-		return excelRows;
-
-	}
-
-	public int countRow() {
-
-		return totalRow;
-
-	}
-
+    // Get total rows in a sheet
+    public static int getRowCount(String sheetName) {
+        Sheet sheet = workbook.getSheet(sheetName);
+        return (sheet != null) ? sheet.getLastRowNum() : 0;
+    }
 }
