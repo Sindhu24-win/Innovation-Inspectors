@@ -58,6 +58,12 @@
     <artifactId>allure-cucumber7-jvm</artifactId>
     <version>2.29.1</version>
 </dependency>
+<!-- Allure TestNG Adapter -->
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-testng</artifactId>
+        <version>2.21.0</version>
+    </dependency>
 <!-- https://mvnrepository.com/artifact/ru.stqa.selenium/webdriver-factory -->
 <dependency>
     <groupId>ru.stqa.selenium</groupId>
@@ -70,12 +76,6 @@
     <artifactId>junit</artifactId>
     <version>4.13.2</version>
     <scope>test</scope>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
-<dependency>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>3.5.2</version>
 </dependency>
 <!-- Apache POI for Excel Reading -->
 
@@ -108,14 +108,22 @@
 		</dependency>
 
 
-
-
-
-
-
-
-
 </dependencies>
+<build>
+    <plugins>
+        <!-- Maven Surefire Plugin for Running Tests -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M7</version>
+            <configuration>
+                <systemPropertyVariables>
+                    <allure.results.directory>target/allure-results</allure.results.directory>
+                </systemPropertyVariables>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 </project>
   
   

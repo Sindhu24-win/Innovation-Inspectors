@@ -1,4 +1,4 @@
-@Array
+@Array @Regression
 Feature: Array Navigation
 
   Background: The User sign in to dsAlgo portal
@@ -34,7 +34,7 @@ Feature: Array Navigation
     When The user clicks the Run Button without entering the code in the Editor
     Then The user should be able to see error message in alert window
 
-  Scenario Outline: Verify that user receives error for invalid python code read from "<SheetName>"  and <RowNumber> 
+  Scenario Outline: Verify that user receives error for invalid python code read from "<SheetName>"  and <RowNumber>
     Given The user is in the tryEditor page
     When The user reads the invalid python code from  excel "<SheetName>"  and <RowNumber> and  enters in the Editor and clicks on Run Button
     Then The user should be able to see an error message in alert window
@@ -63,8 +63,8 @@ Feature: Array Navigation
     Then The user should able to see an error message in alert window
 
     Examples: 
-      | SheetName  | RowNumber | 
-      | pythonCode |         1| 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
 
   Scenario Outline: Verify that user is able to see output for valid python code read from "<SheetName>" and <RowNumber>
     Given The user is in the tryEditor page
@@ -72,8 +72,8 @@ Feature: Array Navigation
     Then The user should able to see output for Arrays using list in the console
 
     Examples: 
-      | SheetName  | RowNumber | 
-      | pythonCode |         0| 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Basic Operations in Lists page
     Given The user is on the Basic Operations in Lists page
@@ -86,8 +86,8 @@ Feature: Array Navigation
     Then The user should able to see an error message for Basic Operations in alert window
 
     Examples: 
-      | SheetName  | RowNumber | 
-      | pythonCode |         1 | 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
 
   Scenario Outline: Verify that user is able to see output for valid python code read from "<SheetName>" and <RowNumber> for Basic Operations in Lists page
     Given The user is in the tryEditor page
@@ -95,8 +95,8 @@ Feature: Array Navigation
     Then The user should able to see output for Basic Operations in the console
 
     Examples: 
-      | SheetName  | RowNumber | 
-      | pythonCode |         0 | 
+      | SheetName  | RowNumber |
+      | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Applications of Array page
     Given The user is in the Array page after Sign in
@@ -108,22 +108,22 @@ Feature: Array Navigation
     When The user clicks Try Here button in Application of Arrays page
     Then The user should be redirected to a page having an try Editor with a Run button to test
 
-  Scenario Outline: Verify that user receives error for invalid python code  read from "<SheetName>" and <RowNumber> 
+  Scenario Outline: Verify that user receives error for invalid python code  read from "<SheetName>" and <RowNumber>
     Given The user is in the tryEditor page
     When The user reads the invalid python code from excel "<SheetName>" and <RowNumber> and enters  in  Applications of Arrays Editor and click the Run Button
     Then The user should able to see error message in alert window
 
     Examples: 
-      | SheetName  | RowNumber | 
-      | pythonCode |         1 | 
+      | SheetName  | RowNumber |
+      | pythonCode |         1 |
 
-  Scenario Outline: Verify that user is able to see output for valid python code  read from "<SheetName>" and <RowNumber> 
+  Scenario Outline: Verify that user is able to see output for valid python code  read from "<SheetName>" and <RowNumber>
     Given The user is in the tryEditor page
     When The user reads the valid  python code from excel "<SheetName>" and <RowNumber> and  enters in Application of Arrays Editor and click the Run Button
     Then The user should able to see output for Application of Arrays in the console
 
     Examples: 
-      | SheetName  | RowNumber | 
+      | SheetName  | RowNumber |
       | pythonCode |         0 |
 
   Scenario: Verify that user is able to navigate to Practice Questions Page for Applications of Array page
@@ -161,21 +161,21 @@ Feature: Array Navigation
     Then The user should able to see output for maximum number of consecutive ones  in the console
 
     Examples: 
-      | SheetName  | RowNumber | 
-      | pythonCode |         4 | 
+      | SheetName  | RowNumber |
+      | pythonCode |         4 |
 
   Scenario: Verify that user is able to navigate to Find Numbers with Even Number of Digits Page from Practice questions page
     Given The user is in the practice page
     When The user clicks the Find Numbers with Even Number of Digits link
     Then The user should be redirected to Question page contains a question,and try Editor with Run and Submit button
 
-  Scenario Outline: Verify that user is able to see output for valid python code  read from "<SheetName>" and <RowNumber> 
+  Scenario Outline: Verify that user is able to see output for valid python code  read from "<SheetName>" and <RowNumber>
     Given The user is in the tryEditor in question page
     When The user reads the valid python code from excel "<SheetName>" and <RowNumber> and  enters in Editor for even number of integers and Click the Run Button
     Then The user should able to see output for even number of integers in the console
 
     Examples: 
-      | SheetName  | RowNumber | 
+      | SheetName  | RowNumber |
       | pythonCode |         6 |
 
   Scenario: Verify that user is able to navigate to Squares of a Sorted Array Page from Practice questions page
@@ -183,11 +183,16 @@ Feature: Array Navigation
     When The user clicks the Squares of a Sorted Array link
     Then The user should be redirected to Question page contains a question,and try Editor with Run and Submit button
 
-  Scenario Outline: Verify that user is able to see output for valid python code  read from "<SheetName>" and <RowNumber> 
+  Scenario Outline: Verify that user is able to see output for valid python code  read from "<SheetName>" and <RowNumber>
     Given The user is in the tryEditor in question page
     When The user reads the valid python code from excel "<SheetName>" and <RowNumber> and enters in Editor for squares of each number in Editor and Click the Run Button
     Then The user should able to see output for squares of each number  in the console
 
     Examples: 
-      | SheetName  | RowNumber | 
+      | SheetName  | RowNumber |
       | pythonCode |         8 |
+
+  Scenario: Verify that user is able to log out succeessfully from dsAlgo portal
+    Given The user is in Practice Questions page
+    When The user clicks on Sign out
+    Then The user should be logged out succeessfully

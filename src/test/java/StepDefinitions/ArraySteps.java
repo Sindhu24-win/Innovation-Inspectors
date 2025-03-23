@@ -146,7 +146,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
 		arraypage.Run.click();
@@ -179,7 +179,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
 		arraypage.Run.click();
@@ -213,7 +213,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
 		arraypage.Run.click();
@@ -246,7 +246,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
 		arraypage.Run.click();
@@ -281,7 +281,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
 		arraypage.Run.click();
@@ -314,7 +314,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
 		arraypage.Run.click();
@@ -359,7 +359,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
 		arraypage.Run.click();
@@ -391,7 +391,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
 		arraypage.Run.click();
@@ -459,7 +459,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		StringSelection stringSelection = new StringSelection(pcode);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 
@@ -509,7 +509,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		StringSelection stringSelection = new StringSelection(pcode);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 
@@ -545,7 +545,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		StringSelection stringSelection = new StringSelection(pcode);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 
@@ -586,7 +586,7 @@ public class ArraySteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		StringSelection stringSelection = new StringSelection(pcode);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 
@@ -606,6 +606,22 @@ public class ArraySteps {
 		Assert.assertEquals("[4, 9, 9, 49, 121]", arraypage.GetConsoleOutput());
 		System.out.println("======Valid python code output is ===" + arraypage.GetConsoleOutput());
 
+	}
+
+	@Given("The user is in Practice Questions page")
+	public void the_user_is_in_practice_questions_page() {
+		driver.navigate().back();
+		Assert.assertEquals(driver.getTitle(), "Practice Questions");
+	}
+
+	@When("The user clicks on Sign out")
+	public void the_user_clicks_on_sign_out() {
+		arraypage.ArraySigningout();
+	}
+
+	@Then("The user should be logged out succeessfully")
+	public void the_user_should_be_logged_out_succeessfully() {
+		arraypage.Logout();
 	}
 
 }

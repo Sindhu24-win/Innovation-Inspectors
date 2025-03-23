@@ -56,9 +56,10 @@ public class Linkedlistpage {
 	@CacheLookup()
 	public WebElement Runbtn;
 
-	@FindBy(xpath = "//pre[@id='output']")
+	// @FindBy(xpath = "//pre[@id='output']")
+	@FindBy(id = "output")
 	@CacheLookup()
-	WebElement Introduction_Output;
+	WebElement Console_Output;
 
 	@FindBy(linkText = "Creating Linked LIst")
 	@CacheLookup()
@@ -87,6 +88,14 @@ public class Linkedlistpage {
 	@FindBy(linkText = "Practice Questions")
 	@CacheLookup()
 	WebElement Practice_Questions;
+
+	@FindBy(xpath = "//a[text()='Sign out']")
+	@CacheLookup
+	WebElement Signout;
+
+	@FindBy(xpath = "//div[@class='alert alert-primary']")
+	@CacheLookup
+	WebElement logoutMsg;
 
 	private WebDriver driver;
 
@@ -152,7 +161,7 @@ public class Linkedlistpage {
 	}
 
 	public String ValidOutput() {
-		return Introduction_Output.getText();
+		return Console_Output.getText();
 	}
 
 	public void CreatingLinkedlist() {
@@ -183,4 +192,13 @@ public class Linkedlistpage {
 	public void PracticeQuestion() {
 		Practice_Questions.click();
 	}
+
+	public void LinkedlistSigningout() {
+		Signout.click();
+	}
+
+	public String Logout() {
+		return logoutMsg.getText();
+	}
+
 }

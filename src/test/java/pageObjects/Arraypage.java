@@ -146,6 +146,15 @@ public class Arraypage {
 	@CacheLookup
 	public WebElement codeMirrorDiv;
 
+	@FindBy(xpath = "//a[text()='Sign out']")
+	@CacheLookup
+	WebElement Signout;
+	
+	
+    @FindBy(xpath ="//div[@class='alert alert-primary']")
+    @CacheLookup
+    WebElement logoutMsg;
+
 	private WebDriver driver;
 
 	public Arraypage(WebDriver driver) {
@@ -296,4 +305,11 @@ public class Arraypage {
 		SquaresOf_SortedArray.click();
 	}
 
+	public void ArraySigningout() {
+		Signout.click();
+	}
+	
+	public String Logout() {
+		return logoutMsg.getText();
+	}
 }

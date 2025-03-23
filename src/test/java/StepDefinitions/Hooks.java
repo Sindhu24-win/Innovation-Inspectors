@@ -7,6 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+//import DriverFactory.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.Status;
@@ -16,9 +17,11 @@ public class Hooks {
 
 	@BeforeClass
 	public static void setUp() {
+		 
 // //Initialize WebDriver only once before all tests
 		if (driver == null) {
 			driver = new ChromeDriver();
+			driver.manage().deleteAllCookies();//clears session
 		}
 	}
 
