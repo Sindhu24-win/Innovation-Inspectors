@@ -23,15 +23,18 @@ public class TreePage {
 	@CacheLookup
 	WebElement GetStarted;
 
-	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[3]")
+	@FindBy(xpath = "//a[text()='Sign in']")
 	@CacheLookup
 	WebElement signIn;
+	@FindBy(xpath = "//a[text()='Sign out']")
+	@CacheLookup
+	WebElement signOut;
 
-	@FindBy(id = "id_username")
+	@FindBy(xpath = "//input[@name='username']")
 	@CacheLookup
 	WebElement userName;
 
-	@FindBy(id = "id_password")
+	@FindBy(xpath = "//input[@name='password']")
 	@CacheLookup
 	WebElement Password;
 
@@ -39,7 +42,7 @@ public class TreePage {
 	@CacheLookup
 	WebElement LoginBtn;
 
-	@FindBy(xpath = "//*[@class ='alert alert-primary']")
+	@FindBy(xpath = "//div[@role='alert']")
 	@CacheLookup
 	WebElement LoginStatus;
 
@@ -163,6 +166,10 @@ public class TreePage {
 		Password.sendKeys(password);
 		LoginBtn.click();
 
+	}
+
+	public void signOut() {
+		signOut.click();
 	}
 
 	public String getStatus() {

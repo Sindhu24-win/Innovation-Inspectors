@@ -38,15 +38,16 @@ public class TreeSteps {
 @Given("The user is in the Home page after Sign in")
 public void the_user_is_in_the_home_page_after_sign_in() {
 	driverFactory.getStarted();
-	driverFactory.homepage();
 	treepage.GetStarted();
-	treepage.signIn();
-	treepage.clickLogin(username, password);
+	treepage.signIn();//if we100 %
+	treepage.clickLogin(username, password); // Sign in and sign out has the same xpath. If we want to run as scenario
+	treepage.getStatus();	// it will get error.If we want to run in Test runner we need to modify this..
 }
 
 @When("The user clicks the Getting Started button in Tree Panel")
 public void the_user_clicks_the_getting_started_button_in_tree_panel() {
-	treepage.treeGetStarted();
+	driverFactory.homepage();
+	treepage.treeGetStarted();;
 }
 
 @When("The user select Tree item from the drop down menu")
@@ -512,5 +513,21 @@ public void the_user_is_in_the_try_editor_page_for_implementation_of_bst() {
 	treepage.treeGetStarted();
 	treepage.ImplementationOfBST();
 	treepage.TryHereButton();
+}
+
+@Given("The user is in the Tree data structure page")
+public void the_user_is_in_the_tree_data_structure_page() {
+	driver.navigate().back();
+}
+
+@When("The User clicks signout button from the Tree page")
+public void the_user_clicks_signout_button_from_the_tree_page() {
+	treepage.signOut();
+}
+
+@Then("The user should Logged out successfully")
+public void the_user_should_logged_out_successfully() {
+	Assert.assertEquals(driver.getTitle(), "NumpyNinja");
+	treepage.getStatus();
 }
 }

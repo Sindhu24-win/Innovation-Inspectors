@@ -30,6 +30,10 @@ public class GraphPage {
 	@CacheLookup
 	WebElement signIn;
 
+	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[3]")
+	@CacheLookup
+	WebElement SignOut;
+
 	@FindBy(id = "id_username")
 	@CacheLookup
 	WebElement userName;
@@ -98,8 +102,6 @@ public class GraphPage {
 	@CacheLookup
 	WebElement GraphRepresentationsLink;
 
-	
-
 	private WebDriver driver;
 
 	public GraphPage(WebDriver driver) {
@@ -113,6 +115,10 @@ public class GraphPage {
 
 	public void signIn() {
 		signIn.click();
+	}
+
+	public void signOut() {
+		SignOut.click();
 	}
 
 	public void clickLogin(String username, String password) {
@@ -187,7 +193,6 @@ public class GraphPage {
 			System.out.println("No alert present.");
 		}
 	}
-
 
 	public String Outputmsg() {
 		return OutPutmsg.getText();

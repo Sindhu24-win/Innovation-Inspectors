@@ -1,4 +1,4 @@
-@DsAlgo_Cucumber
+@Regression
 Feature: Graph
 
   Background: The user sign in to dsAlgo Portal
@@ -83,3 +83,8 @@ Feature: Graph
     Examples: 
       | SheetName  | RowNumber |
       | pythonCode |         0 |
+
+  Scenario: Verify that user able to logout from the Graph data structure
+    Given The user is in the Graph data structure page
+    When The User clicks signout button
+    Then The user should signout successfully

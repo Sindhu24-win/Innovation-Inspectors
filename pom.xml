@@ -5,18 +5,29 @@
 	<groupId>DsAlgo_Cucumber</groupId>
 	<artifactId>DsAlgo_Cucumber</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<build>
+	<packaging>jar</packaging>
+
+<name>DsAlgo_Cucumber</name>
+	<url>http://maven.apache.org</url>
+<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.5.2</version>
-					
+					<configuration>
+					<properties>
+					<dataproviderthreadcount>3</dataproviderthreadcount>
+					<parallel>tests</parallel>
+        			
+					</properties>
+   			 </configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
+	
 	<dependencies>
 
 
@@ -46,7 +57,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.29.0</version>
+			<version>4.28.1</version>
 		</dependency>
 		<!--
 		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
@@ -55,6 +66,13 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.9.3</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.18.0</version>
+		</dependency>
+
 
 		<!--
 		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
@@ -69,7 +87,13 @@
 			<artifactId>extentreports</artifactId>
 			<version>5.1.2</version>
 		</dependency>
-
+		<!--
+		https://mvnrepository.com/artifact/ru.stqa.selenium/webdriver-factory -->
+		<dependency>
+			<groupId>ru.stqa.selenium</groupId>
+			<artifactId>webdriver-factory</artifactId>
+			<version>4.4</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
@@ -100,6 +124,11 @@
 			<artifactId>junit</artifactId>
 			<version>4.13.2</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>3.5.2</version>
 		</dependency>
 		<!--
 		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->

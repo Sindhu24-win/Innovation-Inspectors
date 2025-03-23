@@ -86,10 +86,10 @@ public class driverFactory {
         openwebpage("https://dsportalapp.herokuapp.com/tree/");
     }
 
-//    public static void tearDown() {
-//        if (driver.get() != null) {
-//            driver.get().quit();
-//            driver.remove();
-//        }
-//    }
+   public static void tearDown() {
+        if (driver.get() != null) {
+            driver.get().quit();
+            driver.remove();
+        }
+    }
 }
