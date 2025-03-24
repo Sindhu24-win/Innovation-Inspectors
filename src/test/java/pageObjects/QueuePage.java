@@ -1,6 +1,10 @@
 
 package pageObjects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 //import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,12 +12,12 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class QueuePage {
 	private WebDriver driver;
 	WebDriverWait wait;
-	
 	String loginname = "darshana";
 	String loginpassword = "zenithhp4987";
 	public String url = "https://dsportalapp.herokuapp.com/home";
@@ -22,7 +26,7 @@ public class QueuePage {
 	@CacheLookup
 	WebElement GetStartedIntro;
 	
-	@FindBy(xpath = "//*[@id=\"navbarCollapse\"]/div[2]/ul/a[3]")
+	@FindBy(xpath = "//a[text()='Sign in']")
 	@CacheLookup
 	WebElement SignIn;
 	
@@ -66,6 +70,7 @@ public class QueuePage {
 	
 	@FindBy(xpath = "//*[@id='output']")
 	@CacheLookup
+	public
 	WebElement Outputmsg;
 	
 	@FindBy(xpath = "//a[text()='Practice Questions']")
@@ -131,14 +136,30 @@ public class QueuePage {
 	}
 
 	public void Invalidinput() {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(tryEditor).click().sendKeys("System.out.println('Hello, World!');").build().perform();
+		RunButton.click();
+		try {
+			// Wait for the alert to appear
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			wait.until(ExpectedConditions.alertIsPresent());
+
+			// Switch to the alert and accept (click OK)
+			Alert alert = driver.switchTo().alert();
+			alert.accept(); // Or alert.dismiss() if you want to dismiss the alert
+
+		} catch (NoAlertPresentException e) {
+			// No alert was present, continue with the test
+			System.out.println("No alert present.");
+		}
+
+		//Actions actions = new Actions(driver);
+		//actions.moveToElement(tryEditor).click().sendKeys("System.out.println('Hello, World!');").build().perform();
 	}
 
-	public void Validinput() {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(tryEditor).click().sendKeys("print 'Hello'").build().perform();
-	}
+//	public void Validinput() {
+	//	RunButton.click();
+		//Actions actions = new Actions(driver);
+		//actions.moveToElement(tryEditor).click().sendKeys("print 'Hello World'").build().perform();
+	//}
 	public String Outputmsg() {
 		return Outputmsg.getText();
 	}
@@ -157,9 +178,9 @@ public class QueuePage {
 	public void clickQueueOperations() {
 		QueueOperations.click();
 	}
-	//public void Signout() {
-		//Actions actions = new Actions(driver);
-		//actions.moveToElement(Signout).click().build().perform();
-	//}
+	public void SignOut() {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(Signout).click().build().perform();
+	}
 		
 		}

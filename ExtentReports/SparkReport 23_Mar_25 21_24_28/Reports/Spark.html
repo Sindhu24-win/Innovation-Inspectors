@@ -1,0 +1,2384 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Mar 23, 2025 09:24:28 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Mar 23, 2025 09:24:28 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Mar 23, 2025 09:25:05 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>2</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>2</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>40</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>120</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Queue DataStructure":27.004,"Stack DataStructure":8.947
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@Queue</td>
+<td>23</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Stack</td>
+<td>17</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Regression</td>
+<td>40</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Engineer</td>
+<td>Rajee Ramya</td>
+</tr>
+<tr>
+<td>Project</td>
+<td>Innovation_Inspectors</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>Microsoft Edge</td>
+</tr>
+<tr>
+<td>os</td>
+<td>windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 2,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 40,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 120,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@Queue</a><a class="dropdown-item" href="#">@Stack</a><a class="dropdown-item" href="#">@Regression</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Queue DataStructure</p>
+            <p class="text-sm">
+              <span>9:24:29 PM</span> / <span>00:00:27:004</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Queue DataStructure</h5>
+<span class='badge badge-success'>03.23.2025 9:24:29 PM</span>
+<span class='badge badge-danger'>03.23.2025 9:24:56 PM</span>
+<span class='badge badge-default'>00:00:27:004</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Navigate to Queue Data Structure Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_home_page()">
+                <span>Given The user is on the Home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_selects_getting_started_in_queue_panel_or_the_user_selects_queue_item_from_the_drop_down_menu()">
+                <span>When The user selects Getting Started in Queue Panel or the user selects Queue item from the drop down menu</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_be_directed_to_the_queue_data_structure_page()">
+                <span>Then The user should be directed to the Queue Data Structure Page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="7"><span class="badge log pass-bg mr-2">Pass</span>Navigate to Implementation of Queue in Python page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_queue_page()">
+                <span>Given The user is on the Queue page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_implementation_of_queue_in_python_button()">
+                <span>When The user clicks Implementation of Queue in Python button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_be_redirected_to_implementation_of_queue_in_python_page()">
+                <span>Then The user should be redirected to Implementation of Queue in Python page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="12"><span class="badge log pass-bg mr-2">Pass</span>Navigate to try editor page for Implementation of Queue in Python</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_implementation_of_queue_in_python_page()">
+                <span>Given The user is on the Implementation of Queue in Python page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_try_here_button_in_queue_in_python_page()">
+                <span>When The user clicks Try Here button in Queue in Python page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_be_redirected_to_a_page_having_a_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to a page having a try Editor with a Run button to test</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="17"><span class="badge log pass-bg mr-2">Pass</span>Error on clicking Run button without entering code for Implementation of Queue in Python</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_try_editor_page_in_the_implementation_of_queue_on_python_page()">
+                <span>Given The user is on the try editor page in the Implementation of Queue on Python page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_the_run_button_without_entering_the_code_in_the_editor()">
+                <span>When The user clicks the Run Button without entering the code in the Editor</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_see_an_error_message_in_the_alert_window()">
+                <span>Then The user should see an error message in the alert window</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="22"><span class="badge log pass-bg mr-2">Pass</span>Error for invalid Python code for Implementation of Queue in Python</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="23"><span class="badge log pass-bg mr-2">Pass</span>Error for invalid Python code for Implementation of Queue in Python</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the try editor page in the Implementation of Queue on Python page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user writes invalid python code from excel "pythonCode" and 1 and enters in the Editor and clicks the Run Button for queue tryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should see an error message in the alert window</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="28"><span class="badge log pass-bg mr-2">Pass</span>Output for valid Python code for Implementation of Queue in Python</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="29"><span class="badge log pass-bg mr-2">Pass</span>Output for valid Python code for Implementation of Queue in Python</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the try editor page in the Implementation of Queue in Python page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user writes valid python code from excel "pythonCode" and 0 and enters in the Editor and clicks the Run Button  for queue tryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should see the output in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="34"><span class="badge log pass-bg mr-2">Pass</span>Navigate to Practice Questions Page for Implementation of Queue in Python</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_queue_page()">
+                <span>Given The user is on the Queue page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_practice_questions_button_in_the_implementation_of_queue_in_python_page()">
+                <span>When The user clicks Practice Questions button in the Implementation of Queue in Python page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_be_redirected_to_the_practice_questions_page()">
+                <span>Then The user should be redirected to the Practice Questions page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="39"><span class="badge log pass-bg mr-2">Pass</span>Navigate to Implementation using collections.deque page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_queue_page()">
+                <span>Given The user is on the Queue page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_implementation_using_collections_deque_button_page()">
+                <span>When The user clicks Implementation using collections.deque button page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_be_redirected_to_the_implementation_using_collections_deque_page()">
+                <span>Then The user should be redirected to the Implementation using collections.deque page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="44"><span class="badge log pass-bg mr-2">Pass</span>Navigate to try editor page for Implementation using collections.deque</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_implementation_using_collections_deque_page()">
+                <span>Given The user is on the Implementation using collections.deque page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_try_here_button_in_queue_in_python_page()">
+                <span>When The user clicks Try Here button in Queue in Python page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_be_redirected_to_a_page_having_a_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to a page having a try Editor with a Run button to test</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="49"><span class="badge log pass-bg mr-2">Pass</span>Error on clicking Run button without entering code for Implementation using collections.deque</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_try_editor_page_in_the_implementation_using_collections_deque_page()">
+                <span>Given The user is on the try editor page in the Implementation using collections.deque page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_the_run_button_without_entering_the_code_in_the_editor()">
+                <span>When The user clicks the Run Button without entering the code in the Editor</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_see_an_error_message_in_the_alert_window()">
+                <span>Then The user should see an error message in the alert window</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="54"><span class="badge log pass-bg mr-2">Pass</span>Error for invalid Python code for Implementation using collections.deque</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="55"><span class="badge log pass-bg mr-2">Pass</span>Error for invalid Python code for Implementation using collections.deque</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the try editor page in the Implementation using collections.deque page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user writes invalid python code from excel "pythonCode" and 1 and enters in the Editor and clicks the Run Button  for queue tryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should see an error message in the alert window</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="60"><span class="badge log pass-bg mr-2">Pass</span>Output for valid Python code for Implementation using collections.deque</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="61"><span class="badge log pass-bg mr-2">Pass</span>Output for valid Python code for Implementation using collections.deque</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the try editor page in the Implementation using collections.deque page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user writes valid python code from excel "pythonCode" and 0 and enters in the Editor and clicks the Run Button  for queue tryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should see the output in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="66"><span class="badge log pass-bg mr-2">Pass</span>Navigate to Implementation using array page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_queue_page()">
+                <span>Given The user is on the Queue page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_implementation_using_array_button()">
+                <span>When The user clicks Implementation using array button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_be_redirected_to_the_implementation_using_array_page()">
+                <span>Then The user should be redirected to the Implementation using array page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="71"><span class="badge log pass-bg mr-2">Pass</span>Navigate to try editor page for Implementation using array page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_implementation_using_array_page()">
+                <span>Given The user is on the Implementation using array page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_try_here_button_in_queue_in_python_page()">
+                <span>When The user clicks Try Here button in Queue in Python page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_be_redirected_to_a_page_having_a_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to a page having a try Editor with a Run button to test</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="76"><span class="badge log pass-bg mr-2">Pass</span>Error on clicking Run button without entering code for Implementation using array page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_try_editor_page_in_the_Implementation_using_array_page()">
+                <span>Given The user is on the try editor page in the Implementation using array page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_the_run_button_without_entering_the_code_in_the_editor()">
+                <span>When The user clicks the Run Button without entering the code in the Editor</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_see_an_error_message_in_the_alert_window()">
+                <span>Then The user should see an error message in the alert window</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="81"><span class="badge log pass-bg mr-2">Pass</span>Error for invalid Python code for Implementation using array page</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="82"><span class="badge log pass-bg mr-2">Pass</span>Error for invalid Python code for Implementation using array page</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the try editor page in the Implementation using array page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user writes invalid python code from excel "pythonCode" and 1 and enters in the Editor and clicks the Run Button  for queue tryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should see an error message in the alert window</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="87"><span class="badge log pass-bg mr-2">Pass</span>Output for valid Python code for Implementation using array</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="88"><span class="badge log pass-bg mr-2">Pass</span>Output for valid Python code for Implementation using array</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the try editor page  in the Implementation using array page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user writes valid python code from excel "pythonCode" and 0 and enters in the Editor and clicks the Run Button  for queue tryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should see the output in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="93"><span class="badge log pass-bg mr-2">Pass</span>Navigate to Queue Operations page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_queue_page()">
+                <span>Given The user is on the Queue page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_queue_operations_button()">
+                <span>When The user clicks Queue Operations button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_be_redirected_to_the_queue_operations_page()">
+                <span>Then The user should be redirected to the Queue Operations page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="98"><span class="badge log pass-bg mr-2">Pass</span>Navigate to try editor page for Queue Operations</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_queue_operations_page()">
+                <span>Given The user is on the Queue Operations page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_try_here_button_in_queue_in_python_page()">
+                <span>When The user clicks Try Here button in Queue in Python page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_be_redirected_to_a_page_having_a_try_editor_with_a_run_button_to_test()">
+                <span>Then The user should be redirected to a page having a try Editor with a Run button to test</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="103"><span class="badge log pass-bg mr-2">Pass</span>Error on clicking Run button without entering code for Queue Operations</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_on_the_try_editor_page_in_the_queue_operations_page()">
+                <span>Given The user is on the try editor page in the Queue Operations page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_the_run_button_without_entering_the_code_in_the_editor()">
+                <span>When The user clicks the Run Button without entering the code in the Editor</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_see_an_error_message_in_the_alert_window()">
+                <span>Then The user should see an error message in the alert window</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="108"><span class="badge log pass-bg mr-2">Pass</span>Error for invalid Python code for Queue Operations</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="109"><span class="badge log pass-bg mr-2">Pass</span>Error for invalid Python code for Queue Operations</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the try editor page in the Queue Operations page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user writes invalid python code from excel "pythonCode" and 1 and enters in the Editor and clicks the Run Button  for queue tryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should see an error message in the alert window</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="114"><span class="badge log pass-bg mr-2">Pass</span>Output for valid Python code for Queue Operations</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="115"><span class="badge log pass-bg mr-2">Pass</span>Output for valid Python code for Queue Operations</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given The user is on the try editor page in the Queue Operations page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When The user writes valid python code from excel "pythonCode" and 0 and enters in the Editor and clicks the Run Button for queue tryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then The user should see the output in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="120"><span class="badge log pass-bg mr-2">Pass</span>Verify that user able to logout from the Queue data structure</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_is_in_the_queue_data_structure_page()">
+                <span>Given The user is in the Queue data structure page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_clicks_signout_button()">
+                <span>When The User clicks signout button.</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.QueueSteps.the_user_should_signout_successfully()">
+                <span>Then The user should signout successfully.</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="125"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Stack DataStructure</p>
+            <p class="text-sm">
+              <span>9:24:56 PM</span> / <span>00:00:08:947</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Stack DataStructure</h5>
+<span class='badge badge-success'>03.23.2025 9:24:56 PM</span>
+<span class='badge badge-danger'>03.23.2025 9:25:05 PM</span>
+<span class='badge badge-default'>00:00:08:947</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=125</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="126"><span class="badge log pass-bg mr-2">Pass</span>Navigate to Stack Data Structure Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_is_on_the_homepage_after_logging_into_the_ds_algo_portal()">
+                <span>Given the user is on the homepage after logging into the dsAlgo Portal</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_selects_the_getting_started_button_from_the_stack_panel()">
+                <span>When the user selects the Getting Started button from the Stack panel</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_should_be_redirected_to_the_stack_data_structure_page()">
+                <span>Then the user should be redirected to the Stack Data Structure page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="131"><span class="badge log pass-bg mr-2">Pass</span>Navigate to Operations in Stack Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_is_on_the_stack_page()">
+                <span>Given the user is on the Stack page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_clicks_the_operations_in_stack_link()">
+                <span>When the user clicks the Operations in Stack link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_should_be_navigated_to_the_operations_in_stack_page()">
+                <span>Then the user should be navigated to the Operations in Stack page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="136"><span class="badge log pass-bg mr-2">Pass</span>Navigate to TryEditor for Operations in Stack</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_is_on_the_operations_in_stack_page()">
+                <span>Given the user is on the Operations in Stack page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_clicks_the_try_here_button_on_the_operations_in_stack_page()">
+                <span>When the user clicks the Try Here button on the Operations in Stack page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_should_be_taken_to_a_page_containing_a_try_editor_with_a_run_button_for_testing_the_code()">
+                <span>Then the user should be taken to a page containing a try editor with a Run button for testing the code</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="141"><span class="badge log pass-bg mr-2">Pass</span>Error on Clicking Run Without Code in Operations in Stack</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_is_on_the_try_editor_page_in_the_operations_in_stack_on_python_page()">
+                <span>Given the user is on the TryEditor page in the Operations in Stack on Python page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_clicks_the_run_button_without_any_code_in_the_editor()">
+                <span>When the user clicks the Run button without any code in the editor</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_should_receive_an_error_message_in_the_alert_window()">
+                <span>Then the user should receive an error message in the alert window</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="146"><span class="badge log pass-bg mr-2">Pass</span>Error for Invalid Python Code in Operations in Stack</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="147"><span class="badge log pass-bg mr-2">Pass</span>Error for Invalid Python Code in Operations in Stack</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the TryEditor page in the Operations in Stack on Python page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user types invalid python code from excel "pythonCode" and 1 and enters in the editor and clicks the Run button for stack TryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the user should see an error message in the alert window</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="152"><span class="badge log pass-bg mr-2">Pass</span>Display Output for Valid Python Code in Operations in Stack</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="153"><span class="badge log pass-bg mr-2">Pass</span>Display Output for Valid Python Code in Operations in Stack</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the TryEditor page in the Operations in Stack on Python page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user enters valid python code  from excel "pythonCode" and 0 and enters in the editor and clicks the Run button for stack TryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the user should see the output displayed in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="158"><span class="badge log pass-bg mr-2">Pass</span>Navigate to Practice Questions Page for Operations in Stack</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_is_on_the_operations_in_stack_page()">
+                <span>Given the user is on the Operations in Stack page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_clicks_the_practice_questions_button_in_the_operations_in_stack_on_python_page()">
+                <span>When the user clicks the Practice Questions button in the Operations in Stack on Python page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_should_be_redirected_to_the_practice_questions_page()">
+                <span>Then the user should be redirected to the Practice Questions page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="163"><span class="badge log pass-bg mr-2">Pass</span>Navigate to Implementation Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_is_currently_on_the_stack_page()">
+                <span>Given the user is currently on the stack page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_clicks_the_implementation_link()">
+                <span>When the user clicks the Implementation link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_should_be_taken_to_the_implementation_page()">
+                <span>Then the user should be taken to the Implementation page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="168"><span class="badge log pass-bg mr-2">Pass</span>Navigate to TryEditor for Implementation Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_is_on_the_implementation_page()">
+                <span>Given the user is on the Implementation page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_clicks_the_try_here_button_on_the_implementation_page()">
+                <span>When the user clicks the Try Here button on the Implementation page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_should_be_redirected_to_a_page_containing_a_try_editor_with_a_run_button_for_testing_the_code()">
+                <span>Then the user should be redirected to a page containing a try editor with a Run button for testing the code</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="173"><span class="badge log pass-bg mr-2">Pass</span>Error on Clicking Run Without Code in Implementation Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_is_on_the_try_editor_page_in_the_implementation_page()">
+                <span>Given the user is on the TryEditor page in the Implementation page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_clicks_the_run_button_without_entering_any_code_in_the_editor()">
+                <span>When the user clicks the Run button without entering any code in the editor</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_should_see_an_error_message_in_the_alert_window()">
+                <span>Then the user should see an error message in the alert window</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="178"><span class="badge log pass-bg mr-2">Pass</span>Error for Invalid Python Code in Implementation Page</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="179"><span class="badge log pass-bg mr-2">Pass</span>Error for Invalid Python Code in Implementation Page</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the TryEditor page in the Implementation page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user enters invalid python code from excel "pythonCode" and 1 and enters in the editor and clicks the Run button for stack TryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the user should receive an error message in the alert window</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="184"><span class="badge log pass-bg mr-2">Pass</span>Display Output for Valid Python Code in Implementation Page</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="185"><span class="badge log pass-bg mr-2">Pass</span>Display Output for Valid Python Code in Implementation Page</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the TryEditor page in the Implementation page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user enters valid python code from excel "pythonCode" and 0 and enters in the editor and clicks the Run button for stack TryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the user should see the output displayed in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="190"><span class="badge log pass-bg mr-2">Pass</span>Navigate to Applications Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_is_currently_on_the_stack_page()">
+                <span>Given the user is currently on the stack page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_clicks_the_applications_link()">
+                <span>When the user clicks the Applications link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_should_be_taken_to_the_applications_page()">
+                <span>Then the user should be taken to the Applications page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="195"><span class="badge log pass-bg mr-2">Pass</span>Navigate to TryEditor for Applications Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_is_on_the_applications_page()">
+                <span>Given the user is on the Applications page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_clicks_the_try_here_button_on_the_applications_page()">
+                <span>When the user clicks the Try Here button on the Applications page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_should_be_redirected_to_a_page_containing_a_try_editor_with_a_run_button_for_testing_the_code()">
+                <span>Then the user should be redirected to a page containing a try editor with a Run button for testing the code</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="200"><span class="badge log pass-bg mr-2">Pass</span>Error on Clicking Run Without Code in Applications Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_is_on_the_try_editor_page_in_the_applications_page()">
+                <span>Given the user is on the TryEditor page in the Applications page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_clicks_the_run_button_without_any_code_in_the_editor()">
+                <span>When the user clicks the Run button without any code in the editor</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.StackSteps.the_user_should_see_an_error_message_in_the_alert_window()">
+                <span>Then the user should see an error message in the alert window</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="205"><span class="badge log pass-bg mr-2">Pass</span>Error for Invalid Python Code in Applications Page</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="206"><span class="badge log pass-bg mr-2">Pass</span>Error for Invalid Python Code in Applications Page</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the TryEditor page in the Applications page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user enters invalid python code from excel "pythonCode" and 1 and enters in the editor and clicks the Run button for stack TryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the user should receive an error message in the alert window</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="211"><span class="badge log pass-bg mr-2">Pass</span>Display Output for Valid Python Code in Applications Page</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="212"><span class="badge log pass-bg mr-2">Pass</span>Display Output for Valid Python Code in Applications Page</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given the user is on the TryEditor page in the Applications page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When the user enters valid python code  from excel "pythonCode" and 0 and enters in the editor and clicks the Run button for stack TryEditor</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then the user should see the output displayed in the console</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>23</span>
+</span>
+<p class="name">@Queue</p>
+<p class="duration text-sm">23 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Queue</h4>
+<span status="pass" class='badge log pass-bg'>23 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Navigate to Queue Data Structure Page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Queue Data Structure Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='7'>Navigate to Implementation of Queue in Python page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Implementation of Queue in Python page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Navigate to try editor page for Implementation of Queue in Python</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to try editor page for Implementation of Queue in Python</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Error on clicking Run button without entering code for Implementation of Queue in Python</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error on clicking Run button without entering code for Implementation of Queue in Python</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='23'>Error for invalid Python code for Implementation of Queue in Python</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error for invalid Python code for Implementation of Queue in Python</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='29'>Output for valid Python code for Implementation of Queue in Python</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Output for valid Python code for Implementation of Queue in Python</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='34'>Navigate to Practice Questions Page for Implementation of Queue in Python</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Practice Questions Page for Implementation of Queue in Python</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='39'>Navigate to Implementation using collections.deque page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Implementation using collections.deque page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Navigate to try editor page for Implementation using collections.deque</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to try editor page for Implementation using collections.deque</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='49'>Error on clicking Run button without entering code for Implementation using collections.deque</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error on clicking Run button without entering code for Implementation using collections.deque</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='55'>Error for invalid Python code for Implementation using collections.deque</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error for invalid Python code for Implementation using collections.deque</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='61'>Output for valid Python code for Implementation using collections.deque</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Output for valid Python code for Implementation using collections.deque</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='66'>Navigate to Implementation using array page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Implementation using array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='71'>Navigate to try editor page for Implementation using array page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to try editor page for Implementation using array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='76'>Error on clicking Run button without entering code for Implementation using array page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error on clicking Run button without entering code for Implementation using array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='82'>Error for invalid Python code for Implementation using array page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error for invalid Python code for Implementation using array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='88'>Output for valid Python code for Implementation using array</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Output for valid Python code for Implementation using array</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='93'>Navigate to Queue Operations page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Queue Operations page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='98'>Navigate to try editor page for Queue Operations</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to try editor page for Queue Operations</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='103'>Error on clicking Run button without entering code for Queue Operations</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error on clicking Run button without entering code for Queue Operations</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='109'>Error for invalid Python code for Queue Operations</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error for invalid Python code for Queue Operations</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='115'>Output for valid Python code for Queue Operations</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Output for valid Python code for Queue Operations</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='120'>Verify that user able to logout from the Queue data structure</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Verify that user able to logout from the Queue data structure</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>17</span>
+</span>
+<p class="name">@Stack</p>
+<p class="duration text-sm">17 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Stack</h4>
+<span status="pass" class='badge log pass-bg'>17 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='126'>Navigate to Stack Data Structure Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to Stack Data Structure Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='131'>Navigate to Operations in Stack Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to Operations in Stack Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='136'>Navigate to TryEditor for Operations in Stack</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to TryEditor for Operations in Stack</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='141'>Error on Clicking Run Without Code in Operations in Stack</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error on Clicking Run Without Code in Operations in Stack</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='147'>Error for Invalid Python Code in Operations in Stack</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error for Invalid Python Code in Operations in Stack</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='153'>Display Output for Valid Python Code in Operations in Stack</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Display Output for Valid Python Code in Operations in Stack</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='158'>Navigate to Practice Questions Page for Operations in Stack</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to Practice Questions Page for Operations in Stack</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='163'>Navigate to Implementation Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to Implementation Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='168'>Navigate to TryEditor for Implementation Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to TryEditor for Implementation Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='173'>Error on Clicking Run Without Code in Implementation Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error on Clicking Run Without Code in Implementation Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='179'>Error for Invalid Python Code in Implementation Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error for Invalid Python Code in Implementation Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='185'>Display Output for Valid Python Code in Implementation Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Display Output for Valid Python Code in Implementation Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:02 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='190'>Navigate to Applications Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to Applications Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='195'>Navigate to TryEditor for Applications Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to TryEditor for Applications Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='200'>Error on Clicking Run Without Code in Applications Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error on Clicking Run Without Code in Applications Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='206'>Error for Invalid Python Code in Applications Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error for Invalid Python Code in Applications Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='212'>Display Output for Valid Python Code in Applications Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Display Output for Valid Python Code in Applications Page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>40</span>
+</span>
+<p class="name">@Regression</p>
+<p class="duration text-sm">40 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Regression</h4>
+<span status="pass" class='badge log pass-bg'>40 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Navigate to Queue Data Structure Page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Queue Data Structure Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='7'>Navigate to Implementation of Queue in Python page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Implementation of Queue in Python page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Navigate to try editor page for Implementation of Queue in Python</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to try editor page for Implementation of Queue in Python</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Error on clicking Run button without entering code for Implementation of Queue in Python</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error on clicking Run button without entering code for Implementation of Queue in Python</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='23'>Error for invalid Python code for Implementation of Queue in Python</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error for invalid Python code for Implementation of Queue in Python</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='29'>Output for valid Python code for Implementation of Queue in Python</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Output for valid Python code for Implementation of Queue in Python</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='34'>Navigate to Practice Questions Page for Implementation of Queue in Python</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Practice Questions Page for Implementation of Queue in Python</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='39'>Navigate to Implementation using collections.deque page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Implementation using collections.deque page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='44'>Navigate to try editor page for Implementation using collections.deque</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to try editor page for Implementation using collections.deque</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='49'>Error on clicking Run button without entering code for Implementation using collections.deque</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error on clicking Run button without entering code for Implementation using collections.deque</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='55'>Error for invalid Python code for Implementation using collections.deque</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error for invalid Python code for Implementation using collections.deque</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='61'>Output for valid Python code for Implementation using collections.deque</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Output for valid Python code for Implementation using collections.deque</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='66'>Navigate to Implementation using array page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Implementation using array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='71'>Navigate to try editor page for Implementation using array page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to try editor page for Implementation using array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='76'>Error on clicking Run button without entering code for Implementation using array page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error on clicking Run button without entering code for Implementation using array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='82'>Error for invalid Python code for Implementation using array page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error for invalid Python code for Implementation using array page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='88'>Output for valid Python code for Implementation using array</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Output for valid Python code for Implementation using array</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='93'>Navigate to Queue Operations page</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to Queue Operations page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='98'>Navigate to try editor page for Queue Operations</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Navigate to try editor page for Queue Operations</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='103'>Error on clicking Run button without entering code for Queue Operations</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error on clicking Run button without entering code for Queue Operations</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='109'>Error for invalid Python code for Queue Operations</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Error for invalid Python code for Queue Operations</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='115'>Output for valid Python code for Queue Operations</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Output for valid Python code for Queue Operations</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='120'>Verify that user able to logout from the Queue data structure</a>
+<div class="">
+<span class="badge badge-default">Queue DataStructure.Verify that user able to logout from the Queue data structure</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='126'>Navigate to Stack Data Structure Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to Stack Data Structure Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='131'>Navigate to Operations in Stack Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to Operations in Stack Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='136'>Navigate to TryEditor for Operations in Stack</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to TryEditor for Operations in Stack</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='141'>Error on Clicking Run Without Code in Operations in Stack</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error on Clicking Run Without Code in Operations in Stack</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:58 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='147'>Error for Invalid Python Code in Operations in Stack</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error for Invalid Python Code in Operations in Stack</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='153'>Display Output for Valid Python Code in Operations in Stack</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Display Output for Valid Python Code in Operations in Stack</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:24:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='158'>Navigate to Practice Questions Page for Operations in Stack</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to Practice Questions Page for Operations in Stack</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='163'>Navigate to Implementation Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to Implementation Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='168'>Navigate to TryEditor for Implementation Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to TryEditor for Implementation Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='173'>Error on Clicking Run Without Code in Implementation Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error on Clicking Run Without Code in Implementation Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='179'>Error for Invalid Python Code in Implementation Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error for Invalid Python Code in Implementation Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='185'>Display Output for Valid Python Code in Implementation Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Display Output for Valid Python Code in Implementation Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:02 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='190'>Navigate to Applications Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to Applications Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='195'>Navigate to TryEditor for Applications Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Navigate to TryEditor for Applications Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='200'>Error on Clicking Run Without Code in Applications Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error on Clicking Run Without Code in Applications Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='206'>Error for Invalid Python Code in Applications Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Error for Invalid Python Code in Applications Page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>21:25:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='212'>Display Output for Valid Python Code in Applications Page</a>
+<div class="">
+<span class="badge badge-default">Stack DataStructure.Display Output for Valid Python Code in Applications Page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
