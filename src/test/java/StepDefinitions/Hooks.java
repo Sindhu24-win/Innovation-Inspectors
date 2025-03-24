@@ -18,7 +18,7 @@ package StepDefinitions;
 		public Hooks() {
 
 		}
-
+		
 		@Before
 		public static void setUp() {
 	// Initialize WebDriver only once before all tests

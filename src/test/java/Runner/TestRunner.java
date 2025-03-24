@@ -12,10 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 
 
 
-@CucumberOptions(features ={"src/test/resources/features/Register.feature",
-		"src/test/resources/features/Login.feature",
-		"src/test/resources/features/Home.feature",
-		"src/test/resources/features/DataStructure.feature"},
+@CucumberOptions(features ={"src/test/resources/features"},
           glue={"StepDefinitions"},
 
                  monochrome=true,tags="@Regression",
@@ -41,18 +38,14 @@ public class TestRunner extends AbstractTestNGCucumberTests{
     }
 
 	
-
 	@Override
 
 	  @DataProvider(parallel = false)
 
 	  public Object[][] scenarios() {
 
-					
-
 			return super.scenarios();
-			
-			
+						
 	}
 
 }

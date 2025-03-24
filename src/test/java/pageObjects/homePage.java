@@ -1,175 +1,197 @@
 package pageObjects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-//import io.cucumber.messages.types.Duration;
-
 public class homePage {
 
-	  WebDriver driver;
-	  WebDriverWait wait;
+    WebDriver driver;
+    WebDriverWait wait;
 
-	    // Locating the Data Structures dropdown menu
-	    @FindBy(xpath = "//a[contains(text(),'Data Structures')]")
-	    private WebElement dataStructuresDropdown;
-
-	    // Locating the "Arrays" option in the dropdown
-	    @FindBy(xpath = "//a[text()='Arrays']")
-	    private WebElement arraysOption;
-
-	    // Locating the "Linked List" option in the dropdown
-	    @FindBy(xpath = "//a[text()='Linked List']")
-	    private WebElement linkedListOption;
-
-	    // Locating the "Stack" option in the dropdown
-	    @FindBy(xpath = "//a[text()='Stack']")
-	    private WebElement stackOption;
-
-	    // Locating the "Queue" option in the dropdown
-	    @FindBy(xpath = "//a[text()='Queue']")
-	    private WebElement queueOption;
-
-	    // Locating the "Tree" option in the dropdown
-	    @FindBy(xpath = "//a[text()='Tree']")
-	    private WebElement treeOption;
-
-	    // Locating the "Graph" option in the dropdown
-	    @FindBy(xpath = "//a[text()='Graph']")
-	    private WebElement graphOption;
-	    
-	   
-	
-	//By logoutmessage=By.xpath("//div[@role='alert']");
-	
-	
-    @FindBy(xpath="/html/body/div[2]")WebElement loginMessage;
-	
-    @FindBy(xpath="//a[@href='/register']")WebElement registerLink;
-   
-	@FindBy(xpath="//a[@href='/login']")WebElement loginLink;
-   
-    @FindBy(xpath="//div[@role='alert']")WebElement logoutMessage;
-    
-    // Locating the "Get Started" button for Data Structures Introduction
-    @FindBy(xpath = "//a[@href='data-structures-introduction']")
-    private WebElement dsIntroGetStarted;
-
-    // Locating the "Get Started" button for Array
-    @FindBy(xpath = "//a[@href='array']")
-    private WebElement arrayGetStarted;
-
-    // Locating the "Get Started" button for Linked List
-    @FindBy(xpath = "//a[@href='linked-list']")
-    private WebElement linkedListGetStarted;
-
-    // Locating the "Get Started" button for Stack
-    @FindBy(xpath = "//a[@href='stack']")
-    private WebElement stackGetStarted;
-
-    // Locating the "Get Started" button for Queue
-    @FindBy(xpath = "//a[@href='queue']")
-    private WebElement queueGetStarted;
-
-    // Locating the "Get Started" button for Tree
-    @FindBy(xpath = "//a[@href='tree']")
-    private WebElement treeGetStarted;
-
-    // Locating the "Get Started" button for Graph
-    @FindBy(xpath = "//a[@href='graph']")
-    private WebElement graphGetStarted;
-
-    // Locating the "Sign Out" link
-    @FindBy(xpath="//a[@href='/logout']")
-    private WebElement signOutLink;
-
-    
-  
     // Constructor to initialize PageFactory elements
     public homePage(WebDriver driver) {
+        this.driver = driver;  // ✅ Set driver before using it
+        this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(10)); // ✅ Initialize WebDriverWait correctly
         PageFactory.initElements(driver, this);
-       // wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    
-    // Method to click on the dropdown menu
+    @FindBy(xpath = "//button[text()='Get Started']")
+    WebElement DSAlgoGetstart;
+
+    @FindBy(id = "id_username")
+    WebElement userName;
+
+    @FindBy(id = "id_password")
+    @CacheLookup
+    WebElement Password;
+
+    @FindBy(xpath = "//*[@value='Login']")
+    @CacheLookup
+    WebElement LoginBtn;
+
+    @FindBy(xpath = "//div[@class='nav-item dropdown show']")
+    public WebElement dataStructuresDropdown;
+
+    @FindBy(xpath = "//a[text()='Arrays']")
+    public WebElement arraysOption;
+
+    @FindBy(xpath = "//a[text()='Linked List']")
+    public WebElement linkedListOption;
+
+    @FindBy(xpath = "//a[text()='Stack']")
+    public WebElement stackOption;
+
+    @FindBy(xpath = "//a[text()='Queue']")
+    public WebElement queueOption;
+
+    @FindBy(xpath = "//a[text()='Tree']")
+    public WebElement treeOption;
+
+    @FindBy(xpath = "//a[text()='Graph']")
+    public WebElement graphOption;
+
+    @FindBy(xpath = "/html/body/div[2]")
+    public WebElement warning;
+
+    @FindBy(xpath="/html/body/div[2]")
+    public WebElement loginMessage;
+
+    @FindBy(xpath="//a[@href='/register']")
+    public WebElement registerLink;
+
+    @FindBy(xpath="//a[text()='Sign in']")
+    public WebElement loginLink;
+
+    @FindBy(xpath="//div[@role='alert']")
+    public WebElement logoutMessage;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div/a/button")
+    public WebElement dsIntroGetStarted;
+
+    @FindBy(xpath = "//a[@href='array']")
+    public WebElement arrayGetStarted;
+
+    @FindBy(xpath = "//a[@href='linked-list']")
+    public WebElement linkedListGetStarted;
+
+    @FindBy(xpath = "//a[@href='stack']")
+    public WebElement stackGetStarted;
+
+    @FindBy(xpath = "//a[@href='queue']")
+    public WebElement queueGetStarted;
+
+    @FindBy(xpath = "//a[@href='tree']")
+    public WebElement treeGetStarted;
+
+    @FindBy(xpath = "//a[@href='graph']")
+    public WebElement graphGetStarted;
+
+    @FindBy(xpath="//a[@href='/logout']")
+    public WebElement signOutLink;
+
+    // ✅ Fix WebDriverWait initialization in constructor
     public void openDropdown() {
-        wait.until(ExpectedConditions.elementToBeClickable(dataStructuresDropdown)).click();
-    }
-    
- // Method to select a specific option from the dropdown
-    public void selectDropdownOption(String option) {
-        openDropdown(); // Ensure dropdown is opened before selection
+        WebElement dropdown = driver.findElement(By.xpath("//a[@href='#']"));
 
-        switch (option.toLowerCase()) {
-            case "arrays":
-                wait.until(ExpectedConditions.elementToBeClickable(arraysOption)).click();
-                break;
-            case "linked list":
-                wait.until(ExpectedConditions.elementToBeClickable(linkedListOption)).click();
-                break;
-            case "stack":
-                wait.until(ExpectedConditions.elementToBeClickable(stackOption)).click();
-                break;
-            case "queue":
-                wait.until(ExpectedConditions.elementToBeClickable(queueOption)).click();
-                break;
-            case "tree":
-                wait.until(ExpectedConditions.elementToBeClickable(treeOption)).click();
-                break;
-            case "graph":
-                wait.until(ExpectedConditions.elementToBeClickable(graphOption)).click();
-                break;
-            default:
-                System.out.println("Invalid dropdown option: " + option);
-        }
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dropdown);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(dropdown)).click();
     }
-    // Methods to click on "Get Started" buttons
-    public void clickDSIntroGetStarted() {
-        dsIntroGetStarted.click();
+
+    // ✅ Ensure elements are clickable before interacting
+    public void dropdown(String string) {
+
+    	dataStructuresDropdown.click();
+		switch (string) {
+		case "Arrays":
+			
+			arraysOption.click();
+			break;
+		case "Linkedlist":
+			
+			linkedListOption.click();
+			break;
+		case "Stack":
+			
+			stackOption.click();
+			break;
+		case "Queue":
+			
+			queueOption.click();
+			break;
+		case "Tree":
+			
+			treeOption.click();
+			break;
+		case "Graph":
+			
+			graphOption.click();
+			break;
+		}
+		}
+
+    public void clickLogin(String username, String password) {
+        wait.until(ExpectedConditions.visibilityOf(userName)).sendKeys(username);
+        wait.until(ExpectedConditions.visibilityOf(Password)).sendKeys(password);
+        wait.until(ExpectedConditions.elementToBeClickable(LoginBtn)).click();
     }
 
     public void clickArrayGetStarted() {
-        arrayGetStarted.click();
+        wait.until(ExpectedConditions.elementToBeClickable(arrayGetStarted)).click();
+    }
+
+    public void GetStarted() {
+        wait.until(ExpectedConditions.elementToBeClickable(DSAlgoGetstart)).click();
     }
 
     public void clickLinkedListGetStarted() {
-        linkedListGetStarted.click();
+        wait.until(ExpectedConditions.elementToBeClickable(linkedListGetStarted)).click();
     }
 
     public void clickStackGetStarted() {
-        stackGetStarted.click();
+        wait.until(ExpectedConditions.elementToBeClickable(stackGetStarted)).click();
     }
 
     public void clickQueueGetStarted() {
-        queueGetStarted.click();
+        wait.until(ExpectedConditions.elementToBeClickable(queueGetStarted)).click();
     }
 
     public void clickTreeGetStarted() {
-        treeGetStarted.click();
+        wait.until(ExpectedConditions.elementToBeClickable(treeGetStarted)).click();
     }
 
     public void clickGraphGetStarted() {
-        graphGetStarted.click();
+        wait.until(ExpectedConditions.elementToBeClickable(graphGetStarted)).click();
     }
 
     public void clickSignOut() {
-        signOutLink.click();
+        wait.until(ExpectedConditions.elementToBeClickable(signOutLink)).click();
     }
+
     public void clickSignIn() {
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+       // WebElement signInButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Sign in')]")));
     	loginLink.click();
     }
-	
-	public void clickRegister()
-	{
-		registerLink.click();
-	}
-	public String getWelcomeMessage() {
-		return loginMessage.getText();
-	}
-	
+    public void clickRegister() {
+        wait.until(ExpectedConditions.elementToBeClickable(registerLink)).click();
+    }
+
+    public String getWelcomeMessage() {
+        return wait.until(ExpectedConditions.visibilityOf(loginMessage)).getText();
+    }
+
+    public String getLogoutMessage() {
+        return wait.until(ExpectedConditions.visibilityOf(logoutMessage)).getText();
+    }
 }
