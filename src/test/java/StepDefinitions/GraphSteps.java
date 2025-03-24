@@ -14,6 +14,7 @@ import org.testng.Assert;
 import DriverFactory.driverFactory;
 import Utilities.ConfigReader;
 import Utilities.Excelreaderpython;
+import Utilities.LoggerReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -48,7 +49,10 @@ public class GraphSteps {
 
 	@Then("The user should be directed to Graph Data Structure Page")
 	public void the_user_should_be_directed_to_graph_data_structure_page() {
+
 		Assert.assertEquals(driver.getTitle(), "Graph");
+		LoggerReader.info("User is in the Graph Page");
+
 	}
 
 	@Given("The user is in the Home page after Signed in.")
@@ -64,6 +68,7 @@ public class GraphSteps {
 
 	@Then("The user should land in Graph Data Structure Page")
 	public void the_user_should_land_in_graph_data_structure_page() {
+		LoggerReader.info("User is in the Graph Page");
 		Assert.assertEquals(driver.getTitle(), "Graph");
 	}
 
@@ -81,6 +86,8 @@ public class GraphSteps {
 
 	@Then("The user should be redirected to Graph page of Graph-Data structures")
 	public void the_user_should_be_redirected_to_graph_page_of_graph_data_structures() {
+		String Title = graphPage.GraphTitle();
+		LoggerReader.info("title of current page : Graph" + Title);
 		Assert.assertEquals(driver.getTitle(), "Graph");
 	}
 
@@ -133,7 +140,7 @@ public class GraphSteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(graphPage.tryEditor).sendKeys(pcode).build().perform();
 		graphPage.Invalidinput();
@@ -147,7 +154,7 @@ public class GraphSteps {
 		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(graphPage.tryEditor).sendKeys(pcode).build().perform();
 		graphPage.RunBtn.click();
@@ -205,5 +212,6 @@ public class GraphSteps {
 	public void the_user_should_signout_successfully() {
 		Assert.assertEquals(driver.getTitle(), "NumpyNinja");
 		graphPage.getStatus();
+		LoggerReader.info("User Signed out Successfully!");
 	}
 }

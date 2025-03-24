@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import DriverFactory.driverFactory;
 import Utilities.ConfigReader;
 import Utilities.Excelreaderpython;
+import Utilities.LoggerReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -39,9 +40,10 @@ public class TreeSteps {
 public void the_user_is_in_the_home_page_after_sign_in() {
 	driverFactory.getStarted();
 	treepage.GetStarted();
-	treepage.signIn();//if we100 %
-	treepage.clickLogin(username, password); // Sign in and sign out has the same xpath. If we want to run as scenario
-	treepage.getStatus();	// it will get error.If we want to run in Test runner we need to modify this..
+	treepage.signIn();
+	treepage.clickLogin(username, password); // Sign in and sign out has the same xpath. 
+	treepage.getStatus();	
+	LoggerReader.info("User Signed in Successfully!");
 }
 
 @When("The user clicks the Getting Started button in Tree Panel")
@@ -52,6 +54,8 @@ public void the_user_clicks_the_getting_started_button_in_tree_panel() {
 
 @When("The user select Tree item from the drop down menu")
 public void the_user_select_tree_item_from_the_drop_down_menu() {
+	LoggerReader.info("User click on Data Structure dropdown ");
+	LoggerReader.info("User select Tree from Data Structure dropdown ");
 	treepage.dropdownMenuClick();
 	treepage.clickTreeFromDropdown();
 }
@@ -74,7 +78,6 @@ public void the_user_selects_tree_item_from_the_drop_down_menu() {
 
 @Then("The user should land on the Tree Data Structure page")
 public void the_user_should_land_on_the_tree_data_structure_page() {
-	System.out.println("Current URL: " + driver.getCurrentUrl());
 	System.out.println("Actual title: " + driver.getTitle());
 	assertEquals("Tree", driver.getTitle());
 
@@ -111,6 +114,7 @@ public void the_user_clicks_try_here_button_in_the_overview_of_trees_page() {
 public void the_user_should_be_redirected_to_a_try_editor_page_with_a_run_button_to_test() {
 	assert treepage.tryEditor.isDisplayed();
 	assert treepage.RunBtn.isDisplayed();
+	LoggerReader.info("User redirected to a page having an tryEditor with a Run button to test");
 }
 
 @Given("The user is on the TryEditor page.")
@@ -146,7 +150,7 @@ public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_
 	String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 	Path filePath = Paths.get(relativePath).toAbsolutePath();
 	List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-	String pcode = testDataMap.get(rowNumber).get("pCode");
+	String pcode = testDataMap.get(rowNumber).get("pyCode");
 	Actions actions = new Actions(driver);
 	actions.moveToElement(treepage.tryEditor).sendKeys(pcode).build().perform();
 	treepage.Invalidinput();
@@ -158,7 +162,7 @@ public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_th
 	String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 	Path filePath = Paths.get(relativePath).toAbsolutePath();
 	List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-	String pcode = testDataMap.get(rowNumber).get("pCode");
+	String pcode = testDataMap.get(rowNumber).get("pyCode");
 	Actions actions = new Actions(driver);
 	actions.moveToElement(treepage.tryEditor).sendKeys(pcode).build().perform();
 	treepage.RunBtn.click();
@@ -529,5 +533,6 @@ public void the_user_clicks_signout_button_from_the_tree_page() {
 public void the_user_should_logged_out_successfully() {
 	Assert.assertEquals(driver.getTitle(), "NumpyNinja");
 	treepage.getStatus();
+	LoggerReader.info("User Signed out Successfully!");
 }
 }

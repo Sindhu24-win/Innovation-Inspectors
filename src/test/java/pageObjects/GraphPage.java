@@ -15,6 +15,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Utilities.LoggerReader;
+
 public class GraphPage {
 
 	WebDriverWait wait;
@@ -125,6 +127,7 @@ public class GraphPage {
 		userName.sendKeys(username);
 		Password.sendKeys(password);
 		LoginBtn.click();
+		LoggerReader.info("User Signed in Successfully");
 	}
 
 	public String getStatus() {
@@ -149,16 +152,16 @@ public class GraphPage {
 
 	public void Graphlink() {
 		GraphLink.click();
+		
 	}
 
 	public void TryHereButton() {
 		TryhereBtn.click();
+		LoggerReader.info("User clicked on Graph Try here link");
 	}
 
-	public void enterCode() {
-		tryEditor.clear();
-		tryEditor.sendKeys(" ");
-	}
+	
+	
 
 	public String RunBtnText() {
 		return RunBtn.getText();

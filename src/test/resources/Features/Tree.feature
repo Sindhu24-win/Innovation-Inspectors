@@ -1,5 +1,5 @@
 @Regression
-Feature: Tree Data Structure
+Feature: Tree 
 
   Background: The user sign in to dsAlgo Portal
 
