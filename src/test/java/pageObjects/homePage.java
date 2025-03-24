@@ -1,15 +1,10 @@
 package pageObjects;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class homePage {
@@ -19,11 +14,11 @@ public class homePage {
 
     // Constructor to initialize PageFactory elements
     public homePage(WebDriver driver) {
-        this.driver = driver;  // ✅ Set driver before using it
-        this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(10)); // ✅ Initialize WebDriverWait correctly
-        PageFactory.initElements(driver, this);
-    }
-
+		PageFactory.initElements(driver, this);
+		this.driver = driver;
+	}
+    
+    
     @FindBy(xpath = "//button[text()='Get Started']")
     WebElement DSAlgoGetstart;
 
@@ -95,103 +90,65 @@ public class homePage {
     @FindBy(xpath = "//a[@href='graph']")
     public WebElement graphGetStarted;
 
-    @FindBy(xpath="//a[@href='/logout']")
-    public WebElement signOutLink;
+    @FindBy(xpath = "//a[text()='Sign out']")
+	@CacheLookup
+	WebElement signOut;
 
-    // ✅ Fix WebDriverWait initialization in constructor
-    public void openDropdown() {
-        WebElement dropdown = driver.findElement(By.xpath("//a[@href='#']"));
+    @FindBy(xpath = "//a[text()='Sign in']")
+	@CacheLookup
+	WebElement signIn;
+    
+    @FindBy(xpath = "//div[@class='nav-item dropdown']")
+	@CacheLookup
+	WebElement dropdownMenu;
 
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dropdown);
+	@FindBy(xpath = "//a[text()='Tree']")
+	@CacheLookup
+	WebElement selectTree_DropdownMenu;
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(dropdown)).click();
-    }
+	@FindBy(xpath = "//title[text()='Tree']")
+	@CacheLookup
+	WebElement titleTree;
+    public void signOut() {
+		signOut.click();
+	}
 
-    // ✅ Ensure elements are clickable before interacting
-    public void dropdown(String string) {
+    public String getStatus() {
+		return loginMessage.getText();
+	}
 
-    	dataStructuresDropdown.click();
-		switch (string) {
-		case "Arrays":
-			
-			arraysOption.click();
-			break;
-		case "Linkedlist":
-			
-			linkedListOption.click();
-			break;
-		case "Stack":
-			
-			stackOption.click();
-			break;
-		case "Queue":
-			
-			queueOption.click();
-			break;
-		case "Tree":
-			
-			treeOption.click();
-			break;
-		case "Graph":
-			
-			graphOption.click();
-			break;
-		}
-		}
+    public String getStatus1() {
+		return logoutMessage.getText();
+	}
 
-    public void clickLogin(String username, String password) {
-        wait.until(ExpectedConditions.visibilityOf(userName)).sendKeys(username);
-        wait.until(ExpectedConditions.visibilityOf(Password)).sendKeys(password);
-        wait.until(ExpectedConditions.elementToBeClickable(LoginBtn)).click();
-    }
+    public void dropdownMenuClick() {
+		dropdownMenu.click();
+	}
 
-    public void clickArrayGetStarted() {
-        wait.until(ExpectedConditions.elementToBeClickable(arrayGetStarted)).click();
-    }
+	public void clickTreeFromDropdown() {
+		selectTree_DropdownMenu.click();
+	}
 
-    public void GetStarted() {
-        wait.until(ExpectedConditions.elementToBeClickable(DSAlgoGetstart)).click();
-    }
+	public String titleTree() {
+		return titleTree.getText();
+	}
+	public void GetStarted() {
+		DSAlgoGetstart.click();
+	}
 
-    public void clickLinkedListGetStarted() {
-        wait.until(ExpectedConditions.elementToBeClickable(linkedListGetStarted)).click();
-    }
+	public void signIn() {
+		signIn.click();
+	}
 
-    public void clickStackGetStarted() {
-        wait.until(ExpectedConditions.elementToBeClickable(stackGetStarted)).click();
-    }
+	public String warning()
+	{
+		return warning.getText();
+	}
+	public void clickLogin(String username, String password) {
+		userName.sendKeys(username);
+		Password.sendKeys(password);
+		LoginBtn.click();
 
-    public void clickQueueGetStarted() {
-        wait.until(ExpectedConditions.elementToBeClickable(queueGetStarted)).click();
-    }
-
-    public void clickTreeGetStarted() {
-        wait.until(ExpectedConditions.elementToBeClickable(treeGetStarted)).click();
-    }
-
-    public void clickGraphGetStarted() {
-        wait.until(ExpectedConditions.elementToBeClickable(graphGetStarted)).click();
-    }
-
-    public void clickSignOut() {
-        wait.until(ExpectedConditions.elementToBeClickable(signOutLink)).click();
-    }
-
-    public void clickSignIn() {
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-       // WebElement signInButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Sign in')]")));
-    	loginLink.click();
-    }
-    public void clickRegister() {
-        wait.until(ExpectedConditions.elementToBeClickable(registerLink)).click();
-    }
-
-    public String getWelcomeMessage() {
-        return wait.until(ExpectedConditions.visibilityOf(loginMessage)).getText();
-    }
-
-    public String getLogoutMessage() {
-        return wait.until(ExpectedConditions.visibilityOf(logoutMessage)).getText();
-    }
+	}
+   
 }
