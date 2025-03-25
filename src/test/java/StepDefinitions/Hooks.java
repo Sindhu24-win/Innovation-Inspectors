@@ -7,9 +7,10 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import Utilities.LoggerReader;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
-import io.cucumber.java.Status;
+import io.qameta.allure.Allure;
 
 public class Hooks {
 	private static WebDriver driver;
@@ -31,18 +32,20 @@ public class Hooks {
 		}
 	}
 
+	
 	@After
-	public void takeScreenshot(Scenario scenario) {
-
-		if (scenario.getStatus().equals(Status.FAILED)) { // Corrected method
-			String screenshotName = scenario.getName().replaceAll(" ", "_");
-			final byte[] sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-			scenario.attach(sourcePath, "image/png", screenshotName);
+	public void afterstep(Scenario scenario) {
+		if (scenario.isFailed()) {
+			LoggerReader.error("Steps Failed , Taking Screenshot");
+			TakesScreenshot screenshotTaker = (TakesScreenshot) driver;
+			final byte[] screenshot = screenshotTaker.getScreenshotAs(OutputType.BYTES);
+			scenario.attach(screenshot, "image/png", "My screenshot");
+			Allure.addAttachment("Myscreenshot",
+					new String(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
 		}
 
 	}
 
-	public static WebDriver getDriver() {
-		return driver;
-	}
+	
+
 }

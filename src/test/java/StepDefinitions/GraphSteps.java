@@ -23,10 +23,10 @@ import pageObjects.GraphPage;
 public class GraphSteps {
 
 	GraphPage graphPage;
-	WebDriver driver = Hooks.getDriver();
+	WebDriver driver ;
 	WebDriverWait wait;
-	String username = ConfigReader.getUsername();
-	String password = ConfigReader.getPassword();
+	String username = ConfigReader.getProperty("username");
+	String password = ConfigReader.getProperty("password");
 
 	public GraphSteps() {
 		System.out.println("****I'm in Graph Data Structure****");

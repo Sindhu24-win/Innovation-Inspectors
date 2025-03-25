@@ -24,21 +24,17 @@ import io.cucumber.testng.CucumberOptions;
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-	@BeforeClass(alwaysRun = true)
-	@Parameters("browser")
+    @BeforeClass(alwaysRun = true)
+    @Parameters("browser")
+    public static void setup(@Optional("chrome") String browser) { 
+        System.out.println("Setting up driver for browser: " + browser);
+        driverFactory.setBrowser(browser);
+        driverFactory.initiateDriver();
+    }
 
-	public static void setup(@Optional("chrome") String browser) { // Default to "chrome" if not provided
-		System.out.println("Setting up driver for browser: " + browser);
-		driverFactory.setBrowser(browser);
-		driverFactory.initiateDriver();
-//	    System.setProperty("allure.results.directory", "target/allure-results");
-	}
-
-	@Override
-	@DataProvider(parallel = false)
-
-	public Object[][] scenarios() {
-		return super.scenarios();
-
-	}
+    @Override
+    @DataProvider(parallel = false) //Enable parallel execution
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
 }
