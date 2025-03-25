@@ -22,35 +22,36 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import DriverFactory.DriverFactory;
+import DriverFactory.driverFactory;
 import io.cucumber.java.en.Given;
 //import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.Arraypage;
 import pageObjects.Linkedlistpage;
+import utilities.ConfigReader;
 //import utilities.ConfigReader;
 import utilities.Excelreaderpython;
 
 public class LinkedlistSteps {
-	WebDriver driver;
 	Linkedlistpage linkedlistpage;
+	WebDriver driver;
+	WebDriver Wait;
+	Arraypage arraypage;
+	String username = ConfigReader.getUsername();
+	String password = ConfigReader.getPassword();
 
-	String username = "darshana";
-	String password = "zenithhp4987";
-
-	// String HomeUrl = "https://dsportalapp.herokuapp.com/home";
 	String TryEditorUrl = "https://dsportalapp.herokuapp.com/tryEditor";
-	String PracticepageUrl = "https://dsportalapp.herokuapp.com/array/practice";
 
 	public LinkedlistSteps() {
-		driver = DriverFactory.initiateDriver();
+		driver = driverFactory.initiateDriver();
 		linkedlistpage = new Linkedlistpage(driver);
 
 	}
 
 	@Given("The user is in the Home Page")
 	public void the_user_is_in_the_home_page() {
-		DriverFactory.getStarted();
+		driverFactory.getStarted();
 		linkedlistpage.DsAlgoStarting();
 	}
 
@@ -69,7 +70,7 @@ public class LinkedlistSteps {
 
 	@Given("The user is in home page after sign in")
 	public void the_user_is_in_home_page_after_sign_in() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 	}
 
 	@When("The user clicks Get Started button in Linkedlist panel")
@@ -84,7 +85,7 @@ public class LinkedlistSteps {
 
 	@Given("The user is in the Linked List page after Sign in")
 	public void the_user_is_in_the_Linked_list_page_after_sign_in() {
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 	}
 
 	@When("The user clicks Introduction link")
@@ -99,7 +100,7 @@ public class LinkedlistSteps {
 
 	@Given("The user is on the Introduction page")
 	public void the_user_is_on_the_introduction_page() {
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 	}
 
 	@When("The user clicks Try Here button in Introduction page")
@@ -183,7 +184,7 @@ public class LinkedlistSteps {
 	@When("The user clicks Creating Linked List link")
 	public void the_user_clicks_creating_linked_list_link() {
 		driver.navigate().back();
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 		linkedlistpage.CreatingLinkedlist();
 
 	}
@@ -195,7 +196,7 @@ public class LinkedlistSteps {
 
 	@Given("The user is on the Creating Linked List page")
 	public void the_user_is_on_the_creating_linked_list_page() {
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 	}
 
 	@When("The user clicks Try Here button in Creating Linked List page")
@@ -264,7 +265,7 @@ public class LinkedlistSteps {
 	@Given("The user is in the Linked List  page after Sign in")
 	public void the_user_is_in_the_Linked_List_page_after_sign_in() {
 		driver.navigate().back();
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 	}
 
 	@When("The user clicks Types of Linked List")
@@ -280,7 +281,7 @@ public class LinkedlistSteps {
 	@Given("The user is on the Types of Linked List page")
 	public void the_user_is_on_the_types_of_linked_list_page() {
 		Assert.assertEquals(driver.getTitle(), "Types of Linked List");
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 	}
 
 	@When("The user clicks Try Here button in Types of Linked List page")
@@ -351,7 +352,7 @@ public class LinkedlistSteps {
 	@Given("The user is in the  Linked List  page after Sign in")
 	public void the_user_is_in_the_linked_list_page_after_sign_in() {
 		driver.navigate().back();
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 
 	}
 
@@ -367,7 +368,7 @@ public class LinkedlistSteps {
 
 	@Given("The user is on the Implement Linked List in Python page")
 	public void the_user_is_on_the_implement_linked_list_in_python_page() {
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 
 	}
 
@@ -438,7 +439,7 @@ public class LinkedlistSteps {
 	@Given("The user is on Linked List page after sign in")
 	public void the_user_is_on_linked_list_page_after_sign_in() {
 		driver.navigate().back();
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 
 	}
 
@@ -455,7 +456,7 @@ public class LinkedlistSteps {
 
 	@Given("The user is on the  Traversal page")
 	public void the_user_is_on_the_traversal_page() {
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 
 	}
 
@@ -530,7 +531,7 @@ public class LinkedlistSteps {
 	@Given("The user is on the Linked List page after sign in")
 	public void the_user_is_on_the_Linked_list_page_after_sign_in() {
 		driver.navigate().back();
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 	}
 
 	@When("The user clicks the Insertion  link")
@@ -545,7 +546,7 @@ public class LinkedlistSteps {
 
 	@Given("The user is on the Insertion page")
 	public void the_user_is_on_the_insertion_page() {
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 
 	}
 
@@ -629,7 +630,7 @@ public class LinkedlistSteps {
 	@Given("The user is on the Linked list page after sign in")
 	public void the_user_is_on_the_linked_list_page_after_sign_in() {
 		driver.navigate().back();
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 
 	}
 
@@ -645,7 +646,7 @@ public class LinkedlistSteps {
 
 	@Given("The user is on the Deletion page")
 	public void the_user_is_on_the_deletion_page() {
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 	}
 
 	@When("The user clicks the Try Here  button in Deletion page")
@@ -734,7 +735,7 @@ public class LinkedlistSteps {
 
 	@Given("The user is in Linked List Practice Questions page")
 	public void the_user_is_in_linked_list_practice_questions_page() {
-		DriverFactory.getCurrentURL();
+		driverFactory.getCurrentURL();
 	}
 
 	@When("The user clicks on  Sign out in Linked List Practice Questions page")
@@ -744,7 +745,7 @@ public class LinkedlistSteps {
 
 	@Then("The user should be logged out succeessfully from dsAlgo portal page")
 	public void the_user_should_be_logged_out_succeessfully_from_ds_algo_portal_page() {
-	  linkedlistpage.Logout();
+		linkedlistpage.Logout();
 	}
 
 }

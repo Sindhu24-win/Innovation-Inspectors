@@ -34,40 +34,41 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import DriverFactory.DriverFactory;
+import DriverFactory.driverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import pageObjects.Arraypage;
+import utilities.ConfigReader;
 //import utilities.ConfigReader;
 //import utilities.ExcelReader;
 import utilities.Excelreaderpython;
+import utilities.LoggerReader;
 
 public class ArraySteps {
 
 	WebDriver driver;
-
+	WebDriver Wait;
 	Arraypage arraypage;
-	String username = "darshana";
-	String password = "zenithhp4987";
+	String username = ConfigReader.getUsername();
+	String password = ConfigReader.getPassword();
 	String TryEditorUrl = "https://dsportalapp.herokuapp.com/tryEditor";
-	String PracticepageUrl = "https://dsportalapp.herokuapp.com/array/practice";
 
 	public ArraySteps() {
-		driver = DriverFactory.initiateDriver();
+		driver = driverFactory.initiateDriver();
 		arraypage = new Arraypage(driver);
 	}
 
 	@Given("The user is in the Home page")
 	public void the_user_is_in_the_home_page() {
-		DriverFactory.getStarted();
+		driverFactory.getStarted();
 		arraypage.DsAlgoStarting();
 	}
 
 	@When("The user clicks on Sign in and enter username and password and clicks on Login button")
 	public void the_user_clicks_on_sign_in_and_enter_username_and_password_and_clicks_on_login_button() {
-		arraypage.Usersignin();
+        arraypage.Usersignin();
 		arraypage.Entercredentials();
 		arraypage.Userlogin();
 	}
@@ -79,7 +80,7 @@ public class ArraySteps {
 
 	@Given("The user is in the Home page after Sign in with valid credentials")
 	public void the_user_is_in_the_home_page_after_sign_in_with_valid_credentials() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 	}
 
 	@When("The user clicks the Getting Started button in Array Panel")
@@ -90,6 +91,7 @@ public class ArraySteps {
 	@Then("The user should be directed to Array Data Structure Page")
 	public void the_user_should_be_directed_to_array_data_structure_page() {
 		Assert.assertEquals(driver.getTitle(), "Array");
+		LoggerReader.info("User is in the Array Page");
 	}
 
 	@Given("The user is in the Array page after Sign in")
@@ -418,7 +420,7 @@ public class ArraySteps {
 
 	@Given("The user is in the practice page")
 	public void the_user_is_in_the_Practice_Page() {
-		driver.get(PracticepageUrl);
+		driverFactory.getCurrentURL();
 	}
 
 	@When("The user clicks the Search the array link")
@@ -532,6 +534,7 @@ public class ArraySteps {
 
 	@When("The user clicks the Find Numbers with Even Number of Digits link")
 	public void the_user_clicks_the_find_numbers_with_even_number_of_digits_link() {
+		driver.navigate().back();
 
 		arraypage.FindEvenNumbers();
 

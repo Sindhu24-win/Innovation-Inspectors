@@ -1,11 +1,7 @@
 package pageObjects;
 
-//import java.time.Duration;
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-//import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -149,11 +145,10 @@ public class Arraypage {
 	@FindBy(xpath = "//a[text()='Sign out']")
 	@CacheLookup
 	WebElement Signout;
-	
-	
-    @FindBy(xpath ="//div[@class='alert alert-primary']")
-    @CacheLookup
-    WebElement logoutMsg;
+
+	@FindBy(xpath = "//div[@class='alert alert-primary']")
+	@CacheLookup
+	WebElement logoutMsg;
 
 	private WebDriver driver;
 
@@ -308,7 +303,7 @@ public class Arraypage {
 	public void ArraySigningout() {
 		Signout.click();
 	}
-	
+
 	public String Logout() {
 		return logoutMsg.getText();
 	}
