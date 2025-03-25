@@ -15,6 +15,7 @@ import org.testng.Assert;
 import DriverFactory.driverFactory;
 import utilities.ConfigReader;
 import utilities.Excelreaderpython;
+import utilities.LoggerReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -153,6 +154,23 @@ public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_th
 
 @Then("The user should able to see output in the console.")
 public void the_user_should_able_to_see_output_in_the_console() {
-	Assert.assertEquals("Hello World", DSPage.Outputmsg());}
+	Assert.assertEquals("Hello World", DSPage.Outputmsg());
 }
-	
+
+@Given("The user is in the data structure page")
+public void the_user_is_in_the_data_structure_page() {
+	driver.navigate().back();
+}
+
+@When("The User clicks signout button")
+public void the_user_clicks_signout_button() {
+	DSPage.signOut();
+}
+
+@Then("The user should signout successfully")
+public void the_user_should_signout_successfully() {
+	Assert.assertEquals(driver.getTitle(), "NumpyNinja");
+	DSPage.getStatus();
+	LoggerReader.info("User Signed out Successfully!");
+}
+}

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>22/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>24/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Mar 24 19:58:29 EDT 2025</td>
+<td>Started on:</td><td>Mon Mar 24 20:55:18 EDT 2025</td>
 </tr>
-<tr><td>Total time:</td><td>86 seconds (86920 ms)</td>
+<tr><td>Total time:</td><td>80 seconds (80296 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,43 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Tree Data Structures page", "Home and DS Algo Portal Navigation and Functionality"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[text()=&apos;Sign in&apos;] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.118, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\Ashish\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60802}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60802/devtoo..., se:cdpVersion: 134.0.6998.118, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0a46f20dee1be4fe2b9166e5a63d0ed3
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at pageObjects.homePage.signIn(homePage.java:142)
-	at StepDefinitions.Homestep.the_user_is_on_the_home_page_after_signed_in(Homestep.java:79)
-	at ✽.The user is on the Home page after signed in(file:///C:/Users/Ashish/eclipse-workspace/DsAlgoCucumber/src/test/resources/Features/Home.feature:20)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1642771051", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1642771051'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[text()=&apos;Sign in&apos;] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.118, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\Ashish\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60802}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60802/devtoo..., se:cdpVersion: 134.0.6998.118, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0a46f20dee1be4fe2b9166e5a63d0ed3
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at pageObjects.homePage.signIn(homePage.java:142)
-	at StepDefinitions.Homestep.the_user_is_on_the_home_page_after_signed_in(Homestep.java:79)
-	at ✽.The user is on the Home page after signed in(file:///C:/Users/Ashish/eclipse-workspace/DsAlgoCucumber/src/test/resources/Features/Home.feature:20)
-</pre></div></td>
-<td>10</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -113,12 +76,77 @@ Session ID: 0a46f20dee1be4fe2b9166e5a63d0ed3
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that the user can navigate to Data Structures - Introduction page", "Data Structures - Introduction"</td>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Tree Data Structures page", "Home and DS Algo Portal Navigation and Functionality"</td>
 <td></td>
-<td>6</td>
+<td>2</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives an error message for all empty fields during login", "Sign In and Sign Out in dsAlgo Portal"</td>
+<td></td>
+<td>0</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user able to logout from the data structure", "Data Structures - Introduction"</td>
+<td></td>
+<td>0</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to sign out successfully", "Home and DS Algo Portal Navigation and Functionality"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error message for all empty fields during registration", "User Registration"</td>
+<td></td>
+<td>1</td>
 <td>Runner.TestRunner@4944252c</td></tr>
 <tr>
 <td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that the user can navigate to registration from login", "Sign In and Sign Out in dsAlgo Portal"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that the user can navigate to Data Structures - Introduction page", "Data Structures - Introduction"</td>
+<td></td>
+<td>5</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error message for mismatched Password and Password Confirmation field during registration", "User Registration"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid Python code in Try Editor page of Time Complexity", "Data Structures - Introduction"</td>
+<td></td>
+<td>5</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Home page for a user", "Home and DS Algo Portal Navigation and Functionality"</td>
+<td></td>
+<td>0</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives an error message for invalid Username during login", "Sign In and Sign Out in dsAlgo Portal"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to land on Homepage after registration with valid fields", "User Registration"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives an error message for empty Username field during login", "Sign In and Sign Out in dsAlgo Portal"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error message for empty Username Confirmation field during registration", "User Registration"</td>
+<td></td>
+<td>1</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives an error message for empty Password field during login", "Sign In and Sign Out in dsAlgo Portal"</td>
 <td></td>
 <td>0</td>
 <td>Runner.TestRunner@4944252c</td></tr>
@@ -130,17 +158,17 @@ Session ID: 0a46f20dee1be4fe2b9166e5a63d0ed3
 <tr>
 <td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives an error for invalid Python code in Try Editor page of Time Complexity", "Data Structures - Introduction"</td>
 <td></td>
-<td>11</td>
+<td>12</td>
 <td>Runner.TestRunner@4944252c</td></tr>
 <tr>
 <td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to land on the Home page after entering valid credentials", "Sign In and Sign Out in dsAlgo Portal"</td>
 <td></td>
-<td>2</td>
+<td>1</td>
 <td>Runner.TestRunner@4944252c</td></tr>
 <tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to try Editor page", "Data Structures - Introduction"</td>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives an error message for invalid Username during login", "Sign In and Sign Out in dsAlgo Portal"</td>
 <td></td>
-<td>3</td>
+<td>1</td>
 <td>Runner.TestRunner@4944252c</td></tr>
 <tr>
 <td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to Practice Questions page", "Data Structures - Introduction"</td>
@@ -148,79 +176,24 @@ Session ID: 0a46f20dee1be4fe2b9166e5a63d0ed3
 <td>3</td>
 <td>Runner.TestRunner@4944252c</td></tr>
 <tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error message for mismatched Password and Password Confirmation field during registration", "User Registration"</td>
-<td></td>
-<td>1</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Home page for a user", "Home and DS Algo Portal Navigation and Functionality"</td>
-<td></td>
-<td>0</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives an error message for empty Password field during login", "Sign In and Sign Out in dsAlgo Portal"</td>
-<td></td>
-<td>1</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to land on Homepage after registration with valid fields", "User Registration"</td>
-<td></td>
-<td>1</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives an error message for invalid Username during login", "Sign In and Sign Out in dsAlgo Portal"</td>
-<td></td>
-<td>1</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives an error message for invalid Username during login", "Sign In and Sign Out in dsAlgo Portal"</td>
-<td></td>
-<td>1</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to see output for valid Python code in Try Editor page of Time Complexity", "Data Structures - Introduction"</td>
-<td></td>
-<td>4</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error message for all empty fields during registration", "User Registration"</td>
-<td></td>
-<td>0</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
 <td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user sees a warning message when selecting Data Structures from the dropdown without Sign in", "Home and DS Algo Portal Navigation and Functionality"</td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>Runner.TestRunner@4944252c</td></tr>
 <tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error message for empty Username Confirmation field during registration", "User Registration"</td>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to navigate to try Editor page", "Data Structures - Introduction"</td>
 <td></td>
-<td>1</td>
+<td>3</td>
+<td>Runner.TestRunner@4944252c</td></tr>
+<tr>
+<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that the user is able to navigate to the Time Comlexity Page", "Data Structures - Introduction"</td>
+<td></td>
+<td>2</td>
 <td>Runner.TestRunner@4944252c</td></tr>
 <tr>
 <td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives error when click on Run button without entering code", "Data Structures - Introduction"</td>
 <td></td>
 <td>3</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives an error message for empty Username field during login", "Sign In and Sign Out in dsAlgo Portal"</td>
-<td></td>
-<td>1</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user receives an error message for all empty fields during login", "Sign In and Sign Out in dsAlgo Portal"</td>
-<td></td>
-<td>0</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that user is able to sign out successfully", "Home and DS Algo Portal Navigation and Functionality"</td>
-<td></td>
-<td>1</td>
-<td>Runner.TestRunner@4944252c</td></tr>
-<tr>
-<td title='Runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that the user is able to navigate to the Time Comlexity Page", "Data Structures - Introduction"</td>
-<td></td>
-<td>1</td>
 <td>Runner.TestRunner@4944252c</td></tr>
 </table><p>
 </body>

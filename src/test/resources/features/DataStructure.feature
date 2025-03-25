@@ -52,3 +52,10 @@ Feature: Data Structures - Introduction
     Examples: 
       | SheetName  | RowNumber |
       | pythonCode |         0 |
+      
+      
+      @ds8
+       Scenario: Verify that user able to logout from the data structure
+    Given The user is in the data structure page
+    When The User clicks signout button
+    Then The user should signout successfully

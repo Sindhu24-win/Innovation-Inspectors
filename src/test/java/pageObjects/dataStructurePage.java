@@ -77,6 +77,10 @@ public class dataStructurePage {
 	@CacheLookup
 	WebElement tryEditorInp;
 
+	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[3]")
+	@CacheLookup
+	WebElement SignOut;
+
 	public dataStructurePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
@@ -164,5 +168,7 @@ public class dataStructurePage {
 	public String Outputmsg() {
 		return OutPutmsg.getText();
 	}
-
+	public void signOut() {
+		SignOut.click();
+	}
 }
