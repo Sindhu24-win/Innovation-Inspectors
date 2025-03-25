@@ -1,13 +1,11 @@
+
 package DriverFactory;
 
 import java.time.Duration;
-
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class driverFactory { 
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>(); // Each thread gets its own WebDriver
@@ -75,7 +73,9 @@ public class driverFactory {
 		openWebPage("https://dsportalapp.herokuapp.com/home");
 	}
 
-	
+	public static void treepage() {
+		openWebPage("https://dsportalapp.herokuapp.com/tree/");
+	}
 
     public static void tearDown() {
         if (driver.get() != null) {
@@ -87,4 +87,5 @@ public class driverFactory {
 
 
 		
-		}
+		
+}
