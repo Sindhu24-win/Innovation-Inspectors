@@ -23,7 +23,7 @@ import org.openqa.selenium.interactions.Actions;
 //import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import DriverFactory.DriverFactory;
+import DriverFactory.driverFactory;
 import Utilities.ConfigReader;
 import Utilities.Excelreaderpython;
 import io.cucumber.java.en.Given;
@@ -33,7 +33,7 @@ import pageObjects.QueuePage;
 
 public class QueueSteps {
 	WebDriverWait wait;
-	WebDriver driver = Hooks.getDriver();
+	WebDriver driver;
 	QueuePage queuePage;
 	String username = ConfigReader.getUsername();
 	String password = ConfigReader.getPassword();
@@ -43,7 +43,7 @@ public class QueueSteps {
 
 	public QueueSteps() {
 		System.out.println("****I'm in Queue Data Structure****");
-		driver = DriverFactory.initiateDriver();
+		driver = driverFactory.initiateDriver();
 		queuePage = new QueuePage(driver);
 		//wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 	}
@@ -51,11 +51,11 @@ public class QueueSteps {
 	
 	@Given("The user is on the Home page")
 	public void the_user_is_on_the_home_page() {
-		DriverFactory.getstatred();;
+		driverFactory.getStatred();;
 		queuePage.GetStartedIntro();
 		queuePage.SignIn();
 		queuePage.Login();
-		DriverFactory.homepage();
+		driverFactory.homepage();
 
 		
 
@@ -109,7 +109,7 @@ public class QueueSteps {
 
 	@Given("The user is on the try editor page in the Implementation of Queue on Python page")
 	public void the_user_is_on_the_try_editor_page_in_the_implementation_of_queue_on_python_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		queuePage.clickQueueGetStartedBtn();
 		queuePage.clickImplementationOfQueueInPython();
 		queuePage.clickTryHereBtn();
@@ -136,7 +136,7 @@ public class QueueSteps {
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(),sheetName);
 		
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		// wait.until(ExpectedConditions.visibilityOf(queuePage.tryEditor));
 		 //System.out.println("Code read from Excel: " + pcode);
 		Actions actions = new Actions(driver);
@@ -147,7 +147,7 @@ public class QueueSteps {
 
 	@Given("The user is on the try editor page in the Implementation of Queue in Python page")
 	public void the_user_is_on_the_try_editor_page_in_the_implementation_of_queue_in_python_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		queuePage.clickQueueGetStartedBtn();
 		queuePage.clickImplementationOfQueueInPython();
 		queuePage.clickTryHereBtn();
@@ -163,7 +163,7 @@ public class QueueSteps {
 		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		// wait.until(ExpectedConditions.visibilityOf(queuePage.tryEditor));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(queuePage.tryEditor).sendKeys(pcode).build().perform();
@@ -210,7 +210,7 @@ public class QueueSteps {
 
 	@Given("The user is on the try editor page in the Implementation using collections.deque page")
 	public void the_user_is_on_the_try_editor_page_in_the_implementation_using_collections_deque_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		queuePage.clickQueueGetStartedBtn();
 		queuePage.clickImplementationUsingCollectionsDequeue();
 
@@ -224,7 +224,7 @@ public class QueueSteps {
 		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(),sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		 //wait.until(ExpectedConditions.visibilityOf(queuePage.tryEditor));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(queuePage.tryEditor).sendKeys(pcode).build().perform();
@@ -249,7 +249,7 @@ public class QueueSteps {
 
 	@Given("The user is on the try editor page in the Implementation using array page")
 	public void the_user_is_on_the_try_editor_page_in_the_Implementation_using_array_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		queuePage.clickQueueGetStartedBtn();
 		queuePage.clickImplementationUsingArray();
          queuePage.clickTryHereBtn();
@@ -259,7 +259,7 @@ public class QueueSteps {
 
 	@Given("The user is on the try editor page  in the Implementation using array page")
 	public void the_user_is_on_the_try_editor_page_in_the_implementation_using_array_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		queuePage.clickQueueGetStartedBtn();
 		queuePage.clickImplementationUsingArray();
          queuePage.clickTryHereBtn();
@@ -285,7 +285,7 @@ public class QueueSteps {
 
 	@Given("The user is on the try editor page in the Queue Operations page")
 	public void the_user_is_on_the_try_editor_page_in_the_queue_operations_page() {
-		DriverFactory.homepage();
+		driverFactory.homepage();
 		queuePage.clickQueueGetStartedBtn();
 		queuePage.clickImplementationUsingArray();
          queuePage.clickTryHereBtn();
@@ -300,7 +300,7 @@ public class QueueSteps {
 		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		// wait.until(ExpectedConditions.visibilityOf(queuePage.tryEditor));
         Actions actions = new Actions(driver);
 		actions.moveToElement(queuePage.tryEditor).sendKeys(pcode).build().perform();

@@ -16,7 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 //import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import DriverFactory.DriverFactory;
+import DriverFactory.driverFactory;
 import Utilities.ConfigReader;
 import Utilities.Excelreaderpython;
 import io.cucumber.java.en.Given;
@@ -28,7 +28,7 @@ import pageObjects.StackPage;
 public class StackSteps {
 	
 	WebDriverWait wait;
-	WebDriver driver = Hooks.getDriver();
+	WebDriver driver;
 	StackPage stackPage;
 	String username = ConfigReader.getUsername();
 	String password = ConfigReader.getPassword();
@@ -38,17 +38,17 @@ String TryEditor = "https://dsportalapp.herokuapp.com/tryEditor";
 
 	public StackSteps() {
 		System.out.println("****I'm in Stack Data Structure****");
-		driver = DriverFactory.initiateDriver();
+		driver = driverFactory.initiateDriver();
 		stackPage = new StackPage(driver);
 		wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 	}
 	@Given("the user is on the homepage after logging into the dsAlgo Portal")
 	public void the_user_is_on_the_homepage_after_logging_into_the_ds_algo_portal() {
-	    DriverFactory.getstatred();
+	    driverFactory.getStatred();
 	    stackPage.GetStartedIntro();
 		stackPage.SignIn();
 		stackPage.Login();
-		DriverFactory.homepage();
+		driverFactory.homepage();
 
 	}
 
@@ -123,7 +123,7 @@ String TryEditor = "https://dsportalapp.herokuapp.com/tryEditor";
 		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(),sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(stackPage.TryEditor).sendKeys(pcode).build().perform();
 	//stackPage.Invalidinput();
@@ -143,7 +143,7 @@ String TryEditor = "https://dsportalapp.herokuapp.com/tryEditor";
 		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(stackPage.TryEditor).sendKeys(pcode).build().perform();
 		stackPage.RunBtn.click();
@@ -228,7 +228,7 @@ String TryEditor = "https://dsportalapp.herokuapp.com/tryEditor";
 		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(),sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(stackPage.TryEditor).sendKeys(pcode).build().perform();
 	stackPage.Invalidinput();
@@ -240,7 +240,7 @@ String TryEditor = "https://dsportalapp.herokuapp.com/tryEditor";
 		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(stackPage.TryEditor).sendKeys(pcode).build().perform();
 		stackPage.RunBtn.click();
@@ -276,6 +276,26 @@ String TryEditor = "https://dsportalapp.herokuapp.com/tryEditor";
       driver.get(TryEditor);
 
 	}
+	@Given("The user is in the Stack data structure page")
+	public void the_user_is_in_the_stack_data_structure_page() {
+	   driver.navigate().back();
+	  
+	  
+	}
+	@When("The User clicks SignOut button.")
+	public void the_user_clicks_sign_out_button() {
+		 stackPage.SignOut();
+	}
+
+	@Then("The user should SignOut successfully.")
+	public void the_user_should_sign_out_successfully() {
+		 Assert.assertEquals(driver.getTitle(), "NumpyNinja");
+			stackPage.getStatus();
+		
+	}
+
+
+
 
 
 

@@ -1,7 +1,5 @@
 package StepDefinitions;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Scenario;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.OutputType;
@@ -10,6 +8,10 @@ import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
+//import Utilities.LoggerReader;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
+//import io.qameta.allure.Allure;
 
 public class Hooks {
 	private static WebDriver driver;
@@ -41,8 +43,7 @@ public class Hooks {
 		}
 	}
 
-	public static WebDriver getDriver() {
-		return driver;
-	}
+	
 
+	
 }

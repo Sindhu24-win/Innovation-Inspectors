@@ -92,7 +92,10 @@ public class StackPage {
 	 @FindBy(xpath = "//a[text()='Applications']")
 	 @CacheLookup
 	WebElement Applications;
-	
+	 
+	 @FindBy(xpath = "//a[text()='Sign out']")
+		@CacheLookup
+		WebElement Signout;
 	
 			public StackPage(WebDriver driver) {
 	        this.driver = driver;
@@ -183,4 +186,8 @@ public class StackPage {
 	 Applications.click();
 	
 }
+			public void SignOut() {
+				Actions actions = new Actions(driver);
+				actions.moveToElement(Signout).click().build().perform();
+			}
 }

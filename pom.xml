@@ -3,6 +3,26 @@
   <groupId>DsAlgo_Cucumber</groupId>
   <artifactId>DsAlgo_Cucumber</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+<name>DsAlgo_Cucumber</name>
+<url>http://maven.apache.org</url>
+<build>
+<pluginManagement>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>3.5.2</version>
+<configuration>
+<properties>
+<dataproviderthreadcount>3</dataproviderthreadcount>
+<parallel>tests</parallel>
+</properties>
+</configuration>
+</plugin>
+</plugins>
+</pluginManagement>
+</build>
   <dependencies>
   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
@@ -49,8 +69,50 @@
     <artifactId>allure-cucumber7-jvm</artifactId>
     <version>2.29.1</version>
 </dependency>
-
-   <dependency>
+		<!--https://mvnrepository.com/artifact/ru.stqa.selenium/webdriver-factory  -->
+<dependency>
+<groupId>ru.stqa.selenium</groupId>
+<artifactId>webdriver-factory</artifactId>
+<version>4.4</version>
+</dependency>
+<!--  https://mvnrepository.com/artifact/org.testng/testng  -->
+<dependency>
+<groupId>org.testng</groupId>
+<artifactId>testng</artifactId>
+<version>7.10.2</version>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>junit</groupId>
+<artifactId>junit</artifactId>
+<version>4.13.2</version>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>3.5.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api  -->
+<dependency>
+<groupId>org.apache.logging.log4j</groupId>
+<artifactId>log4j-api</artifactId>
+<version>2.24.3</version>
+</dependency>
+<!--  https://mvnrepository.com/artifact/org.slf4j/slf4j-api  -->
+<dependency>
+<groupId>org.slf4j</groupId>
+<artifactId>slf4j-api</artifactId>
+<version>2.0.17</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl  -->
+<dependency>
+<groupId>org.apache.logging.log4j</groupId>
+<artifactId>log4j-slf4j2-impl</artifactId>
+<version>2.24.3</version>
+<scope>test</scope>
+</dependency>
+<dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-java</artifactId>
     <version>7.21.1</version>

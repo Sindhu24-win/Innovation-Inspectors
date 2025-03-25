@@ -178,6 +178,7 @@ public class QueuePage {
 	public void clickQueueOperations() {
 		QueueOperations.click();
 	}
+	
 	public void SignOut() {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(Signout).click().build().perform();
