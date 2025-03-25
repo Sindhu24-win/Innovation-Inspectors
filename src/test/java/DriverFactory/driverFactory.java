@@ -6,103 +6,94 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class driverFactory {
-    private static driverFactory instance;
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-    public final static int TIMEOUT = 10;
-    private static String browser = "chrome"; // Default browser
+public class driverFactory { 
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>(); // Each thread gets its own WebDriver
+    private static ThreadLocal<String> browser = new ThreadLocal<>(); // Each thread gets its own browser setting
 
-    public driverFactory() {
+    public static final int TIMEOUT = 10;
+
+    private driverFactory() {
+        // Private constructor to prevent instantiation
     }
 
-    public static synchronized driverFactory getInstance() {
-        if (instance == null) {
-            instance = new driverFactory();
-        }
-        return instance;
+    public static void setBrowser(String browserName) {
+        browser.set(browserName);
     }
 
     public static synchronized WebDriver initiateDriver() {
         if (driver.get() == null) {
-            switch (browser.toLowerCase()) {
-                case "firefox":
+            String browserName = browser.get();
+            if (browserName == null) {
+                browserName = "chrome"; // Default to Chrome if not set
+            }
+
+            switch (browserName.toLowerCase()) {
+                
+            case "firefox":
+                	System.setProperty("webdriver.gecko.driver", "/users/Ashish/eclipse-workspace/DsAlgoCucumber/src/test/resources/driver/geckodriver.exe");
                     driver.set(new FirefoxDriver());
                     break;
+               
                 case "edge":
+                	System.setProperty("webdriver.edge.driver", "/users/Ashish/eclipse-workspace/DsAlgoCucumber/src/test/resources/driver/msedge.exe");
                     driver.set(new EdgeDriver());
                     break;
+                
                 case "chrome":
+                	
                 default:
                 	System.setProperty("webdriver.chrome.driver", "/users/Ashish/eclipse-workspace/DsAlgoCucumber/src/test/resources/driver/chromedriver.exe");
                     driver.set(new ChromeDriver());
+                    
                     break;
             }
+
             driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
             driver.get().manage().window().maximize();
         }
         return driver.get();
     }
 
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         if (driver.get() == null) {
-            initiateDriver();
+            initiateDriver(); // Ensure driver is initialized before returning
         }
         return driver.get();
     }
 
-    public static void setBrowser(String browserName) {
-        browser = browserName;
-    }
-
-    public static void waitFor(int time) {
-        new WebDriverWait(getInstance().getDriver(), Duration.ofSeconds(time));
-    }
-
-    public static void openwebpage(String url) {
-        getInstance().getDriver().get(url);
+    public static void openWebPage(String url) {
+        getDriver().get(url);
     }
 
     public static String getCurrentURL() {
-        return getInstance().getDriver().getCurrentUrl();
+        return getDriver().getCurrentUrl();
     }
 
     public static String getTitle() {
-        return getInstance().getDriver().getTitle();
+        return getDriver().getTitle();
     }
-
     public static void getStarted() {
-        openwebpage("https://dsportalapp.herokuapp.com/");
-    }
+		openWebPage("https://dsportalapp.herokuapp.com/");
+	}
 
-    public static void homepage() {
-        openwebpage("https://dsportalapp.herokuapp.com/home");
-    }
+	public static void homepage() {
+		openWebPage("https://dsportalapp.herokuapp.com/home");
+	}
 
-    public static void treepage() {
-        openwebpage("https://dsportalapp.herokuapp.com/tree/");
-    }
+	public static void treepage() {
+		openWebPage("https://dsportalapp.herokuapp.com/tree/");
+	}
 
-    public static void login()
-    {
-      openwebpage("https://dsportalapp.herokuapp.com/login");
-    }
-    
-    public static void dspage() {
-        openwebpage("https://dsportalapp.herokuapp.com/data-structures-introduction/");
-    }
-    
-    public static void graph() {
-        openwebpage("https://dsportalapp.herokuapp.com/graph/");
-    }
-    
-    
-    
     public static void tearDown() {
         if (driver.get() != null) {
             driver.get().quit();
             driver.remove();
+            browser.remove();
         }
     }
+
+
+		
+		
 }

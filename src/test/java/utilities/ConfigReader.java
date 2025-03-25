@@ -1,3 +1,4 @@
+
 package utilities;
 
 import java.io.FileInputStream;
@@ -6,40 +7,50 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    private static Properties prop = new Properties();
+	private static Properties prop = new Properties();
 
-    // Static block to load properties only once
-    static {
-        try (FileInputStream ip = new FileInputStream("./src/test/resources/Config.properties")) {
-            prop.load(ip);
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to load config.properties: " + e.getMessage(), e);
-        }
-    }
+	private static String browser;
 
-    // Retrieve a property value
-    public static String getProperty(String key) {
-        return prop.getProperty(key);
-    }
+	// Static block to load properties only once
+	static {
+		try (FileInputStream ip = new FileInputStream("./src/test/resources/Config.properties")) {
+			prop.load(ip);
+		} catch (IOException e) {
+			throw new RuntimeException("Failed to load config.properties: " + e.getMessage(), e);
+		}
+	}
 
-    // Retrieve browser property (handles commented-out values)
-    public static String getBrowser() {
-        String browser = prop.getProperty("browser");
-        return (browser != null && !browser.isEmpty()) ? browser.trim() : "chrome"; // Default to Chrome
-    }
+	// Retrieve a property value
+	public static String getProperty(String key) {
+		return prop.getProperty(key);
+	}
 
-    // Retrieve URL property
-    public static String getUrl() {
-        return prop.getProperty("url");
-    }
+	public static void setProperty(String key, String value) {
+		prop.setProperty(key, value);
+	}
 
-    // Retrieve username
-    public static String getUsername() {
-        return prop.getProperty("username");
-    }
+	// Retrieve browser property (handles commented-out values)
+	public static String getBrowser() {
+		String browser = prop.getProperty("browser");
+		return (browser != null && !browser.isEmpty()) ? browser.trim() : "chrome"; // Default to Chrome
+	}
 
-    // Retrieve password
-    public static String getPassword() {
-        return prop.getProperty("password");
-    }
+	public static void setBrowser(String browserValue) {
+		browser = browserValue;
+	}
+
+	// Retrieve URL property
+	public static String getUrl() {
+		return prop.getProperty("url");
+	}
+
+	// Retrieve username
+	public static String getUsername() {
+		return prop.getProperty("username");
+	}
+
+	// Retrieve password
+	public static String getPassword() {
+		return prop.getProperty("password");
+	}
 }

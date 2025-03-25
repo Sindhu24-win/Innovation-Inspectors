@@ -22,7 +22,7 @@ import pageObjects.dataStructurePage;
 
 public class DataStructurestep {
 	dataStructurePage DSPage;
-	WebDriver driver = Hooks.getDriver();
+	WebDriver driver;
 	WebDriverWait wait;
 	String username = ConfigReader.getUsername();
 	String password = ConfigReader.getPassword();
@@ -132,7 +132,7 @@ public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_
 		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 		Path filePath = Paths.get(relativePath).toAbsolutePath();
 		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pCode");
+		String pcode = testDataMap.get(rowNumber).get("pyCode");
 		Actions actions = new Actions(driver);
 		actions.moveToElement(DSPage.tryEditor).sendKeys(pcode).build().perform();
 		DSPage.Invalidinput();
@@ -144,7 +144,7 @@ public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_th
 	String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 	Path filePath = Paths.get(relativePath).toAbsolutePath();
 	List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-	String pcode = testDataMap.get(rowNumber).get("pCode");
+	String pcode = testDataMap.get(rowNumber).get("pyCode");
 	Actions actions = new Actions(driver);
 	actions.moveToElement(DSPage.tryEditor).sendKeys(pcode).build().perform();
 	DSPage.RunBtn.click();

@@ -29,7 +29,7 @@ public class registerPage {
     @FindBy(xpath = "//input[@value='Register']") // Change if needed
     private WebElement registerButton;
     
-    @FindBy(xpath="/html/body/div[2]")WebElement success;
+    @FindBy(xpath="/html/body/div[2]")public WebElement success;
 
     // Constructor to initialize the PageFactory
     public registerPage(WebDriver driver) {

@@ -1,10 +1,14 @@
 package pageObjects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class homePage {
@@ -19,9 +23,6 @@ public class homePage {
 	}
     
     
-    @FindBy(xpath = "//button[text()='Get Started']")
-    WebElement DSAlgoGetstart;
-
     @FindBy(id = "id_username")
     WebElement userName;
 
@@ -55,7 +56,7 @@ public class homePage {
     public WebElement graphOption;
 
     @FindBy(xpath = "/html/body/div[2]")
-    public WebElement warning;
+    public WebElement warning1;
 
     @FindBy(xpath="/html/body/div[2]")
     public WebElement loginMessage;
@@ -63,15 +64,14 @@ public class homePage {
     @FindBy(xpath="//a[@href='/register']")
     public WebElement registerLink;
 
-    @FindBy(xpath="//a[text()='Sign in']")
-    public WebElement loginLink;
-
+    
     @FindBy(xpath="//div[@role='alert']")
     public WebElement logoutMessage;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div/a/button")
-    public WebElement dsIntroGetStarted;
-
+    @FindBy(xpath = "//button[text()='Get Started']")
+	WebElement DSAlgoGetstart;
+	@CacheLookup
+	
     @FindBy(xpath = "//a[@href='array']")
     public WebElement arrayGetStarted;
 
@@ -137,12 +137,16 @@ public class homePage {
 	}
 
 	public void signIn() {
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement signIn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Sign in']")));
+		
 		signIn.click();
 	}
 
 	public String warning()
 	{
-		return warning.getText();
+		return warning1.getText();
 	}
 	public void clickLogin(String username, String password) {
 		userName.sendKeys(username);

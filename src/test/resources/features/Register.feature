@@ -1,11 +1,15 @@
 @Regression
-Feature: User Registration on DS Algo Portal
+Feature: User Registration
 
+  Background: The user is in the ds algo portal
+
+  @register1
   Scenario: Verify that user receives error message for all empty fields during registration
     Given The user is on the user registration page
     When The user clicks Register button with "username" , "password" and "confirm_password" empty
     Then The error message should be displayed under username
 
+  @register2
   Scenario Outline: Verify that user receives error message for empty Username Confirmation field during registration
     Given The user is on the user registration page
     When The user clicks Register button after entering Password and Password Confirmation with Username field empty <rowIndex>
@@ -15,6 +19,7 @@ Feature: User Registration on DS Algo Portal
       | rowIndex |
       |        1 |
 
+  @register3
   Scenario Outline: Verify that user receives error message for mismatched Password and Password Confirmation field during registration
     Given The user is on the user registration page
     When The user clicks Register button after entering different passwords in Password and Password Confirmation fields <rowIndex>
@@ -24,6 +29,7 @@ Feature: User Registration on DS Algo Portal
       | rowIndex |
       |        2 |
 
+  @register4
   Scenario Outline: Verify that user is able to land on Homepage after registration with valid fields
     Given The user is on the user registration page
     When The user clicks Register button after entering a valid username, password, and password confirmation in related textboxes <rowIndex>
