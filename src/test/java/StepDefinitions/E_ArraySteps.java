@@ -68,7 +68,7 @@ public class E_ArraySteps {
 
 	@Then("The user should be directed to Array Data Structure Page")
 	public void the_user_should_be_directed_to_array_data_structure_page() {
-		//Assert.assertEquals(driver.getTitle(), "Array");
+		
 		LoggerReader.info("User is in the Array Page");
 	}
 

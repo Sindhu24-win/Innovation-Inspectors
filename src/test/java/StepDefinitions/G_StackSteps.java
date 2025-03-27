@@ -36,8 +36,6 @@ public class G_StackSteps {
 		driver = driverFactory.initiateDriver();
 		stackPage = new StackPage(driver);
 		homepage =new HomePage(driver);
-
-		
 	}
 
 	@Given("the user is on the homepage after logging into the dsAlgo Portal")

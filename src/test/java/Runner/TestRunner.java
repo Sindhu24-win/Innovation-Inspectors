@@ -16,25 +16,23 @@ import io.cucumber.testng.CucumberOptions;
 
 		plugin = { "pretty", "html:target/cucumber.html", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 
-				"junit:target/CucumberReports/CucumberReport.xml",
-
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 
 		})
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-    @BeforeClass(alwaysRun = true)
-    @Parameters("browser")
-    public static void setup(@Optional("chrome") String browser) { 
-        System.out.println("Setting up driver for browser: " + browser);
-        driverFactory.setBrowser(browser);
-        driverFactory.initiateDriver();
-    }
+	@BeforeClass
+	@Parameters("browser")
+	public static void setup(@Optional("chrome") String browser) {
+		System.out.println("Setting up driver for browser: " + browser);
+		driverFactory.setBrowser(browser);
+		
+	}
 
-    @Override
-    @DataProvider(parallel = true) //Enable parallel execution
-    public Object[][] scenarios() {
-        return super.scenarios();
-    }
+	@Override
+	@DataProvider(parallel = false) // Enable parallel execution
+	public Object[][] scenarios() {
+		return super.scenarios();
+	}
 }

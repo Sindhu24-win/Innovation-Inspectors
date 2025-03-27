@@ -30,9 +30,9 @@ public class D_DataStructureSteps {
 
 	@Given("The user is in the Home page after logged in the DsAlgo portal")
 	public void the_user_is_in_the_home_page_after_logged_in_the_ds_algo_portal() {
-		homepageobj.Gethomeurl();
-		//DSPage.signIn();
-		//DSPage.clickLogin(username, password);
+		homepageobj.Gethomeurl(); 
+		//DSPage.signIn();// We'r putting sign and sign out for to test individually run as a cucumber feature.
+		//DSPage.clickLogin(username, password); // while running from testng/test runner we'll comment this. 
 		LoggerReader.info("User in Home page");
 	}
 
