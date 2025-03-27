@@ -15,10 +15,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Utilities.ConfigReader;
+
 public class TreePage {
 
 	WebDriverWait wait;
-
+	String url = ConfigReader.getProperty("tree");
+	
 	@FindBy(className = "btn")
 	@CacheLookup
 	WebElement GetStarted;
@@ -52,7 +55,7 @@ public class TreePage {
 
 	@FindBy(xpath = "//div[@class='nav-item dropdown']")
 	@CacheLookup
-	WebElement dropdownMenu;
+	WebElement dropdownmenu;
 
 	@FindBy(xpath = "//a[text()='Tree']")
 	@CacheLookup
@@ -152,6 +155,7 @@ public class TreePage {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
+	
 
 	public void GetStarted() {
 		GetStarted.click();
@@ -186,8 +190,8 @@ public class TreePage {
 		TreeGetStarted.click();
 	}
 
-	public void dropdownMenuClick() {
-		dropdownMenu.click();
+	public void dropdownmenuClick() {
+		dropdownmenu.click();
 	}
 
 	public void clickTreeFromDropdown() {
@@ -217,7 +221,10 @@ public class TreePage {
 	public void clickRun() {
 		RunBtn.click();
 	}
-
+	public void Geturl() {
+		driver.get(url);
+	}
+	
 	public void EmptytryInput() {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(tryEditorInp).click().sendKeys("").build().perform();

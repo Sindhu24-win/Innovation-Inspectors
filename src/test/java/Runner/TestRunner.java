@@ -33,7 +33,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     }
 
     @Override
-    @DataProvider(parallel = false) //Enable parallel execution
+    @DataProvider(parallel = true) //Enable parallel execution
     public Object[][] scenarios() {
         return super.scenarios();
     }

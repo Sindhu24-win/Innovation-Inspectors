@@ -52,30 +52,6 @@ public class driverFactory {
         }
         return driver.get();
     }
-
-    public static void openWebPage(String url) {
-        getDriver().get(url);
-    }
-
-    public static String getCurrentURL() {
-        return getDriver().getCurrentUrl();
-    }
-
-    public static String getTitle() {
-        return getDriver().getTitle();
-    }
-    public static void getStarted() {
-		openWebPage("https://dsportalapp.herokuapp.com/");
-	}
-
-	public static void homepage() {
-		openWebPage("https://dsportalapp.herokuapp.com/home");
-	}
-
-	public static void treepage() {
-		openWebPage("https://dsportalapp.herokuapp.com/tree/");
-	}
-
     public static void tearDown() {
         if (driver.get() != null) {
             driver.get().quit();
@@ -83,6 +59,8 @@ public class driverFactory {
             browser.remove();
         }
     }
+   
+   
 
 
 		

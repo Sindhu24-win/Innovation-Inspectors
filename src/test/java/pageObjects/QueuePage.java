@@ -14,14 +14,16 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Utilities.ConfigReader;
 import Utilities.LoggerReader;
 
 public class QueuePage {
 	private WebDriver driver;
 	WebDriverWait wait;
-	String loginname = "darshana";
-	String loginpassword = "zenithhp4987";
-	public String url = "https://dsportalapp.herokuapp.com/home";
+	//String loginname = "darshana";
+	//String loginpassword = "zenithhp4987";
+	String url = ConfigReader.getProperty("url");
+	String homeurl = ConfigReader.getProperty("homeUrl");
 
 	@FindBy(className = "btn")
 	@CacheLookup
@@ -104,7 +106,12 @@ public class QueuePage {
 	public void SignIn() {
 		signIn.click();
 	}
-
+	public void Geturl() {
+		driver.get(url);
+	}
+	public void Gethomeurl() {
+		driver.get(homeurl);
+	}
 	
 
 	public String getStatus() {

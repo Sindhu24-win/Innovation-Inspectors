@@ -1,17 +1,21 @@
 package pageObjects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Linkedlistpage {
 
-	String username = "darshana";
-	String password = "zenithhp4987";
-
+	
 	@FindBy(xpath = "//button[text()='Get Started']")
 	@CacheLookup
 	WebElement DSAlgoGetStart;
@@ -56,7 +60,6 @@ public class Linkedlistpage {
 	@CacheLookup()
 	public WebElement Runbtn;
 
-	// @FindBy(xpath = "//pre[@id='output']")
 	@FindBy(id = "output")
 	@CacheLookup()
 	WebElement Console_Output;
@@ -115,8 +118,8 @@ public class Linkedlistpage {
 	}
 
 	public void EnterCredentials() {
-		Username.sendKeys(username);
-		Password.sendKeys(password);
+		//Username.sendKeys(username);
+		//Password.sendKeys(password);
 	}
 
 	public void login() {
@@ -130,6 +133,22 @@ public class Linkedlistpage {
 	public void Getstarted() {
 		Linked_List.click();
 
+	}
+	public void invalid() {
+		Runbtn.click();
+		try {
+			// Wait for the alert to appear
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			wait.until(ExpectedConditions.alertIsPresent());
+
+			// Switch to the alert and accept (click OK)
+			Alert alert = driver.switchTo().alert();
+			alert.accept(); // Or alert.dismiss() if you want to dismiss the alert
+
+		} catch (NoAlertPresentException e) {
+			// No alert was present, continue with the test
+			System.out.println("No alert present.");
+		}
 	}
 
 	public void Introductionpage() {
