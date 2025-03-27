@@ -1,7 +1,9 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,27 +13,34 @@ public class RegisterPage {
 	 public WebDriver driver;
 	 WebDriverWait wait;
 	
-	@FindBy(xpath="//div[@class='alert alert-primary']")WebElement ErrorMessage;
+	@FindBy(xpath="//div[@class='alert alert-primary']")
+	WebElement ErrorMessage;
 	
-	 // Locating the Username field
-    @FindBy(xpath="//input[@id='id_username']") // Change if the actual attribute is different
+	@FindBy(css=("input:invalid"))
+	public WebElement alert;
+	
+    @FindBy(xpath="//input[@id='id_username']") 
     private WebElement usernameField;
-
-    // Locating the Password field
-    @FindBy(xpath="//input[@id='id_password1']") // Change if the actual attribute is different
+   
+    
+    @FindBy(xpath="//input[@id='id_password1']") 
     private WebElement passwordField;
 
-    // Locating the Password Confirmation field
-    @FindBy(xpath="//input[@id='id_password2']") // Change if the actual attribute is different
+	@FindBy(className = "btn")
+	WebElement GetStarted;
+	@FindBy(xpath = "//[@id='navbarCollapse']/div[2]/ul/a[2]")
+	WebElement registerlink;
+    
+    @FindBy(xpath="//input[@id='id_password2']") 
     private WebElement confirmPasswordField;
 
     // Locating the Register button
-    @FindBy(xpath = "//input[@value='Register']") // Change if needed
+    @FindBy(xpath = "//input[@value='Register']") 
     private WebElement registerButton;
     
     @FindBy(xpath="/html/body/div[2]")public WebElement success;
 
-    // Constructor to initialize the PageFactory
+    
     public RegisterPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver=driver;
@@ -50,6 +59,12 @@ public class RegisterPage {
     // Method to enter Password Confirmation
     public void enterConfirmPassword(String confirmPassword) {
         confirmPasswordField.sendKeys(confirmPassword);
+    }
+    public void GetStarted() {
+		GetStarted.click();
+    }
+    public void register() {
+    	registerlink.click();
     }
 
     // Method to click Register button
@@ -71,8 +86,16 @@ public class RegisterPage {
 	public String successMessage()
 	{
 		return success.getText();
-		
-		
+				
 	}
- 
+	public String alertmsg() {
+		return alert.getText();
+	}
+	public void GetUrl() { 
+	driver.get("https://dsportalapp.herokuapp.com/register");//
+	}
+	public void Getbaseurl() { 
+		driver.get("https://dsportalapp.herokuapp.com");//
+	}
+	
 }

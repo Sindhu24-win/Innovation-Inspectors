@@ -11,17 +11,19 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Utilities.ConfigReader;
+
 public class HomePage {
 
     WebDriver driver;
     WebDriverWait wait;
-
+    String url = ConfigReader.getProperty("url");
+	String homeurl = ConfigReader.getProperty("homeUrl");
     // Constructor to initialize PageFactory elements
     public HomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
-    
     
     @FindBy(id = "id_username")
     WebElement userName;
@@ -142,6 +144,12 @@ public class HomePage {
 		WebElement signIn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Sign in']")));
 		
 		signIn.click();
+	}
+	public void Geturl() {
+		driver.get(url);
+	}
+	public void Gethomeurl() {
+		driver.get(homeurl);
 	}
 
 	public String warning()

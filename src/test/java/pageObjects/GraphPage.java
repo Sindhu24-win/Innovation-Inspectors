@@ -15,15 +15,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Utilities.ConfigReader;
 import Utilities.LoggerReader;
 
 public class GraphPage {
-
+	 
 	WebDriverWait wait;
-	// String loginName = "darshana";
-	// String loginPassword = "zenithhp4987";
-	// public String baseUrl="https://dsportalapp.herokuapp.com/";
-
+	String url = ConfigReader.getProperty("url");
+	String homeurl = ConfigReader.getProperty("homeUrl");
 	@FindBy(className = "btn")
 	@CacheLookup
 	WebElement GetStarted;
@@ -104,7 +103,7 @@ public class GraphPage {
 	@CacheLookup
 	WebElement GraphRepresentationsLink;
 
-	private WebDriver driver;
+	public WebDriver driver;
 
 	public GraphPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -152,16 +151,13 @@ public class GraphPage {
 
 	public void Graphlink() {
 		GraphLink.click();
-		
+
 	}
 
 	public void TryHereButton() {
 		TryhereBtn.click();
 		LoggerReader.info("User clicked on Graph Try here link");
 	}
-
-	
-	
 
 	public String RunBtnText() {
 		return RunBtn.getText();
@@ -209,6 +205,18 @@ public class GraphPage {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Practice_QuestionsLink);
 		wait.until(ExpectedConditions.elementToBeClickable(Practice_QuestionsLink)).click();
+	}
+
+	public String getTitle() {
+		return driver.getTitle();
+
+	}
+	// Retrieve URL property
+	public void Geturl() {
+		driver.get(url);
+	}
+	public void Gethomeurl() {
+		driver.get(homeurl);
 	}
 
 }

@@ -1,12 +1,11 @@
 package StepDefinitions;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import Utilities.LoggerReader;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
@@ -32,7 +31,6 @@ public class Hooks {
 		}
 	}
 
-	
 	@After
 	public void afterstep(Scenario scenario) {
 		if (scenario.isFailed()) {
@@ -45,7 +43,5 @@ public class Hooks {
 		}
 
 	}
-
-	
 
 }

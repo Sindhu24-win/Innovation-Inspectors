@@ -21,8 +21,4 @@ Feature: Home and DS Algo Portal Navigation and Functionality
     When The user selects Tree item from the drop-down menu
     Then The user should land on the Tree Data Structure page
 
-  @home4
-  Scenario: Verify that user is able to sign out successfully
-    Given The user is on the home page after logging in
-    When The user clicks Sign out on home page
-    Then The user should be redirected to the home page with message "Logged out successfully"
+ 

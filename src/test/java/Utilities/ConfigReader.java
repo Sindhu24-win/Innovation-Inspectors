@@ -8,7 +8,7 @@ public class ConfigReader {
 
 	private static Properties prop = new Properties();
 
-	private static String browser;
+	public static String browser;
 
 	// Static block to load properties only once
 	static {
@@ -38,18 +38,4 @@ public class ConfigReader {
 		browser = browserValue;
 	}
 
-	// Retrieve URL property
-	public static String getUrl() {
-		return prop.getProperty("url");
 	}
-
-	// Retrieve username
-	public static String getUsername() {
-		return prop.getProperty("username");
-	}
-
-	// Retrieve password
-	public static String getPassword() {
-		return prop.getProperty("password");
-	}
-}
