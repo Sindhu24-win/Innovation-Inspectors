@@ -1,16 +1,8 @@
 package StepDefinitions;
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import DriverFactory.driverFactory;
 import io.cucumber.java.en.Given;
@@ -18,7 +10,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.ArrayPage;
 import pageObjects.HomePage;
-import Utilities.ConfigReader;
 import Utilities.Excelreaderpython;
 import Utilities.LoggerReader;
 
@@ -27,35 +18,15 @@ public class E_ArraySteps {
 	WebDriver driver;
 	ArrayPage arraypage;
 	HomePage homepage;
-	String username = ConfigReader.getProperty("username");
-	String password = ConfigReader.getProperty("password");
-
+	Excelreaderpython python = new Excelreaderpython();
+	String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 
 	public E_ArraySteps() {
-		System.out.println("****I'm in Graph Data Structure****");
 		driver = driverFactory.initiateDriver();
 		arraypage = new ArrayPage(driver);
 		homepage = new HomePage(driver);
 	}
-
-	@Given("The user is in the Home page")
-	public void the_user_is_in_the_home_page() {
-		homepage.Gethomeurl();
-		LoggerReader.info("User is Home page for checking Array Data Structure");
-	}
-
-	@When("The user clicks on Sign in and enter username and password and clicks on Login button")
-	public void the_user_clicks_on_sign_in_and_enter_username_and_password_and_clicks_on_login_button() {
-		//arraypage.Usersignin();
-		//arraypage.Entercredentials(username,password);
-		//arraypage.Userlogin();
-	}
-
-	@Then("The user should be logged in successfully")
-	public void the_user_should_be_logged_in_successfully() {
-		//LoggerReader.info("User Logged in Successfully");
-	}
-
+	
 	@Given("The user is in the Home page after Sign in with valid credentials")
 	public void the_user_is_in_the_home_page_after_sign_in_with_valid_credentials() {
 		homepage.Gethomeurl();
@@ -68,7 +39,7 @@ public class E_ArraySteps {
 
 	@Then("The user should be directed to Array Data Structure Page")
 	public void the_user_should_be_directed_to_array_data_structure_page() {
-		
+		Assert.assertEquals(driver.getTitle(), "Array");
 		LoggerReader.info("User is in the Array Page");
 	}
 
@@ -80,7 +51,6 @@ public class E_ArraySteps {
 	@When("The user clicks Arrays in Python link")
 	public void the_user_clicks_arrays_in_python_link() {
 		arraypage.ArraysPython();
-
 	}
 
 	@Then("The user should be redirected to Arrays in Python page")
@@ -104,7 +74,6 @@ public class E_ArraySteps {
 		arraypage.ArrayGetStarted();
 		arraypage.ArraysPython();
 		arraypage.Tryherebtn();
-		
 	}
 
 	@Then("The user should be able to see error message in alert pop-up")
@@ -115,7 +84,6 @@ public class E_ArraySteps {
 
 	@Given("The user is in the tryEditor page Arrays in Python page")
 	public void the_user_is_in_the_try_editor_page_arrays_in_python_page() {
-
 		homepage.Gethomeurl();
 		arraypage.ArrayGetStarted();
 		arraypage.ArraysPython();
@@ -124,16 +92,8 @@ public class E_ArraySteps {
 
 	@When("The user reads the invalid python code from  excel {string}  and {int} and  enters in the Editor and clicks on Run Button")
 	public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_the_editor_and_clicks_on_run_button(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
-		arraypage.Run.click();
-		arraypage.InvalidPythoncode();
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@Then("The user should be able to see an error message in alert pop-up")
@@ -144,14 +104,7 @@ public class E_ArraySteps {
 	@When("The user reads the valid python code from excel {string} and {int} and  enters in the Editor and click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_the_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		// Using relative path
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
 		arraypage.Run.click();
 	}
 
@@ -159,7 +112,6 @@ public class E_ArraySteps {
 	public void the_user_is_on_the_arrays_using_list_page() {
 		driver.navigate().back();
 		arraypage.ArraysList();
-
 	}
 
 	@When("The user clicks Try Here button in Arrays using List page")
@@ -177,17 +129,8 @@ public class E_ArraySteps {
 
 	@When("The user reads  the invalid python code from excel {string} and {int} and enters in Arrays using List Editor and click the Run Button")
 	public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_arrays_using_list_editor_and_click_the_run_button(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		// Using relative path
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
-		arraypage.Run.click();
-		arraypage.InvalidPythoncode();
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@Then("The user should able to see an error message in alert pop-up")
@@ -198,15 +141,7 @@ public class E_ArraySteps {
 	@When("The user reads  the valid python code from excel {string} and {int} and  enters in Arrays using List Editor and click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_arrays_using_list_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-
-		Excelreaderpython python = new Excelreaderpython();
-		// Using relative path
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
 		arraypage.Run.click();
 	}
 
@@ -214,7 +149,6 @@ public class E_ArraySteps {
 	public void the_user_should_able_to_see_output_for_arrays_using_list_in_the_console() {
 		Assert.assertEquals("Hello World", arraypage.GetConsoleOutput());
 		System.out.println("======Valid python code output is ===" + arraypage.GetConsoleOutput());
-
 	}
 
 	@Given("The user is on the Basic Operations in Lists page")
@@ -238,17 +172,8 @@ public class E_ArraySteps {
 
 	@When("The user read the invalid python code from excel {string} and {int} and  enters in Basic Operations Editor and click the Run Button")
 	public void the_user_read_the_invalid_python_code_from_excel_and_and_enters_in_basic_operations_editor_and_click_the_run_button(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		// Using relative path
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
-		arraypage.Run.click();
-		arraypage.InvalidPythoncode();
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@Then("The user should able to see an error message for Basic Operations in alert pop-up")
@@ -259,14 +184,7 @@ public class E_ArraySteps {
 	@When("The user write the valid python code from excel {string} and {int} and enters in Basic Operations Editor and click the Run Button")
 	public void the_user_write_the_valid_python_code_from_excel_and_and_enters_in_basic_operations_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		// Using relative path
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
 		arraypage.Run.click();
 	}
 
@@ -308,17 +226,9 @@ public class E_ArraySteps {
 
 	@When("The user reads the invalid python code from excel {string} and {int} and enters  in  Applications of Arrays Editor and click the Run Button")
 	public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_applications_of_arrays_editor_and_click_the_run_button(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		// Using relative path
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
-		arraypage.Run.click();
-		arraypage.InvalidPythoncode();
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
+	
 	}
 
 	@Then("The user should able to see error message in alert pop-up")
@@ -329,14 +239,7 @@ public class E_ArraySteps {
 	@When("The user reads the valid  python code from excel {string} and {int} and  enters in Application of Arrays Editor and click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_application_of_arrays_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		// Using relative path
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(arraypage.TryEditor).sendKeys(pcode).build().perform();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
 		arraypage.Run.click();
 	}
 
@@ -381,43 +284,27 @@ public class E_ArraySteps {
 
 	@Then("The user should be able to see error message for search element  in alert pop-up")
 	public void the_user_should_be_able_to_see_error_message_for_search_element_in_alert_pop_up() {
-		System.out.println("No Error Message is present");
-
+		Assert.assertEquals(driver.getTitle(), "Assessment");
 	}
 
 	@When("The user reads the valid python code for search element from excel {string} and {int} and enters in Editor and Click the Run Button")
 	public void the_user_reads_the_valid_python_code_for_search_element_from_excel_and_and_enters_in_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		// Using relative path
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		StringSelection stringSelection = new StringSelection(pcode);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-
-		Actions actions = new Actions(driver);
-		actions.moveToElement(arraypage.codeMirrorDiv).click().keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL)
-				.perform();
-
+		arraypage.ValidInputPracticeQn(sheetName, rowNumber);
 		arraypage.Run.click();
 		System.out.println("Search Array Program entered Successfully  ");
-
 	}
 
 	@Then("The user should able to see output for search element  in the console")
 	public void the_user_should_able_to_see_output_for_search_element_in_the_console() {
 		Assert.assertEquals("Element Found", arraypage.GetConsoleOutput());
 		System.out.println("======Valid python code output is ===" + arraypage.GetConsoleOutput());
-
 	}
 
 	@Given("The user is in the practice  page")
 	public void the_user_is_in_the_Practice_Page() {
 		driver.navigate().back();
 		Assert.assertEquals(driver.getTitle(), "Practice Questions");
-
 	}
 
 	@When("The user clicks the Max ConsecutiveOnes link")
@@ -434,23 +321,9 @@ public class E_ArraySteps {
 	@When("The user reads the valid python code from excel {string} and {int} and enters in Editor for maximum number of consecutive ones and Click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_editor_for_maximum_number_of_consecutive_ones_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		// Using relative path
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		StringSelection stringSelection = new StringSelection(pcode);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-
-		Actions actions = new Actions(driver);
-
-		actions.moveToElement(arraypage.codeMirrorDiv).click().keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL)
-				.perform();
-
+		arraypage.ValidInputPracticeQn(sheetName, rowNumber);
 		arraypage.Run.click();
 		System.out.println("Max Consecutive Program entered Successfully  ");
-
 	}
 
 	@Then("The user should able to see output for maximum number of consecutive ones  in the console")
@@ -468,20 +341,7 @@ public class E_ArraySteps {
 	@When("The user reads the valid python code from excel {string} and {int} and  enters in Editor for even number of integers and Click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_editor_for_even_number_of_integers_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		// Using relative path
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		StringSelection stringSelection = new StringSelection(pcode);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-
-		Actions actions = new Actions(driver);
-
-		actions.moveToElement(arraypage.codeMirrorDiv).click().keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL)
-				.perform();
-
+		arraypage.ValidInputPracticeQn(sheetName, rowNumber);
 		arraypage.Run.click();
 		System.out.println("Find Even Numbers  Program entered Successfully  ");
 	}
@@ -490,14 +350,12 @@ public class E_ArraySteps {
 	public void the_user_should_able_to_see_output_for_even_number_of_integers_in_the_console() {
 		Assert.assertEquals("1", arraypage.GetConsoleOutput());
 		System.out.println("======Valid python code output is ===" + arraypage.GetConsoleOutput());
-
 	}
 
 	@Given("The user is in the  practice  page")
 	public void the_user_is_in_the_practice_page() {
 		driver.navigate().back();
 		Assert.assertEquals(driver.getTitle(), "Practice Questions");
-
 	}
 
 	@When("The user clicks the Squares of a Sorted Array link")
@@ -508,20 +366,7 @@ public class E_ArraySteps {
 	@When("The user reads the valid python code from excel {string} and {int} and enters in Editor for squares of each number in Editor and Click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_editor_for_squares_of_each_number_in_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		// Using relative path
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		StringSelection stringSelection = new StringSelection(pcode);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-
-		Actions actions = new Actions(driver);
-
-		actions.moveToElement(arraypage.codeMirrorDiv).click().keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL)
-				.perform();
-
+		arraypage.ValidInputPracticeQn(sheetName, rowNumber);
 		arraypage.Run.click();
 		System.out.println("Squares of sorted Array program  entered Successfully  ");
 	}
@@ -530,22 +375,11 @@ public class E_ArraySteps {
 	public void the_user_should_able_to_see_output_for_squares_of_each_number_in_the_console() {
 		Assert.assertEquals("[4, 9, 9, 49, 121]", arraypage.GetConsoleOutput());
 		System.out.println("======Valid python code output is ===" + arraypage.GetConsoleOutput());
-
 	}
 
 	@Given("The user is in Practice Questions page")
 	public void the_user_is_in_practice_questions_page() {
 		driver.navigate().back();
 		Assert.assertEquals(driver.getTitle(), "Practice Questions");
-	}
-
-	@When("The user clicks on Sign out")
-	public void the_user_clicks_on_sign_out() {
-		//arraypage.ArraySigningout();
-	}
-
-	@Then("The user should be logged out succeessfully")
-	public void the_user_should_be_logged_out_succeessfully() {
-		//arraypage.Logout();
 	}
 }

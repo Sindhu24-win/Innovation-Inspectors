@@ -15,9 +15,27 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DataStructurePage {
 
-	private WebDriver driver;
-	WebDriverWait wait;
+	WebDriver driver;
+	public DataStructurePage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+		this.driver = driver;
+	}
 
+	@FindBy(xpath = "//a[text()='Sign in']")
+	@CacheLookup
+	WebElement signIn;
+	
+	@FindBy(id = "id_username")
+	WebElement userName;
+
+	@FindBy(id = "id_password")
+	@CacheLookup
+	WebElement Password;
+
+	@FindBy(xpath = "//*[@value='Login']")
+	@CacheLookup
+	WebElement LoginBtn;
+	
 	@FindBy(xpath = "//button[text()='Get Started']")
 	WebElement DSAlgoGetstart;
 	@CacheLookup
@@ -48,23 +66,7 @@ public class DataStructurePage {
 
 	@FindBy(className = "btn")
 	WebElement GetStarted;
-
-	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[3]")
-	@CacheLookup
-	WebElement signin;
-
-	@FindBy(id = "id_username")
-	@CacheLookup
-	WebElement userName;
-
-	@FindBy(id = "id_password")
-	@CacheLookup
-	WebElement Password;
-
-	@FindBy(xpath = "//*[@value='Login']")
-	@CacheLookup
-	WebElement LoginBtn;
-
+	
 	@FindBy(xpath = "//*[@class ='alert alert-primary']")
 	@CacheLookup
 	WebElement LoginStatus;
@@ -76,25 +78,13 @@ public class DataStructurePage {
 	@FindBy(xpath = "//div[@class='CodeMirror-code']")
 	@CacheLookup
 	WebElement tryEditorInp;
-
-	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[3]")
-	@CacheLookup
-	WebElement SignOut;
-
-	public DataStructurePage(WebDriver driver) {
-		PageFactory.initElements(driver, this);
-		this.driver = driver;
-	}
-
+		
 	public void GetStarted() {
 		DSAlgoGetstart.click();
 	}
-
-	public void signIn() {
-		signin.click();
-	}
-
+	
 	public void clickLogin(String username, String password) {
+		signIn.click();
 		userName.sendKeys(username);
 		Password.sendKeys(password);
 		LoginBtn.click();
@@ -113,19 +103,15 @@ public class DataStructurePage {
 	}
 
 	public void tryhere() {
-
 		TryhereBtn.click();
 	}
 
 	public void checkPractice() {
-
 		PracticeQuestions.click();
 	}
 
 	public void enterCode() {
-
 		tryEditorTextBox.clear();
-
 		tryEditorTextBox.sendKeys(" ");
 	}
 
@@ -134,7 +120,6 @@ public class DataStructurePage {
 	}
 
 	public void Run() {
-
 		RunBtn.click();
 	}
 
@@ -148,7 +133,6 @@ public class DataStructurePage {
 	}
 
 	public void Invalidinput() {
-
 		RunBtn.click();
 		try {
 			// Wait for the alert to appear
@@ -167,8 +151,5 @@ public class DataStructurePage {
 
 	public String Outputmsg() {
 		return OutPutmsg.getText();
-	}
-	public void signOut() {
-		SignOut.click();
 	}
 }

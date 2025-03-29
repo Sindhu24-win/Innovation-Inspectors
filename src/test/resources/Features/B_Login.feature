@@ -1,4 +1,5 @@
 @Regression
+
 Feature: Sign In and Sign Out in dsAlgo Portal
 
   Background: The user is in the ds algo portal
@@ -48,3 +49,4 @@ Feature: Sign In and Sign Out in dsAlgo Portal
     Examples: 
       | rowIndex |
       |        4 |
+      

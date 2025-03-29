@@ -2,10 +2,7 @@
 package pageObjects;
 
 import java.time.Duration;
-
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,42 +12,20 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import Utilities.ConfigReader;
-import Utilities.LoggerReader;
-
 public class GraphPage {
-	 
+	
+	WebDriver driver;
 	WebDriverWait wait;
-	String url = ConfigReader.getProperty("url");
-	String homeurl = ConfigReader.getProperty("homeUrl");
+	
+	public GraphPage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+		this.driver = driver;
+	}
+	
 	@FindBy(className = "btn")
 	@CacheLookup
 	WebElement GetStarted;
-
-	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[3]")
-	@CacheLookup
-	WebElement signIn;
-
-	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[3]")
-	@CacheLookup
-	WebElement SignOut;
-
-	@FindBy(id = "id_username")
-	@CacheLookup
-	WebElement userName;
-
-	@FindBy(id = "id_password")
-	@CacheLookup
-	WebElement Password;
-
-	@FindBy(xpath = "//*[@value='Login']")
-	@CacheLookup
-	WebElement LoginBtn;
-
-	@FindBy(xpath = "//*[@class ='alert alert-primary']")
-	@CacheLookup
-	WebElement LoginStatus;
-
+	
 	@FindBy(xpath = "//a[@href='graph']")
 	@CacheLookup
 	WebElement GraphGetStarted;
@@ -71,7 +46,7 @@ public class GraphPage {
 	@CacheLookup
 	WebElement GraphLink;
 
-	@FindBy(xpath = "//a[@href='/tryEditor']")
+	@FindBy(xpath = "//a[text()='Try here>>>']")
 	@CacheLookup
 	WebElement TryhereBtn;
 
@@ -102,41 +77,11 @@ public class GraphPage {
 	@FindBy(linkText = "Graph Representations")
 	@CacheLookup
 	WebElement GraphRepresentationsLink;
-
-	public WebDriver driver;
-
-	public GraphPage(WebDriver driver) {
-		PageFactory.initElements(driver, this);
-		this.driver = driver;
-	}
-
-	public void GetStarted() {
-		GetStarted.click();
-	}
-
-	public void signIn() {
-		signIn.click();
-	}
-
-	public void signOut() {
-		SignOut.click();
-	}
-
-	public void clickLogin(String username, String password) {
-		userName.sendKeys(username);
-		Password.sendKeys(password);
-		LoginBtn.click();
-		LoggerReader.info("User Signed in Successfully");
-	}
-
-	public String getStatus() {
-		return LoginStatus.getText();
-	}
-
-	public String GraphTitle() {
-		return GraphTitle.getText();
-	}
-
+	
+	@FindBy(xpath = "//a[text()='Sign out']")
+	@CacheLookup
+	WebElement SignOut;
+		
 	public void GraphGetStarted() {
 		GraphGetStarted.click();
 	}
@@ -151,12 +96,10 @@ public class GraphPage {
 
 	public void Graphlink() {
 		GraphLink.click();
-
 	}
 
 	public void TryHereButton() {
 		TryhereBtn.click();
-		LoggerReader.info("User clicked on Graph Try here link");
 	}
 
 	public String RunBtnText() {
@@ -176,23 +119,6 @@ public class GraphPage {
 		return driver.switchTo().alert().getText();
 	}
 
-	public void Invalidinput() {
-		RunBtn.click();
-		try {
-			// Wait for the alert to appear
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-			wait.until(ExpectedConditions.alertIsPresent());
-
-			// Switch to the alert and accept (click OK)
-			Alert alert = driver.switchTo().alert();
-			alert.accept(); // Or alert.dismiss() if you want to dismiss the alert
-
-		} catch (NoAlertPresentException e) {
-			// No alert was present, continue with the test
-			System.out.println("No alert present.");
-		}
-	}
-
 	public String Outputmsg() {
 		return OutPutmsg.getText();
 	}
@@ -207,16 +133,8 @@ public class GraphPage {
 		wait.until(ExpectedConditions.elementToBeClickable(Practice_QuestionsLink)).click();
 	}
 
-	public String getTitle() {
-		return driver.getTitle();
-
+	public void signOut() {
+		SignOut.click();
 	}
-	// Retrieve URL property
-	public void Geturl() {
-		driver.get(url);
-	}
-	public void Gethomeurl() {
-		driver.get(homeurl);
-	}
-
+	
 }

@@ -1,4 +1,5 @@
 @Regression
+
 Feature: Tree Datastructure
 
   Background: The user sign in to dsAlgo Portal
@@ -516,8 +517,4 @@ Feature: Tree Datastructure
       | SheetName  | RowNumber |
       | pythonCode |         0 |
 
-  @Tree69
-  Scenario: Verify that user able to logout from the Tree data structure
-    Given The user is in the Tree data structure page
-    When The User clicks signout button from the Tree page
-    Then The user should Logged out successfully
+  

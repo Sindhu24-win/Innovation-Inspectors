@@ -1,4 +1,5 @@
 @Regression
+
 Feature: User Registration
 
   Background: The user is in the ds algo portal

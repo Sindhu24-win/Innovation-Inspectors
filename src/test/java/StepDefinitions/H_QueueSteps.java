@@ -1,24 +1,15 @@
 package StepDefinitions;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
-
 import org.apache.poi.EncryptedDocumentException;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-
 import DriverFactory.driverFactory;
-import Utilities.ConfigReader;
-import Utilities.Excelreaderpython;
 import Utilities.LoggerReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.ArrayPage;
 import pageObjects.HomePage;
 import pageObjects.QueuePage;
 
@@ -27,42 +18,34 @@ public class H_QueueSteps {
 	WebDriver driver;
 	QueuePage queuePage;
 	HomePage homepage;
-	String username = ConfigReader.getProperty("username");
-	String password = ConfigReader.getProperty("password");
-
+	ArrayPage arraypage;
+	
 	public H_QueueSteps() {
-		System.out.println("****I'm in Queue Data Structure****");
 		driver = driverFactory.initiateDriver();
 		queuePage = new QueuePage(driver);
 		homepage = new HomePage(driver);
-
+		arraypage = new ArrayPage(driver);
 	}
 
 	@Given("The user is on the Home page")
 	public void the_user_is_on_the_home_page() {
 		homepage.Gethomeurl();
 		LoggerReader.info("User is on the HomePage to check Queue DataStructure");
-
 	}
 
 	@When("The user selects Getting Started in Queue Panel or the user selects Queue item from the drop down menu")
 	public void the_user_selects_getting_started_in_queue_panel_or_the_user_selects_queue_item_from_the_drop_down_menu() {
-		//queuePage.SignIn();
-		//queuePage.clickLogin(username, password);
 		queuePage.clickQueueGetStartedBtn();
-
 	}
 
 	@Then("The user should be directed to the Queue Data Structure Page")
 	public void the_user_should_be_directed_to_the_queue_data_structure_page() {
 		Assert.assertEquals(driver.getTitle(), "Queue");
-
 	}
 
 	@Given("The user is on the Queue page")
 	public void the_user_is_on_the_queue_page() {
 		driver.getCurrentUrl();
-
 	}
 
 	@When("The user clicks Implementation of Queue in Python button")
@@ -90,7 +73,6 @@ public class H_QueueSteps {
 	public void the_user_should_be_redirected_to_a_page_having_a_try_editor_with_a_run_button_to_test() {
 		assert queuePage.tryEditor.isDisplayed();
 		assert queuePage.RunButton.isDisplayed();
-
 	}
 
 	@Given("The user is on the try editor page in the Implementation of Queue on Python page")
@@ -109,21 +91,12 @@ public class H_QueueSteps {
 	@Then("The user should see an error message in the alert window")
 	public void the_user_should_see_an_error_message_in_the_alert_window() {
 		Assert.assertEquals(driver.getTitle(), "Assessment");// no alert is printed
-
 	}
 
 	@When("The user writes invalid python code from excel {string} and {int} and enters in the Editor and clicks the Run Button for queue tryEditor")
 	public void the_user_writes_invalid_python_code_from_excel_and_and_enters_in_the_editor_and_clicks_the_Run_button_for_queue_try_editor(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(queuePage.tryEditor).sendKeys(pcode).build().perform();
-		queuePage.Invalidinput();
-
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@Given("The user is on the try editor page in the Implementation of Queue in Python page")
@@ -137,21 +110,13 @@ public class H_QueueSteps {
 	@When("The user writes valid python code from excel {string} and {int} and enters in the Editor and clicks the Run Button  for queue tryEditor")
 	public void the_user_writes_valid_python_code_from_excel_and_and_enters_in_the_editor_and_clicks_the_run_Button_for_queue_try_editor(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(queuePage.tryEditor).sendKeys(pcode).build().perform();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
 		queuePage.RunButton.click();
-
 	}
 
 	@Then("The user should see the output in the console")
 	public void the_user_should_see_the_output_in_the_console() {
 		Assert.assertEquals("Hello World", queuePage.Outputmsg());
-
 	}
 
 	@When("The user clicks Practice Questions button in the Implementation of Queue in Python page")
@@ -193,15 +158,8 @@ public class H_QueueSteps {
 
 	@When("The user writes invalid python code from excel {string} and {int} and enters in the Editor and clicks the Run Button  for queue tryEditor")
 	public void the_user_writes_invalid_python_code_from_excel_and_and_enters_in_the_editor_and_clicks_the_run_button_for_queue_try_editor(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(queuePage.tryEditor).sendKeys(pcode).build().perform();
-		queuePage.Invalidinput();
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@When("The user clicks Implementation using array button")
@@ -226,7 +184,6 @@ public class H_QueueSteps {
 		queuePage.clickQueueGetStartedBtn();
 		queuePage.clickImplementationUsingArray();
 		queuePage.clickTryHereBtn();
-
 	}
 
 	@Given("The user is on the try editor page  in the Implementation using array page")
@@ -235,7 +192,6 @@ public class H_QueueSteps {
 		queuePage.clickQueueGetStartedBtn();
 		queuePage.clickImplementationUsingArray();
 		queuePage.clickTryHereBtn();
-
 	}
 
 	@When("The user clicks Queue Operations button")
@@ -252,7 +208,6 @@ public class H_QueueSteps {
 	@Given("The user is on the Queue Operations page")
 	public void the_user_is_on_the_queue_operations_page() {
 		driver.getCurrentUrl();
-
 	}
 
 	@Given("The user is on the try editor page in the Queue Operations page")
@@ -266,32 +221,7 @@ public class H_QueueSteps {
 	@When("The user writes valid python code from excel {string} and {int} and enters in the Editor and clicks the Run Button for queue tryEditor")
 	public void the_user_writes_valid_python_code_from_excel_and_and_enters_in_the_editor_and_clicks_the_run_button_for_queue_try_editor(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(queuePage.tryEditor).sendKeys(pcode).build().perform();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
 		queuePage.RunButton.click();
-
-	}
-
-	@Given("The user is in the Queue data structure page")
-	public void the_user_is_in_the_queue_data_structure_page() {
-		driver.navigate().back();
-	}
-
-	@When("The User clicks signout button.")
-	public void the_user_clicks_signout_button() {
-		//queuePage.SignOut();
-	}
-
-	@Then("The user should signout successfully.")
-	public void the_user_should_signout_successfully() {
-		//Assert.assertEquals(driver.getTitle(), "NumpyNinja");
-		//queuePage.getStatus();
-		LoggerReader.info("User leaving Queue!");
 	}
 }

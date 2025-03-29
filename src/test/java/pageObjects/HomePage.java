@@ -1,106 +1,56 @@
 package pageObjects;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Utilities.ConfigReader;
 
 public class HomePage {
 
-    WebDriver driver;
-    WebDriverWait wait;
-    String url = ConfigReader.getProperty("url");
+	WebDriver driver;
+	String url = ConfigReader.getProperty("url");
 	String homeurl = ConfigReader.getProperty("homeUrl");
-    // Constructor to initialize PageFactory elements
-    public HomePage(WebDriver driver) {
+
+	public HomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
-    
-    @FindBy(id = "id_username")
-    WebElement userName;
 
-    @FindBy(id = "id_password")
-    @CacheLookup
-    WebElement Password;
+	@FindBy(xpath = "//div[@class='nav-item dropdown show']")
+	@CacheLookup
+	public WebElement dataStructuresDropdown;
 
-    @FindBy(xpath = "//*[@value='Login']")
-    @CacheLookup
-    WebElement LoginBtn;
+	@FindBy(xpath = "//a[text()='Tree']")
+	@CacheLookup
+	public WebElement treeOption;
 
-    @FindBy(xpath = "//div[@class='nav-item dropdown show']")
-    public WebElement dataStructuresDropdown;
+	@FindBy(xpath = "//div[@class='alert alert-primary']")
+	@CacheLookup
+	public WebElement warning1;
 
-    @FindBy(xpath = "//a[text()='Arrays']")
-    public WebElement arraysOption;
+	@FindBy(xpath = "//a[@href='/register']")
+	@CacheLookup
+	public WebElement registerLink;
 
-    @FindBy(xpath = "//a[text()='Linked List']")
-    public WebElement linkedListOption;
-
-    @FindBy(xpath = "//a[text()='Stack']")
-    public WebElement stackOption;
-
-    @FindBy(xpath = "//a[text()='Queue']")
-    public WebElement queueOption;
-
-    @FindBy(xpath = "//a[text()='Tree']")
-    public WebElement treeOption;
-
-    @FindBy(xpath = "//a[text()='Graph']")
-    public WebElement graphOption;
-
-    @FindBy(xpath = "/html/body/div[2]")
-    public WebElement warning1;
-
-    @FindBy(xpath="/html/body/div[2]")
-    public WebElement loginMessage;
-
-    @FindBy(xpath="//a[@href='/register']")
-    public WebElement registerLink;
-
-    
-    @FindBy(xpath="//div[@role='alert']")
-    public WebElement logoutMessage;
-
-    @FindBy(xpath = "//button[text()='Get Started']")
+	@FindBy(xpath = "//button[text()='Get Started']")
+	@CacheLookup
 	WebElement DSAlgoGetstart;
+
+	@FindBy(xpath = "//a[@href='tree']")
 	@CacheLookup
-	
-    @FindBy(xpath = "//a[@href='array']")
-    public WebElement arrayGetStarted;
+	public WebElement treeGetStarted;
 
-    @FindBy(xpath = "//a[@href='linked-list']")
-    public WebElement linkedListGetStarted;
-
-    @FindBy(xpath = "//a[@href='stack']")
-    public WebElement stackGetStarted;
-
-    @FindBy(xpath = "//a[@href='queue']")
-    public WebElement queueGetStarted;
-
-    @FindBy(xpath = "//a[@href='tree']")
-    public WebElement treeGetStarted;
-
-    @FindBy(xpath = "//a[@href='graph']")
-    public WebElement graphGetStarted;
-
-    @FindBy(xpath = "//a[text()='Sign out']")
+	@FindBy(xpath = "//a[@href='graph']")
 	@CacheLookup
-	WebElement signOut;
+	public WebElement graphGetStarted;
 
-    @FindBy(xpath = "//a[text()='Sign in']")
+	@FindBy(xpath = "//a[text()='Sign out']")
 	@CacheLookup
-	WebElement signIn;
-    
-    @FindBy(xpath = "//div[@class='nav-item dropdown']")
+	WebElement signout;
+
+	@FindBy(xpath = "//div[@class='nav-item dropdown']")
 	@CacheLookup
 	WebElement dropdownMenu;
 
@@ -111,19 +61,8 @@ public class HomePage {
 	@FindBy(xpath = "//title[text()='Tree']")
 	@CacheLookup
 	WebElement titleTree;
-    public void signOut() {
-		signOut.click();
-	}
 
-    public String getStatus() {
-		return loginMessage.getText();
-	}
-
-    public String getStatus1() {
-		return logoutMessage.getText();
-	}
-
-    public void dropdownMenuClick() {
+	public void dropdownMenuClick() {
 		dropdownMenu.click();
 	}
 
@@ -134,33 +73,25 @@ public class HomePage {
 	public String titleTree() {
 		return titleTree.getText();
 	}
+
 	public void GetStarted() {
 		DSAlgoGetstart.click();
 	}
 
-	public void signIn() {
-		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement signIn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Sign in']")));
-		
-		signIn.click();
+	public void signout() {
+		signout.click();
 	}
+
 	public void Geturl() {
 		driver.get(url);
 	}
+
 	public void Gethomeurl() {
 		driver.get(homeurl);
 	}
 
-	public String warning()
-	{
+	public String warning() {
 		return warning1.getText();
 	}
-	public void clickLogin(String username, String password) {
-		userName.sendKeys(username);
-		Password.sendKeys(password);
-		LoginBtn.click();
 
-	}
-   
 }
