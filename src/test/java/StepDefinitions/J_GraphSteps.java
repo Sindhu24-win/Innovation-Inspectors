@@ -26,7 +26,6 @@ public class J_GraphSteps {
 	String password = ConfigReader.getProperty("password");
 
 	public J_GraphSteps() {
-		System.out.println("****I'm in Graph Data Structure****");
 		driver = driverFactory.initiateDriver();
 		graphPage = new GraphPage(driver);
 		arraypage = new ArrayPage(driver);
