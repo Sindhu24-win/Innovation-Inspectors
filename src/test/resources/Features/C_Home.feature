@@ -1,4 +1,5 @@
 @Regression
+
 Feature: Home and DS Algo Portal Navigation and Functionality
 
   Background: The user is in the ds algo portal
@@ -19,6 +20,6 @@ Feature: Home and DS Algo Portal Navigation and Functionality
   Scenario: Verify that user is able to navigate to Tree Data Structures page
     Given The user is on the Home page after signed in
     When The user selects Tree item from the drop-down menu
-    Then The user should land on the Tree Data Structure page
+    Then The user should land on the Tree Data Structure page 
 
  

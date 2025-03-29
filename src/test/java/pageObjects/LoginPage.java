@@ -1,7 +1,6 @@
 package pageObjects;
 
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -12,84 +11,94 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage {
 
-	private WebDriver driver;
+	WebDriver driver;
 	WebDriverWait wait;
-
-	@FindBy(xpath = "//input[@name='username']")
-	public WebElement usernameLoginpage;
-	@FindBy(xpath = "//input[@name='password']")
-	public WebElement passwordLoginpage;
-	@FindBy(xpath = "/html/body/div[2]/div/div[2]/form/input[4]")
-	public WebElement loginButton;
-	@FindBy(xpath = "//a[@href='/register']")
-	WebElement registerlinkLoginPage;
-	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[3]")
-	@CacheLookup
-	WebElement SignOut;
-	@FindBy(css=("input:invalid"))
-	public WebElement alert;
-	@FindBy(xpath = "//div[@role='alert']")
-	public WebElement Error; // Fixed xpath for username error
-
-	@FindBy(className = "btn")
-	@CacheLookup
-	WebElement getStartedButton; // Renamed WebElement to avoid method conflict
-
+	
 	public LoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5)); // Initializing WebDriverWait with a timeout of 10
-																		// seconds
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5)); 
 	}
+	
+	@FindBy(xpath = "//a[text()='Sign in']")
+	@CacheLookup
+	WebElement signIn;
+	
+	@FindBy(xpath = "//input[@name='username']")
+	@CacheLookup
+	public WebElement usernameLoginpage;
+	
+	@FindBy(xpath = "//input[@name='password']")
+	@CacheLookup
+	public WebElement passwordLoginpage;
+	
+	@FindBy(xpath = "//*[@value='Login']")
+	@CacheLookup
+	public WebElement loginButton;
+	
+	@FindBy(xpath = "//a[@href='/register']")
+	@CacheLookup
+	WebElement registerlinkLoginPage;
+	
+	@FindBy(xpath = "//*[@id='navbarCollapse']/div[2]/ul/a[3]")
+	@CacheLookup
+	WebElement SignOut;
+	
+	@FindBy(css=("input:invalid"))
+	@CacheLookup
+	public WebElement alert;
+	
+	@FindBy(xpath = "//div[@role='alert']")
+	@CacheLookup
+	public WebElement LoginStatus;
 
+	@FindBy(className = "btn")
+	@CacheLookup
+	WebElement getStartedButton;
+
+	public void signin() {
+		signIn.click();
+	}
+	
 	public void clickGetStarted() {
-		wait.until(ExpectedConditions.elementToBeClickable(getStartedButton)); // Wait until clickable
+		wait.until(ExpectedConditions.elementToBeClickable(getStartedButton)); 
 		getStartedButton.click();
 	}
 
-	// Method to enter the username
 	public void enterUsername(String username) {
-		wait.until(ExpectedConditions.visibilityOf(usernameLoginpage)); // Wait until username field is visible
+		wait.until(ExpectedConditions.visibilityOf(usernameLoginpage)); 
 		usernameLoginpage.sendKeys(username);
 	}
-
-	// Method to enter the password
+	
 	public void enterPassword(String password) {
-		wait.until(ExpectedConditions.visibilityOf(passwordLoginpage)); // Wait until password field is visible
+		wait.until(ExpectedConditions.visibilityOf(passwordLoginpage)); 
 		passwordLoginpage.sendKeys(password);
 	}
 
-	// Method to click the login button
 	public void clickLoginButton() {
-		wait.until(ExpectedConditions.elementToBeClickable(loginButton)); // Wait until login button is clickable
+		wait.until(ExpectedConditions.elementToBeClickable(loginButton)); 
 		loginButton.click();
 	}
 
-	// Method to perform login action
 	public void login(String username, String password) {
 		enterUsername(username);
 		enterPassword(password);
 		clickLoginButton();
 	}
 
-	// Method to click on the Register link
 	public void register() {
-		wait.until(ExpectedConditions.elementToBeClickable(registerlinkLoginPage)); // Wait until Register link is
-																					// clickable
+		wait.until(ExpectedConditions.elementToBeClickable(registerlinkLoginPage)); 
 		registerlinkLoginPage.click();
 	}
 
-	// Method to perform invalid login
 	public void invalidLogin(String username, String password) {
 		enterUsername(username);
 		enterPassword(password);
 		clickLoginButton();
 	}
 
-	// Get the error message for username
 	public String getErrorMessage() {
-
-		return Error.getText();
+		return LoginStatus.getText();
 	}
 
 	public boolean isLoginPageDisplayed() {
@@ -97,15 +106,10 @@ public class LoginPage {
 	}
 
 	public boolean isErrorMessageForUsernameDisplayed() {
-		return Error.isDisplayed(); // Assuming 'usernameErrorMessage' is a WebElement for the error message below
-									// the username field
+		return LoginStatus.isDisplayed(); 
 	}
 
 	public void signout() {
 		SignOut.click();
-	}
-
-	public void getUrl() {
-		driver.get("https://dsportalapp.herokuapp.com/login");
 	}
 }

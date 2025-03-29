@@ -1,9 +1,9 @@
 @Regression
+
 Feature: Stack DataStructure
 
   Background: 
-    the user has successfully logged into the dsAlgo Portal
-
+    The user has successfully logged into the dsAlgo Portal
 
   @Stack1
   Scenario: Navigate to Stack Data Structure Page
@@ -131,8 +131,3 @@ Feature: Stack DataStructure
       | SheetName  | RowNumber |
       | pythonCode |         0 |
 
-  @Stack18
-  Scenario: Verify that user able to logout from the Stack data structure
-    Given The user is in the Stack data structure page
-    When The User clicks sign-out button.
-    Then The user should sign-out successfully.

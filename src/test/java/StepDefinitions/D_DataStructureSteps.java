@@ -1,9 +1,7 @@
 package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import DriverFactory.driverFactory;
 import Utilities.ConfigReader;
 import Utilities.LoggerReader;
@@ -14,30 +12,28 @@ import pageObjects.DataStructurePage;
 import pageObjects.HomePage;
 
 public class D_DataStructureSteps {
+	WebDriver driver;
 	DataStructurePage DSPage;
 	HomePage homepageobj;
-	WebDriver driver;
-	WebDriverWait wait;
 	String username = ConfigReader.getProperty("username");
 	String password = ConfigReader.getProperty("password");
-
+	
 	public D_DataStructureSteps() {
-		System.out.println("****I'm in Data Structure****");
 		driver = driverFactory.initiateDriver();
 		DSPage = new DataStructurePage(driver);
-		homepageobj =new HomePage(driver);
+		homepageobj = new HomePage(driver);
 	}
 
 	@Given("The user is in the Home page after logged in the DsAlgo portal")
 	public void the_user_is_in_the_home_page_after_logged_in_the_ds_algo_portal() {
-		homepageobj.Gethomeurl(); 
-		//DSPage.signIn();// We'r putting sign and sign out for to test individually run as a cucumber feature.
-		//DSPage.clickLogin(username, password); // while running from testng/test runner we'll comment this. 
+		homepageobj.Gethomeurl();
+		DSPage.clickLogin(username,password);
 		LoggerReader.info("User in Home page");
 	}
 
 	@When("The user clicks on the Getting Started button in Data Structures Introduction")
 	public void the_user_clicks_on_the_getting_started_button_in_data_structures_introduction() {
+		homepageobj.Gethomeurl();
 		DSPage.checkGetstarted();
 	}
 
@@ -115,17 +111,5 @@ public class D_DataStructureSteps {
 	@Then("The user should able to see output in the console")
 	public void the_user_should_able_to_see_output_in_the_console() {
 		Assert.assertEquals("Hello World", DSPage.Outputmsg());
-	}
-
-	@Given("The user is in the DataStructure-Intro page")
-	public void the_user_is_in_the_data_structure_intro_page() {
-		homepageobj.Gethomeurl();
-		DSPage.checkGetstarted();
-	}
-
-	@When("The User clicks signout button from the DataStructure-Intro page")
-	public void the_user_clicks_signout_button_from_the_data_structure_intro_page() {
-		//DSPage.signOut();
-
 	}
 }

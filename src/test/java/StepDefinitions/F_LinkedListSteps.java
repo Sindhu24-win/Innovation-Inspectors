@@ -1,13 +1,8 @@
 package StepDefinitions;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import DriverFactory.driverFactory;
 import io.cucumber.java.en.Given;
@@ -16,43 +11,20 @@ import io.cucumber.java.en.When;
 import pageObjects.ArrayPage;
 import pageObjects.HomePage;
 import pageObjects.Linkedlistpage;
-import Utilities.ConfigReader;
-import Utilities.Excelreaderpython;
 import Utilities.LoggerReader;
 
 public class F_LinkedListSteps {
-	Linkedlistpage linkedlistpage;
+	
 	WebDriver driver;
-	WebDriver Wait;
 	ArrayPage arraypage;
 	HomePage homepage;
-	String username = ConfigReader.getProperty("username");
-	String password = ConfigReader.getProperty("password");
-
+	Linkedlistpage linkedlistpage;
+	
 	public F_LinkedListSteps() {
 		driver = driverFactory.initiateDriver();
 		linkedlistpage = new Linkedlistpage(driver);
 		homepage = new HomePage(driver);
-
-	}
-
-	@Given("The user is in the Home Page.")
-	public void the_user_is_in_the_home_page() {
-		homepage.Gethomeurl();
-		LoggerReader.info("User is in the Home Page to check LinkedList DataStructure");
-
-	}
-
-	@When("The user clicks the Sign in button to enter username and password.")
-	public void the_user_clicks_the_sign_in_button_to_enter_username_and_password() {
-		//linkedlistpage.signingin();
-		//linkedlistpage.EnterCredentials();
-	}
-
-	@Then("The user clicks on Login and sees logged in message.")
-	public void the_user_clicks_on_login_and_sees_logged_in_message() {
-		//linkedlistpage.login();
-		//linkedlistpage.LoginStatus();
+		arraypage = new ArrayPage(driver);
 	}
 
 	@Given("The user is in home page after sign-in")
@@ -101,7 +73,6 @@ public class F_LinkedListSteps {
 		linkedlistpage.Getstarted();
 		linkedlistpage.Introductionpage();
 		linkedlistpage.Tryhere();
-		
 	}
 
 	@When("The user clicks the Run Button without entering the code in the Introduction TryEditor")
@@ -112,7 +83,7 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be able to see error message for Introduction  in alert window")
 	public void the_user_should_be_able_to_see_error_message_for_introduction_in_alert_window() {
-		System.out.println("No Error Message is present");
+		Assert.assertEquals(driver.getTitle(), "Assessment");
 	}
 
 	@Given("The user is in the Introduction tryEditor page.")
@@ -126,14 +97,8 @@ public class F_LinkedListSteps {
 	@When("The user reads the valid python code from excel {string} and {int} and enters in Introduction Try Editor and click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_introduction_try_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.Runbtn.click();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
+		linkedlistpage.Run();
 	}
 
 	@Then("The user should able to see output for Introduction in the console")
@@ -152,19 +117,13 @@ public class F_LinkedListSteps {
 
 	@When("The user reads  the invalid python code from excel {string} and {int} and enters in Introduction Try Editor and click the Run Button")
 	public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_introduction_try_editor_and_click_the_run_button(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.invalid();
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@Then("The user should able to see an error message for Introduction in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_introduction_in_alert_window() {
+		Assert.assertEquals(driver.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message");
 	}
 
@@ -177,7 +136,6 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be redirected to Creating Linked List page")
 	public void the_user_should_be_redirected_to_creating_linked_list_page() {
-
 		Assert.assertEquals(driver.getTitle(), "Creating Linked LIst");
 	}
 
@@ -207,19 +165,13 @@ public class F_LinkedListSteps {
 
 	@When("The user reads the invalid python code from excel {string} and {int} and enters in Creating Linked List Try Editor and click the Run Button")
 	public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_creating_linked_list_try_editor_and_click_the_run_button(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.invalid();
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@Then("The user should able to see an error message for Creating Linked List in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_creating_linked_list_in_alert_window() {
+		Assert.assertEquals(driver.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message");
 	}
 
@@ -234,14 +186,8 @@ public class F_LinkedListSteps {
 	@When("The user raeds the valid python code from excel {string} and {int} and enters in Creating Linked List Try Editor and click the Run Button")
 	public void the_user_raeds_the_valid_python_code_from_excel_and_and_enters_in_creating_linked_list_try_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.Runbtn.click();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
+		linkedlistpage.Run();
 	}
 
 	@Then("The user should able to see output for Creating Linked List  in the console")
@@ -293,33 +239,21 @@ public class F_LinkedListSteps {
 
 	@When("The user reads the invalid python code from excel {string} and {int} and enters  in Types of Linked List Try Editor and click the Run Button")
 	public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_types_of_linked_list_try_editor_and_click_the_run_button(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.invalid();
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@Then("The user should able to see an error message for Types of Linked List in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_types_of_linked_list_in_alert_window() {
+		Assert.assertEquals(driver.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message");
 	}
 
 	@When("The user reads the valid python code  from excel {string} and {int} and enters in  Types of Linked List Try Editor and click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_types_of_linked_list_try_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.Runbtn.click();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
+		linkedlistpage.Run();
 	}
 
 	@Then("The user should able to see output for Types of Linked List  in the console")
@@ -370,33 +304,21 @@ public class F_LinkedListSteps {
 
 	@When("The user reads the invalid python code  from excel {string} and {int} and enters in Implement Linked List Try Editor and click the Run Button")
 	public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_implement_linked_list_try_editor_and_click_the_run_button(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.invalid();
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@Then("The user should able to see an error message for Implement Linked List  in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_implement_linked_list_in_alert_window() {
+		Assert.assertEquals(driver.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message Implement Linked List  ");
 	}
 
 	@When("The user reads the valid python code from excel {string} and {int}  and enters in Implement Linked List Try Editor and click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_implement_linked_list_try_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.Runbtn.click();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
+		linkedlistpage.Run();
 	}
 
 	@Then("The user should able to see output for Implement Linked List in the console")
@@ -446,33 +368,21 @@ public class F_LinkedListSteps {
 
 	@When("The user reads the invalid python code from excel {string} and {int} and enters  in  Traversal Try Editor and Click the Run Button")
 	public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_traversal_try_editor_and_click_the_run_button(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.invalid();
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@Then("The user should able to see an error message for Traversal  in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_traversal_in_alert_window() {
+		Assert.assertEquals(driver.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message for Traversal page tryeditor");
 	}
 
 	@When("The user reads the valid python code from excel {string} and {int} and enters   in Traversal Try Editor and Click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_traversal_try_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.Runbtn.click();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
+		linkedlistpage.Run();
 	}
 
 	@Then("The user should able to see output for Traversal  in the console")
@@ -523,14 +433,8 @@ public class F_LinkedListSteps {
 	@When("The user reads the valid python code  from excel {string} and {int} and enters in Insertion Try Editor and Click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_insertion_try_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.Runbtn.click();
+		arraypage.ValidPythoncode(sheetName, rowNumber);
+		linkedlistpage.Run();
 	}
 
 	@Then("The user should able to see output for Insertion in the console")
@@ -550,20 +454,12 @@ public class F_LinkedListSteps {
 	@When("The user reads the invalid python code from excel {string} and {int} and enters in Insertion Try Editor and Click the Run Button")
 	public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_insertion_try_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
-
-		Thread.sleep(2000);
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.invalid();
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@Then("The user should able to see an error message for Insertion  in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_insertion_in_alert_window() {
+		Assert.assertEquals(driver.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message");
 	}
 
@@ -608,19 +504,13 @@ public class F_LinkedListSteps {
 
 	@When("The user  reads the invalid python code  from excel {string} and {int} and enters in Deletion Try Editor and Click the Submit Button")
 	public void the_user_reads_the_invalid_python_code_from_excel_and_and_enters_in_deletion_try_editor_and_click_the_submit_button(
-			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.invalid();
+			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
+		arraypage.InvalidPythoncode(sheetName, rowNumber);
 	}
 
 	@Then("The user should  be able to see an error message for Deletion in the alert window")
 	public void the_user_should_be_able_to_see_an_error_message_for_deletion_in_the_alert_window() {
+		Assert.assertEquals(driver.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message");
 	}
 
@@ -635,15 +525,8 @@ public class F_LinkedListSteps {
 	@When("The user reads the valid python code from excel {string} and {int} and enters in Deletion Try Editor and Click the Run Button")
 	public void the_user_reads_the_valid_python_code_from_excel_and_and_enters_in_deletion_try_editor_and_click_the_run_button(
 			String sheetName, Integer rowNumber) throws EncryptedDocumentException, IOException {
-		Excelreaderpython python = new Excelreaderpython();
-		String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(linkedlistpage.Tryeditor).sendKeys(pcode).build().perform();
-		linkedlistpage.Runbtn.click();
-
+		arraypage.ValidPythoncode(sheetName, rowNumber);
+		linkedlistpage.Run();
 	}
 
 	@Then("The user should able to see output for Deletion in the console")
@@ -669,18 +552,4 @@ public class F_LinkedListSteps {
 		LoggerReader.info("User is in Practice Questions page for Linked list");
 	}
 
-	@Given("The user is in Linked List Practice Questions page")
-	public void the_user_is_in_linked_list_practice_questions_page() {
-		driver.getCurrentUrl();
-	}
-
-	@When("The user clicks on  Sign out in Linked List Practice Questions page")
-	public void the_user_clicks_on_sign_out_in_linked_list_practice_questions_page() {
-		//linkedlistpage.LinkedlistSigningout();
-	}
-
-	@Then("The user should be logged out succeessfully from dsAlgo portal page")
-	public void the_user_should_be_logged_out_succeessfully_from_ds_algo_portal_page() {
-	//	linkedlistpage.Logout();
-	}
 }
