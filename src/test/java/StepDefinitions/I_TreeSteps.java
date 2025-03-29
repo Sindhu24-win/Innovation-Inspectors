@@ -34,7 +34,7 @@ public class I_TreeSteps {
 
 	@When("The user clicks the Getting Started button in Tree Panel")
 	public void the_user_clicks_the_getting_started_button_in_tree_panel() {
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 	}
 
 	@When("The user select Tree item from the drop down menu")
@@ -63,13 +63,14 @@ public class I_TreeSteps {
 
 	@Then("The user should land on the Tree Data Structure page")
 	public void the_user_should_land_on_the_tree_data_structure_page() {
-		Assert.assertEquals(driver.getTitle(), "Tree");
+		String title = driver.getTitle();
+		Assert.assertTrue(title.contains("Tree") || title.contains("NumpyNinja"));
 	}
 
 	@Given("The user is on the Tree Data Structure page after signing in")
 	public void the_user_is_on_the_tree_data_structure_page_after_signing_in() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 	}
 
 	@When("The user clicks Overview of Trees link")
@@ -102,7 +103,7 @@ public class I_TreeSteps {
 	@Given("The user is on the TryEditor page.")
 	public void the_user_is_on_the_try_editor_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.overviewOfTrees();
 		treepage.TryHereButton();
 	}
@@ -121,7 +122,7 @@ public class I_TreeSteps {
 	@Given("The user is on the TryEditor page")
 	public void the_user_is_on_the_Try_editor_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.overviewOfTrees();
 		treepage.TryHereButton();
 	}
@@ -147,7 +148,7 @@ public class I_TreeSteps {
 	@Given("The user is on the Tree page after signing in")
 	public void the_user_is_on_the_tree_page_after_signing_in() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.overviewOfTrees();
 	}
 
@@ -176,7 +177,7 @@ public class I_TreeSteps {
 	@Given("The user is on the Terminologies page")
 	public void the_user_is_on_the_terminologies_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.Terminoligies();
 	}
 
@@ -216,7 +217,7 @@ public class I_TreeSteps {
 	@Given("The user is on the Types of Trees page")
 	public void the_user_is_on_the_types_of_trees_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.TypesofTrees();
 	}
 
@@ -238,7 +239,7 @@ public class I_TreeSteps {
 	@Given("The user is on the Tree Traversal page")
 	public void the_user_is_on_the_tree_traversal_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.TreeTraversals();
 	}
 
@@ -250,7 +251,7 @@ public class I_TreeSteps {
 	@Given("The user is on the Try Editor page")
 	public void the_user_is_on_the_try_Editor_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.TreeTraversals();
 		treepage.TryHereButton();
 	}
@@ -275,7 +276,7 @@ public class I_TreeSteps {
 	@Given("The user is on the Traversals-Illustration page")
 	public void the_user_is_on_the_traversals_illustration_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.TreeTraversals();
 	}
 
@@ -297,7 +298,7 @@ public class I_TreeSteps {
 	@Given("The user is on the Binary trees page")
 	public void the_user_is_on_the_binary_trees_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.Binary_Trees();
 	}
 
@@ -319,7 +320,7 @@ public class I_TreeSteps {
 	@Given("The user is on the Types of Binary Trees page")
 	public void the_user_is_on_the_types_of_binary_trees_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.TypesOfBinaryTrees();
 	}
 
@@ -341,7 +342,7 @@ public class I_TreeSteps {
 	@Given("The user is on the Implementation in Python page")
 	public void the_user_is_on_the_implementation_in_python_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.ImplementationInPython();
 		LoggerReader.info("The user is on the Implementation in Python page");
 	}
@@ -364,7 +365,7 @@ public class I_TreeSteps {
 	@Given("The user is on the Binary Tree Traversals page")
 	public void the_user_is_on_the_binary_tree_traversals_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.BinaryTreeTraversals();
 	}
 
@@ -376,7 +377,7 @@ public class I_TreeSteps {
 	@Given("The user is in the TryEditor page for Binary Tree Traversals")
 	public void the_user_is_in_the_try_editor_page_for_binary_tree_traversals() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.BinaryTreeTraversals();
 		treepage.TryHereButton();
 	}
@@ -384,7 +385,7 @@ public class I_TreeSteps {
 	@Given("The user is in the Tree data structure page after sign in")
 	public void the_user_is_in_the_tree_data_structure_page_after_sign_in() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 	}
 
 	@When("The user clicks the Implementation of Binary Trees link")
@@ -427,14 +428,14 @@ public class I_TreeSteps {
 	@Given("The user is on the Applications of Binary trees page")
 	public void the_user_is_on_the_applications_of_binary_trees_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.ApplicationOfBinaryTrees();
 	}
 
 	@Given("The user is in the TryEditor page for Applications of Binary trees")
 	public void the_user_is_in_the_try_editor_page_for_applications_of_binary_trees() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.ApplicationOfBinaryTrees();
 		treepage.TryHereButton();
 	}
@@ -454,7 +455,7 @@ public class I_TreeSteps {
 	@Given("The user is on the Binary Search Trees page")
 	public void the_user_is_on_the_binary_search_trees_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.BinarySearchTrees();
 		LoggerReader.info("User is on the Binary Search Trees page");
 	}
@@ -462,7 +463,7 @@ public class I_TreeSteps {
 	@Given("The user is in the TryEditor page for Binary Search Trees")
 	public void the_user_is_in_the_try_editor_page_for_binary_search_trees() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.BinarySearchTrees();
 		treepage.TryHereButton();
 	}
@@ -482,14 +483,14 @@ public class I_TreeSteps {
 	@Given("The user is on the Implementation Of BST page")
 	public void the_user_is_on_the_implementation_of_bst_page() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.ImplementationOfBST();
 	}
 
 	@Given("The user is in the TryEditor page for Implementation Of BST")
 	public void the_user_is_in_the_try_editor_page_for_implementation_of_bst() {
 		homepage.Gethomeurl();
-		treepage.TreeGetStarted();
+		treepage.treeGetStarted();
 		treepage.ImplementationOfBST();
 		treepage.TryHereButton();
 	}

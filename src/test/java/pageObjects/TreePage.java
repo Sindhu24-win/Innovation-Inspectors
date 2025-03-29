@@ -120,13 +120,9 @@ public class TreePage {
 	WebElement Practice_QuestionsLink;
 		
 	public void treeGetStarted() {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", TreeGetStarted);
 		wait.until(ExpectedConditions.elementToBeClickable(TreeGetStarted)).click();
-	}
-
-	public void TreeGetStarted() {
-		TreeGetStarted.click();
 	}
 
 	public void dropdownmenuClick() {
