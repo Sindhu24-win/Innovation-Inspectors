@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import Utilities.LoggerReader;
-import io.cucumber.java.After;
+
+import DriverFactory.driverFactory;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.Allure;
 
@@ -31,17 +31,18 @@ public class Hooks {
 		}
 	}
 
-	@After
-	public void afterstep(Scenario scenario) {
-		if (scenario.isFailed()) {
-			LoggerReader.error("Steps Failed , Taking Screenshot");
-			TakesScreenshot screenshotTaker = (TakesScreenshot) driver;
-			final byte[] screenshot = screenshotTaker.getScreenshotAs(OutputType.BYTES);
-			scenario.attach(screenshot, "image/png", "My screenshot");
-			Allure.addAttachment("Myscreenshot",
-					new String(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-		}
+	  public void afterStep(Scenario scenario) {
+	        WebDriver driver = driverFactory.getDriver(); // Get WebDriver for current thread
 
-	}
+	        if (scenario.isFailed()) {
+	            // Capture screenshot if scenario fails
+	            TakesScreenshot screenshotTaker = (TakesScreenshot) driver;
+	            final byte[] screenshot = screenshotTaker.getScreenshotAs(OutputType.BYTES);
+	            scenario.attach(screenshot, "image/png", "My screenshot");
+	            Allure.addAttachment("Myscreenshot", new String(screenshot));
+	        }
+	    }
+
+	
 
 }

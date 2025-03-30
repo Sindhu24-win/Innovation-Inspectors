@@ -21,6 +21,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import DriverFactory.driverFactory;
 import Utilities.Excelreaderpython;
 
 public class ArrayPage {
@@ -28,9 +30,9 @@ public class ArrayPage {
 	Excelreaderpython python = new Excelreaderpython();
 	String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 	
-	public ArrayPage(WebDriver driver) {
+	public ArrayPage() {
+		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
-		this.driver = driver;
 	}
 	
 	@FindBy(xpath = "//button[text()='Get Started']")

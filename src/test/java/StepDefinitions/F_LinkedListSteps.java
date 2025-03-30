@@ -2,29 +2,28 @@ package StepDefinitions;
 
 import java.io.IOException;
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import DriverFactory.driverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.ArrayPage;
 import pageObjects.HomePage;
 import pageObjects.Linkedlistpage;
+import pageObjects.LoginPage;
 import Utilities.LoggerReader;
 
 public class F_LinkedListSteps {
 	
-	WebDriver driver;
 	ArrayPage arraypage;
 	HomePage homepage;
+	LoginPage loginpage;
 	Linkedlistpage linkedlistpage;
 	
 	public F_LinkedListSteps() {
-		driver = driverFactory.initiateDriver();
-		linkedlistpage = new Linkedlistpage(driver);
-		homepage = new HomePage(driver);
-		arraypage = new ArrayPage(driver);
+		linkedlistpage = new Linkedlistpage();
+		homepage = new HomePage();
+		arraypage = new ArrayPage();
+		loginpage = new LoginPage();
 	}
 
 	@Given("The user is in home page after sign-in")
@@ -39,12 +38,12 @@ public class F_LinkedListSteps {
 
 	@Then("The user should land on LinkedList page")
 	public void the_user_should_land_on_linked_list_page() {
-		Assert.assertEquals(driver.getTitle(), "Linked List");
+		Assert.assertEquals(LoginPage.getTitle(), "Linked List");
 	}
 
 	@Given("The user is in the Linked List page after Sign in")
 	public void the_user_is_in_the_linked_list_Page_after_sign_in() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Introduction link")
@@ -54,12 +53,12 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be redirected to Introduction page")
 	public void the_user_should_be_redirected_to_introduction_page() {
-		Assert.assertEquals(driver.getTitle(), "Introduction");
+		Assert.assertEquals(LoginPage.getTitle(), "Introduction");
 	}
 
 	@Given("The user is on the Introduction page")
 	public void the_user_is_on_the_introduction_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Try Here button in Introduction page")
@@ -83,7 +82,7 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be able to see error message for Introduction  in alert window")
 	public void the_user_should_be_able_to_see_error_message_for_introduction_in_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 	}
 
 	@Given("The user is in the Introduction tryEditor page.")
@@ -123,25 +122,25 @@ public class F_LinkedListSteps {
 
 	@Then("The user should able to see an error message for Introduction in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_introduction_in_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message");
 	}
 
 	@When("The user clicks Creating Linked List link")
 	public void the_user_clicks_creating_linked_list_link() {
-		driver.navigate().back();
-		driver.getCurrentUrl();
+		LoginPage.navigate();
+		LoginPage.getCurrentUrl();
 		linkedlistpage.CreatingLinkedlist();
 	}
 
 	@Then("The user should be redirected to Creating Linked List page")
 	public void the_user_should_be_redirected_to_creating_linked_list_page() {
-		Assert.assertEquals(driver.getTitle(), "Creating Linked LIst");
+		Assert.assertEquals(LoginPage.getTitle(), "Creating Linked LIst");
 	}
 
 	@Given("The user is on the Creating Linked List page")
 	public void the_user_is_on_the_creating_linked_list_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Try Here button in Creating Linked List page")
@@ -171,7 +170,7 @@ public class F_LinkedListSteps {
 
 	@Then("The user should able to see an error message for Creating Linked List in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_creating_linked_list_in_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message");
 	}
 
@@ -198,8 +197,8 @@ public class F_LinkedListSteps {
 
 	@Given("The user is in the Linked List  page after Sign in")
 	public void the_user_is_in_the_linked_list_page_after_Sign_in() {
-		driver.navigate().back();
-		driver.getCurrentUrl();
+		LoginPage.navigate();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Types of Linked List")
@@ -209,13 +208,13 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be redirected to Types of Linked List page")
 	public void the_user_should_be_redirected_to_types_of_linked_list_page() {
-		Assert.assertEquals(driver.getTitle(), "Types of Linked List");
+		Assert.assertEquals(LoginPage.getTitle(), "Types of Linked List");
 	}
 
 	@Given("The user is on the Types of Linked List page")
 	public void the_user_is_on_the_types_of_linked_list_page() {
-		Assert.assertEquals(driver.getTitle(), "Types of Linked List");
-		driver.getCurrentUrl();
+		Assert.assertEquals(LoginPage.getTitle(), "Types of Linked List");
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Try Here button in Types of Linked List page")
@@ -245,7 +244,7 @@ public class F_LinkedListSteps {
 
 	@Then("The user should able to see an error message for Types of Linked List in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_types_of_linked_list_in_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message");
 	}
 
@@ -264,8 +263,8 @@ public class F_LinkedListSteps {
 
 	@Given("The user is in the  Linked List  page after Sign in")
 	public void the_user_is_in_the_linked_list_page_after_sign_in() {
-		driver.navigate().back();
-		driver.getCurrentUrl();
+		LoginPage.navigate();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Implement Linked List in Python link")
@@ -275,12 +274,12 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be redirected to Implement Linked List in Python page")
 	public void the_user_should_be_redirected_to_implement_linked_list_in_python_page() {
-		Assert.assertEquals(driver.getTitle(), "Implement Linked List in Python");
+		Assert.assertEquals(LoginPage.getTitle(), "Implement Linked List in Python");
 	}
 
 	@Given("The user is on the Implement Linked List in Python page")
 	public void the_user_is_on_the_implement_linked_list_in_python_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Try Here button in Implement Linked List in Python page")
@@ -310,7 +309,7 @@ public class F_LinkedListSteps {
 
 	@Then("The user should able to see an error message for Implement Linked List  in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_implement_linked_list_in_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message Implement Linked List  ");
 	}
 
@@ -329,8 +328,8 @@ public class F_LinkedListSteps {
 
 	@Given("The user is on Linked List page after sign in.")
 	public void the_user_is_on_linked_list_page_after_sign_in() {
-		driver.navigate().back();
-		driver.getCurrentUrl();
+		LoginPage.navigate();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Traversal link")
@@ -340,12 +339,12 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be redirected to Traversal page")
 	public void the_user_should_be_redirected_to_traversal_page() {
-		Assert.assertEquals(driver.getTitle(), "Traversal");
+		Assert.assertEquals(LoginPage.getTitle(), "Traversal");
 	}
 
 	@Given("The user is on the  Traversal page")
 	public void the_user_is_on_the_traversal_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks the Try here  button in Traversal page")
@@ -355,7 +354,7 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be redirected to Try Editor page when clicking on Try here button")
 	public void the_user_should_be_redirected_to_try_editor_page_when_clicking_on_try_here_button() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 	}
 
 	@Given("The user is on the tryEditor page Traversal page")
@@ -374,7 +373,7 @@ public class F_LinkedListSteps {
 
 	@Then("The user should able to see an error message for Traversal  in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_traversal_in_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message for Traversal page tryeditor");
 	}
 
@@ -393,8 +392,8 @@ public class F_LinkedListSteps {
 
 	@Given("The user is on the Linked List page after sign in")
 	public void the_user_is_on_the_linked_list_page_After_sign_in() {
-		driver.navigate().back();
-		driver.getCurrentUrl();
+		LoginPage.navigate();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks the Insertion  link")
@@ -404,12 +403,12 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be redirected to Insertion page from Linked List page")
 	public void the_user_should_be_redirected_to_insertion_page_from_linked_list_page() {
-		Assert.assertEquals(driver.getTitle(), "Insertion");
+		Assert.assertEquals(LoginPage.getTitle(), "Insertion");
 	}
 
 	@Given("The user is on the Insertion page")
 	public void the_user_is_on_the_insertion_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks the Try here button in Insertion page")
@@ -419,7 +418,7 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be redirected to Try Editor page from Insertion page")
 	public void the_user_should_be_redirected_to_try_editor_page_from_insertion_page() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 	}
 
 	@Given("The user is on the Try Editor page in Insertion page")
@@ -459,14 +458,14 @@ public class F_LinkedListSteps {
 
 	@Then("The user should able to see an error message for Insertion  in alert window")
 	public void the_user_should_able_to_see_an_error_message_for_insertion_in_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message");
 	}
 
 	@Given("The user is on the Linked list page after sign in")
 	public void the_user_is_on_the_linked_list_page_after_sign_in() {
-		driver.navigate().back();
-		driver.getCurrentUrl();
+		LoginPage.navigate();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks the Deletion link")
@@ -476,12 +475,12 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be redirected to Deletion page")
 	public void the_user_should_be_redirected_to_deletion_page() {
-		Assert.assertEquals(driver.getTitle(), "Deletion");
+		Assert.assertEquals(LoginPage.getTitle(), "Deletion");
 	}
 
 	@Given("The user is on the Deletion page")
 	public void the_user_is_on_the_deletion_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks the Try Here  button in Deletion page")
@@ -491,7 +490,7 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be redirected to Deletion  Try Editor  page")
 	public void the_user_should_be_redirected_to_deletion_try_editor_page() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 	}
 
 	@Given("The user is on the Try Editor page in Deletion page")
@@ -510,7 +509,7 @@ public class F_LinkedListSteps {
 
 	@Then("The user should  be able to see an error message for Deletion in the alert window")
 	public void the_user_should_be_able_to_see_an_error_message_for_deletion_in_the_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 		LoggerReader.error("User able to see an error message");
 	}
 
@@ -537,8 +536,8 @@ public class F_LinkedListSteps {
 
 	@Given("The user is on the Linked List  page")
 	public void the_user_is_on_the_linked_list_page() {
-		driver.navigate().back();
-		Assert.assertEquals(driver.getTitle(), "Deletion");
+		LoginPage.navigate();
+		Assert.assertEquals(LoginPage.getTitle(), "Deletion");
 	}
 
 	@When("The user clicks on Practice Questions link in Linked List page")
@@ -548,7 +547,7 @@ public class F_LinkedListSteps {
 
 	@Then("The user should be redirected to Practice Questions page")
 	public void the_user_should_be_redirected_to_practice_questions_page() {
-		Assert.assertEquals(driver.getTitle(), "Practice Questions");
+		Assert.assertEquals(LoginPage.getTitle(), "Practice Questions");
 		LoggerReader.info("User is in Practice Questions page for Linked list");
 	}
 

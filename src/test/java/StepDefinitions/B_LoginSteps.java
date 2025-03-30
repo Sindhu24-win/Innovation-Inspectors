@@ -4,8 +4,8 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 import java.io.IOException;
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.WebDriver;
-import DriverFactory.driverFactory;
+import org.testng.Assert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,7 +17,6 @@ import Utilities.LoggerReader;
 
 public class B_LoginSteps {
 
-	WebDriver driver;
 	LoginPage loginPageobj;
 	HomePage homeObj;
 	RegisterPage registerpage;
@@ -26,9 +25,8 @@ public class B_LoginSteps {
 	String sheetName = "Sheet1";
 
 	public B_LoginSteps() {
-		driver = driverFactory.initiateDriver(); 
-		loginPageobj = new LoginPage(driver); 
-		homeObj = new HomePage(driver); 
+		loginPageobj = new LoginPage(); 
+		homeObj = new HomePage(); 
 	}
 
 	@Given("The user is on the login page")
@@ -45,7 +43,7 @@ public class B_LoginSteps {
 
 	@Then("The user should be redirected to the registration page")
 	public void the_user_should_be_redirected_to_the_registration_page() {
-		assertTrue(driver.getCurrentUrl().contains("register")); 
+		Assert.assertEquals(LoginPage.getTitle(), "Registration"); 
 	}
 
 	@Given("The user is on the DS Algo Sign in Page")

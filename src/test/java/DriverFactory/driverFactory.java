@@ -12,7 +12,7 @@ public class driverFactory {
     private static ThreadLocal<String> browser = new ThreadLocal<>(); // Each thread gets its own browser setting
     public static final int TIMEOUT = 10;
 
-    private driverFactory() {
+    public driverFactory() {
         // Private constructor to prevent instantiation
     }
     public static void setBrowser(String browserName) {

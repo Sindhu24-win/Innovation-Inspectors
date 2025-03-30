@@ -2,31 +2,28 @@ package StepDefinitions;
 
 import java.io.IOException;
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import DriverFactory.driverFactory;
 import Utilities.LoggerReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.ArrayPage;
 import pageObjects.HomePage;
+import pageObjects.LoginPage;
 import pageObjects.StackPage;
 
 public class G_StackSteps {
 
-	WebDriverWait wait;
-	WebDriver driver;
 	StackPage stackPage;
 	HomePage homepage;
 	ArrayPage arraypage;
+	LoginPage loginpage;
 	
 	public G_StackSteps() {
-		driver = driverFactory.initiateDriver();
-		stackPage = new StackPage(driver);
-		homepage = new HomePage(driver);
-		arraypage = new ArrayPage(driver);
+		stackPage = new StackPage();
+		homepage = new HomePage();
+		arraypage = new ArrayPage();
+		loginpage = new LoginPage();
 	}
 
 	@Given("the user is on the homepage after logging into the dsAlgo Portal")
@@ -42,12 +39,12 @@ public class G_StackSteps {
 
 	@Then("the user should be redirected to the Stack Data Structure page")
 	public void the_user_should_be_redirected_to_the_stack_data_structure_page() {
-		Assert.assertEquals(driver.getTitle(), "Stack");
+		Assert.assertEquals(LoginPage.getTitle(), "Stack");
 	}
 
 	@Given("the user is on the Stack page")
 	public void the_user_is_on_the_stack_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("the user clicks the Operations in Stack link")
@@ -57,12 +54,12 @@ public class G_StackSteps {
 
 	@Then("the user should be navigated to the Operations in Stack page")
 	public void the_user_should_be_navigated_to_the_operations_in_stack_page() {
-		Assert.assertEquals(driver.getTitle(), "Operations in Stack");
+		Assert.assertEquals(LoginPage.getTitle(), "Operations in Stack");
 	}
 
 	@Given("the user is on the Operations in Stack page")
 	public void the_user_is_on_the_operations_in_stack_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("the user clicks the Try Here button on the Operations in Stack page")
@@ -91,7 +88,7 @@ public class G_StackSteps {
 
 	@Then("the user should receive an error message in the alert window")
 	public void the_user_should_receive_an_error_message_in_the_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");// There will be no alert window pop-up so its is bug???
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");// There will be no alert window pop-up so its is bug???
 	}
 
 	@When("the user types invalid python code from excel {string} and {int} and enters in the editor and clicks the Run button for stack TryEditor")
@@ -102,7 +99,7 @@ public class G_StackSteps {
 
 	@Then("the user should see an error message in the alert window")
 	public void the_user_should_see_an_error_message_in_the_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");// There will be no alert window pop-up so its is bug???
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");// There will be no alert window pop-up so its is bug???
 	}
 
 	@When("the user enters valid python code  from excel {string} and {int} and enters in the editor and clicks the Run button for stack TryEditor")
@@ -120,19 +117,19 @@ public class G_StackSteps {
 
 	@When("the user clicks the Practice Questions button in the Operations in Stack on Python page")
 	public void the_user_clicks_the_practice_questions_button_in_the_operations_in_stack_on_python_page() {
-		driver.navigate().back();
+		LoginPage.navigate();
 		stackPage.StackPracticeQuestions();
 	}
 
 	@Then("the user should be redirected to the Practice Questions page")
 	public void the_user_should_be_redirected_to_the_practice_questions_page() {
-		Assert.assertEquals(driver.getTitle(), "Practice Questions");
+		Assert.assertEquals(LoginPage.getTitle(), "Practice Questions");
 	}
 
 	@Given("the user is currently on the stack page")
 	public void the_user_is_currently_on_the_stack_page() {
-		driver.navigate().back();
-		driver.getCurrentUrl();
+		LoginPage.navigate();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("the user clicks the Implementation link")
@@ -142,12 +139,12 @@ public class G_StackSteps {
 
 	@Then("the user should be taken to the Implementation page")
 	public void the_user_should_be_taken_to_the_implementation_page() {
-		Assert.assertEquals(driver.getTitle(), "Implementation");
+		Assert.assertEquals(LoginPage.getTitle(), "Implementation");
 	}
 
 	@Given("the user is on the Implementation page")
 	public void the_user_is_on_the_implementation_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("the user clicks the Try Here button on the Implementation page")
@@ -190,18 +187,18 @@ public class G_StackSteps {
 
 	@When("the user clicks the Applications link")
 	public void the_user_clicks_the_applications_link() {
-		driver.navigate().back();
+		LoginPage.navigate();
 		stackPage.Applications();
 	}
 
 	@Then("the user should be taken to the Applications page")
 	public void the_user_should_be_taken_to_the_applications_page() {
-		Assert.assertEquals(driver.getTitle(), "Applications");
+		Assert.assertEquals(LoginPage.getTitle(), "Applications");
 	}
 
 	@Given("the user is on the Applications page")
 	public void the_user_is_on_the_applications_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 		LoggerReader.info("User is on the Application page");
 	}
 

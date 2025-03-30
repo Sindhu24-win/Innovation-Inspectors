@@ -1,8 +1,6 @@
 package StepDefinitions;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import DriverFactory.driverFactory;
 import Utilities.ConfigReader;
 import Utilities.LoggerReader;
 import io.cucumber.java.en.Given;
@@ -10,18 +8,20 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.DataStructurePage;
 import pageObjects.HomePage;
+import pageObjects.LoginPage;
 
 public class D_DataStructureSteps {
-	WebDriver driver;
+	
 	DataStructurePage DSPage;
 	HomePage homepageobj;
+	LoginPage loginpage;
 	String username = ConfigReader.getProperty("username");
 	String password = ConfigReader.getProperty("password");
 	
 	public D_DataStructureSteps() {
-		driver = driverFactory.initiateDriver();
-		DSPage = new DataStructurePage(driver);
-		homepageobj = new HomePage(driver);
+		DSPage = new DataStructurePage();
+		homepageobj = new HomePage();
+		loginpage = new LoginPage();
 	}
 
 	@Given("The user is in the Home page after logged in the DsAlgo portal")
@@ -39,7 +39,7 @@ public class D_DataStructureSteps {
 
 	@Then("The user should land in Data Structures Introduction Page")
 	public void the_user_should_land_in_data_structures_introduction_page() {
-		Assert.assertEquals(driver.getTitle(), "Data Structures-Introduction");
+		Assert.assertEquals(LoginPage.getTitle(), "Data Structures-Introduction");
 	}
 
 	@Given("The user is in the Data Structure Introduction page")
@@ -56,7 +56,7 @@ public class D_DataStructureSteps {
 
 	@Then("The user should be able to land on the Time complexity page")
 	public void the_user_should_be_able_to_land_on_the_time_complexity_page() {
-		Assert.assertEquals(driver.getTitle(), "Time Complexity");
+		Assert.assertEquals(LoginPage.getTitle(), "Time Complexity");
 	}
 
 	@Given("The user is in the Time Complexity page")
@@ -73,12 +73,12 @@ public class D_DataStructureSteps {
 
 	@Then("The user should be redirected to Practice Questions of Data structures-Introduction")
 	public void the_user_should_be_redirected_to_practice_questions_of_data_structures_introduction() {
-		Assert.assertEquals(driver.getTitle(), "Practice Questions");
+		Assert.assertEquals(LoginPage.getTitle(), "Practice Questions");
 	}
 
 	@When("The user clicks Try Here button for the time complexity page")
 	public void the_user_clicks_try_here_button_for_the_time_complexity_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 		DSPage.tryhere();
 	}
 
@@ -104,7 +104,7 @@ public class D_DataStructureSteps {
 
 	@Then("The user should able to see an error message in alert window")
 	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");// There will be no alert window pop-up so its is bug???
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");// There will be no alert window pop-up so its is bug???
 		System.out.println("No Error Message is present");
 	}
 

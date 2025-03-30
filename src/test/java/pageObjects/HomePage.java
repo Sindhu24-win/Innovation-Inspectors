@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import DriverFactory.driverFactory;
 import Utilities.ConfigReader;
 
 public class HomePage {
@@ -13,9 +15,9 @@ public class HomePage {
 	String url = ConfigReader.getProperty("url");
 	String homeurl = ConfigReader.getProperty("homeUrl");
 
-	public HomePage(WebDriver driver) {
+	public HomePage() {
+		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
-		this.driver = driver;
 	}
 
 	@FindBy(xpath = "//div[@class='nav-item dropdown show']")
