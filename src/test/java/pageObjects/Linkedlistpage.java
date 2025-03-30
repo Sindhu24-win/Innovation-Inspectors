@@ -7,12 +7,14 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import DriverFactory.driverFactory;
+
 public class Linkedlistpage {
 	WebDriver driver;
 
-	public Linkedlistpage(WebDriver driver) {
+	public Linkedlistpage() {
+		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
-		this.driver = driver;
 	}
 		
 	@FindBy(xpath = "//a[@href='linked-list']")

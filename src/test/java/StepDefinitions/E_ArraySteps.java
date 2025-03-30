@@ -2,29 +2,28 @@ package StepDefinitions;
 
 import java.io.IOException;
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import DriverFactory.driverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.ArrayPage;
 import pageObjects.HomePage;
+import pageObjects.LoginPage;
 import Utilities.Excelreaderpython;
 import Utilities.LoggerReader;
 
 public class E_ArraySteps {
 
-	WebDriver driver;
 	ArrayPage arraypage;
 	HomePage homepage;
+	LoginPage loginpage;
 	Excelreaderpython python = new Excelreaderpython();
 	String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
 
 	public E_ArraySteps() {
-		driver = driverFactory.initiateDriver();
-		arraypage = new ArrayPage(driver);
-		homepage = new HomePage(driver);
+		arraypage = new ArrayPage();
+		homepage = new HomePage();
+		loginpage = new LoginPage();
 	}
 	
 	@Given("The user is in the Home page after Sign in with valid credentials")
@@ -39,13 +38,13 @@ public class E_ArraySteps {
 
 	@Then("The user should be directed to Array Data Structure Page")
 	public void the_user_should_be_directed_to_array_data_structure_page() {
-		Assert.assertEquals(driver.getTitle(), "Array");
+		Assert.assertEquals(LoginPage.getTitle(), "Array");
 		LoggerReader.info("User is in the Array Page");
 	}
 
 	@Given("The user is in the Array page after Sign in")
 	public void the_user_is_in_the_array_page_after_sign_in() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Arrays in Python link")
@@ -55,12 +54,12 @@ public class E_ArraySteps {
 
 	@Then("The user should be redirected to Arrays in Python page")
 	public void the_user_should_be_redirected_to_arrays_in_python_page() {
-		Assert.assertEquals(driver.getTitle(), "Arrays in Python");
+		Assert.assertEquals(LoginPage.getTitle(), "Arrays in Python");
 	}
 
 	@Given("The user is on the Arrays in Python page")
 	public void the_user_is_on_the_arrays_in_python_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Try Here button in Arrays in Python page")
@@ -98,7 +97,7 @@ public class E_ArraySteps {
 
 	@Then("The user should be able to see an error message in alert pop-up")
 	public void the_user_should_be_able_to_see_an_error_message_in_alert_pop_up() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 	}
 
 	@When("The user reads the valid python code from excel {string} and {int} and  enters in the Editor and click the Run Button")
@@ -110,7 +109,7 @@ public class E_ArraySteps {
 
 	@Given("The user is on the Arrays using List page")
 	public void the_user_is_on_the_arrays_using_list_page() {
-		driver.navigate().back();
+		LoginPage.navigate();
 		arraypage.ArraysList();
 	}
 
@@ -135,7 +134,7 @@ public class E_ArraySteps {
 
 	@Then("The user should able to see an error message in alert pop-up")
 	public void the_user_should_able_to_see_an_error_message_in_alert_pop_up() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 	}
 
 	@When("The user reads  the valid python code from excel {string} and {int} and  enters in Arrays using List Editor and click the Run Button")
@@ -153,7 +152,7 @@ public class E_ArraySteps {
 
 	@Given("The user is on the Basic Operations in Lists page")
 	public void the_user_is_on_the_basic_operations_in_lists_page() {
-		driver.navigate().back();
+		LoginPage.navigate();
 		arraypage.Basicoperation();
 	}
 
@@ -178,7 +177,7 @@ public class E_ArraySteps {
 
 	@Then("The user should able to see an error message for Basic Operations in alert pop-up")
 	public void the_user_should_able_to_see_an_error_message_for_basic_operations_in_alert_pop_up() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 	}
 
 	@When("The user write the valid python code from excel {string} and {int} and enters in Basic Operations Editor and click the Run Button")
@@ -196,19 +195,19 @@ public class E_ArraySteps {
 
 	@When("The user clicks Applications of Array link")
 	public void the_user_clicks_applications_of_array_link() {
-		driver.navigate().back();
+		LoginPage.navigate();
 		arraypage.ApplicationsArray();
 		LoggerReader.info("User clicks Applications of Array link");
 	}
 
 	@Then("The user should be redirected to Applications of Array page")
 	public void the_user_should_be_redirected_to_applications_of_array_page() {
-		Assert.assertEquals(driver.getTitle(), "Applications of Array");
+		Assert.assertEquals(LoginPage.getTitle(), "Applications of Array");
 	}
 
 	@Given("The user is on the Applications of Array page")
 	public void the_user_is_on_the_applications_of_array_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Try Here button in Application of Arrays page")
@@ -233,7 +232,7 @@ public class E_ArraySteps {
 
 	@Then("The user should able to see error message in alert pop-up")
 	public void the_user_should_able_to_see_error_message_in_alert_pop_up() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 	}
 
 	@When("The user reads the valid  python code from excel {string} and {int} and  enters in Application of Arrays Editor and click the Run Button")
@@ -251,14 +250,14 @@ public class E_ArraySteps {
 
 	@When("The user clicks Practice Questions link Applications of Array page")
 	public void the_user_clicks_practice_questions_link_applications_of_array_page() {
-		driver.navigate().back();
+		LoginPage.navigate();;
 		arraypage.Practicequestions();
 		LoggerReader.info("User is in Practice Questions link");
 	}
 
 	@Given("The user is in the practice page")
 	public void the_user_is_in_the_Practice_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks the Search the array link")
@@ -284,7 +283,7 @@ public class E_ArraySteps {
 
 	@Then("The user should be able to see error message for search element  in alert pop-up")
 	public void the_user_should_be_able_to_see_error_message_for_search_element_in_alert_pop_up() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");
 	}
 
 	@When("The user reads the valid python code for search element from excel {string} and {int} and enters in Editor and Click the Run Button")
@@ -303,8 +302,8 @@ public class E_ArraySteps {
 
 	@Given("The user is in the practice  page")
 	public void the_user_is_in_the_Practice_Page() {
-		driver.navigate().back();
-		Assert.assertEquals(driver.getTitle(), "Practice Questions");
+		LoginPage.navigate();
+		Assert.assertEquals(LoginPage.getTitle(), "Practice Questions");
 	}
 
 	@When("The user clicks the Max ConsecutiveOnes link")
@@ -334,7 +333,7 @@ public class E_ArraySteps {
 
 	@When("The user clicks the Find Numbers with Even Number of Digits link")
 	public void the_user_clicks_the_find_numbers_with_even_number_of_digits_link() {
-		driver.navigate().back();
+		LoginPage.navigate();
 		arraypage.FindEvenNumbers();
 	}
 
@@ -354,8 +353,8 @@ public class E_ArraySteps {
 
 	@Given("The user is in the  practice  page")
 	public void the_user_is_in_the_practice_page() {
-		driver.navigate().back();
-		Assert.assertEquals(driver.getTitle(), "Practice Questions");
+		LoginPage.navigate();
+		Assert.assertEquals(LoginPage.getTitle(), "Practice Questions");
 	}
 
 	@When("The user clicks the Squares of a Sorted Array link")
@@ -379,7 +378,7 @@ public class E_ArraySteps {
 
 	@Given("The user is in Practice Questions page")
 	public void the_user_is_in_practice_questions_page() {
-		driver.navigate().back();
-		Assert.assertEquals(driver.getTitle(), "Practice Questions");
+		LoginPage.navigate();
+		Assert.assertEquals(LoginPage.getTitle(), "Practice Questions");
 	}
 }

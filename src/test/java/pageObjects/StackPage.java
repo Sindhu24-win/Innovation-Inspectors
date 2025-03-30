@@ -7,11 +7,13 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import DriverFactory.driverFactory;
+
 public class StackPage {
 	WebDriver driver;
 	
-	public StackPage(WebDriver driver) {
-		this.driver = driver;
+	public StackPage() {
+		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
 	}
 	

@@ -7,14 +7,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import DriverFactory.driverFactory;
+
 public class RegisterPage {
 
 	WebDriver driver;
 	WebDriverWait wait;
 
-    public RegisterPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        this.driver=driver;
+    public RegisterPage() {
+    	driver = driverFactory.getDriver();
+		PageFactory.initElements(driver, this);
     }
 	
 	@FindBy(xpath="//div[@class='alert alert-primary']")

@@ -2,11 +2,7 @@ package StepDefinitions;
 
 import java.io.IOException;
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import DriverFactory.driverFactory;
-import Utilities.ConfigReader;
 import Utilities.LoggerReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,22 +10,21 @@ import io.cucumber.java.en.When;
 import pageObjects.ArrayPage;
 import pageObjects.GraphPage;
 import pageObjects.HomePage;
+import pageObjects.LoginPage;
 
 public class J_GraphSteps {
 
-	WebDriver driver ;
+	LoginPage loginpage;
 	GraphPage graphPage;
 	HomePage homepage;
 	ArrayPage arraypage;
-	WebDriverWait wait;
-	String username = ConfigReader.getProperty("username");
-	String password = ConfigReader.getProperty("password");
-
+	
+	
 	public J_GraphSteps() {
-		driver = driverFactory.initiateDriver();
-		graphPage = new GraphPage(driver);
-		arraypage = new ArrayPage(driver);
-		homepage = new HomePage(driver);
+		loginpage = new LoginPage();
+		graphPage = new GraphPage();
+		arraypage = new ArrayPage();
+		homepage = new HomePage();
 	}
 	
 	@Given("The user is in the Home page after Sign in with valid credentials.")
@@ -46,7 +41,7 @@ public class J_GraphSteps {
 
 	@Then("The user should be directed to Graph Data Structure Page")
 	public void the_user_should_be_directed_to_graph_data_structure_page() {
-		Assert.assertEquals(driver.getTitle(), "Graph");
+		Assert.assertEquals(LoginPage.getTitle(), "Graph");
 		LoggerReader.info("User is in the Graph Page");
 	}
 
@@ -63,7 +58,7 @@ public class J_GraphSteps {
 
 	@Then("The user should land in Graph Data Structure Page")
 	public void the_user_should_land_in_graph_data_structure_page() {
-		Assert.assertEquals(driver.getTitle(), "Graph");
+		Assert.assertEquals(LoginPage.getTitle(), "Graph");
 		LoggerReader.info("User is in the Graph Page");
 	}
 
@@ -80,7 +75,7 @@ public class J_GraphSteps {
 
 	@Then("The user should be redirected to Graph page of Graph-Data structures")
 	public void the_user_should_be_redirected_to_graph_page_of_graph_data_structures() {
-		Assert.assertEquals(driver.getTitle(), "Graph");
+		Assert.assertEquals(LoginPage.getTitle(), "Graph");
 		LoggerReader.info("The User is redirected");
 	}
 
@@ -118,7 +113,7 @@ public class J_GraphSteps {
 
 	@Then("The user should see an error message in an alert window")
 	public void the_user_should_see_an_error_message_in_an_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");// There will be no alert window pop-up so its is bug???
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");// There will be no alert window pop-up so its is bug???
 		System.out.println("No Error Message is present");
 	}
 
@@ -144,14 +139,14 @@ public class J_GraphSteps {
 
 	@When("The user clicks Practice Questions link")
 	public void the_user_clicks_practice_questions_link() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 		graphPage.PracticeQns(); // no such element exception coming
 		LoggerReader.info("User clicks Practice Questions link");
 	}
 
 	@Then("The user should be redirected to Practice page")
 	public void the_user_should_be_redirected_to_practice_page() {
-		Assert.assertEquals(driver.getTitle(), "Practice Questions");
+		Assert.assertEquals(LoginPage.getTitle(), "Practice Questions");
 		LoggerReader.info("The User is in Practice page");
 	}
 
@@ -162,12 +157,12 @@ public class J_GraphSteps {
 
 	@Then("The user should be redirected to Graph Representations page")
 	public void the_user_should_be_redirected_to_graph_representations_page() {
-		Assert.assertEquals(driver.getTitle(), "Graph Representations");
+		Assert.assertEquals(LoginPage.getTitle(), "Graph Representations");
 	}
 
 	@Given("The user is on the Graph Representations page")
 	public void the_user_is_on_the_graph_representations_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Try Here button in the Graph Representations page")
@@ -177,7 +172,7 @@ public class J_GraphSteps {
 	
 	@Given("The user is in the Graph data structure page")
 	public void the_user_is_in_the_graph_data_structure_page() {
-		driver.navigate().back();
+		LoginPage.navigate();
 	}
 
 	@When("The User clicks signout button")
@@ -188,7 +183,7 @@ public class J_GraphSteps {
 
 	@Then("The user should signout successfully")
 	public void the_user_should_signout_successfully() {
-		Assert.assertEquals(driver.getTitle(), "NumpyNinja");
+		Assert.assertEquals(LoginPage.getTitle(), "NumpyNinja");
 		LoggerReader.info("User Signed out Successfully!");
 	}
 }

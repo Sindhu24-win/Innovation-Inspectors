@@ -5,10 +5,6 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import DriverFactory.driverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,17 +16,14 @@ import Utilities.LoggerReader;
 public class A_RegisterStep {
 
 	RegisterPage registerobj;
-	WebDriver driver;
-	WebDriverWait wait;
 	HomePage homeObj;
 	ExcelReader excelReader = new ExcelReader();
 	String filePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx"; // Excel file path
 	String sheetName = "Register";
 
 	public A_RegisterStep() {
-		driver = driverFactory.initiateDriver();//
-		registerobj = new RegisterPage(driver);
-		homeObj = new HomePage(driver);
+		registerobj = new RegisterPage();
+		homeObj = new HomePage();
 	}
 
 	@Given("The user is on the user registration page")

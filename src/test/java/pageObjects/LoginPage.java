@@ -7,16 +7,19 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import DriverFactory.driverFactory;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage {
 
-	WebDriver driver;
+	public static WebDriver driver;
 	WebDriverWait wait;
 	
-	public LoginPage(WebDriver driver) {
+	public LoginPage() {
+		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
-		this.driver = driver;
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5)); 
 	}
 	
@@ -111,5 +114,17 @@ public class LoginPage {
 
 	public void signout() {
 		SignOut.click();
+	}
+	 public static String getTitle() {
+			return driver.getTitle();
+	 }
+
+	public static void getCurrentUrl() {
+		driver.getCurrentUrl();
+		
+	}
+
+	public static void navigate() {
+		driver.navigate().back();
 	}
 }

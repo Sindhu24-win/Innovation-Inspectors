@@ -13,14 +13,16 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import DriverFactory.driverFactory;
+
 public class TreePage {
 
 	WebDriver driver;
 	WebDriverWait wait;
 
-	public TreePage(WebDriver driver) {
+	public TreePage() {
+		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
-		this.driver = driver;
 	}
 		
 	@FindBy(className = "btn")

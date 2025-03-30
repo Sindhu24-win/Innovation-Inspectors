@@ -13,12 +13,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import DriverFactory.driverFactory;
+
 public class DataStructurePage {
 
 	WebDriver driver;
-	public DataStructurePage(WebDriver driver) {
+	
+	public DataStructurePage() {
+		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
-		this.driver = driver;
 	}
 
 	@FindBy(xpath = "//a[text()='Sign in']")

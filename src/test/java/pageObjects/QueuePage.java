@@ -7,12 +7,14 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import DriverFactory.driverFactory;
+
 public class QueuePage {
 	WebDriver driver;
 	
-	public QueuePage(WebDriver driver) {
+	public QueuePage() {
+		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
-		this.driver = driver;
 	}
 	
 	@FindBy(className = "btn")

@@ -2,29 +2,28 @@ package StepDefinitions;
 
 import java.io.IOException;
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import DriverFactory.driverFactory;
 import Utilities.LoggerReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.ArrayPage;
 import pageObjects.HomePage;
+import pageObjects.LoginPage;
 import pageObjects.QueuePage;
 
 public class H_QueueSteps {
 
-	WebDriver driver;
 	QueuePage queuePage;
 	HomePage homepage;
 	ArrayPage arraypage;
+	LoginPage loginpage;
 	
 	public H_QueueSteps() {
-		driver = driverFactory.initiateDriver();
-		queuePage = new QueuePage(driver);
-		homepage = new HomePage(driver);
-		arraypage = new ArrayPage(driver);
+		loginpage = new LoginPage();
+		queuePage = new QueuePage();
+		homepage = new HomePage();
+		arraypage = new ArrayPage();
 	}
 
 	@Given("The user is on the Home page")
@@ -40,12 +39,12 @@ public class H_QueueSteps {
 
 	@Then("The user should be directed to the Queue Data Structure Page")
 	public void the_user_should_be_directed_to_the_queue_data_structure_page() {
-		Assert.assertEquals(driver.getTitle(), "Queue");
+		Assert.assertEquals(LoginPage.getTitle(), "Queue");
 	}
 
 	@Given("The user is on the Queue page")
 	public void the_user_is_on_the_queue_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@When("The user clicks Implementation of Queue in Python button")
@@ -55,12 +54,12 @@ public class H_QueueSteps {
 
 	@Then("The user should be redirected to Implementation of Queue in Python page")
 	public void the_user_should_be_redirected_to_implementation_of_queue_in_python_page() {
-		Assert.assertEquals(driver.getTitle(), "Implementation of Queue in Python");
+		Assert.assertEquals(LoginPage.getTitle(), "Implementation of Queue in Python");
 	}
 
 	@Given("The user is on the Implementation of Queue in Python page")
 	public void the_user_is_on_the_implementation_of_queue_in_python_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 		LoggerReader.info("User is on the Implementation of Queue in Python page");
 	}
 
@@ -90,7 +89,7 @@ public class H_QueueSteps {
 
 	@Then("The user should see an error message in the alert window")
 	public void the_user_should_see_an_error_message_in_the_alert_window() {
-		Assert.assertEquals(driver.getTitle(), "Assessment");// no alert is printed
+		Assert.assertEquals(LoginPage.getTitle(), "Assessment");// no alert is printed
 	}
 
 	@When("The user writes invalid python code from excel {string} and {int} and enters in the Editor and clicks the Run Button for queue tryEditor")
@@ -121,30 +120,30 @@ public class H_QueueSteps {
 
 	@When("The user clicks Practice Questions button in the Implementation of Queue in Python page")
 	public void the_user_clicks_practice_questions_button_in_the_implementation_of_queue_in_python_page() {
-		driver.navigate().back();
+		LoginPage.navigate();
 		queuePage.clickQueuePracticeQuestionsBtn();
 	}
 
 	@Then("The user should be redirected to the Practice Questions page")
 	public void the_user_should_be_redirected_to_the_practice_questions_page() {
-		Assert.assertEquals(driver.getTitle(), "Practice Questions");
+		Assert.assertEquals(LoginPage.getTitle(), "Practice Questions");
 	}
 
 	@When("The user clicks Implementation using collections.deque button page")
 	public void the_user_clicks_implementation_using_collections_deque_button_page() {
-		driver.navigate().back();
+		LoginPage.navigate();
 		queuePage.clickImplementationUsingCollectionsDequeue();
 
 	}
 
 	@Then("The user should be redirected to the Implementation using collections.deque page")
 	public void the_user_should_be_redirected_to_the_implementation_using_collections_deque_page() {
-		Assert.assertEquals(driver.getTitle(), "Implementation using collections.deque");
+		Assert.assertEquals(LoginPage.getTitle(), "Implementation using collections.deque");
 	}
 
 	@Given("The user is on the Implementation using collections.deque page")
 	public void the_user_is_on_the_implementation_using_collections_deque_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 		LoggerReader.info("The user is on the Implementation using collections.deque page");
 	}
 
@@ -164,18 +163,18 @@ public class H_QueueSteps {
 
 	@When("The user clicks Implementation using array button")
 	public void the_user_clicks_implementation_using_array_button() {
-		driver.navigate().back();
+		LoginPage.navigate();
 		queuePage.clickImplementationUsingArray();
 	}
 
 	@Then("The user should be redirected to the Implementation using array page")
 	public void the_user_should_be_redirected_to_the_implementation_using_array_page() {
-		Assert.assertEquals(driver.getTitle(), "Implementation using array");
+		Assert.assertEquals(LoginPage.getTitle(), "Implementation using array");
 	}
 
 	@Given("The user is on the Implementation using array page")
 	public void the_user_is_on_the_implementation_using_array_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@Given("The user is on the try editor page in the Implementation using array page")
@@ -196,18 +195,18 @@ public class H_QueueSteps {
 
 	@When("The user clicks Queue Operations button")
 	public void the_user_clicks_queue_operations_button() {
-		driver.navigate().back();
+		LoginPage.navigate();
 		queuePage.clickQueueOperations();
 	}
 
 	@Then("The user should be redirected to the Queue Operations page")
 	public void the_user_should_be_redirected_to_the_queue_operations_page() {
-		Assert.assertEquals(driver.getTitle(), "Queue Operations");
+		Assert.assertEquals(LoginPage.getTitle(), "Queue Operations");
 	}
 
 	@Given("The user is on the Queue Operations page")
 	public void the_user_is_on_the_queue_operations_page() {
-		driver.getCurrentUrl();
+		LoginPage.getCurrentUrl();
 	}
 
 	@Given("The user is on the try editor page in the Queue Operations page")

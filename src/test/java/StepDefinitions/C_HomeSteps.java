@@ -1,10 +1,8 @@
 package StepDefinitions;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import DriverFactory.driverFactory;
 import Utilities.LoggerReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,17 +12,17 @@ import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
 public class C_HomeSteps {
-	WebDriver driver;
+
 	WebDriverWait wait;
 	HomePage homePageobj;
 	LoginPage loginobj;
 	DataStructurePage dataobj;
 	
 	public C_HomeSteps() {
-		driver = driverFactory.initiateDriver();
-		homePageobj = new HomePage(driver);
-		loginobj = new LoginPage(driver);
-		dataobj = new DataStructurePage(driver);
+		
+		homePageobj = new HomePage();
+		loginobj = new LoginPage();
+		dataobj = new DataStructurePage();
 	}
 
 	@Given("The user is on the DS Algo Portal")
@@ -41,7 +39,7 @@ public class C_HomeSteps {
 
 	@Then("The user should be navigated to the home page")
 	public void the_user_should_be_navigated_to_the_home_page() {
-		Assert.assertTrue(driver.getTitle().contains("NumpyNinja"));
+		Assert.assertTrue(LoginPage.getTitle().contains("NumpyNinja"));
 		LoggerReader.info("User navigated to Home Page");
 	}
 
