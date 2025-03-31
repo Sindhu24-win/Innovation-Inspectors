@@ -67,7 +67,7 @@ public class ArrayPage {
 	@CacheLookup
 	WebElement Arrays_Python;
 
-	@FindBy(linkText = "Try here>>>") 
+	@FindBy(xpath = "//a[text()='Try here>>>']")
 	@CacheLookup
 	WebElement TryHere;
 

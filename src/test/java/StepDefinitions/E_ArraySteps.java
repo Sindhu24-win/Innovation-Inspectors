@@ -9,7 +9,6 @@ import io.cucumber.java.en.When;
 import pageObjects.ArrayPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
-import Utilities.Excelreaderpython;
 import Utilities.LoggerReader;
 
 public class E_ArraySteps {
@@ -17,9 +16,7 @@ public class E_ArraySteps {
 	ArrayPage arraypage;
 	HomePage homepage;
 	LoginPage loginpage;
-	Excelreaderpython python = new Excelreaderpython();
-	String relativePath = "src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
-
+	
 	public E_ArraySteps() {
 		arraypage = new ArrayPage();
 		homepage = new HomePage();
