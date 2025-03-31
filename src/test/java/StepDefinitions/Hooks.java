@@ -25,10 +25,7 @@ public class Hooks {
 	@AfterClass
 	public static void tearDown() {
 // Quit WebDriver after all tests are finished
-		if (driver != null) {
-			driver.quit();
-			driver = null;
-		}
+		driverFactory.quitDriver();
 	}
 
 	  public void afterStep(Scenario scenario) {

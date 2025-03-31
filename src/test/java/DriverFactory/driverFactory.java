@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import StepDefinitions.Hooks;
 
 public class driverFactory { 
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>(); // Each thread gets its own WebDriver
@@ -48,9 +47,11 @@ public class driverFactory {
         return driver.get();
     }
     public static void quitDriver() {
-    	Hooks.tearDown();
-        driver.remove();
-        browser.remove();
+        if (driver.get() != null) {
+            driver.get().quit();
+            driver.remove();
+            browser.remove();
+        }
     }
    
 }
