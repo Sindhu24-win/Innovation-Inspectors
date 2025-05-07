@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import DriverFactory.driverFactory;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.Allure;
 
@@ -27,7 +28,7 @@ public class Hooks {
 // Quit WebDriver after all tests are finished
 		driverFactory.quitDriver();
 	}
-
+	@AfterStep
 	  public void afterStep(Scenario scenario) {
 	        WebDriver driver = driverFactory.getDriver(); // Get WebDriver for current thread
 

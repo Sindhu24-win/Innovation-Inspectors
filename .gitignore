@@ -7,3 +7,4 @@ test-output/
 .classpath
 .project
 bin/
+ExtentReports/
