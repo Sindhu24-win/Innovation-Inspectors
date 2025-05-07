@@ -72,6 +72,12 @@
 			<artifactId>extentreports</artifactId>
 			<version>5.1.2</version>
 		</dependency>
+		<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.8.0</version>
+</dependency>
+
 		<!--
 		https://mvnrepository.com/artifact/ru.stqa.selenium/webdriver-factory -->
 		<dependency>
@@ -132,7 +138,28 @@
 			<version>2.24.3</version>
 			<scope>test</scope>
 		</dependency>
+<dependency>
 
+  <groupId>com.aventstack</groupId>
+
+  <artifactId>chaintest-cucumber-jvm</artifactId>
+
+  <version>1.0.10</version>
+
+  <scope>provided</scope>
+
+</dependency>
+
+
+<dependency>
+
+          <groupId>org.freemarker</groupId>
+
+          <artifactId>freemarker</artifactId>
+
+          <version>2.3.33</version>
+
+    </dependency>
 
 	</dependencies>
 </project>
